@@ -1,0 +1,9 @@
+name: scar
+version: 0.1.0
+
+authors:
+  - Colonlc <thml@gmx.de>
+
+crystal: 0.24.2
+
+license: MIT
