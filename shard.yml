@@ -5,7 +5,7 @@ description: |
   A game engine/entity component system written in Crystal using crsfml and crystal-chipmunk, inspired by Glove
 
 authors:
-  - Colonlc <thml@gmx.de>
+  - Colonlc
 
 crystal: 0.24.2
 
@@ -14,5 +14,5 @@ license: MIT
 dependencies:
   crsfml:
     github: oprypin/crsfml
-  crystal-chipmunk:
+  chipmunk:
     github: oprypin/crystal-chipmunk
