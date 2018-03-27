@@ -1,9 +1,18 @@
 name: scar
 version: 0.1.0
 
+description: |
+  A game engine/entity component system written in Crystal using crsfml and crystal-chipmunk, inspired by Glove
+
 authors:
   - Colonlc <thml@gmx.de>
 
 crystal: 0.24.2
 
 license: MIT
+
+dependencies:
+  crsfml:
+    github: oprypin/crsfml
+  crystal-chipmunk:
+    github: oprypin/crystal-chipmunk

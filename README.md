@@ -1,6 +1,9 @@
-# scar
+# scar [Sfml Chipmunk cRystal] [WIP]
 
-TODO: Write a description here
+[![GitHub release](https://img.shields.io/github/release/colonlc/scar.svg)](https://github.com/colonlc/scar/releases)
+[![Build Status](https://travis-ci.org/colonlc/scar.svg?branch=master)](https://travis-ci.org/colonlc/scar)
+
+A game engine written in Crystal using crsfml and crystal-chipmunk, inspired by Glove
 
 ## Installation
 
@@ -9,7 +12,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   scar:
-    github: [your-github-name]/scar
+    github: colonlc/scar
 ```
 
 ## Usage
@@ -17,12 +20,6 @@ dependencies:
 ```crystal
 require "scar"
 ```
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
@@ -34,4 +31,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Colonlc - creator, maintainer
+- [colonlc](https://github.com/colonlc) colonlc - creator, maintainer
