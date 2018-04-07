@@ -7,10 +7,12 @@ module Scar
     property :y
 
     def initialize(@x : Float32, @y : Float32); end
+
     # From SF::Vector2
     def from(v : SF::Vector2)
       self.new(v.x, v.y)
     end
+
     # From CP::Vector
     def fom(v : CP::Vector)
       self.new(v.x, v.y)
@@ -68,6 +70,7 @@ module Scar
     def unit
       self / self.length
     end
+
     # Same vector, but length is one
     def normalized
       unit
@@ -76,7 +79,7 @@ module Scar
     # Rotate by angle
     def rotate(angle : Float32)
       Vec2.new(x * Math.cos(angle) - y * Math.sin(angle),
-               x * Math.sin(angle) + y * Math.cos(angle))
+        x * Math.sin(angle) + y * Math.cos(angle))
     end
 
     def angle
@@ -92,6 +95,5 @@ module Scar
     def cp
       CP.v(x, y)
     end
-
   end # End struct Vec
-end # End module Scar
+end   # End module Scar

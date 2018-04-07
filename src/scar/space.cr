@@ -1,4 +1,3 @@
-
 module Scar
   # A Space holds Entities and Systems. Spaces should not interact with each other
   class Space
@@ -21,6 +20,7 @@ module Scar
     def <<(entity : Entity)
       @entities << entity
     end
+
     # Adds multiple Entities to the Space
     def <<(*entities : Entity)
       @entities.push entities
@@ -30,9 +30,10 @@ module Scar
     def <<(system : System)
       @systems << system
     end
+
     # Adds multiple Entities to the Space
     def <<(*systems : System)
       @systems.push entities
     end
   end # End class Space
-end # End module Scar
+end   # End module Scar
