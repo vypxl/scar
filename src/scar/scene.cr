@@ -3,7 +3,7 @@ module Scar
   class Scene
     getter :spaces
 
-    def initialize()
+    def initialize
       @spaces = Array(Space).new
     end
 
@@ -26,15 +26,17 @@ module Scar
       @spaces << space
       @spaces.sort_by! &.z
     end
+
     # Shortcut for @spaces#push(*values : T)
     def <<(*spaces : Space)
       @spaces.push spaces
       @spaces.sort_by! &.z
     end
+
     # Shortcut for @spaces#pop
     def pop(&block)
       @spaces.pop(block)
       @spaces.sort_by! &.z
     end
   end # End class Scene
-end # End module Scar
+end   # End module Scar

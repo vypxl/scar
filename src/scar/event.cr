@@ -22,10 +22,13 @@ module Scar
     end
 
     struct Closed < Event; end
+
     struct Resized < Event
       getter :size
+
       def initialize(@size : Vec); end
     end
+
     struct PlaceHolderCuzIDidNotHaveTimeToDefineAllEventsLol < Event; end
   end # End module Event
-end # End module Scar
+end   # End module Scar
