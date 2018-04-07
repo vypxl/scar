@@ -14,6 +14,8 @@ module Scar
       ret = false
       if @digital_bindings[which]?
         @digital_bindings[which].each { |check| ret = true if check.call }
+      else
+        Logger.warn "No Input Symbol '#{which}'"
       end
       ret
     end # End active?

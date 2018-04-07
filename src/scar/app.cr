@@ -35,7 +35,8 @@ module Scar
       time = Time.now
       while window.open?
         while e = window.poll_event
-          broadcast Event.from_sfml_event(e)
+          converted = Event.from_sfml_event(e)
+          broadcast converted if converted
         end
 
         new_time = Time.now
