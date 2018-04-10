@@ -10,7 +10,7 @@ module Scar
 
     # SFML Event Wrappers
 
-    # Converts a raw SFML Event to the matching Event wrapper
+    # Converts a raw SFML Event to the matching Event wrapper.
     def from_sfml_event(e)
       case e
       when SF::Event::Closed
@@ -58,24 +58,32 @@ module Scar
       end
     end
 
+    # Window got an exit signal.
     struct Closed < Event; end
 
+    # Window got Resized (size : Vec).
     struct Resized < Event
       getter :size
 
       def initialize(@size : Vec); end
     end
 
+    # Window lost Focus.
     struct LostFocus < Event; end
 
+    # Window gained Focus.
     struct GainedFocus < Event; end
 
+    # Window got unicode char entered (unicode : UInt32).
+    # This is not a Key event, it captures any entered unicode char entered by
+    # any input method. This can capture things like ^+e => ê.
     struct TextEntered < Event
       getter :unicode
 
       def initialize(@unicode : UInt32); end
     end
 
+    # Key was pressed (code : SF::Keyboard::Key, alt control shift system : Bool).
     struct KeyPressed < Event
       getter :code
       getter :alt
@@ -86,6 +94,7 @@ module Scar
       def initialize(@code : SF::Keyboard::Key, @alt : Bool, @control : Bool, @shift : Bool, @system : Bool); end
     end
 
+    # Same as KeyPressed but it was released.
     struct KeyReleased < Event
       getter :code
       getter :alt
@@ -96,6 +105,7 @@ module Scar
       def initialize(@code : SF::Keyboard::Key, @alt : Bool, @control : Bool, @shift : Bool, @system : Bool); end
     end
 
+    # Mouse wheel got scrolled (wheel : SF::Mouse::Wheel, delta : Float32, x y : Int32).
     struct MouseWheelScrolled < Event
       getter :wheel
       getter :delta
@@ -105,6 +115,7 @@ module Scar
       def initialize(@wheel : SF::Mouse::Wheel, @delta : Float32, @x : Int32, @y : Int32); end
     end
 
+    # Mouse button was pressed (button : SF::Mouse::Button, x y : Int32).
     struct MouseButtonPressed < Event
       getter :button
       getter :x
@@ -113,6 +124,7 @@ module Scar
       def initialize(@button : SF::Mouse::Button, @x : Int32, @y : Int32); end
     end
 
+    # Same as MouseButtonPressed but it was released.
     struct MouseButtonReleased < Event
       getter :button
       getter :x
@@ -121,6 +133,7 @@ module Scar
       def initialize(@button : SF::Mouse::Button, @x : Int32, @y : Int32); end
     end
 
+    # Mouse was moved (x y : Int32).
     struct MouseMoved < Event
       getter :x
       getter :y
@@ -128,10 +141,13 @@ module Scar
       def initialize(@x : Int32, @y : Int32); end
     end
 
+    # Mouse entered the window.
     struct MouseEntered < Event; end
 
+    # Mouse left the window.
     struct MouseLeft < Event; end
 
+    # Joystick button got pressed (joystick_id button : UInt32).
     struct JoystickButtonPressed < Event
       getter :joystick_id
       getter :button
@@ -139,6 +155,7 @@ module Scar
       def initialize(@joystick_id : UInt32, @button : UInt32); end
     end
 
+    # Same as JoystickButtonPressed but it was released.
     struct JoystickButtonReleased < Event
       getter :joystick_id
       getter :button
@@ -146,18 +163,21 @@ module Scar
       def initialize(@joystick_id : UInt32, @button : UInt32); end
     end
 
+    # A Joystick connected (joystick_id : UInt32).
     struct JoystickConnected < Event
       getter :joystick_id
 
       def initialize(@joystick_id : UInt32); end
     end
 
+    # Same as JoystickConnected but it disconnected.
     struct JoystickDisconnected < Event
       getter :joystick_id
 
       def initialize(@joystick_id : UInt32); end
     end
 
+    # A touch began (finger : UInt32, x y : Int32).
     struct TouchBegan < Event
       getter :finger
       getter :x
@@ -166,6 +186,7 @@ module Scar
       def initialize(@finger : UInt32, @x : Int32, @y : Int32); end
     end
 
+    # Same as TouchBegan but it moved.
     struct TouchMoved < Event
       getter :finger
       getter :x
@@ -174,6 +195,7 @@ module Scar
       def initialize(@finger : UInt32, @x : Int32, @y : Int32); end
     end
 
+    # Same as TouchBegan but it ended.
     struct TouchEnded < Event
       getter :finger
       getter :x

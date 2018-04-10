@@ -3,7 +3,8 @@
 [![GitHub release](https://img.shields.io/github/release/colonlc/scar.svg)](https://github.com/colonlc/scar/releases)
 [![Build Status](https://travis-ci.org/colonlc/scar.svg?branch=master)](https://travis-ci.org/colonlc/scar)
 
-A 2D game engine written in Crystal using crsfml and crystal-chipmunk, inspired by Glove
+A 2D game engine written in Crystal using crsfml, crystal-chipmunk and
+msgpack-crystal inspired by Glove
 
 ## Motivation
 
@@ -17,12 +18,12 @@ purpose.
 - Configurable input handling
 - Universal 2D Vector class
 - Entity-Component-System
+- Configuration manager
+- Easy to use scene/game state serialization for savegames
 
 ## Not yet implemented features
 
 - Asset manager
-- Configuration manager
-- Easy to use scene/game state serialization for savegames
 - Tween
 - Builtin Components and Systems e.g. position, drawable, physics, etc.
 - More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions
@@ -47,7 +48,7 @@ dependencies:
 require "scar"
 ```
 
-## Feature Request
+## Feature Requests
 
 Feature requests are welcome, just open an issue!
 
