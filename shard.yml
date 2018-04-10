@@ -16,3 +16,5 @@ dependencies:
     github: oprypin/crsfml
   chipmunk:
     github: oprypin/crystal-chipmunk
+  msgpack:
+    github: crystal-community/msgpack-crystal
