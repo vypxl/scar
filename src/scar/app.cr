@@ -30,7 +30,7 @@ module Scar
     end # End initialize
 
     # Starts the app.
-    # Update and render based on stack
+    # Update and render based on scene stack
     def run
       time = Time.now
       while window.open?
