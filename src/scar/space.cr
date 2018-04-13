@@ -39,7 +39,7 @@ module Scar
     end
 
     # For each Entity with the given component Type in the space, yields the entity and it's component
-    def each_with(comp_type : T.class, &block : ((Entity, T)->))
+    def each_with(comp_type : T.class, &block : ((Entity, T) ->))
       @entities.each { |e|
         c = e[comp_type]?
         yield e, c if c
