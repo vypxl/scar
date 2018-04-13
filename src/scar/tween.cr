@@ -3,18 +3,18 @@ module Scar
     # Basic easing functions
     module Easing
       Linear         = ->(lf: Float32) { lf                                                  }
-      EaseInQuad     = ->(lf: Float32) { lf*lf                                               }
-      EaseOutQuad    = ->(lf: Float32) { lf*(2-lf)                                           }
-      EaseInOutQuad  = ->(lf: Float32) { lf<.5 ? 2*lf*lf : -1+(4-2*lf)*lf                    }
-      EaseInCubic    = ->(lf: Float32) { lf*lf*lf                                            }
-      EaseOutCubic   = ->(lf: Float32) { (--lf)*lf*lf+1                                      }
-      EaseInOutCubic = ->(lf: Float32) { lf<.5 ? 4*lf*lf*lf : (lf-1)*(2*lf-2)*(2*lf-2)+1     }
-      EaseInQuart    = ->(lf: Float32) { lf*lf*lf*lf                                         }
-      EaseOutQuart   = ->(lf: Float32) { 1-(--lf)*lf*lf*lf                                   }
-      EaseInOutQuart = ->(lf: Float32) { lf<.5 ? 8*lf*lf*lf*lf : 1-8*(--lf)*lf*lf*lf         }
-      EaseInQuint    = ->(lf: Float32) { lf*lf*lf*lf*lf                                      }
-      EaseOutQuint   = ->(lf: Float32) { 1+(--lf)*lf*lf*lf*lf                                }
-      EaseInOutQuint = ->(lf: Float32) { lf<.5 ? 16*lf*lf*lf*lf*lf : 1+16*(--lf)*lf*lf*lf*lf }
+      EaseInQuad     = ->(lf: Float32) { lf ** 2                                             }
+      EaseOutQuad    = ->(lf: Float32) { lf * (2-lf)                                         }
+      EaseInOutQuad  = ->(lf: Float32) { lf < 0.5 ? 2 * lf ** 2 : -1 + (4 - 2 * lf) * lf     }
+      EaseInCubic    = ->(lf: Float32) { lf ** 3                                             }
+      EaseOutCubic   = ->(lf: Float32) { (lf - 1) ** 3 + 1                                   }
+      EaseInOutCubic = ->(lf: Float32) { lf < 0.5 ? 4 * lf ** 3 : (lf - 1) * (2 * lf - 2) ** 2 + 1 }
+      EaseInQuart    = ->(lf: Float32) { lf ** 4                                             }
+      EaseOutQuart   = ->(lf: Float32) { 1 - (lf - 1) ** 4                                   }
+      EaseInOutQuart = ->(lf: Float32) { lf < 0.5 ? 8 * lf ** 4 : 1 - 8 * (lf - 1) ** 4      }
+      EaseInQuint    = ->(lf: Float32) { lf ** 5                                             }
+      EaseOutQuint   = ->(lf: Float32) { 1 + (lf - 1) ** 5                                   }
+      EaseInOutQuint = ->(lf: Float32) { lf < 0.5 ? 16 * lf ** 5 : 1 + 16 * (lf - 1) ** 5    }
     end
 
     property :on_update
