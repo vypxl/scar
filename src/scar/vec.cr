@@ -6,6 +6,10 @@ module Scar
     property :x
     property :y
 
+    def initialize(x, y)
+      initialize(x.to_f32, y.to_f32)
+    end
+
     def initialize(@x : Float32, @y : Float32); end
 
     # From SF::Vector2

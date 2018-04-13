@@ -2,6 +2,8 @@ module Scar
   # A Space holds Entities and Systems. Spaces should not interact with each other
   class Space
     getter :z
+    getter :entities
+    getter :systems
 
     def initialize(@z : Int32)
       @entities = Array(Entity).new
@@ -34,6 +36,14 @@ module Scar
     # Adds multiple Entities to the Space
     def <<(*systems : System)
       @systems.push entities
+    end
+
+    # For each Entity with the given component Type in the space, yields the entity and it's component
+    def each_with(comp_type : T.class, &block : ((Entity, T)->))
+      @entities.each { |e|
+        c = e[comp_type]?
+        yield e, c if c
+      }
     end
   end # End class Space
 end   # End module Scar
