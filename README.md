@@ -19,12 +19,13 @@ purpose.
 - Universal 2D Vector class
 - Entity-Component-System
 - Configuration manager
-- Easy to use scene/game state serialization for savegames
+- Tween
+
+- Easy to use scene/game state serialization for savegames NOTICE: not yet for scenes; only simple classes.
 
 ## Not yet implemented features
 
 - Asset manager
-- Tween
 - Builtin Components and Systems e.g. position, drawable, physics, etc.
 - More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions
 
