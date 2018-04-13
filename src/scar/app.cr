@@ -49,7 +49,7 @@ module Scar
           @scene_stack.last.update(self, dt)
           @scene_stack.last.render(self, dt)
         end
-        @window.display()
+        @window.display
         time = new_time
       end
     end # End run
