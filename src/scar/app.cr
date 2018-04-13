@@ -106,8 +106,8 @@ module Scar
     # Creates a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
     # If the Tween restarts itself in on_complete (by calling `Tween#reset` for example)
     # or does anything that prevents the `Tween#complete?` check, it is NOT deleted!
-    def tween(duration : Float32, kind : Tween::Kind.class, on_update : Proc(Tween, Nil) = ->{}, on_complete : Proc(Tween, Nil) = ->{})
-      @tweens << Tween.new(duration, kind, on_update, on_complete)
+    def tween(duration : Float32, ease : Proc(Float32, Float32), on_update : Proc(Tween, Nil) = ->{}, on_complete : Proc(Tween, Nil) = ->{})
+      @tweens << Tween.new(duration, ease, on_update, on_complete)
     end
   end # End class App
 end   # End module Scar
