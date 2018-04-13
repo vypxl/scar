@@ -1,7 +1,5 @@
 require "crsfml"
 
-require "./*"
-
 module Scar
   # A Scar powered application.
   abstract class App
@@ -15,10 +13,10 @@ module Scar
     # App specific initialization (load config, bind inputs(based on config), load textures...).
     abstract def init
 
-    # App update logic.
+    # General App update logic; executed before all System updates.
     abstract def update(dt)
 
-    # App rendering logic.
+    # General App rendering logic; executed before all System rendering.
     abstract def render(dt)
 
     # Initializes the app with an RenderWindow and an input handler.
@@ -26,6 +24,7 @@ module Scar
       @next_id = 0u32
       @time = Time.now
       @scene_stack = Array(Scene).new
+      @tweens = Array(Tween).new
       init()
     end # End initialize
 
@@ -41,10 +40,16 @@ module Scar
 
         new_time = Time.now
         dt = (new_time - time).total_seconds
+        @window.clear(SF::Color::Black)
+        @tweens.each { |t| t.update dt }
+        @tweens.select! { |t| !t.complete? }
+        update dt
+        render dt
         if @scene_stack.last?
           @scene_stack.last.update(self, dt)
           @scene_stack.last.render(self, dt)
         end
+        @window.display()
         time = new_time
       end
     end # End run
@@ -96,6 +101,13 @@ module Scar
     # Shortcut for @scene_stack#pop
     def pop(&block)
       @scene_stack.pop(block)
+    end
+
+    # Creates a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
+    # If the Tween restarts itself in on_complete (by calling `Tween#reset` for example)
+    # or does anything that prevents the `Tween#complete?` check, it is NOT deleted!
+    def tween(duration : Float32, kind : Tween::Kind.class, on_update : Proc(Tween, Nil) = ->{}, on_complete : Proc(Tween, Nil) = ->{})
+      @tweens << Tween.new(duration, kind, on_update, on_complete)
     end
   end # End class App
 end   # End module Scar

@@ -4,6 +4,7 @@ require "msgpack"
 
 module Scar
 end
+
 # Use this instead of initialize if you want a serializable type.
 # It creates a initialize method and a MessagePack mapping to use it with
 # `to_msgpack` and `from_msgpack` and getter/setter methods for all fields.
