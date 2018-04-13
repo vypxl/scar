@@ -1,49 +1,30 @@
 module Scar
   class Tween
-    abstract class Kind
-      abstract def calc(lf)
-
-      class Linear < Kind
-        def calc(lf)
-          lf
-        end
-      end
-
-      class EaseIn < Kind
-        def calc(lf)
-          lf * lf * lf
-        end
-      end
-
-      class EaseOut < Kind
-        @@ease_in = EaseIn.new
-
-        def calc(lf)
-          1f32 - @@ease_in.calc(1f32 - lf)
-        end
-      end
-
-      class EaseInOut < Kind
-        @@ease_in = EaseIn.new
-
-        def calc(lf)
-          if lf < 0.5
-            @@ease_in.calc(lf * 2) / 2
-          else
-            1 - @@ease_in.calc((1 - lf) * 2) / 2
-          end
-        end
-      end
+    # Basic easing functions
+    module Easing
+      Linear         = ->(lf: Float32) { lf                                                  }
+      EaseInQuad     = ->(lf: Float32) { lf*lf                                               }
+      EaseOutQuad    = ->(lf: Float32) { lf*(2-lf)                                           }
+      EaseInOutQuad  = ->(lf: Float32) { lf<.5 ? 2*lf*lf : -1+(4-2*lf)*lf                    }
+      EaseInCubic    = ->(lf: Float32) { lf*lf*lf                                            }
+      EaseOutCubic   = ->(lf: Float32) { (--lf)*lf*lf+1                                      }
+      EaseInOutCubic = ->(lf: Float32) { lf<.5 ? 4*lf*lf*lf : (lf-1)*(2*lf-2)*(2*lf-2)+1     }
+      EaseInQuart    = ->(lf: Float32) { lf*lf*lf*lf                                         }
+      EaseOutQuart   = ->(lf: Float32) { 1-(--lf)*lf*lf*lf                                   }
+      EaseInOutQuart = ->(lf: Float32) { lf<.5 ? 8*lf*lf*lf*lf : 1-8*(--lf)*lf*lf*lf         }
+      EaseInQuint    = ->(lf: Float32) { lf*lf*lf*lf*lf                                      }
+      EaseOutQuint   = ->(lf: Float32) { 1+(--lf)*lf*lf*lf*lf                                }
+      EaseInOutQuint = ->(lf: Float32) { lf<.5 ? 16*lf*lf*lf*lf*lf : 1+16*(--lf)*lf*lf*lf*lf }
     end
 
     property :on_update
     property :on_complete
 
-    def initialize(duration : Float32, kind : Kind.class, on_update : Proc(Tween, Nil) = ->{}, on_complete : Proc(Tween, Nil) = ->{})
+    def initialize(duration : Float32, ease : Proc(Float32, Float32), on_update : Proc(Tween, Nil) = ->{}, on_complete : Proc(Tween, Nil) = ->{})
       initialize(duration, kind.new, on_update, on_complete)
     end
 
-    def initialize(@duration : Float32, @kind : Kind, @on_update : Proc(Tween, Nil), @on_complete : Proc(Tween, Nil))
+    def initialize(@duration : Float32, @ease : Proc(Float32, Float32), @on_update : Proc(Tween, Nil), @on_complete : Proc(Tween, Nil))
       @time_spent = 0f32
     end
 
@@ -55,7 +36,7 @@ module Scar
 
     # Returns the current interpolated fraction (defined by the kind)
     def fraction
-      @kind.calc(linear_fraction)
+      @ease.call(linear_fraction)
     end
 
     def complete?
