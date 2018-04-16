@@ -40,7 +40,7 @@ module Scar
 
         new_time = Time.now
         dt = (new_time - time).total_seconds
-        @window.clear(SF::Color::Black)
+        # @window.clear(SF::Color::Black)
         @tweens.each { |t| t.update dt }
         @tweens.select! { |t| !t.complete? }
         update dt
@@ -106,7 +106,7 @@ module Scar
     # Creates a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
     # If the Tween restarts itself in on_complete (by calling `Tween#reset` for example)
     # or does anything that prevents the `Tween#complete?` check, it is NOT deleted!
-    def tween(duration : Float32, ease : Proc(Float32, Float32), on_update : Proc(Tween, Nil) = ->{}, on_complete : Proc(Tween, Nil) = ->{})
+    def tween(duration : Float32, ease : Easing::EasingDefinition, on_update : Proc(Tween, _) = ->{}, on_complete : Proc(Tween, _) = ->{})
       @tweens << Tween.new(duration, ease, on_update, on_complete)
     end
   end # End class App
