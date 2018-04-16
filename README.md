@@ -55,7 +55,7 @@ Feature requests are welcome, just open an issue!
 
 ## Contributing
 
-1. Create a Feature Request Issue
+1. Create an [Feature Request] Issue
 2. Fork it ( https://github.com/colonlc/scar/fork )
 3. Create your feature branch (git checkout -b my-new-feature)
 4. Commit your changes (git commit -am 'Add some feature')
