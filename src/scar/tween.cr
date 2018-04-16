@@ -4,6 +4,7 @@ module Scar
     # Inherit from this to create your own easing.
     abstract struct EasingDefinition
       abstract def calc(lf : Float32) : Float32
+
       def test(lf)
         0f32
       end
@@ -18,28 +19,31 @@ module Scar
       end
     end
 
-    simple_easing_function(:Linear         , "lf")
-    simple_easing_function(:EaseInQuad     , "lf ** 2")
-    simple_easing_function(:EaseOutQuad    , "lf * (2 - lf)")
-    simple_easing_function(:EaseInOutQuad  , "lf < 0.5 ? 2 * lf ** 2 : -1 + (4 - 2 * lf) * lf")
-    simple_easing_function(:EaseInCubic    , "lf ** 3")
-    simple_easing_function(:EaseOutCubic   , "(lf - 1) ** 3 + 1")
-    simple_easing_function(:EaseInOutCubic , "lf < 0.5 ? 4 * lf ** 3 : (lf - 1) * (2 * lf - 2) ** 2 + 1")
-    simple_easing_function(:EaseInQuart    , "lf ** 4")
-    simple_easing_function(:EaseOutQuart   , "1 - (lf - 1) ** 4")
-    simple_easing_function(:EaseInOutQuart , "lf < 0.5 ? 8 * lf ** 4 : 1 - 8 * (lf - 1) ** 4")
-    simple_easing_function(:EaseInQuint    , "lf ** 5")
-    simple_easing_function(:EaseOutQuint   , "1 + (lf - 1) ** 5")
-    simple_easing_function(:EaseInOutQuint , "lf < 0.5 ? 16 * lf ** 5 : 1 + 16 * (lf - 1) ** 5")
+    simple_easing_function(:Linear, "lf")
+    simple_easing_function(:EaseInQuad, "lf ** 2")
+    simple_easing_function(:EaseOutQuad, "lf * (2 - lf)")
+    simple_easing_function(:EaseInOutQuad, "lf < 0.5 ? 2 * lf ** 2 : -1 + (4 - 2 * lf) * lf")
+    simple_easing_function(:EaseInCubic, "lf ** 3")
+    simple_easing_function(:EaseOutCubic, "(lf - 1) ** 3 + 1")
+    simple_easing_function(:EaseInOutCubic, "lf < 0.5 ? 4 * lf ** 3 : (lf - 1) * (2 * lf - 2) ** 2 + 1")
+    simple_easing_function(:EaseInQuart, "lf ** 4")
+    simple_easing_function(:EaseOutQuart, "1 - (lf - 1) ** 4")
+    simple_easing_function(:EaseInOutQuart, "lf < 0.5 ? 8 * lf ** 4 : 1 - 8 * (lf - 1) ** 4")
+    simple_easing_function(:EaseInQuint, "lf ** 5")
+    simple_easing_function(:EaseOutQuint, "1 + (lf - 1) ** 5")
+    simple_easing_function(:EaseInOutQuint, "lf < 0.5 ? 16 * lf ** 5 : 1 + 16 * (lf - 1) ** 5")
 
     # Use this instead of simple_easing_function ONLY if you need dynamically created easing functions.
     # Usage:
     # ```
-    # Tween.new(1f32, EaseWithFunction.new(->(lf: Float32) { lf - 0.2 ** 3 }))
+    # Tween.new(1f32, EaseWithFunction.new(->(lf : Float32) { lf - 0.2 ** 3 }))
     # ```
     struct EaseWithFunction < EasingDefinition
       def initialize(@fn : Proc(Float32, Float32)); end
-      def calc(lf : Float32); @fn.call(lf); end
+
+      def calc(lf : Float32)
+        @fn.call(lf)
+      end
     end
 
     # Can compute a 4 point Bezier curve easing.
