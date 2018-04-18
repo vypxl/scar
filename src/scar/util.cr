@@ -35,11 +35,7 @@ module Scar
     # Reads filename in the specified directory as string
     def self.read_file(name : String)
       fname = File.join(@@dir, name)
-      if File.exists?(fname)
-        File.read(fname)
-      else
-        ""
-      end
+      File.read(fname)
     end
 
     # Same as read_file but reads it as Bytes
