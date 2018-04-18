@@ -20,12 +20,13 @@ purpose.
 - Entity-Component-System
 - Configuration manager
 - Tween
+- Asset manager
+
 
 - Easy to use scene/game state serialization for savegames NOTICE: not yet for scenes; only simple classes.
 
 ## Not yet implemented features
 
-- Asset manager
 - Builtin Components and Systems e.g. position, drawable, physics, etc.
 - More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions
 

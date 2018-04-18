@@ -54,8 +54,9 @@ module Scar
       end
     end # End run
 
-    # Exits the app. Override if you have specific exit logic.
+    # Unloads Assets and exits the app. Override if you have specific exit logic.
     def exit
+      Assets.unload_all
       window.close
     end # End exit
 
