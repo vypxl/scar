@@ -1,16 +1,11 @@
-require "msgpack"
-
 module Scar
   # Use this to store basic configuration like Keybindings, resolutions..
-  # Can store all types of the Value alias.
+  # Can store all types of the YAML::Type alias.
   module Config
     extend self
 
-    # The types that can be stored via this module.
-    alias Value = Nil | Bool | Int32 | Float32 | String | Bytes | Array(Value) | Hash(Value, Value)
-
-    @@data : Hash(String, Value) = Hash(String, Value).new
-    @@standards : Hash(String, Value) = Hash(String, Value).new
+    @@data : Hash(String, YAML::Type) = Hash(String, YAML::Type).new
+    @@standards : Hash(String, YAML::Type) = Hash(String, YAML::Type).new
 
     # Sets given key to it's standard. (`Config#define_standards`)
     def standardize(key)
@@ -28,7 +23,7 @@ module Scar
     # ```
     macro define_standards(standards)
       module Scar::Config
-        @@standards = Hash(String, Value) {
+        @@standards = Hash(String, YAML::Type) {
           {% for k, v, i in standards %}"{{k.id}}" => convert({{v}}){% if i < standards.size - 1 %},{% end %}
           {% end %}
         }
@@ -38,12 +33,12 @@ module Scar
 
     # Resets all configuration to the standard values.
     def load_standards
-      @@data = Hash(String, Value).new
+      @@data = Hash(String, YAML::Type).new
       @@standards.each_key { |key| @@data[key] = @@standards[key] }
     end
 
     # Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.
-    def []?(key) : Value
+    def []?(key) : YAML::Type
       query = @@data[key.to_s]?
       if query
         query
@@ -57,46 +52,38 @@ module Scar
       @@data[key.to_s] = convert(value)
     end
 
-    # Converts incompatible primitive types to Value
-    private def convert(v) : Value
-      (if v.is_a?(Value)
+    # Converts incompatible primitive types to YAML::Type
+    private def convert(v) : YAML::Type
+      (if v.is_a?(YAML::Type)
         v
-      elsif v.is_a?(Int8 | Int16 | Int64 | UInt8 | UInt16 | UInt32 | UInt64)
-        v.to_i32
-      elsif v.is_a?(Float64)
-        v.to_f32
+      elsif v.is_a?(Int8 | Int16 | Int32 | UInt8 | UInt16 | UInt32 | UInt64)
+        v.to_i64
+      elsif v.is_a?(Float32)
+        v.to_f64
       elsif v.is_a?(Array)
-        v.map { |item| convert(item).as(Value) }
+        v.map { |item| convert(item).as(YAML::Type) }
       elsif v.is_a?(Hash)
-        Hash(Value, Value).zip(v.keys.map { |key| convert(key).as(Value) }, v.values.map { |value| convert(value).as(Value) })
+        Hash(YAML::Type, YAML::Type).zip(v.keys.map { |key| convert(key).as(YAML::Type) }, v.values.map { |value| convert(value).as(YAML::Type) })
       else
-        raise "Cant convert #{v.class} to Scar::Config::Value"
-      end).as(Value)
-    end
-
-    # Converts Value to MessagePack::Type
-    private def to_msgp_type(v : Value) : MessagePack::Type
-      (if v.is_a?(Array)
-        v.map { |item| to_msgp_type(item).as(MessagePack::Type) }
-      elsif v.is_a?(Hash)
-        Hash.zip(v.keys.map { |key| to_msgp_type(key).as(MessagePack::Type) }, v.values.map { |value| to_msgp_type(value).as(MessagePack::Type) })
-      else
-        v
-      end).as(MessagePack::Type)
+        raise "Cant convert #{v.class} to YAML::Type"
+      end).as(YAML::Type)
     end
 
     # Saves config to file with given file name (using `Util#write_file`)
     def save(fname : String)
-      Util.write_file_bytes(fname, MessagePack.pack(Hash.zip(@@data.keys, @@data.values.map { |item| to_msgp_type(item) })))
+      Util.write_file(fname, YAML.dump(@@data))
+    end
+
+    # Returns the yaml dump of the config data
+    def dump
+      YAML.dump(@@data)
     end
 
     # Loads in config values from given filename (using `Util#read_file`)
     def load(fname : String)
-      data = MessagePack::Unpacker.new(Util.read_file(fname)).read_hash
-      mapped = data.select { |k, v| k.is_a?(String) }
-      keys = mapped.keys.map(&.to_s)
-      vals = mapped.values.map { |v| convert(v) }
-      @@data = Hash.zip(keys, vals)
+      data = YAML.parse(Util.read_file(fname)).as_h
+      keys = data.keys.map(&.to_s)
+      @@data = Hash.zip(keys, data.values)
     rescue ex
       Logger.error "Error loading config file! Loading standard. Exception: #{ex}"
       load_standards()
