@@ -1,5 +1,4 @@
-require "crsfml"
-require "crsfml/src/audio/*"
+# require "crsfml/src/audio/*"
 require "zip"
 
 # TODO: Yaml/Json/MsgPack Assets?
@@ -14,8 +13,11 @@ module Scar
     alias Sound = SF::Sound
     alias Music = SF::Music
     alias Font = SF::Font
+    alias Yaml = YAML::Any
+    alias Json = JSON::Any
+    alias MsgPack = MessagePack::Unpacker
 
-    alias Asset = Text | Texture | Sound | Music | Font
+    alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json | MsgPack
 
     @@dir_index : Hash(String, String) = {} of String => String
     @@zip_index : Hash(String, String) = {} of String => String
@@ -83,10 +85,10 @@ module Scar
     def cache(name : String)
       raise "no asset named #{name} was indexed!" if !@@zip_index[name]? && !@@dir_index[name]?
       fname = @@zip_index[name]? ? @@zip_index[name] : @@dir_index[name]
-      @@cache[name] = @@zip_index[name]? ? read_zip_entry_into_memory(name, fname) : read_into_memory(fname)
+      @@cache[name] = @@zip_indexype[name]? ? read_zip_entry_into_memory(name, fname) : read_into_memory(fname)
     end
 
-    # Indexes a zip file and caches all contents of it. Use this to preload all assets at once without reading each file on its own.
+    # Indexes a zip file and caches all contents of it. Use this to preload all assets in the file at once without reading each file on its own.
     def cache_zipfile(fname : String)
       use(fname)
       Zip::File.open(fname) do |zfile|
@@ -133,6 +135,12 @@ module Scar
                   SF::Music.from_memory data
                 elsif asset_type == Font
                   SF::Font.from_memory data
+                elsif asset_type == Yaml
+                  YAML.parse(String.new data)
+                elsif asset_type == Json
+                  JSON.parse(String.new data)
+                elsif asset_type == MsgPack
+                  MessagePack::Unpacker.new(data)
                 end
               else
                 if asset_type == Text
@@ -145,6 +153,12 @@ module Scar
                   SF::Music.from_file fname
                 elsif asset_type == Font
                   SF::Font.from_file fname
+                elsif asset_type == Yaml
+                  YAML.parse(File.read fname)
+                elsif asset_type == Json
+                  JSON.parse(File.read fname)
+                elsif asset_type == MsgPack
+                  MessagePack::Unpacker.new(File.read(fname).bytes)
                 end
               end
 
@@ -161,6 +175,9 @@ module Scar
     # ".wav" => Sound
     # ".ogg" => Music
     # ".ttf" => Font
+    # ".yml", ".yaml" => Yaml
+    # ".json" => JSON
+    # ".msgpack" => MsgPack
     def load(name : String)
       ex = /.+(\.[a-zA-Z]+)$/.match name
       if ex
@@ -175,6 +192,14 @@ module Scar
                load(name, Music)
              when ".ttf"
                load(name, Font)
+             when ".yml"
+               load(name, Yaml)
+             when ".yaml"
+               load(name, Yaml)
+             when ".json"
+               load(name, Json)
+             when ".msgpack"
+               load(name, MsgPack)
              else
                raise "Unknown file extension #{ex[ex.size - 1]}!"
              end
