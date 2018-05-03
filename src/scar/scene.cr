@@ -1,7 +1,7 @@
 module Scar
   # A Scene is a game state with multiple spaces
   class Scene
-    getter :spaces
+    serializable({spaces: Array(Space)})
 
     def initialize
       @spaces = Array(Space).new
