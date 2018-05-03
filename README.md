@@ -1,10 +1,10 @@
-# scar [Sfml Chipmunk cRystal] [WIP]
+# Scar - A Crystal Game Library/Engine with Batteries included [WIP - expect breaking changes]
 
 [![GitHub release](https://img.shields.io/github/release/colonlc/scar.svg)](https://github.com/colonlc/scar/releases)
 [![Build Status](https://travis-ci.org/colonlc/scar.svg?branch=master)](https://travis-ci.org/colonlc/scar)
 
 A 2D game engine written in Crystal using crsfml, crystal-chipmunk and
-msgpack-crystal inspired by Glove
+msgpack-crystal; inspired by Glove
 
 ## Motivation
 
@@ -21,9 +21,7 @@ purpose.
 - Configuration manager
 - Tween
 - Asset manager
-
-
-- Easy to use scene/game state serialization for savegames NOTICE: not yet for scenes; only simple classes.
+- Easy to use scene/game state serialization for savegames. - Attention when using YAML until Crystal fixes it with probably 0.24.3, yaml cannot parse 0 as int (also floats with leading zeros)!
 
 ## Not yet implemented features
 
@@ -44,11 +42,7 @@ dependencies:
     github: colonlc/scar
 ```
 
-## Usage
-
-```crystal
-require "scar"
-```
+Documentation is coming when I finished the library core.
 
 ## Feature Requests
 

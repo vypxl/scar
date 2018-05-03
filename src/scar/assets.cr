@@ -1,7 +1,6 @@
 # require "crsfml/src/audio/*"
 require "zip"
 
-# TODO: Yaml/Json/MsgPack Assets?
 # NOTE: Book: hint that music can be streamed from files
 
 module Scar
