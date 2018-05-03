@@ -1,9 +1,7 @@
 module Scar
   # A Space holds Entities and Systems. Spaces should not interact with each other
   class Space
-    getter :z
-    getter :entities
-    getter :systems
+    serializable({entities: Array(Entity), systems: Array(System), z: Int32})
 
     def initialize(@z : Int32)
       @entities = Array(Entity).new
