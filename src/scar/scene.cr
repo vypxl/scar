@@ -34,8 +34,8 @@ module Scar
     end
 
     # Shortcut for @spaces#pop
-    def pop()
-      @spaces.pop()
+    def pop
+      @spaces.pop
       @spaces.sort_by! &.z
     end
 
