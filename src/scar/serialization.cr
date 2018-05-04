@@ -54,14 +54,14 @@ macro abstract_serializable
   # abstract def from_yaml
   # abstract def to_json
   # abstract def from_json
-  def to_msgpack(packer : MessagePack::Packer)
-    to_msgpack(packer)
+  def to_msgpack(%packer : MessagePack::Packer)
+    to_msgpack(%packer)
   end
   # abstract def from_msgpack
 
-  def self.new(pull : JSON::PullParser)
-    location = pull.location
-    string = pull.read_raw
+  def self.new(%pull : JSON::PullParser)
+    location = %pull.location
+    string = %pull.read_raw
 
     \{% for klass in @type.all_subclasses %}
     begin
@@ -73,22 +73,22 @@ macro abstract_serializable
     raise JSON::ParseException.new("Couldn't parse #{self} from #{string}", *location)
   end
 
-  def self.new(ctx : YAML::ParseContext, node : YAML::Nodes::Node)
+  def self.new(%ctx : YAML::ParseContext, %node : YAML::Nodes::Node)
     \{% for klass in @type.all_subclasses %}
     begin
-      return \{{ klass }}.new(ctx, node)
+      return \{{ klass }}.new(%ctx, %node)
     rescue YAML::ParseException
     end
     \{% end %}
 
-    raise YAML::ParseException.new("Couldn't parse #{self}", node.location[0], node.location[1])
+    raise YAML::ParseException.new("Couldn't parse #{self}", %node.location[0], %node.location[1])
   end
 
-  def self.new(pull : MessagePack::Unpacker)
-    hash = pull.read_hash
+  def self.new(%pull : MessagePack::Unpacker)
+    %hash = %pull.read_hash
     \{% for klass in @type.all_subclasses %}
     begin
-      return \{{ klass }}.from_msgpack(hash.to_msgpack)
+      return \{{ klass }}.from_msgpack(%hash.to_msgpack)
     rescue MessagePack::UnpackException
     end
     \{% end %}

@@ -65,44 +65,32 @@ module Scar
         @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}} = Hash(UInt32, ({{evt}}->)).new
 
         # Adds an event handler for {{evt}} and returns its id.
-        def subscribe(event_type : {{evt}}.class, &block : {{evt}} ->) : UInt32
+        def subscribe(%event_type : {{evt}}.class, &block : {{evt}} ->) : UInt32
           @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}[@next_id] = block
           @next_id += 1
           @next_id - 1
         end # End subscribe
 
         # Broadcasts an {{evt}} Event.
-        def broadcast(event : {{evt}})
+        def broadcast(%event : {{evt}})
           @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}.each do |_, handler|
-            handler.call(event)
+            handler.call(%event)
           end
         end # End broadcast
       {% end %} # End macro-for
 
       # Deletes the event handler with the given id.
-      def unsubscribe(id)
+      def unsubscribe(%id)
         {% for evt in Event::Event.subclasses %}
-          if @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}[id]?
-            @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}.delete id
+          if @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}[%id]?
+            @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}.delete %id
           end
         {% end %}
       end # End unsubscribe
     end # End macro finished
 
-    # Shortcut for @scene_stack#<<
-    def <<(scene : Scene)
-      @scene_stack << scene
-    end
-
-    # Shortcut for @scene_stack#push(*values : T)
-    def <<(*scenes : Scene)
-      @scene_stack.push scenes
-    end
-
-    # Shortcut for @scene_stack#pop
-    def pop(&block)
-      @scene_stack.pop(block)
-    end
+    delegate :<<, to: @scene_stack
+    delegate pop, to: @scene_stack
 
     # Creates a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
     # If the Tween restarts itself in on_complete (by calling `Tween#reset` for example)
