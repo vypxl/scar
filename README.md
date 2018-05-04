@@ -9,8 +9,8 @@ msgpack-crystal; inspired by Glove
 ## Motivation
 
 This library aims to offer a simple interface for game programming with less
-boilerplate code. I mainly create it for my own game and for educational
-purpose.
+boilerplate code. I mainly create it for my own games, for my own educational
+purpose and of course for the fun.
 
 ## Features
 
