@@ -13,12 +13,12 @@ module Scar
     end
 
     # From SF::Vector2
-    def from(v : SF::Vector2)
+    def self.from(v : SF::Vector2)
       self.new(v.x, v.y)
     end
 
     # From CP::Vector
-    def fom(v : CP::Vector)
+    def self.from(v : CP::Vector)
       self.new(v.x, v.y)
     end
 
@@ -82,12 +82,26 @@ module Scar
 
     # Rotate by angle
     def rotate(angle : Float32)
-      Vec2.new(x * Math.cos(angle) - y * Math.sin(angle),
+      Vec.new(x * Math.cos(angle) - y * Math.sin(angle),
         x * Math.sin(angle) + y * Math.cos(angle))
+    end
+
+    def rotate(angle)
+      rotate(angle.to_f32)
     end
 
     def angle
       Math.atan2(y, x)
+    end
+
+    # Return copy of self with a new x value
+    def new_x(nx)
+      Vec.new(nx, y)
+    end
+
+    # Return copy of self with a new x value
+    def new_y(ny)
+      Vec.new(x, ny)
     end
 
     # Converts the vector to an SF::Vector2
