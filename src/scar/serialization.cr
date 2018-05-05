@@ -19,10 +19,11 @@
 #   YAML.mapping({name: String, age: UInt32, friend_names: Array(String)}, strict = true)
 #   JSON.mapping({name: String, age: UInt32, friend_names: Array(String)}, strict = true)
 # end
+# Also generates simple to_s
 # ```
-macro serializable(fields)
-  # Dummy property for separating subclasses with same fields for serialization.
+macro serializable(fields = nil)
   {% if @type.abstract? %} HEY! Look Here: ->Use abstract_serializable in abstract classes!<- (makes sense, right?){% end %}
+    # Dummy property for separating subclasses with same fields for serialization.
   {% name = ("__" + @type.name.gsub(/::/, "__").downcase.stringify).id %}
   @{{name}} = 1
   {% for key, value in fields %}
@@ -35,9 +36,25 @@ macro serializable(fields)
   MessagePack.mapping({{fields}}, strict = true)
   YAML.mapping({{fields}}, strict = true)
   JSON.mapping({{fields}}, strict = true)
+
+  def to_s
+    String.new to_s(IO::Memory.new).bytes
+  end
+
+  def to_s(io : IO)
+    io << {{ @type.id }}
+    io << '('
+    \{% for iv, i in (@type.instance_vars.select { |iv| iv.id != ("__" + @type.name.gsub(/::/, "__").downcase.stringify).id }) %}
+      io << "@\{{iv.id}}="
+      @\{{iv}}.to_s(io)
+      \{% if i < (@type.instance_vars.select { |iv| iv.id != ("__" + @type.name.gsub(/::/, "__").downcase.stringify).id }).size - 1 %}io << ", "\{% end %}
+    \{% end %}
+    io << ')'
+  end
 end
 
 # For empty classes (e. g. tag components)
+# Same functionality as serializable
 macro empty_serializable
   {% if @type.abstract? %} HEY! Look Here: ->Use abstract_serializable in abstract classes!<- (makes sense, right?){% end %}
   {% name = ("__" + @type.name.gsub(/::/, "__").downcase.stringify).id %}
@@ -46,18 +63,29 @@ macro empty_serializable
   MessagePack.mapping({ {{name}}: {type: Int32, default: 0, setter: false, getter: false } })
   YAML.mapping(       { {{name}}: {type: Int32, default: 0, setter: false, getter: false } })
   JSON.mapping(       { {{name}}: {type: Int32, default: 0, setter: false, getter: false } })
+
+  def to_s
+    String.new to_s(IO::Memory.new).bytes
+  end
+
+  def to_s(io : IO)
+    io << {{ @type.id }}
+    io << '('
+    \{% for iv, i in (@type.instance_vars.select { |iv| iv.id != ("__" + @type.name.gsub(/::/, "__").downcase.stringify).id }) %}
+      io << "@\{{iv.id}}="
+      @\{{iv}}.to_s(io)
+      \{% if i < (@type.instance_vars.select { |iv| iv.id != ("__" + @type.name.gsub(/::/, "__").downcase.stringify).id }).size - 1 %}io << ", "\{% end %}
+    \{% end %}
+    io << ')'
+  end
 end
 
 # For abstract classes
 macro abstract_serializable
-  # abstract def to_yaml(%yaml : YAML::Nodes::Builder)
-  # abstract def from_yaml
-  # abstract def to_json
-  # abstract def from_json
+  # Necessary for msgpack serializing to work.
   def to_msgpack(%packer : MessagePack::Packer)
     to_msgpack(%packer)
   end
-  # abstract def from_msgpack
 
   def self.new(%pull : JSON::PullParser)
     location = %pull.location
