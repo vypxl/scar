@@ -128,3 +128,5 @@ end # End macro abstract_serializable
 # Thoughts:
 # Now, you have to include all abstract class properties within the mappings of the subclasses.
 # Maybe someday TODO: automate this as well. But only when I have time for that
+#
+# Also you cannot use this with non-abstract parent classes
