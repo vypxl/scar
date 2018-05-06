@@ -3,6 +3,10 @@ require "chipmunk"
 
 module Scar
   struct Vec
+    include Comparable(Vec)
+    include Comparable(Float32)
+    include Comparable(Float64)
+
     property :x
     property :y
 
@@ -18,7 +22,7 @@ module Scar
     end
 
     # From CP::Vector
-    def self.from(v : CP::Vector)
+    def self.from(v : CP::Vect)
       self.new(v.x, v.y)
     end
 
@@ -39,17 +43,41 @@ module Scar
 
     # Component wise Division
     def /(other : Vec)
-      Vec.new(x / other.x, y * other.y)
+      Vec.new(x / other.x, y / other.y)
     end
 
     # Scales the Vector by the scalar
-    def *(scalar : Float32)
+    def *(scalar)
       Vec.new(x * scalar, y * scalar)
     end
 
     # Scales the Vector by 1 / the scalar
-    def /(scalar : Float32)
+    def /(scalar)
       Vec.new(x / scalar, y / scalar)
+    end
+
+    # Manhattan distance
+    def manhattan
+      x.abs + y.abs
+    end
+
+    # Returns a Vector with the same x and y but both positive
+    def abs
+      Vec.new(x.abs, y.abs)
+    end
+
+    # Comparison between Vectors
+    def <=>(other : Vec)
+      manhattan <=> other.manhattan
+    end
+
+    # Comparison based on length
+    def <=>(other : Float32)
+      length <=> other
+    end
+
+    def <=>(other : Float64)
+      length.to_f64 <=> other
     end
 
     # Dot product
@@ -63,11 +91,19 @@ module Scar
     end
 
     def length
-      Math.sqrt(a.x ** 2 + b.x ** 2)
+      Math.sqrt((x * x) + (y * y))
+    end
+
+    def magnitude
+      length
     end
 
     def length_squared
-      a.x ** 2 + b.x ** 2
+      (x * x) + (y * y)
+    end
+
+    def magnitude_squared
+      length_squared
     end
 
     # Same vector, but length is one
@@ -90,8 +126,14 @@ module Scar
       rotate(angle.to_f32)
     end
 
+    # Returns the angle between the Vector and the x-axis
     def angle
       Math.atan2(y, x)
+    end
+
+    # Returns the angle between this Vector and another (sign indicates which Vector is ahead)
+    def angle_to(other : Vec)
+      Math.atan2(other.y, other.x) - Math.atan2(y, x)
     end
 
     # Return copy of self with a new x value
