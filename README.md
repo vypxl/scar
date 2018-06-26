@@ -1,3 +1,6 @@
+# Attention!
+As I did not have that much time the past weeks, the development came to a halt for this library. I already started to build some components and spent some time with my other library https://github.com/colonlc/serialize.cr which will cover the full serialization feature I planned. But I will not be here to develop anything for the next month or so, so please have patience. After that I will finish this and write documentation. Nothing is forgotten or cancelled.
+
 # Scar - A Crystal Game Library/Engine with Batteries included [WIP - expect breaking changes]
 
 [![GitHub release](https://img.shields.io/github/release/colonlc/scar.svg)](https://github.com/colonlc/scar/releases)
@@ -21,7 +24,7 @@ purpose and of course for the fun.
 - Configuration manager
 - Tween
 - Asset manager
-- Easy to use scene/game state serialization for savegames. - Attention when using YAML until Crystal fixes it with probably 0.24.3, yaml cannot parse 0 as int (also floats with leading zeros)!
+- Easy to use scene/game state serialization for savegames. - Will be outsourced into https://github.com/colonlc/serialize.cr
 
 ## Not yet implemented features
 
