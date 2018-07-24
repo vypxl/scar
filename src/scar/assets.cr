@@ -222,10 +222,10 @@ module Scar
     # Unloads (destroys) an loaded Asset.
     def unload(name : String)
       a = @@loaded[name]
-      # if a.is_a? Sound
-      #   buffer = a.buffer
-      #   buffer.finalize if buffer
-      # end
+      if a.is_a? Sound
+        buffer = a.buffer
+        buffer.finalize if buffer
+      end
       a.finalize if a.responds_to?(:finalize)
       @@loaded.delete name
     end
