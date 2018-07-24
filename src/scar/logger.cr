@@ -17,5 +17,9 @@ module Scar
     def self.error(msg)
       puts "[error] #{msg}"
     end
+
+    def self.fatal(msg)
+      raise "[fatal] #{msg}"
+    end
   end
 end

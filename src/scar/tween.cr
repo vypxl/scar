@@ -132,9 +132,9 @@ module Scar
 
   class Tween
     property :on_update
-    property :on_complete
+    property :on_completed
 
-    def initialize(@duration : Float32, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->{}, @on_complete : Proc(Tween, Nil) = ->{})
+    def initialize(@duration : Float32, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->{}, @on_completed : Proc(Tween, Nil) = ->{})
       @time_spent = 0f32
     end
 
@@ -149,7 +149,7 @@ module Scar
       @ease.calc(linear_fraction)
     end
 
-    def complete?
+    def completed?
       linear_fraction == 1f32
     end
 
@@ -161,8 +161,8 @@ module Scar
     def update(delta_time)
       @time_spent += delta_time
       @on_update.call(self)
-      if complete?
-        @on_complete.call(self)
+      if completed?
+        @on_completed.call(self)
       end
     end
   end # End class Tween
