@@ -1,10 +1,20 @@
 module Scar
   # An entity is entirely defined by it's components.
   class Entity
-    serializable({components: Array(Component)})
+    property :components
+
+    @components : Array(Component)
+
+    def initialize(@components : Array(Component))
+    end
 
     def initialize
       @components = Array(Component).new
+    end
+
+    def initialize(*comps : Component)
+      @components = Array(Component).new
+      comps.each { |c| @components << c }
     end
 
     # Shortcut for adding a component.
@@ -26,7 +36,14 @@ module Scar
 
     # Checks if Entity has all the types of components specified.
     def has?(*cs : Component.class) : Bool
-      cs.all do |c|
+      cs.all? do |c|
+        @components.any? { |co| co.class == c }
+      end
+    end
+
+    # Checks if Entity has all the types of components specified.
+    def has?(cs : Array(Component.class)) : Bool
+      cs.all? do |c|
         @components.any? { |co| co.class == c }
       end
     end

@@ -10,7 +10,8 @@ module Scar
     property :x
     property :y
 
-    serializable({x: Float32, y: Float32})
+    def initialize(@x : Float32, @y : Float32)
+    end
 
     def initialize(x, y)
       initialize(x.to_f32, y.to_f32)

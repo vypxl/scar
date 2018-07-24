@@ -1,6 +1,3 @@
-# Attention!
-As I did not have that much time the past weeks, the development came to a halt for this library. I already started to build some components and spent some time with my other library https://github.com/colonlc/serialize.cr which will cover the full serialization feature I planned. But I will not be here to develop anything for the next month or so, so please have patience. After that I will finish this and write documentation. Nothing is forgotten or cancelled.
-
 # Scar - A Crystal Game Library/Engine with Batteries included [WIP - expect breaking changes]
 
 [![GitHub release](https://img.shields.io/github/release/colonlc/scar.svg)](https://github.com/colonlc/scar/releases)
@@ -9,11 +6,16 @@ As I did not have that much time the past weeks, the development came to a halt 
 A 2D game engine written in Crystal using crsfml, crystal-chipmunk and
 msgpack-crystal; inspired by Glove
 
+## Development status
+I now finished all the features I wanted initially, except video playback but this will
+be delayed because I have to research alot about that topic as SFML does not offer such
+a feature. I am going to focus on documentation and examples for now.
+
 ## Motivation
 
 This library aims to offer a simple interface for game programming with less
-boilerplate code. I mainly create it for my own games, for my own educational
-purpose and of course for the fun.
+boilerplate code. I mainly create it for my own games, for my own education
+and of course for the fun.
 
 ## Features
 
@@ -24,11 +26,13 @@ purpose and of course for the fun.
 - Configuration manager
 - Tween
 - Asset manager
+- Some Builtin Components and Systems, will be expanded in the future
 - Easy to use scene/game state serialization for savegames. - Will be outsourced into https://github.com/colonlc/serialize.cr
 
 ## Not yet implemented features
 
-- Builtin Components and Systems e.g. position, drawable, physics, etc.
+- All Physics related stuff
+- Video playback
 - More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions
 
 ## Installation
@@ -36,6 +40,7 @@ purpose and of course for the fun.
 Follow [Crsfml](https://github.com/oprypin/crsfml) and
 [crystal-chipmunk](https://github.com/oprypin/crystal-chipmunk)'s install guides
 (they are dependencies).
+YOU HAVE TO INSTALL CRSFML MANUALLY.
 
 Then add this to your application's `shard.yml`:
 
@@ -45,7 +50,7 @@ dependencies:
     github: colonlc/scar
 ```
 
-Documentation is coming when I finished the library core.
+Documentation is coming soon.
 
 ## Feature Requests
 
