@@ -1,7 +1,7 @@
-# require "crsfml/src/audio/*"
 require "zip"
 
 # NOTE: Book: hint that music can be streamed from files
+# TODO: Video (Playback)
 
 module Scar
   module Assets
@@ -18,8 +18,10 @@ module Scar
 
     alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json | MsgPack
 
-    @@dir_index : Hash(String, String) = {} of String => String
-    @@zip_index : Hash(String, String) = {} of String => String
+    KNOWN_EXTENSIONS = /\.(txt|png|wav|ogg|ttf|yml|yaml|json|msgpack)$/
+
+    @@dir_index : Hash(String, String) = Hash(String, String).new
+    @@zip_index : Hash(String, String) = Hash(String, String).new
 
     @@cache : Hash(String, IO::Memory) = Hash(String, IO::Memory).new
 
@@ -31,7 +33,7 @@ module Scar
       Dir.cd path do
         Dir.entries(path).each do |entry|
           # exclude '.' and '..'
-          unless /^(\.{1,2})/ =~ entry
+          unless /^(\.{1,2})$/ =~ entry
             exp = File.expand_path entry
             if File.directory?(exp)
               new_base_path = base_path == "" ? entry : "#{base_path}/#{entry}"
@@ -84,19 +86,18 @@ module Scar
     def cache(name : String)
       raise "no asset named #{name} was indexed!" if !@@zip_index[name]? && !@@dir_index[name]?
       fname = @@zip_index[name]? ? @@zip_index[name] : @@dir_index[name]
-      @@cache[name] = @@zip_indexype[name]? ? read_zip_entry_into_memory(name, fname) : read_into_memory(fname)
+      @@cache[name] = @@zip_index[name]? ? read_zip_entry_into_memory(name, fname) : read_into_memory(fname)
     end
 
     # Indexes a zip file and caches all contents of it. Use this to preload all assets in the file at once without reading each file on its own.
     def cache_zipfile(fname : String)
       use(fname)
-      Zip::File.open(fname) do |zfile|
-        zfile.entries.each do |entry|
-          entry.open do |entry_data|
-            @@cache[entry.filename] = IO::Memory.new(entry_data.gets_to_end)
-          end
+      Zip::Reader.open(fname) do |reader|
+        reader.each_entry do |entry|
+          @@cache[entry.filename] = IO::Memory.new(entry.io.gets_to_end) if entry.file?
         end
       end
+      puts @@cache.keys
     end
 
     # Removes an assets data from the cache
@@ -203,13 +204,28 @@ module Scar
                raise "Unknown file extension #{ex[ex.size - 1]}!"
              end
       else
-        raise "No file extension to guess upon in #{name}!"
+        Logger.fatal "No file extension to guess upon in #{name}!"
+      end
+    end
+
+    # Loads all indexed assets in directories and all cached assets from zip files; both only if they have a known file extension
+    def load_all
+      @@dir_index.keys.each do |asset_name|
+        load(asset_name) if asset_name =~ KNOWN_EXTENSIONS
+      end
+
+      @@zip_index.keys.each do |asset_name|
+        load(asset_name) if @@cache[asset_name]? && asset_name =~ KNOWN_EXTENSIONS
       end
     end
 
     # Unloads (destroys) an loaded Asset.
     def unload(name : String)
       a = @@loaded[name]
+      # if a.is_a? Sound
+      #   buffer = a.buffer
+      #   buffer.finalize if buffer
+      # end
       a.finalize if a.responds_to?(:finalize)
       @@loaded.delete name
     end
@@ -222,7 +238,7 @@ module Scar
     # Fetches an loaded asset. Use asset_type to specify the return type.
     def [](name : String, asset_type : T.class) : T forall T
       asset = @@loaded[name]?
-      raise "No Asset named #{name} was loaded!" if asset == nil
+      Logger.fatal "No Asset named #{name} was loaded!" if asset == nil
       if asset.is_a? T && asset.is_a? Asset
         asset
       else

@@ -203,5 +203,13 @@ module Scar
 
       def initialize(@finger : UInt32, @x : Int32, @y : Int32); end
     end
+
+    #####################
+    # END   SFML EVENTS #
+    # START SCAR EVENTS #
+    #####################
+
+    # None at this point of development lol
+
   end # End module Event
 end   # End module Scar

@@ -12,8 +12,6 @@ crystal: 0.24.2
 license: MIT
 
 dependencies:
-  crsfml:
-    github: oprypin/crsfml
   chipmunk:
     github: oprypin/crystal-chipmunk
   msgpack:

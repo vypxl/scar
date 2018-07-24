@@ -9,5 +9,5 @@ require "json"
 module Scar
 end
 
-require "./scar/serialization"
-require "./scar/*"
+# require "./scar/serialization"
+require "./scar/**"
