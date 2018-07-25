@@ -17,6 +17,10 @@ module Scar
       initialize(x.to_f32, y.to_f32)
     end
 
+    def initialize
+      initialize(0, 0)
+    end
+
     # From SF::Vector2
     def self.from(v : SF::Vector2)
       self.new(v.x, v.y)
@@ -109,7 +113,8 @@ module Scar
 
     # Same vector, but length is one
     def unit
-      self / self.length
+      l = length
+      l != 0 ? self / length : self
     end
 
     # Same vector, but length is one
