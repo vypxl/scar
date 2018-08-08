@@ -85,6 +85,16 @@ module Scar
       length.to_f64 <=> other
     end
 
+    def <=>(other)
+      Logger.debug("i")
+      self <=> other.to_f32
+    end
+
+    # Length is within 1e-5 of other
+    def ==(other : Number)
+      (self.length - other.to_f32).abs <= 1e-5
+    end
+
     # Dot product
     def dot(other : Vec)
       x * other.x + y * other.y
