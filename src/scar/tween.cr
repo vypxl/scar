@@ -134,7 +134,7 @@ module Scar
     property :on_update
     property :on_completed
 
-    def initialize(@duration : Float32, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->(t : Tween){}, @on_completed : Proc(Tween, Nil) = ->(t : Tween){})
+    def initialize(@duration : Float32, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->(t : Tween) {}, @on_completed : Proc(Tween, Nil) = ->(t : Tween) {})
       @time_spent = 0f32
     end
 

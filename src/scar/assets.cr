@@ -97,7 +97,6 @@ module Scar
           @@cache[entry.filename] = IO::Memory.new(entry.io.gets_to_end) if entry.file?
         end
       end
-      puts @@cache.keys
     end
 
     # Removes an assets data from the cache
