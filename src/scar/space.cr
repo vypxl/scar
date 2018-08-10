@@ -26,6 +26,7 @@ module Scar
 
     def update(app, dt)
       @systems.each { |s| s.update(app, self, dt) }
+      @entities.select! { |e| e.alive? }
     end
 
     def render(app, dt)
@@ -85,6 +86,21 @@ module Scar
         t = e[Components::Transform]?
         yield e, t, c if t && c && e.has? *other_comp_types
       }
+    end
+
+    # Get Entity with give id raise
+    def [](id : String) : Entity
+      x = self[id]?
+      if x.nil?
+        Logger.fatal "No Entity with id '#{id}' found!"
+      else
+        return x
+      end
+    end
+
+    # Get Entity with give id or nil
+    def []?(id : String) : Entity | Nil
+      @entities.find { |e| e.id == id }
     end
   end # End class Space
 end   # End module Scar
