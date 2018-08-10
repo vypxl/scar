@@ -2,17 +2,20 @@ module Scar
   # An entity is entirely defined by it's components.
   class Entity
     property :components
+    getter :id
 
     @components : Array(Component)
+    @id : String
+    @alive = true
 
-    def initialize(@components : Array(Component))
+    def initialize(@id : String, @components : Array(Component))
     end
 
-    def initialize
+    def initialize(@id : String)
       @components = Array(Component).new
     end
 
-    def initialize(*comps : Component)
+    def initialize(@id : String, *comps : Component)
       @components = Array(Component).new
       comps.each { |c| @components << c }
     end
@@ -66,6 +69,16 @@ module Scar
       else
         nil
       end
+    end
+
+    # Marks this entity for removal
+    def suicide
+      @alive = false
+    end
+
+    # Getter for alive
+    def alive?
+      @alive
     end
   end
 end # End module Scar
