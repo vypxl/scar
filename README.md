@@ -1,15 +1,15 @@
 # Scar - A Crystal Game Library/Engine with Batteries included [WIP - expect breaking changes]
 
-[![GitHub release](https://img.shields.io/github/release/colonlc/scar.svg)](https://github.com/colonlc/scar/releases)
-[![Build Status](https://travis-ci.org/colonlc/scar.svg?branch=master)](https://travis-ci.org/colonlc/scar)
+[![GitHub release](https://img.shields.io/github/release/vypxl/scar.svg)](https://github.com/vypxl/scar/releases)
+[![Build Status](https://travis-ci.org/vypxl/scar.svg?branch=master)](https://travis-ci.org/vypxl/scar)
 
-A 2D game engine written in Crystal using crsfml, crystal-chipmunk and
-msgpack-crystal; inspired by Glove
+A 2D game engine written in Crystal using crsfml; inspired by Glove
 
 ## Development status
+
 I now finished all the features I wanted initially, except video playback but this will
 be delayed because I have to research alot about that topic as SFML does not offer such
-a feature. I am going to focus on documentation and examples for now.
+a feature. I am going to focus on documentation and examples for now. (Now eventually?)
 
 ## Motivation
 
@@ -27,7 +27,6 @@ and of course for the fun.
 - Tween
 - Asset manager
 - Some Builtin Components and Systems, will be expanded in the future
-- Easy to use scene/game state serialization for savegames. - Will be outsourced into https://github.com/colonlc/serialize.cr
 
 ## Not yet implemented features
 
@@ -37,9 +36,7 @@ and of course for the fun.
 
 ## Installation
 
-Follow [Crsfml](https://github.com/oprypin/crsfml) and
-[crystal-chipmunk](https://github.com/oprypin/crystal-chipmunk)'s install guides
-(they are dependencies).
+Follow [Crsfml](https://github.com/oprypin/crsfml).
 YOU HAVE TO INSTALL CRSFML MANUALLY.
 
 Then add this to your application's `shard.yml`:
@@ -47,7 +44,7 @@ Then add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   scar:
-    github: colonlc/scar
+    github: vypxl/scar
 ```
 
 Documentation is coming soon.
@@ -59,7 +56,7 @@ Feature requests are welcome, just open an issue!
 ## Contributing
 
 1. Create an [Feature Request] Issue
-2. Fork it ( https://github.com/colonlc/scar/fork )
+2. Fork it ( https://github.com/vypxl/scar/fork )
 3. Create your feature branch (git checkout -b my-new-feature)
 4. Commit your changes (git commit -am 'Add some feature')
 5. Push to the branch (git push origin my-new-feature)
@@ -67,4 +64,4 @@ Feature requests are welcome, just open an issue!
 
 ## Contributors
 
-- [colonlc](https://github.com/colonlc) colonlc - creator, maintainer
+- [vypxl](https://github.com/vypxl) vypxl - creator, maintainer

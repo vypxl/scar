@@ -5,14 +5,8 @@ description: |
   A game engine/entity component system written in Crystal using crsfml and crystal-chipmunk, inspired by Glove
 
 authors:
-  - Colonlc
+  - vypxl
 
 crystal: 0.24.2
 
 license: MIT
-
-dependencies:
-  chipmunk:
-    github: oprypin/crystal-chipmunk
-  msgpack:
-    github: crystal-community/msgpack-crystal
