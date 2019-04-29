@@ -25,11 +25,6 @@ module Scar
       self.new(v.x, v.y)
     end
 
-    # From CP::Vector
-    def self.from(v : CP::Vect)
-      self.new(v.x, v.y)
-    end
-
     # Component wise Addition
     def +(other : Vec)
       Vec.new(x + other.x, y + other.y)

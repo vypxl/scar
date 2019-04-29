@@ -51,11 +51,10 @@ module Scar
       @analog_bindings[which] << block
     end
 
-    # Shortcut for
+    # Shortcut for digital checks
     # ```
     # SF::Keyboard.key_pressed? SF::Keyboard::{{which.id}}
     # ```
-    # digital Checks.
     macro sf_key(which)
       SF::Keyboard.key_pressed? SF::Keyboard::{{which.id}}
     end
