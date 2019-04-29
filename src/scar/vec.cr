@@ -165,10 +165,5 @@ module Scar
     def sf
       SF::Vector2.new(x, y)
     end
-
-    # Converts the vector to an Chipmunk::Vector
-    def cp
-      CP.v(x, y)
-    end
   end # End struct Vec
 end   # End module Scar
