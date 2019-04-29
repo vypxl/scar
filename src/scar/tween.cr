@@ -133,6 +133,11 @@ module Scar
   class Tween
     property :on_update
     property :on_completed
+    property :paused
+    property :aborted
+
+    @paused = false
+    @aborted = false
 
     def initialize(@duration : Float32, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->(t : Tween) {}, @on_completed : Proc(Tween, Nil) = ->(t : Tween) {})
       @time_spent = 0f32
@@ -158,9 +163,17 @@ module Scar
       @time_spent = 0f32
     end
 
+    # Ends the tween WITHOUT calling the on_completed hook
+    def abort
+      @aborted = true
+    end
+
     def update(delta_time)
-      @time_spent += delta_time
-      @on_update.call(self)
+      return if @aborted
+      if !@paused
+        @time_spent += delta_time
+        @on_update.call(self)
+      end
       if completed?
         @on_completed.call(self)
       end
