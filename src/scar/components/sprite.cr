@@ -1,4 +1,6 @@
-class Scar::Components::Sprite < Scar::Component
+require "./drawable.cr"
+
+class Scar::Components::Sprite < Scar::Components::Drawable
   getter :sf
 
   def initialize(@texture : SF::Texture, rect : SF::IntRect? = nil)

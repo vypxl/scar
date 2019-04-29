@@ -1,4 +1,4 @@
-class Scar::Components::Text < Scar::Component
+class Scar::Components::Text < Scar::Components::Drawable
   getter :text, :font, :sf
 
   def initialize(@text : String, @font : SF::Font)
