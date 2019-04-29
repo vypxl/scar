@@ -102,7 +102,9 @@ module Scar
     # If the Tween restarts itself in on_complete (by calling `Tween#reset` for example)
     # or does anything that prevents the `Tween#complete?` check, it is NOT deleted!
     def tween(duration, ease : Easing::EasingDefinition, on_update : Proc(Tween, Nil) = ->(t : Tween) {}, on_complete : Proc(Tween, Nil) = ->(t : Tween) {})
-      @tweens << Tween.new(duration.to_f32, ease, on_update, on_complete)
+      t = Tween.new(duration.to_f32, ease, on_update, on_complete)
+      @tweens << t
+      return t
     end
 
     # Run an Action
