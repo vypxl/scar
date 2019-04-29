@@ -19,7 +19,7 @@ before_script:
   - export {LD_,}LIBRARY_PATH=$LIBRARY_PATH:$PWD/voidcsfml
   - export CRSFML=$PWD
   - cd ..
-  - rm -rf lib/crsfml
+  - mkdir -p lib
   - ln -s $CRSFML lib/crsfml
   - ls -alR $CRSFML
   - echo $LIBRARY_PATH
