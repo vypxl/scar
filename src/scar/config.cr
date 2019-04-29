@@ -1,6 +1,6 @@
 # Use this to store basic configuration like Keybindings, resolutions..
 # Can store all types of the YAML::Any alias.
-# Usage example: ```crystal
+# Usage example: ```
 #   # At Toplevel!
 #   Scar::Config.define_standards({
 #     int: 7331,
