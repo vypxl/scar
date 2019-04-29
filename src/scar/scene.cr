@@ -28,7 +28,7 @@ module Scar
       end
     end
 
-    # Shortcut for @spaces#push(*values : T)
+    # Shortcut for `@spaces#push(*values : T)`
     def <<(*spaces : Space)
       ids = @spaces.map &.id
       spaces.each do |space|
