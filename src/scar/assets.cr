@@ -14,11 +14,10 @@ module Scar
     alias Font = SF::Font
     alias Yaml = YAML::Any
     alias Json = JSON::Any
-    alias MsgPack = MessagePack::Unpacker
 
-    alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json | MsgPack
+    alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json
 
-    KNOWN_EXTENSIONS = /\.(txt|png|wav|ogg|ttf|yml|yaml|json|msgpack)$/
+    KNOWN_EXTENSIONS = /\.(txt|png|wav|ogg|ttf|yml|yaml|json)$/
 
     @@dir_index : Hash(String, String) = Hash(String, String).new
     @@zip_index : Hash(String, String) = Hash(String, String).new
@@ -138,8 +137,6 @@ module Scar
                   YAML.parse(String.new data)
                 elsif asset_type == Json
                   JSON.parse(String.new data)
-                elsif asset_type == MsgPack
-                  MessagePack::Unpacker.new(data)
                 end
               else
                 if asset_type == Text
@@ -156,8 +153,6 @@ module Scar
                   YAML.parse(File.read fname)
                 elsif asset_type == Json
                   JSON.parse(File.read fname)
-                elsif asset_type == MsgPack
-                  MessagePack::Unpacker.new(File.read(fname).bytes)
                 end
               end
 
@@ -176,7 +171,6 @@ module Scar
     # ".ttf" => Font
     # ".yml", ".yaml" => Yaml
     # ".json" => JSON
-    # ".msgpack" => MsgPack
     def load(name : String)
       ex = /.+(\.[a-zA-Z]+)$/.match name
       if ex
@@ -197,8 +191,6 @@ module Scar
                load(name, Yaml)
              when ".json"
                load(name, Json)
-             when ".msgpack"
-               load(name, MsgPack)
              else
                raise "Unknown file extension #{ex[ex.size - 1]}!"
              end

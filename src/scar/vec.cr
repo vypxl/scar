@@ -1,5 +1,4 @@
 require "crsfml"
-require "chipmunk"
 
 module Scar
   struct Vec
