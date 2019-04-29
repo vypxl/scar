@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.28.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/vypxl/scar">
+  <title>Scar::App - github.com/vypxl/scar</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/vypxl/scar/Scar" data-name="scar">
+      <a href="../Scar.html">Scar</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Action" data-name="scar::action">
+      <a href="../Scar/Action.html">Action</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Actions/PlaySound" data-name="scar::actions::playsound">
+      <a href="../Scar/Actions/PlaySound.html">PlaySound</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/vypxl/scar/Scar/App" data-name="scar::app">
+      <a href="../Scar/App.html">App</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Assets" data-name="scar::assets">
+      <a href="../Scar/Assets.html">Assets</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Asset" data-name="scar::assets::asset">
+      <a href="../Scar/Assets/Asset.html">Asset</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Font" data-name="scar::assets::font">
+      <a href="../Scar/Assets/Font.html">Font</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Json" data-name="scar::assets::json">
+      <a href="../Scar/Assets/Json.html">Json</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Music" data-name="scar::assets::music">
+      <a href="../Scar/Assets/Music.html">Music</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Sound" data-name="scar::assets::sound">
+      <a href="../Scar/Assets/Sound.html">Sound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Text" data-name="scar::assets::text">
+      <a href="../Scar/Assets/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Texture" data-name="scar::assets::texture">
+      <a href="../Scar/Assets/Texture.html">Texture</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Assets/Yaml" data-name="scar::assets::yaml">
+      <a href="../Scar/Assets/Yaml.html">Yaml</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Component" data-name="scar::component">
+      <a href="../Scar/Component.html">Component</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Components" data-name="scar::components">
+      <a href="../Scar/Components.html">Components</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/AnimatedSprite" data-name="scar::components::animatedsprite">
+      <a href="../Scar/Components/AnimatedSprite.html">AnimatedSprite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Camera" data-name="scar::components::camera">
+      <a href="../Scar/Components/Camera.html">Camera</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Drawable" data-name="scar::components::drawable">
+      <a href="../Scar/Components/Drawable.html">Drawable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Sprite" data-name="scar::components::sprite">
+      <a href="../Scar/Components/Sprite.html">Sprite</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Text" data-name="scar::components::text">
+      <a href="../Scar/Components/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Transform" data-name="scar::components::transform">
+      <a href="../Scar/Components/Transform.html">Transform</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Z" data-name="scar::components::z">
+      <a href="../Scar/Components/Z.html">Z</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Config" data-name="scar::config">
+      <a href="../Scar/Config.html">Config</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Easing" data-name="scar::easing">
+      <a href="../Scar/Easing.html">Easing</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/CubicBezier" data-name="scar::easing::cubicbezier">
+      <a href="../Scar/Easing/CubicBezier.html">CubicBezier</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInCubic" data-name="scar::easing::easeincubic">
+      <a href="../Scar/Easing/EaseInCubic.html">EaseInCubic</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInOutCubic" data-name="scar::easing::easeinoutcubic">
+      <a href="../Scar/Easing/EaseInOutCubic.html">EaseInOutCubic</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInOutQuad" data-name="scar::easing::easeinoutquad">
+      <a href="../Scar/Easing/EaseInOutQuad.html">EaseInOutQuad</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInOutQuart" data-name="scar::easing::easeinoutquart">
+      <a href="../Scar/Easing/EaseInOutQuart.html">EaseInOutQuart</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInOutQuint" data-name="scar::easing::easeinoutquint">
+      <a href="../Scar/Easing/EaseInOutQuint.html">EaseInOutQuint</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInQuad" data-name="scar::easing::easeinquad">
+      <a href="../Scar/Easing/EaseInQuad.html">EaseInQuad</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInQuart" data-name="scar::easing::easeinquart">
+      <a href="../Scar/Easing/EaseInQuart.html">EaseInQuart</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseInQuint" data-name="scar::easing::easeinquint">
+      <a href="../Scar/Easing/EaseInQuint.html">EaseInQuint</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseOutCubic" data-name="scar::easing::easeoutcubic">
+      <a href="../Scar/Easing/EaseOutCubic.html">EaseOutCubic</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseOutQuad" data-name="scar::easing::easeoutquad">
+      <a href="../Scar/Easing/EaseOutQuad.html">EaseOutQuad</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseOutQuart" data-name="scar::easing::easeoutquart">
+      <a href="../Scar/Easing/EaseOutQuart.html">EaseOutQuart</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
+      <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
+      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/EasingDefinition" data-name="scar::easing::easingdefinition">
+      <a href="../Scar/Easing/EasingDefinition.html">EasingDefinition</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Easing/Linear" data-name="scar::easing::linear">
+      <a href="../Scar/Easing/Linear.html">Linear</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Entity" data-name="scar::entity">
+      <a href="../Scar/Entity.html">Entity</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Event" data-name="scar::event">
+      <a href="../Scar/Event.html">Event</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/Closed" data-name="scar::event::closed">
+      <a href="../Scar/Event/Closed.html">Closed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/Event" data-name="scar::event::event">
+      <a href="../Scar/Event/Event.html">Event</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/GainedFocus" data-name="scar::event::gainedfocus">
+      <a href="../Scar/Event/GainedFocus.html">GainedFocus</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/JoystickButtonPressed" data-name="scar::event::joystickbuttonpressed">
+      <a href="../Scar/Event/JoystickButtonPressed.html">JoystickButtonPressed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/JoystickButtonReleased" data-name="scar::event::joystickbuttonreleased">
+      <a href="../Scar/Event/JoystickButtonReleased.html">JoystickButtonReleased</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/JoystickConnected" data-name="scar::event::joystickconnected">
+      <a href="../Scar/Event/JoystickConnected.html">JoystickConnected</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/JoystickDisconnected" data-name="scar::event::joystickdisconnected">
+      <a href="../Scar/Event/JoystickDisconnected.html">JoystickDisconnected</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/KeyPressed" data-name="scar::event::keypressed">
+      <a href="../Scar/Event/KeyPressed.html">KeyPressed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/KeyReleased" data-name="scar::event::keyreleased">
+      <a href="../Scar/Event/KeyReleased.html">KeyReleased</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/LostFocus" data-name="scar::event::lostfocus">
+      <a href="../Scar/Event/LostFocus.html">LostFocus</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/MouseButtonPressed" data-name="scar::event::mousebuttonpressed">
+      <a href="../Scar/Event/MouseButtonPressed.html">MouseButtonPressed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/MouseButtonReleased" data-name="scar::event::mousebuttonreleased">
+      <a href="../Scar/Event/MouseButtonReleased.html">MouseButtonReleased</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/MouseEntered" data-name="scar::event::mouseentered">
+      <a href="../Scar/Event/MouseEntered.html">MouseEntered</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/MouseLeft" data-name="scar::event::mouseleft">
+      <a href="../Scar/Event/MouseLeft.html">MouseLeft</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/MouseMoved" data-name="scar::event::mousemoved">
+      <a href="../Scar/Event/MouseMoved.html">MouseMoved</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/MouseWheelScrolled" data-name="scar::event::mousewheelscrolled">
+      <a href="../Scar/Event/MouseWheelScrolled.html">MouseWheelScrolled</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/Resized" data-name="scar::event::resized">
+      <a href="../Scar/Event/Resized.html">Resized</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/TextEntered" data-name="scar::event::textentered">
+      <a href="../Scar/Event/TextEntered.html">TextEntered</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/TouchBegan" data-name="scar::event::touchbegan">
+      <a href="../Scar/Event/TouchBegan.html">TouchBegan</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/TouchEnded" data-name="scar::event::touchended">
+      <a href="../Scar/Event/TouchEnded.html">TouchEnded</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Event/TouchMoved" data-name="scar::event::touchmoved">
+      <a href="../Scar/Event/TouchMoved.html">TouchMoved</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Input" data-name="scar::input">
+      <a href="../Scar/Input.html">Input</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Logger" data-name="scar::logger">
+      <a href="../Scar/Logger.html">Logger</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Music" data-name="scar::music">
+      <a href="../Scar/Music.html">Music</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Scene" data-name="scar::scene">
+      <a href="../Scar/Scene.html">Scene</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Space" data-name="scar::space">
+      <a href="../Scar/Space.html">Space</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/System" data-name="scar::system">
+      <a href="../Scar/System.html">System</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Systems" data-name="scar::systems">
+      <a href="../Scar/Systems.html">Systems</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/AnimateSprites" data-name="scar::systems::animatesprites">
+      <a href="../Scar/Systems/AnimateSprites.html">AnimateSprites</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/DrawSprites" data-name="scar::systems::drawsprites">
+      <a href="../Scar/Systems/DrawSprites.html">DrawSprites</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/DrawTexts" data-name="scar::systems::drawtexts">
+      <a href="../Scar/Systems/DrawTexts.html">DrawTexts</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/RenderCameras" data-name="scar::systems::rendercameras">
+      <a href="../Scar/Systems/RenderCameras.html">RenderCameras</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/TimedAction" data-name="scar::timedaction">
+      <a href="../Scar/TimedAction.html">TimedAction</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Tween" data-name="scar::tween">
+      <a href="../Scar/Tween.html">Tween</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Util" data-name="scar::util">
+      <a href="../Scar/Util.html">Util</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Vec" data-name="scar::vec">
+      <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">abstract class</span> Scar::App
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Scar/App.html">Scar::App</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>A Scar powered application.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L5" target="_blank">
+        scar/app.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28window%3ASF%3A%3ARenderWindow%2Cinput%3AInput%29-class-method" class="signature"><strong>.new</strong>(window : SF::RenderWindow, input : Input)</a>
+        
+          <div class="summary"><p>Initializes the app with an RenderWindow and an input handler.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#<<</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#<<</strong>(*args, **options, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#act%28action%3AAction%29-instance-method" class="signature"><strong>#act</strong>(action : Action)</a>
+        
+          <div class="summary"><p>Run an Action</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#actions%3AArray%28Scar%3A%3AAction%29-instance-method" class="signature"><strong>#actions</strong> : Array(Scar::Action)</a>
+        
+          <div class="summary"><p>Returns the current running actions</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseEntered%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::MouseEntered)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::MouseEntered Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseMoved%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::MouseMoved)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::MouseMoved Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseButtonReleased%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::MouseButtonReleased)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::MouseButtonReleased Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseButtonPressed%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::MouseButtonPressed)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::MouseButtonPressed Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseWheelScrolled%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::MouseWheelScrolled)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::MouseWheelScrolled Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AKeyReleased%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::KeyReleased)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::KeyReleased Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATouchBegan%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::TouchBegan)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::TouchBegan Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AKeyPressed%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::KeyPressed)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::KeyPressed Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATextEntered%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::TextEntered)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::TextEntered Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATouchMoved%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::TouchMoved)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::TouchMoved Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AGainedFocus%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::GainedFocus)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::GainedFocus Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ALostFocus%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::LostFocus)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::LostFocus Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AResized%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::Resized)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::Resized Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AClosed%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::Closed)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::Closed Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseLeft%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::MouseLeft)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::MouseLeft Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickButtonPressed%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::JoystickButtonPressed)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::JoystickButtonPressed Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickButtonReleased%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::JoystickButtonReleased)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::JoystickButtonReleased Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickConnected%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::JoystickConnected)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::JoystickConnected Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickDisconnected%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::JoystickDisconnected)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::JoystickDisconnected Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATouchEnded%29-instance-method" class="signature"><strong>#broadcast</strong>(__temp_28 : Scar::Event::TouchEnded)</a>
+        
+          <div class="summary"><p>Broadcasts an Scar::Event::TouchEnded Event.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#exit%28status%3D0%29-instance-method" class="signature"><strong>#exit</strong>(status = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Unloads Assets and exits the program.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init-instance-method" class="signature"><strong>#init</strong></a>
+        
+          <div class="summary"><p>App specific initialization (load config, bind inputs(based on config), load textures...).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#input%3AScar%3A%3AInput-instance-method" class="signature"><strong>#input</strong> : Scar::Input</a>
+        
+          <div class="summary"><p>Returns the input handler of the app.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pop%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method" class="signature"><strong>#pop</strong>(*args, **options, &block)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pop%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#pop</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render%28dt%29-instance-method" class="signature"><strong>#render</strong>(dt)</a>
+        
+          <div class="summary"><p>General App rendering logic; executed before all System rendering.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#run-instance-method" class="signature"><strong>#run</strong></a>
+        
+          <div class="summary"><p>Starts the app.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scene-instance-method" class="signature"><strong>#scene</strong></a>
+        
+          <div class="summary"><p>Returns current scene for convenience</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#scene_stack%3AArray%28Scar%3A%3AScene%29-instance-method" class="signature"><strong>#scene_stack</strong> : Array(Scar::Scene)</a>
+        
+          <div class="summary"><p>Returns the current scenes</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATouchEnded.class%2C%26block%3AScar%3A%3AEvent%3A%3ATouchEnded-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TouchEnded</span>.<span class="k">class</span>, &block : Scar::Event::TouchEnded -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::TouchEnded and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATouchMoved.class%2C%26block%3AScar%3A%3AEvent%3A%3ATouchMoved-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TouchMoved</span>.<span class="k">class</span>, &block : Scar::Event::TouchMoved -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::TouchMoved and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AClosed.class%2C%26block%3AScar%3A%3AEvent%3A%3AClosed-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Closed</span>.<span class="k">class</span>, &block : Scar::Event::Closed -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::Closed and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AResized.class%2C%26block%3AScar%3A%3AEvent%3A%3AResized-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Resized</span>.<span class="k">class</span>, &block : Scar::Event::Resized -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::Resized and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ALostFocus.class%2C%26block%3AScar%3A%3AEvent%3A%3ALostFocus-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">LostFocus</span>.<span class="k">class</span>, &block : Scar::Event::LostFocus -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::LostFocus and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AGainedFocus.class%2C%26block%3AScar%3A%3AEvent%3A%3AGainedFocus-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">GainedFocus</span>.<span class="k">class</span>, &block : Scar::Event::GainedFocus -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::GainedFocus and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATextEntered.class%2C%26block%3AScar%3A%3AEvent%3A%3ATextEntered-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TextEntered</span>.<span class="k">class</span>, &block : Scar::Event::TextEntered -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::TextEntered and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AKeyPressed.class%2C%26block%3AScar%3A%3AEvent%3A%3AKeyPressed-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">KeyPressed</span>.<span class="k">class</span>, &block : Scar::Event::KeyPressed -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::KeyPressed and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AKeyReleased.class%2C%26block%3AScar%3A%3AEvent%3A%3AKeyReleased-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">KeyReleased</span>.<span class="k">class</span>, &block : Scar::Event::KeyReleased -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::KeyReleased and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseWheelScrolled.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseWheelScrolled-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseWheelScrolled</span>.<span class="k">class</span>, &block : Scar::Event::MouseWheelScrolled -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::MouseWheelScrolled and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseButtonPressed.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseButtonPressed-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseButtonPressed</span>.<span class="k">class</span>, &block : Scar::Event::MouseButtonPressed -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::MouseButtonPressed and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseButtonReleased.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseButtonReleased-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseButtonReleased</span>.<span class="k">class</span>, &block : Scar::Event::MouseButtonReleased -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::MouseButtonReleased and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseMoved.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseMoved-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseMoved</span>.<span class="k">class</span>, &block : Scar::Event::MouseMoved -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::MouseMoved and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseLeft.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseLeft-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseLeft</span>.<span class="k">class</span>, &block : Scar::Event::MouseLeft -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::MouseLeft and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickButtonPressed.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickButtonPressed-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickButtonPressed</span>.<span class="k">class</span>, &block : Scar::Event::JoystickButtonPressed -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::JoystickButtonPressed and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickButtonReleased.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickButtonReleased-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickButtonReleased</span>.<span class="k">class</span>, &block : Scar::Event::JoystickButtonReleased -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::JoystickButtonReleased and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickConnected.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickConnected-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickConnected</span>.<span class="k">class</span>, &block : Scar::Event::JoystickConnected -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::JoystickConnected and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickDisconnected.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickDisconnected-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickDisconnected</span>.<span class="k">class</span>, &block : Scar::Event::JoystickDisconnected -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::JoystickDisconnected and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATouchBegan.class%2C%26block%3AScar%3A%3AEvent%3A%3ATouchBegan-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TouchBegan</span>.<span class="k">class</span>, &block : Scar::Event::TouchBegan -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::TouchBegan and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseEntered.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseEntered-%3E%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseEntered</span>.<span class="k">class</span>, &block : Scar::Event::MouseEntered -> ) : UInt64</a>
+        
+          <div class="summary"><p>Adds an event handler for Scar::Event::MouseEntered and returns its id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tween%28duration%2Cease%3AEasing%3A%3AEasingDefinition%2Con_update%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%2Con_complete%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%29-instance-method" class="signature"><strong>#tween</strong>(duration, ease : Easing::EasingDefinition, on_update : Proc(Tween, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+<span class="k">end</span>, on_complete : Proc(Tween, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+<span class="k">end</span>)</a>
+        
+          <div class="summary"><p>Creates a tween which is then updated simultaneously with the app.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsubscribe%28__temp_29%29-instance-method" class="signature"><strong>#unsubscribe</strong>(__temp_29)</a>
+        
+          <div class="summary"><p>Deletes the event handler with the given id.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update%28dt%29-instance-method" class="signature"><strong>#update</strong>(dt)</a>
+        
+          <div class="summary"><p>General App update logic; executed before all System updates.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#window%3ASF%3A%3ARenderWindow-instance-method" class="signature"><strong>#window</strong> : SF::RenderWindow</a>
+        
+          <div class="summary"><p>Returns the SFML RenderWindow of the app.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(window:SF::RenderWindow,input:Input)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(window : SF::RenderWindow, input : <a href="../Scar/Input.html">Input</a>)
+
+        <a class="method-permalink" href="#new%28window%3ASF%3A%3ARenderWindow%2Cinput%3AInput%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Initializes the app with an RenderWindow and an input handler.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="&lt;&lt;(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong><<</strong>(*args, **options)
+
+        <a class="method-permalink" href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L98" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;&lt;(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong><<</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L98" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="act(action:Action)-instance-method">
+      <div class="signature">
+        
+        def <strong>act</strong>(action : <a href="../Scar/Action.html">Action</a>)
+
+        <a class="method-permalink" href="#act%28action%3AAction%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Run an Action</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L111" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="actions:Array(Scar::Action)-instance-method">
+      <div class="signature">
+        
+        def <strong>actions</strong> : Array(<a href="../Scar/Action.html">Scar::Action</a>)
+
+        <a class="method-permalink" href="#actions%3AArray%28Scar%3A%3AAction%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the current running actions</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::MouseEntered)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/MouseEntered.html">Scar::Event::MouseEntered</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseEntered%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::MouseEntered Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::MouseMoved)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/MouseMoved.html">Scar::Event::MouseMoved</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseMoved%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::MouseMoved Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::MouseButtonReleased)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/MouseButtonReleased.html">Scar::Event::MouseButtonReleased</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseButtonReleased%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::MouseButtonReleased Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::MouseButtonPressed)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/MouseButtonPressed.html">Scar::Event::MouseButtonPressed</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseButtonPressed%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::MouseButtonPressed Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::MouseWheelScrolled)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/MouseWheelScrolled.html">Scar::Event::MouseWheelScrolled</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseWheelScrolled%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::MouseWheelScrolled Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::KeyReleased)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/KeyReleased.html">Scar::Event::KeyReleased</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AKeyReleased%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::KeyReleased Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::TouchBegan)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/TouchBegan.html">Scar::Event::TouchBegan</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATouchBegan%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::TouchBegan Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::KeyPressed)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/KeyPressed.html">Scar::Event::KeyPressed</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AKeyPressed%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::KeyPressed Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::TextEntered)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/TextEntered.html">Scar::Event::TextEntered</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATextEntered%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::TextEntered Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::TouchMoved)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/TouchMoved.html">Scar::Event::TouchMoved</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATouchMoved%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::TouchMoved Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::GainedFocus)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/GainedFocus.html">Scar::Event::GainedFocus</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AGainedFocus%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::GainedFocus Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::LostFocus)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/LostFocus.html">Scar::Event::LostFocus</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ALostFocus%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::LostFocus Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::Resized)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/Resized.html">Scar::Event::Resized</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AResized%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::Resized Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::Closed)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/Closed.html">Scar::Event::Closed</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AClosed%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::Closed Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::MouseLeft)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/MouseLeft.html">Scar::Event::MouseLeft</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AMouseLeft%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::MouseLeft Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::JoystickButtonPressed)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/JoystickButtonPressed.html">Scar::Event::JoystickButtonPressed</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickButtonPressed%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::JoystickButtonPressed Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::JoystickButtonReleased)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/JoystickButtonReleased.html">Scar::Event::JoystickButtonReleased</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickButtonReleased%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::JoystickButtonReleased Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::JoystickConnected)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/JoystickConnected.html">Scar::Event::JoystickConnected</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickConnected%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::JoystickConnected Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::JoystickDisconnected)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/JoystickDisconnected.html">Scar::Event::JoystickDisconnected</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3AJoystickDisconnected%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::JoystickDisconnected Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="broadcast(__temp_28:Scar::Event::TouchEnded)-instance-method">
+      <div class="signature">
+        
+        def <strong>broadcast</strong>(__temp_28 : <a href="../Scar/Event/TouchEnded.html">Scar::Event::TouchEnded</a>)
+
+        <a class="method-permalink" href="#broadcast%28__temp_28%3AScar%3A%3AEvent%3A%3ATouchEnded%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Broadcasts an Scar::Event::TouchEnded Event.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="exit(status=0)-instance-method">
+      <div class="signature">
+        
+        def <strong>exit</strong>(status = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#exit%28status%3D0%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Unloads Assets and exits the program. Override if you have specific exit logic.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L62" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>init</strong>
+
+        <a class="method-permalink" href="#init-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>App specific initialization (load config, bind inputs(based on config), load textures...).</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="input:Scar::Input-instance-method">
+      <div class="signature">
+        
+        def <strong>input</strong> : <a href="../Scar/Input.html">Scar::Input</a>
+
+        <a class="method-permalink" href="#input%3AScar%3A%3AInput-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the input handler of the app.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pop(*args,**options,&amp;block)-instance-method">
+      <div class="signature">
+        
+        def <strong>pop</strong>(*args, **options, &block)
+
+        <a class="method-permalink" href="#pop%28%2Aargs%2C%2A%2Aoptions%2C%26block%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L99" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pop(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>pop</strong>(*args, **options)
+
+        <a class="method-permalink" href="#pop%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L99" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render(dt)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>render</strong>(dt)
+
+        <a class="method-permalink" href="#render%28dt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>General App rendering logic; executed before all System rendering.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="run-instance-method">
+      <div class="signature">
+        
+        def <strong>run</strong>
+
+        <a class="method-permalink" href="#run-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Starts the app.
+Update and render based on scene stack</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scene-instance-method">
+      <div class="signature">
+        
+        def <strong>scene</strong>
+
+        <a class="method-permalink" href="#scene-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns current scene for convenience</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="scene_stack:Array(Scar::Scene)-instance-method">
+      <div class="signature">
+        
+        def <strong>scene_stack</strong> : Array(<a href="../Scar/Scene.html">Scar::Scene</a>)
+
+        <a class="method-permalink" href="#scene_stack%3AArray%28Scar%3A%3AScene%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the current scenes</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::TouchEnded.class,&amp;block:Scar::Event::TouchEnded-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TouchEnded</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/TouchEnded.html">Scar::Event::TouchEnded</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATouchEnded.class%2C%26block%3AScar%3A%3AEvent%3A%3ATouchEnded-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::TouchEnded and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::TouchMoved.class,&amp;block:Scar::Event::TouchMoved-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TouchMoved</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/TouchMoved.html">Scar::Event::TouchMoved</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATouchMoved.class%2C%26block%3AScar%3A%3AEvent%3A%3ATouchMoved-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::TouchMoved and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::Closed.class,&amp;block:Scar::Event::Closed-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Closed</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/Closed.html">Scar::Event::Closed</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AClosed.class%2C%26block%3AScar%3A%3AEvent%3A%3AClosed-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::Closed and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::Resized.class,&amp;block:Scar::Event::Resized-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Resized</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/Resized.html">Scar::Event::Resized</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AResized.class%2C%26block%3AScar%3A%3AEvent%3A%3AResized-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::Resized and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::LostFocus.class,&amp;block:Scar::Event::LostFocus-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">LostFocus</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/LostFocus.html">Scar::Event::LostFocus</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ALostFocus.class%2C%26block%3AScar%3A%3AEvent%3A%3ALostFocus-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::LostFocus and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::GainedFocus.class,&amp;block:Scar::Event::GainedFocus-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">GainedFocus</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/GainedFocus.html">Scar::Event::GainedFocus</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AGainedFocus.class%2C%26block%3AScar%3A%3AEvent%3A%3AGainedFocus-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::GainedFocus and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::TextEntered.class,&amp;block:Scar::Event::TextEntered-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TextEntered</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/TextEntered.html">Scar::Event::TextEntered</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATextEntered.class%2C%26block%3AScar%3A%3AEvent%3A%3ATextEntered-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::TextEntered and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::KeyPressed.class,&amp;block:Scar::Event::KeyPressed-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">KeyPressed</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/KeyPressed.html">Scar::Event::KeyPressed</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AKeyPressed.class%2C%26block%3AScar%3A%3AEvent%3A%3AKeyPressed-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::KeyPressed and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::KeyReleased.class,&amp;block:Scar::Event::KeyReleased-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">KeyReleased</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/KeyReleased.html">Scar::Event::KeyReleased</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AKeyReleased.class%2C%26block%3AScar%3A%3AEvent%3A%3AKeyReleased-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::KeyReleased and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::MouseWheelScrolled.class,&amp;block:Scar::Event::MouseWheelScrolled-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseWheelScrolled</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/MouseWheelScrolled.html">Scar::Event::MouseWheelScrolled</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseWheelScrolled.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseWheelScrolled-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::MouseWheelScrolled and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::MouseButtonPressed.class,&amp;block:Scar::Event::MouseButtonPressed-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseButtonPressed</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/MouseButtonPressed.html">Scar::Event::MouseButtonPressed</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseButtonPressed.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseButtonPressed-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::MouseButtonPressed and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::MouseButtonReleased.class,&amp;block:Scar::Event::MouseButtonReleased-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseButtonReleased</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/MouseButtonReleased.html">Scar::Event::MouseButtonReleased</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseButtonReleased.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseButtonReleased-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::MouseButtonReleased and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::MouseMoved.class,&amp;block:Scar::Event::MouseMoved-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseMoved</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/MouseMoved.html">Scar::Event::MouseMoved</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseMoved.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseMoved-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::MouseMoved and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::MouseLeft.class,&amp;block:Scar::Event::MouseLeft-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseLeft</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/MouseLeft.html">Scar::Event::MouseLeft</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseLeft.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseLeft-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::MouseLeft and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::JoystickButtonPressed.class,&amp;block:Scar::Event::JoystickButtonPressed-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickButtonPressed</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/JoystickButtonPressed.html">Scar::Event::JoystickButtonPressed</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickButtonPressed.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickButtonPressed-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::JoystickButtonPressed and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::JoystickButtonReleased.class,&amp;block:Scar::Event::JoystickButtonReleased-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickButtonReleased</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/JoystickButtonReleased.html">Scar::Event::JoystickButtonReleased</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickButtonReleased.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickButtonReleased-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::JoystickButtonReleased and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::JoystickConnected.class,&amp;block:Scar::Event::JoystickConnected-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickConnected</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/JoystickConnected.html">Scar::Event::JoystickConnected</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickConnected.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickConnected-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::JoystickConnected and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::JoystickDisconnected.class,&amp;block:Scar::Event::JoystickDisconnected-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">JoystickDisconnected</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/JoystickDisconnected.html">Scar::Event::JoystickDisconnected</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AJoystickDisconnected.class%2C%26block%3AScar%3A%3AEvent%3A%3AJoystickDisconnected-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::JoystickDisconnected and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::TouchBegan.class,&amp;block:Scar::Event::TouchBegan-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">TouchBegan</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/TouchBegan.html">Scar::Event::TouchBegan</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3ATouchBegan.class%2C%26block%3AScar%3A%3AEvent%3A%3ATouchBegan-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::TouchBegan and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="subscribe(__temp_27:Scar::Event::MouseEntered.class,&amp;block:Scar::Event::MouseEntered-&gt;):UInt64-instance-method">
+      <div class="signature">
+        
+        def <strong>subscribe</strong>(__temp_27 : <span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">MouseEntered</span>.<span class="k">class</span>, &block : <a href="../Scar/Event/MouseEntered.html">Scar::Event::MouseEntered</a> -> ) : UInt64
+
+        <a class="method-permalink" href="#subscribe%28__temp_27%3AScar%3A%3AEvent%3A%3AMouseEntered.class%2C%26block%3AScar%3A%3AEvent%3A%3AMouseEntered-%3E%29%3AUInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds an event handler for Scar::Event::MouseEntered and returns its id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tween(duration,ease:Easing::EasingDefinition,on_update:Proc(Tween,Nil)=-&gt;(t:Tween)do
+end,on_complete:Proc(Tween,Nil)=-&gt;(t:Tween)do
+end)-instance-method">
+      <div class="signature">
+        
+        def <strong>tween</strong>(duration, ease : <a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a>, on_update : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+<span class="k">end</span>, on_complete : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+<span class="k">end</span>)
+
+        <a class="method-permalink" href="#tween%28duration%2Cease%3AEasing%3A%3AEasingDefinition%2Con_update%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%2Con_complete%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
+If the Tween restarts itself in on_complete (by calling <code><a href="../Scar/Tween.html#reset-instance-method">Tween#reset</a></code> for example)
+or does anything that prevents the <code>Tween#complete?</code> check, it is NOT deleted!</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L104" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unsubscribe(__temp_29)-instance-method">
+      <div class="signature">
+        
+        def <strong>unsubscribe</strong>(__temp_29)
+
+        <a class="method-permalink" href="#unsubscribe%28__temp_29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Deletes the event handler with the given id.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L69" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update(dt)-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>update</strong>(dt)
+
+        <a class="method-permalink" href="#update%28dt%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>General App update logic; executed before all System updates.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="window:SF::RenderWindow-instance-method">
+      <div class="signature">
+        
+        def <strong>window</strong> : SF::RenderWindow
+
+        <a class="method-permalink" href="#window%3ASF%3A%3ARenderWindow-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the SFML RenderWindow of the app.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/ccc415c5d3cce61afc54685f4eb1b55c446d8ab0/src/scar/app.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
