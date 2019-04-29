@@ -1,5 +1,5 @@
 name: scar
-version: 0.1.0
+version: 0.2.0
 
 description: |
   A game engine/entity component system written in Crystal using crsfml and crystal-chipmunk, inspired by Glove
@@ -7,6 +7,6 @@ description: |
 authors:
   - vypxl
 
-crystal: 0.24.2
+crystal: 0.28.0
 
 license: MIT
