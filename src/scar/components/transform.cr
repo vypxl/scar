@@ -1,10 +1,6 @@
 class Scar::Components::Transform < Scar::Component
-  property :pos
+  property :pos, :scale, :rotation
 
-  def initialize(@pos : Vec)
-  end
-
-  def initialize(x, y)
-    initialize(Vec.new(x, y))
+  def initialize(@pos : Vec, @scale : Vec = Vec.new(1, 1), @rotation : Float32 = 0f32)
   end
 end
