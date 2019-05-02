@@ -28,7 +28,7 @@ module Scar
       @systems.each do |s|
         if !s.inited
           s.init(app, self)
-          s.inited = true;
+          s.inited = true
         end
         s.update(app, self, dt)
       end
