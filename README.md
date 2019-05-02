@@ -5,8 +5,8 @@
 
 A 2D game engine written in Crystal using crsfml; inspired by Glove
 
-[Reference](https://vypxl.github.io/scar/)
-[Book](https://vypxl.gitbook.io/scar/)
+[![Book](https://img.shields.io/badge/Documentation-Gitbook-blueviolet.svg)](https://vypxl.gitbook.io/scar/)
+[![Reference](https://img.shields.io/badge/Reference-Crystal%20Docs-informational.svg)](https://vypxl.github.io/scar/)
 
 ## Motivation
 
