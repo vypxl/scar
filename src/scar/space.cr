@@ -25,7 +25,13 @@ module Scar
     end
 
     def update(app, dt)
-      @systems.each { |s| s.update(app, self, dt) }
+      @systems.each do |s|
+        if !s.inited
+          s.init(app, self)
+          s.inited = true;
+        end
+        s.update(app, self, dt)
+      end
       @entities.select! { |e| e.alive? }
     end
 
@@ -46,7 +52,6 @@ module Scar
     # Adds an System to the Space
     def <<(s : System)
       @systems << s
-      s.init
     end
 
     # Adds multiple Entities to the Space
