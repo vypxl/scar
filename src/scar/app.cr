@@ -1,5 +1,3 @@
-require "crsfml"
-
 module Scar
   # A Scar powered application.
   abstract class App
