@@ -6,12 +6,7 @@
 A 2D game engine written in Crystal using crsfml; inspired by Glove
 
 [Reference](https://vypxl.github.io/scar/)
-
-## Development status
-
-I now finished all the features I wanted initially, except video playback but this will
-be delayed because I have to research alot about that topic as SFML does not offer such
-a feature. I am going to focus on documentation and examples for now. (Now eventually?)
+[Book](https://vypxl.gitbook.io/scar/)
 
 ## Motivation
 
