@@ -473,7 +473,7 @@
 
 
 <div class="main-content">
-<h1>Scar - A Crystal Game Library/Engine with Batteries included [WIP - expect breaking changes]</h1>
+<h1>Scar - A Crystal Game Library/Engine with Batteries included</h1>
 
 <p><a href="https://github.com/vypxl/scar/releases" target="_blank"><img src="https://img.shields.io/github/release/vypxl/scar.svg" alt="GitHub release"/></a>
 <a href="https://travis-ci.org/vypxl/scar" target="_blank"><img src="https://travis-ci.org/vypxl/scar.svg?branch=master" alt="Build Status"/></a></p>
@@ -495,12 +495,15 @@ and of course for the fun.</p>
 
 <h2>Not yet implemented features</h2>
 
-<ul><li>All Physics related stuff</li><li>Video playback</li><li>More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions</li></ul>
+<ul><li>Video playback</li><li>More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions</li></ul>
 
 <h2>Installation</h2>
 
-<p>Follow <a href="https://github.com/oprypin/crsfml" target="_blank">Crsfml</a>.
-YOU HAVE TO INSTALL CRSFML MANUALLY.</p>
+<p>Use the <code>scripts/crsfml</code> script to install crsfml into <code>lib/</code></p>
+
+<p>OR</p>
+
+<p>Follow the <a href="https://github.com/oprypin/crsfml" target="_blank">Crsfml</a> manual installation instructions.</p>
 
 <p>Then add this to your application's <code>shard.yml</code>:</p>
 
@@ -508,7 +511,16 @@ YOU HAVE TO INSTALL CRSFML MANUALLY.</p>
   scar:
     github: vypxl/scar</code></pre>
 
-<p>Documentation is coming soon.</p>
+<p>To run your application, you have to make voidcsfml visible to ld.
+To do that, you can either manually export the environment variables as
+described in the crsfml guide or prepend the <code>scripts/run</code> command to 
+everything you want to run. </p>
+
+<pre><code class="language-sh"># no
+crystal run src/main.cr
+
+# yes
+scripts/run crystal run src/main.cr</code></pre>
 
 <h2>Feature Requests</h2>
 
@@ -516,7 +528,13 @@ YOU HAVE TO INSTALL CRSFML MANUALLY.</p>
 
 <h2>Contributing</h2>
 
-<ol><li>Create an [Feature Request] Issue</li><li>Fork it ( https://github.com/vypxl/scar/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request and mention your issue</li></ol>
+<ol><li>Create an [Feature Request] Issue</li><li>Fork it ( https://github.com/vypxl/scar/fork )</li></ol>
+
+<p>Then create the git hook checks via <code>$ scripts/create-git-hooks</code>.
+You have to ensure that <code>crystal spec</code> and <code>crystal tool format [./src / ./spec]</code>
+return 0.</p>
+
+<ol><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request and mention your issue</li></ol>
 
 <h2>Contributors</h2>
 
