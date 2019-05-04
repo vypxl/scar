@@ -1,5 +1,6 @@
 module Scar
   abstract class System
+    property :inited
     @inited = false
 
     def init(app : App, space : Space); end
