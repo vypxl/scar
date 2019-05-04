@@ -4,10 +4,4 @@
 /.shards/
 /shard.lock
 
-book/_book
-
-# My stuff
 /tmp/
-beforecommit
-crsfml
-run
