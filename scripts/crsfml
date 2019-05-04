@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# execute in application root
+cd "${0%/*}/.."
+
+mkdir -p lib
+cd lib
+rm -rf crsfml/
+mkdir crsfml
+cd crsfml
+git clone https://github.com/oprypin/crsfml .
+cmake . && make

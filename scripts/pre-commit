@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# exit on error
+set -e
+
+# execute in application root
+cd "${0%/*}/.."
+
+# check code format
+crystal tool format ./src --check
+crystal tool format ./spec --check
