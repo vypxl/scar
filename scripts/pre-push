@@ -7,7 +7,7 @@ set -e
 cd "$(git rev-parse --show-toplevel)"
 
 # run tests
-export LIBRARY_PATH=/home/thomas/data/projects/code/crystal/scar/lib/crsfml/voidcsfml    # Used during linking
-export LD_LIBRARY_PATH="$LIBRARY_PATH"                                                   # Used when running a binary
+export LIBRARY_PATH="$PWD/lib/crsfml/voidcsfml"    # Used during linking
+export LD_LIBRARY_PATH="$LIBRARY_PATH"             # Used when running a binary
 
 crystal spec
