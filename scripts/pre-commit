@@ -4,7 +4,7 @@
 set -e
 
 # execute in application root
-cd "${0%/*}/.."
+cd "$(git rev-parse --show-toplevel)"
 
 # check code format
 crystal tool format ./src --check
