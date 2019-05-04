@@ -5,9 +5,9 @@ before_install: []
 before_script:
   - sudo apt-get -qq update
   - sudo apt-get install -y libxrandr-dev libudev-dev libopenal-dev libglew-dev libjpeg-dev libfreetype6-dev libsndfile-dev
-  - wget -O sfml.zip https://www.sfml-dev.org/files/SFML-2.4.2-sources.zip
+  - wget -O sfml.zip https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
   - unzip sfml.zip
-  - cd SFML-2.4.2/
+  - cd SFML-2.5.1/
   - cmake . && make && sudo make install
   - export PATH=$PATH:/usr/local/lib
   - export {LD_,}LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
@@ -26,6 +26,7 @@ before_script:
 
 script:
   - crystal tool format ./src --check
+  - crystal tool format ./spec --check
   - crystal spec
 
   - crystal docs
