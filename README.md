@@ -8,6 +8,8 @@ A 2D game engine written in Crystal using crsfml; inspired by Glove
 [![Book](https://img.shields.io/badge/Documentation-Gitbook-blueviolet.svg)](https://vypxl.gitbook.io/scar/)
 [![Reference](https://img.shields.io/badge/Reference-Crystal%20Docs-informational.svg)](https://vypxl.github.io/scar/)
 
+Examples can be found [here](https://github.com/vypxl/scar_examples)
+
 ## Motivation
 
 This library aims to offer a simple interface for game programming with less
@@ -49,7 +51,9 @@ dependencies:
 To run your application, you have to make voidcsfml visible to ld.
 To do that, you can either manually export the environment variables as
 described in the crsfml guide or prepend the `scripts/run` command to 
-everything you want to run. 
+everything you want to run. You can just copy the scripts from the folder
+inside this repo
+
 ```sh
 # no
 crystal run src/main.cr
