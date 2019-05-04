@@ -1,4 +1,4 @@
-# Scar - A Crystal Game Library/Engine with Batteries included [WIP - expect breaking changes]
+# Scar - A Crystal Game Library/Engine with Batteries included
 
 [![GitHub release](https://img.shields.io/github/release/vypxl/scar.svg)](https://github.com/vypxl/scar/releases)
 [![Build Status](https://travis-ci.org/vypxl/scar.svg?branch=master)](https://travis-ci.org/vypxl/scar)
@@ -27,14 +27,16 @@ and of course for the fun.
 
 ## Not yet implemented features
 
-- All Physics related stuff
 - Video playback
 - More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions
 
 ## Installation
 
-Follow [Crsfml](https://github.com/oprypin/crsfml).
-YOU HAVE TO INSTALL CRSFML MANUALLY.
+Use the `scripts/crsfml` script to install crsfml into `lib/`
+
+OR
+
+Follow the [Crsfml](https://github.com/oprypin/crsfml) manual installation instructions.
 
 Then add this to your application's `shard.yml`:
 
@@ -44,7 +46,17 @@ dependencies:
     github: vypxl/scar
 ```
 
-Documentation is coming soon.
+To run your application, you have to make voidcsfml visible to ld.
+To do that, you can either manually export the environment variables as
+described in the crsfml guide or prepend the `scripts/run` command to 
+everything you want to run. 
+```sh
+# no
+crystal run src/main.cr
+
+# yes
+scripts/run crystal run src/main.cr
+```
 
 ## Feature Requests
 
@@ -54,6 +66,11 @@ Feature requests are welcome, just open an issue!
 
 1. Create an [Feature Request] Issue
 2. Fork it ( https://github.com/vypxl/scar/fork )
+
+Then create the git hook checks via `$ scripts/create-git-hooks`.
+You have to ensure that `crystal spec` and `crystal tool format [./src / ./spec]`
+return 0.
+
 3. Create your feature branch (git checkout -b my-new-feature)
 4. Commit your changes (git commit -am 'Add some feature')
 5. Push to the branch (git push origin my-new-feature)
