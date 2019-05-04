@@ -3,11 +3,11 @@ module Scar
   # All methods put messages prefixed with `[<method name>] `
   class Logger
     def self.info(msg)
-      puts "[info] #{msg}"
+      puts "[info]  #{msg}"
     end
 
     def self.warn(msg)
-      puts "[warn] #{msg}"
+      puts "[warn]  #{msg}"
     end
 
     def self.debug(msg)
