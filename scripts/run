@@ -1,0 +1,5 @@
+#! /bin/bash
+export LIBRARY_PATH=/home/thomas/data/projects/code/crystal/scar/lib/crsfml/voidcsfml    # Used during linking
+export LD_LIBRARY_PATH="$LIBRARY_PATH"                                                   # Used when running a binary
+
+exec $@
