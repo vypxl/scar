@@ -138,8 +138,10 @@ module Scar
 
     @paused = false
     @aborted = false
+    @duration : Float32
 
-    def initialize(@duration : Float32, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->(t : Tween) {}, @on_completed : Proc(Tween, Nil) = ->(t : Tween) {})
+    def initialize(duration : Number, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->(t : Tween) {}, @on_completed : Proc(Tween, Nil) = ->(t : Tween) {})
+      @duration = duration.to_f32
       @time_spent = 0f32
     end
 
