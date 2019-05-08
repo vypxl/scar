@@ -29,6 +29,7 @@ and of course for the fun.
 
 ## Not yet implemented features
 
+- Sound Manager
 - Video playback
 - More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions
 
