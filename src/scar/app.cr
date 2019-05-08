@@ -96,11 +96,10 @@ module Scar
     delegate :<<, to: @scene_stack
     delegate pop, to: @scene_stack
 
-    # Creates a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
+    # Registers a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
     # If the Tween restarts itself in on_complete (by calling `Tween#reset` for example)
     # or does anything that prevents the `Tween#complete?` check, it is NOT deleted!
-    def tween(duration, ease : Easing::EasingDefinition, on_update : Proc(Tween, Nil) = ->(t : Tween) {}, on_complete : Proc(Tween, Nil) = ->(t : Tween) {})
-      t = Tween.new(duration.to_f32, ease, on_update, on_complete)
+    def tween(t : Tween)
       @tweens << t
       return t
     end
