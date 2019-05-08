@@ -6,7 +6,7 @@ module Scar
     # Initializes both digital and analog binding collections.
     def initialize
       @digital_bindings = Hash(Symbol, Array(-> Bool)).new
-      @analog_bindings = Hash(Symbol, Array(-> Float32)).new
+      @analog_bindings = Hash(Symbol, -> Float32).new
     end # End Initialize
 
     # Returns if the given input symbol is active.
@@ -15,16 +15,18 @@ module Scar
       if @digital_bindings[which]?
         @digital_bindings[which].each { |check| ret = true if check.call }
       else
-        Logger.warn "No Input Symbol '#{which}'"
+        Logger.warn "No digital input symbol '#{which}'"
       end
       ret
     end # End active?
 
     # Returns the axis value for the given input symbol.
     def axis(which : Symbol)
-      ret = false
+      ret = 0f32
       if @analog_bindings[which]?
-        @analog_bindings[which].each { |check| ret = true if check.call }
+        ret = @analog_bindings[which].call
+      else
+        Logger.warn "No axis input symbol '#{which}'"
       end
       ret
     end # End axis
@@ -48,7 +50,7 @@ module Scar
     # instead of a Bool.
     def bind_axis(which : Symbol, &block : -> Float32)
       @analog_bindings[which] = Array(-> Bool).new if !@analog_bindings[which]?
-      @analog_bindings[which] << block
+      @analog_bindings[which] = block
     end
 
     # Shortcut for digital checks
