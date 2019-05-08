@@ -46,21 +46,6 @@
       
     </li>
   
-  <li class="parent " data-id="github.com/vypxl/scar/Scar/Actions" data-name="scar::actions">
-      <a href="../Scar/Actions.html">Actions</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Actions/PlaySound" data-name="scar::actions::playsound">
-      <a href="../Scar/Actions/PlaySound.html">PlaySound</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
   <li class=" " data-id="github.com/vypxl/scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -531,7 +516,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L20" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L20" target="_blank">
         scar/config.cr
       </a>
     
@@ -550,16 +535,16 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%5B%5D%3D%28key%2Cvalue%29-instance-method" class="signature"><strong>#[]=</strong>(key, value)</a>
+        <a href="#%5B%5D%28key%29%3AYAML%3A%3AType-instance-method" class="signature"><strong>#[]</strong>(key) : YAML::Type</a>
         
-          <div class="summary"><p>Sets a given key to a new value</p></div>
+          <div class="summary"><p>Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%5B%5D%3F%28key%29%3AYAML%3A%3AType-instance-method" class="signature"><strong>#[]?</strong>(key) : YAML::Type</a>
+        <a href="#%5B%5D%3D%28key%2Cvalue%29-instance-method" class="signature"><strong>#[]=</strong>(key, value)</a>
         
-          <div class="summary"><p>Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.</p></div>
+          <div class="summary"><p>Sets a given key to a new value</p></div>
         
       </li>
     
@@ -627,6 +612,24 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
 
   <h2>Instance Method Detail</h2>
   
+    <div class="entry-detail" id="[](key):YAML::Type-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(key) : YAML::Type
+
+        <a class="method-permalink" href="#%5B%5D%28key%29%3AYAML%3A%3AType-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L57" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="[]=(key,value)-instance-method">
       <div class="signature">
         
@@ -640,25 +643,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L67" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(key):YAML::Type-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(key) : YAML::Type
-
-        <a class="method-permalink" href="#%5B%5D%3F%28key%29%3AYAML%3A%3AType-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -676,7 +661,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -694,7 +679,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -712,7 +697,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -730,7 +715,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -748,7 +733,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -778,7 +763,7 @@ Usage:</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/e84c9bc3ab534990e98f375ad984a05967db1fe7/src/scar/config.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/config.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
