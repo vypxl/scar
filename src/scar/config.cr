@@ -54,7 +54,7 @@ module Scar::Config
   end
 
   # Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.
-  def []?(key) : YAML::Type
+  def [](key) : YAML::Type
     query = @@data[key.to_s]?
     if query
       query
