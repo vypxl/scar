@@ -2,6 +2,7 @@ require "zip"
 
 # NOTE: Book: hint that music can be streamed from files
 # TODO: Video (Playback)
+# TODO: make extendable
 
 module Scar
   module Assets
@@ -9,7 +10,7 @@ module Scar
 
     alias Text = String
     alias Texture = SF::Texture
-    alias Sound = SF::Sound
+    alias Sound = SF::SoundBuffer
     alias Music = SF::Music
     alias Font = SF::Font
     alias Yaml = YAML::Any
@@ -128,7 +129,7 @@ module Scar
                 elsif asset_type == Texture
                   SF::Texture.from_memory data
                 elsif asset_type == Sound
-                  SF::Sound.new SF::SoundBuffer.from_memory data
+                  SF::SoundBuffer.from_memory data
                 elsif asset_type == Music
                   SF::Music.from_memory data
                 elsif asset_type == Font
@@ -144,7 +145,7 @@ module Scar
                 elsif asset_type == Texture
                   SF::Texture.from_file fname
                 elsif asset_type == Sound
-                  SF::Sound.new SF::SoundBuffer.from_file fname
+                  SF::SoundBuffer.from_file fname
                 elsif asset_type == Music
                   SF::Music.from_file fname
                 elsif asset_type == Font
@@ -213,10 +214,6 @@ module Scar
     # Unloads (destroys) an loaded Asset.
     def unload(name : String)
       a = @@loaded[name]
-      if a.is_a? Sound
-        buffer = a.buffer
-        buffer.finalize if buffer
-      end
       a.finalize if a.responds_to?(:finalize)
       @@loaded.delete name
     end
@@ -234,29 +231,6 @@ module Scar
         asset
       else
         raise "Incompatible Asset Type #{T}!"
-      end
-    end
-
-    # Same as [] but guesses the Asset type based upon file extension.
-    def [](name : String)
-      ex = /.+(\.[a-zA-Z]+)$/.match name
-      if ex
-        ed = case ex[ex.size - 1]
-             when ".txt"
-               self[name, Text]
-             when ".png"
-               self[name, Texture]
-             when ".wav"
-               self[name, Sound]
-             when ".ogg"
-               self[name, Music]
-             when ".ttf"
-               self[name, Font]
-             else
-               raise "Unknown file extension #{ex[ex.size - 1]}!"
-             end
-      else
-        raise "No file extension to guess upon in #{name}!"
       end
     end
   end # End module Assets
