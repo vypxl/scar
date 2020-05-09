@@ -22,7 +22,7 @@ module Scar
     # Initializes the app with an RenderWindow and an input handler.
     def initialize(@window : SF::RenderWindow, @input : Input)
       @next_id = 0u64
-      @time = Time.now
+      @time = Time.utc
       @scene_stack = Array(Scene).new
       @tweens = Array(Tween).new
       @actions = Array(Action).new
@@ -32,14 +32,14 @@ module Scar
     # Starts the app.
     # Update and render based on scene stack
     def run
-      time = Time.now
+      time = Time.utc
       while window.open?
         while e = window.poll_event
           converted = Event.from_sfml_event(e)
           broadcast converted if converted
         end
 
-        new_time = Time.now
+        new_time = Time.utc
         dt = (new_time - time).total_seconds
         # @window.clear(SF::Color::Black)
         @tweens.each { |t| t.update dt }
