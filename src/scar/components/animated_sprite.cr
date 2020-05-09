@@ -36,7 +36,7 @@ module Scar
       @current = 0 if @current >= @states[@state][1]
       idx = @current + @states[@state][0]
       x = @size[0] * (idx % @spritesheet_size[0])
-      y = @size[1] * ((idx / @spritesheet_size[0]).floor)
+      y = @size[1] * ((idx / @spritesheet_size[0]).to_i)
       rect = SF::IntRect.new(x, y, @size[0], @size[1])
       @sf.texture_rect = rect
     end

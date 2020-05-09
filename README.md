@@ -51,7 +51,7 @@ dependencies:
 
 To run your application, you have to make voidcsfml visible to ld.
 To do that, you can either manually export the environment variables as
-described in the crsfml guide or prepend the `scripts/run` command to 
+described in the crsfml guide or prepend the `scripts/run` command to
 everything you want to run. You can just copy the scripts from the folder
 inside this repo
 
