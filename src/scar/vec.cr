@@ -1,27 +1,18 @@
-require "crsfml"
-
 module Scar
-  struct Vec
-    include Comparable(Vec)
+  alias Vec = SF::Vector2f
+
+  struct SF::Vector2(T)
+    include Comparable(SF::Vector2f)
     include Comparable(Float32)
     include Comparable(Float64)
 
-    property :x
-    property :y
-
-    def initialize(@x : Float32, @y : Float32)
-    end
-
     def initialize(x, y)
-      initialize(x.to_f32, y.to_f32)
-    end
-
-    def initialize
-      initialize(0, 0)
+      @x = x.to_f32
+      @y = y.to_f32
     end
 
     def dup
-      Vec.new(@x, @y)
+      typeof(self).new(@x, @y)
     end
 
     # From SF::Vector2
@@ -35,33 +26,33 @@ module Scar
     end
 
     # Component wise Addition
-    def +(other : Vec)
-      Vec.new(x + other.x, y + other.y)
+    def +(other : SF::Vector2f)
+      typeof(self).new(x + other.x, y + other.y)
     end
 
     # Component wise Substraction
-    def -(other : Vec)
-      Vec.new(x - other.x, y - other.y)
+    def -(other : SF::Vector2f)
+      typeof(self).new(x - other.x, y - other.y)
     end
 
     # Component wise Multiplication
-    def *(other : Vec)
-      Vec.new(x * other.x, y * other.y)
+    def *(other : SF::Vector2f)
+      typeof(self).new(x * other.x, y * other.y)
     end
 
     # Component wise Division
-    def /(other : Vec)
-      Vec.new(x / other.x, y / other.y)
+    def /(other : SF::Vector2f)
+      typeof(self).new(x / other.x, y / other.y)
     end
 
     # Scales the Vector by the scalar
     def *(scalar)
-      Vec.new(x * scalar, y * scalar)
+      typeof(self).new(x * scalar, y * scalar)
     end
 
     # Scales the Vector by 1 / the scalar
     def /(scalar)
-      Vec.new(x / scalar, y / scalar)
+      typeof(self).new(x / scalar, y / scalar)
     end
 
     # Manhattan distance
@@ -70,18 +61,18 @@ module Scar
     end
 
     # Distance to another point
-    def dist(other : Vec)
+    def dist(other : SF::Vector2f)
       Math.sqrt((x - other.x) ** 2 + (y - other.y) ** 2)
     end
 
     # Returns a Vector with the same x and y but both positive
     def abs
-      Vec.new(x.abs, y.abs)
+      typeof(self).new(x.abs, y.abs)
     end
 
     # Comparison between Vectors
-    def <=>(other : Vec)
-      manhattan <=> other.manhattan
+    def <=>(other : SF::Vector2f)
+      length <=> other.length
     end
 
     # Comparison based on length
@@ -103,12 +94,12 @@ module Scar
     end
 
     # Dot product
-    def dot(other : Vec)
+    def dot(other : SF::Vector2f)
       x * other.x + y * other.y
     end
 
     # Z Component of Cross product
-    def cross(other : Vec)
+    def cross(other : SF::Vector2f)
       x * other.y - y * other.x
     end
 
@@ -141,7 +132,7 @@ module Scar
 
     # Rotate by angle
     def rotate(angle : Float32)
-      Vec.new(x * Math.cos(angle) - y * Math.sin(angle),
+      typeof(self).new(x * Math.cos(angle) - y * Math.sin(angle),
         x * Math.sin(angle) + y * Math.cos(angle))
     end
 
@@ -155,23 +146,18 @@ module Scar
     end
 
     # Returns the angle between this Vector and another (sign indicates which Vector is ahead)
-    def angle_to(other : Vec)
+    def angle_to(other : SF::Vector2f)
       Math.atan2(other.y, other.x) - Math.atan2(y, x)
     end
 
     # Return copy of self with a new x value
     def new_x(nx)
-      Vec.new(nx, y)
+      typeof(self).new(nx, y)
     end
 
     # Return copy of self with a new x value
     def new_y(ny)
-      Vec.new(x, ny)
-    end
-
-    # Converts the vector to an SF::Vector2
-    def sf
-      SF::Vector2.new(x, y)
+      typeof(self).new(x, ny)
     end
   end # End struct Vec
 end   # End module Scar
