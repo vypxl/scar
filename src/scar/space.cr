@@ -93,7 +93,7 @@ module Scar
       }
     end
 
-    # Get Entity with give id raise
+    # Get Entity with given id or raise
     def [](id : String) : Entity
       x = self[id]?
       if x.nil?
@@ -103,7 +103,7 @@ module Scar
       end
     end
 
-    # Get Entity with give id or nil
+    # Get Entity with given id or nil
     def []?(id : String) : Entity | Nil
       @entities.find { |e| e.id == id }
     end

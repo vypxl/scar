@@ -32,7 +32,7 @@ module Scar
     def <<(*spaces : Space)
       ids = @spaces.map &.id
       spaces.each do |space|
-        if ids.include? space.id
+        if ids.includes? space.id
           Logger.fatal "Duplicate Space id '#{space.id}'"
         else
           @spaces << space
