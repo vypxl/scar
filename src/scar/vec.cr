@@ -20,9 +20,18 @@ module Scar
       initialize(0, 0)
     end
 
+    def dup
+      Vec.new(@x, @y)
+    end
+
     # From SF::Vector2
     def self.from(v : SF::Vector2)
       self.new(v.x, v.y)
+    end
+
+    # Create from polar coordinate
+    def self.from_polar(angle : Float32, radius : Float32 = 1.0)
+      self.new(radius * Math.cos(angle), radius * Math.sin(angle))
     end
 
     # Component wise Addition
@@ -60,6 +69,11 @@ module Scar
       x.abs + y.abs
     end
 
+    # Distance to another point
+    def dist(other : Vec)
+      Math.sqrt((x - other.x) ** 2 + (y - other.y) ** 2)
+    end
+
     # Returns a Vector with the same x and y but both positive
     def abs
       Vec.new(x.abs, y.abs)
@@ -80,7 +94,6 @@ module Scar
     end
 
     def <=>(other)
-      Logger.debug("i")
       self <=> other.to_f32
     end
 
