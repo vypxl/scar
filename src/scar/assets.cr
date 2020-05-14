@@ -8,6 +8,8 @@ module Scar
   module Assets
     extend self
 
+    class_property :default_font
+
     alias Text = String
     alias Texture = SF::Texture
     alias Sound = SF::SoundBuffer
@@ -27,6 +29,9 @@ module Scar
 
     # Used to store references to currently loaded assets
     @@loaded : Hash(String, Asset) = Hash(String, Asset).new
+
+    # Define this to automatically choose the font when creating e.g. text components
+    @@default_font : Font?
 
     # Indexes a folder recursively
     private def index_folder_recursive(path : String, base_path : String)
