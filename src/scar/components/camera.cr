@@ -1,4 +1,4 @@
-# Use this to tag an entity as a camera. Needs Transform and Z components.
+# Use this to tag an entity as a camera. Needs a Z component.
 class Scar::Components::Camera < Scar::Component
   property :x, :y, :width, :height
 
