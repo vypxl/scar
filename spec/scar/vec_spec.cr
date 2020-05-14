@@ -7,8 +7,8 @@ FAC = 1.0e-5
 
 describe Vec do
   describe "#from" do
-    it "creates a Vec instance from a SFML Vector or a Chipmunk Vector" do
-      Vec.from(SF::Vector2.new(2.5, 163.125)).should eq Vec.new(2.5, 163.125)
+    it "a Vec instance is a SFML Vector" do
+      SF::Vector2f.new(2.5, 163.125).should eq Vec.new(2.5, 163.125)
     end
   end
 
@@ -119,12 +119,6 @@ describe Vec do
   describe "#new_y" do
     it "returns the same vector but with a new y value" do
       Vec.new(1, 552).new_y(2.3).should be_close Vec.new(1, 2.3), FAC
-    end
-  end
-
-  describe "#sf" do
-    it "returns the vector as an SF::Vector2f" do
-      Vec.new(5.43, 6.78).sf.should eq SF::Vector2.new(5.43f32, 6.78f32)
     end
   end
 end
