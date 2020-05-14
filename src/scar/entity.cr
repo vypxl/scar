@@ -1,23 +1,36 @@
 module Scar
   # An entity is entirely defined by it's components.
   class Entity
-    property :components
+    property :components, :position, :scale, :rotation
     getter :id
 
     @components : Array(Component)
     @id : String
     @alive = true
 
-    def initialize(@id : String, @components : Array(Component))
+    @position : Vec = Vec.new(0, 0)
+    @scale : Vec = Vec.new(1, 1)
+    @rotation : Float32 = 0
+
+    def initialize(@id : String, @components : Array(Component), *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil)
+      @position = position if !position.nil?
+      @scale = scale if !scale.nil?
+      @rotation = rotation if !rotation.nil?
     end
 
-    def initialize(@id : String)
+    def initialize(@id : String, *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil)
       @components = Array(Component).new
+      @position = position if !position.nil?
+      @scale = scale if !scale.nil?
+      @rotation = rotation if !rotation.nil?
     end
 
-    def initialize(@id : String, *comps : Component)
+    def initialize(@id : String, *comps : Component, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil)
       @components = Array(Component).new
       comps.each { |c| @components << c }
+      @position = position if !position.nil?
+      @scale = scale if !scale.nil?
+      @rotation = rotation if !rotation.nil?
     end
 
     # Shortcut for adding a component.
