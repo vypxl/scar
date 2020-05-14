@@ -67,29 +67,11 @@ module Scar
       }
     end
 
-    # For each Entity with the given component Type in the space, yields the entity and it's component
-    def each_with_transform(comp_type : T.class, &block : ((Entity, Components::Transform, T) ->)) forall T
-      @entities.each { |e|
-        c = e[comp_type]?
-        t = e[Components::Transform]?
-        yield e, t, c if t && c
-      }
-    end
-
     # For each Entity with the given component Types in the space, yields the entity
     def each_with(comp_type : T.class, *other_comp_types : Component.class, &block : ((Entity, T) ->)) forall T
       @entities.each { |e|
         c = e[comp_type]?
         yield e, c if c && e.has? *other_comp_types
-      }
-    end
-
-    # For each Entity with Transform component and the given component Types in the space, yields the entity, the Transform Component and the first specified Component
-    def each_with_transform(comp_type : T.class, *other_comp_types : Component.class, &block : ((Entity, Components::Transform, T) ->)) forall T
-      @entities.each { |e|
-        c = e[comp_type]?
-        t = e[Components::Transform]?
-        yield e, t, c if t && c && e.has? *other_comp_types
       }
     end
 
