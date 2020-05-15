@@ -32,13 +32,14 @@ class Scar::Objects::Camera < Scar::Object
 
     # draw drawables
     space.each_with(Scar::Components::Drawable) do |entity, drawable|
+      next if !drawable.visible
       sf_drawable = drawable.sf
       if sf_drawable.is_a? SF::Transformable
         sf_drawable.position = entity.position
         sf_drawable.scale = entity.scale
         sf_drawable.rotation = entity.rotation
       end
-      app.window.draw(sf_drawable) if drawable.visible && sf_drawable.is_a? SF::Drawable
+      app.window.draw(sf_drawable) if sf_drawable.is_a? SF::Drawable
     end
 
     # reset view
