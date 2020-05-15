@@ -15,6 +15,10 @@ module Scar
       @spaces = spaces.to_a.sort_by &.z
     end
 
+    def reorder_spaces
+      @spaces.sort_by! &.z
+    end
+
     # Scene update logic
     def update(app, dt)
       @spaces.each do |s|

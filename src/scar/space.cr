@@ -26,9 +26,13 @@ module Scar
         end
       end
 
-      @entities.sort_by! { |e| e.z }
+      reorder_entities()
 
       self << @camera
+    end
+
+    def reorder_entities
+      @entities.sort_by! &.z
     end
 
     def update(app, dt)
