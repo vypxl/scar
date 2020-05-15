@@ -87,7 +87,7 @@ module Scar
 
     # Loads an indexed assets data into memory so it is not loaded from the filesystem.
     # Only use this for preloading as it DOES NOT LOAD THE ASSET, it only stores the raw data
-    # for it to be quicker accesible!
+    # for it to be accesible more quickly!
     def cache(name : String)
       raise "no asset named #{name} was indexed!" if !@@zip_index[name]? && !@@dir_index[name]?
       fname = @@zip_index[name]? ? @@zip_index[name] : @@dir_index[name]
@@ -114,7 +114,7 @@ module Scar
     # Accepted types are all in Alias Asset.
     # Must be called before using the Asset.
     # Uses cached data if available.
-    # Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended).
+    # Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
     # Loads from indexed zip file entries before indexed folders!
     def load(name : String, asset_type : T.class) forall T
       raise "no asset named #{name} was indexed!" if !@@zip_index[name]? && !@@dir_index[name]?
@@ -216,15 +216,17 @@ module Scar
       end
     end
 
-    # Unloads (destroys) an loaded Asset.
+    # Unloads (destroys) an loaded Asset. Caution with assets like Textures or SoundBuffers, they could be referenced by Sprites or Sounds!
     def unload(name : String)
       a = @@loaded[name]
+      a.stop if a.responds_to?(:stop)
       a.finalize if a.responds_to?(:finalize)
       @@loaded.delete name
     end
 
     # Unloads all loaded Assets.
     def unload_all
+      @@sounds.each { |s| s.finalize }
       @@loaded.keys.each { |k| unload k }
     end
 
@@ -237,6 +239,48 @@ module Scar
       else
         raise "Incompatible Asset Type #{T}!"
       end
+    end
+
+    # Fetches a loaded Text asset.
+    def text(name) : Text
+      self[name, Text]
+    end
+
+    # Fetches a loaded Texture asset.
+    def texture(name) : Texture
+      self[name, Texture]
+    end
+
+    # Fetches a loaded Music asset.
+    def music(name) : Music
+      self[name, Music]
+    end
+
+    # Fetches a loaded Font asset.
+    def font(name) : Font
+      self[name, Font]
+    end
+
+    # Fetches a loaded Yaml asset.
+    def yaml(name) : Yaml
+      self[name, Yaml]
+    end
+
+    # Fetches a loaded Json asset.
+    def json(name) : Json
+      self[name, Json]
+    end
+
+    # Keeps track of created SF::Sound instances so they can get unloaded properly.
+    @@sounds : Array(SF::Sound) = Array(SF::Sound).new
+
+    # Creates a SF::Sound from a loaded Sound asset.
+    # This is necessary because SF::Sound has to get finalized explicitly.
+    def sound(name) : SF::Sound
+      buffer = self[name, Sound]
+      s = SF::Sound.new(buffer)
+      @@sounds << s
+      s
     end
   end # End module Assets
 end   # End module Scar
