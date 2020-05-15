@@ -1,14 +1,17 @@
 module Scar
   # A Space holds Entities and Systems. Spaces should not interact with each other
+  # Each Space has a default camera object, accessible through space#camera, and a default Scar::Systems::RenderCameras system.
+  # The camera object has the entity id `__camera`
   class Space
-    property :entities, :systems, :z, :id
+    property :entities, :systems, :z, :id, :camera
 
-    def initialize(@id : String, @entities : Array(Entity), @systems : Array(System), @z : Int32)
-    end
+    @camera : Objects::Camera = Objects::Camera.new("__camera")
 
     def initialize(@id : String, @z : Int32 = 0)
       @entities = Array(Entity).new
       @systems = Array(System).new
+
+      self << @camera
     end
 
     def initialize(@id : String, *entities_or_systems : Entity | System, @z : Int32 = 0)
@@ -22,31 +25,53 @@ module Scar
           @systems << e
         end
       end
+
+      @entities.sort_by! { |e| e.z }
+
+      self << @camera
     end
 
     def update(app, dt)
       @systems.each do |s|
-        if !s.inited
+        if !s.initialized
           s.init(app, self)
-          s.inited = true
+          s.initialized = true
         end
         s.update(app, self, dt)
       end
+
+      @entities.each do |e|
+        if e.is_a? Object
+          if !e.initialized
+            e.init(app, self)
+            e.initialized = true
+          end
+          e.update(app, self, dt)
+        end
+      end
+
       @entities.select! { |e| e.alive? }
     end
 
     def render(app, dt)
-      @systems.each { |s| s.render(app, self, dt) }
+      @entities.each do |e|
+        e.render_view(app, self, dt) if e.is_a? Objects::Camera
+      end
     end
 
     # Adds an Entity to the Space
     def <<(entity : Entity)
-      @entities << entity
+      idx = 0
+      @entities.each_with_index do |e, i|
+        idx = i
+        break if e.z > entity.z
+      end
+      @entities.insert(idx, entity)
     end
 
     # Adds multiple Entities to the Space
     def <<(*entities : Entity)
-      @entities.push entities
+      entities.each { |e| self << e }
     end
 
     # Adds an System to the Space
