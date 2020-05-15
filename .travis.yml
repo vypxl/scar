@@ -1,8 +1,28 @@
 language: crystal
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y libsfml-dev
+before_install: []
+
+before_script:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libxrandr-dev libudev-dev libopenal-dev libglew-dev libjpeg-dev libfreetype6-dev libsndfile-dev
+  - wget -O sfml.zip https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
+  - unzip sfml.zip
+  - cd SFML-2.5.1/
+  - cmake . && make && sudo make install
+  - export PATH=$PATH:/usr/local/lib
+  - export {LD_,}LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
+  - cd ..
+  - git clone https://github.com/oprypin/crsfml crsfml
+  - cd crsfml
+  - crystal run generate.cr -- /usr/local/include
+  - cmake . && make && sudo make install
+  - export {LD_,}LIBRARY_PATH=$LIBRARY_PATH:$PWD/voidcsfml
+  - export CRSFML=$PWD
+  - cd ..
+  - mkdir -p lib
+  - ln -s $CRSFML lib/crsfml
+  - ls -alR $CRSFML
+  - echo $LIBRARY_PATH
 
 script:
   - crystal tool format ./src --check
