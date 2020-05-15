@@ -41,7 +41,7 @@ module Scar
     struct EaseWithFunction < EasingDefinition
       def initialize(@fn : Proc(Float32, Float32)); end
 
-      def calc(lf : Float32)
+      def calc(lf : Float32) : Float32
         @fn.call(lf)
       end
     end
