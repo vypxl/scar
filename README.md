@@ -37,33 +37,18 @@ and of course for the fun.
 
 ## Installation
 
-Use the `scripts/crsfml` script to install crsfml into `lib/`
-
-OR
-
-Follow the [Crsfml](https://github.com/oprypin/crsfml) manual installation instructions.
-
-Then add this to your application's `shard.yml`:
+Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
   scar:
     github: vypxl/scar
+    branch: master
 ```
 
-To run your application, you have to make voidcsfml visible to ld.
-To do that, you can either manually export the environment variables as
-described in the crsfml guide or prepend the `scripts/run` command to
-everything you want to run. You can just copy the scripts from the folder
-inside this repo
-
-```sh
-# no
-crystal run src/main.cr
-
-# yes
-scripts/run crystal run src/main.cr
-```
+If you run into build/linking problems, please check if you have SFML installed properly, as described in the
+[CrSFML Guide](https://github.com/oprypin/crsfml/blob/master/README.md#Installation). You **do not** need to add
+CrSFML as a dependency!
 
 ## Feature Requests
 

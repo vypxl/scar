@@ -1,5 +1,0 @@
-#! /bin/bash
-export LIBRARY_PATH="$PWD/lib/crsfml/voidcsfml"    # Used during linking
-export LD_LIBRARY_PATH="$LIBRARY_PATH"             # Used when running a binary
-
-exec $@
