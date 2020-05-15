@@ -1,5 +1,5 @@
 class Scar::Components::Text < Scar::Components::Drawable
-  getter :text, :font, :sf
+  getter :text, :font
 
   def initialize(@text : String, font : SF::Font? = nil)
     font = font || Scar::Assets.default_font || raise "No font given and no default font for text components specified!"
@@ -14,5 +14,9 @@ class Scar::Components::Text < Scar::Components::Drawable
   def font=(new_font : SF::Font)
     @font = new_font
     @sf.font = @font
+  end
+
+  def sf : SF::Drawable
+    @sf
   end
 end
