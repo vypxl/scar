@@ -17,6 +17,8 @@ script:
   - crystal spec
 
   - crystal docs
+  - pwd
+  - ls -alR
 
 deploy:
     provider: pages
