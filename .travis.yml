@@ -10,6 +10,7 @@ before_install:
   - cmake . && make && sudo make install
   - export PATH=$PATH:/usr/local/lib
   - export {LD_,}LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
+  - cd ..
 
 script:
   - crystal tool format ./src --check
@@ -17,8 +18,6 @@ script:
   - crystal spec
 
   - crystal docs
-  - pwd
-  - ls -alR
 
 deploy:
     provider: pages
