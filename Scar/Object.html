@@ -15,7 +15,7 @@
 </svg>
 
   <meta id="repository-name" content="github.com/vypxl/scar">
-  <title>Scar::Component - github.com/vypxl/scar</title>
+  <title>Scar::Object - github.com/vypxl/scar</title>
   <script type="text/javascript">
     CrystalDoc.base_path = "../";
   </script>
@@ -105,7 +105,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/vypxl/scar/Scar/Component" data-name="scar::component">
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Component" data-name="scar::component">
       <a href="../Scar/Component.html">Component</a>
       
     </li>
@@ -370,7 +370,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Object" data-name="scar::object">
+  <li class=" current" data-id="github.com/vypxl/scar/Scar/Object" data-name="scar::object">
       <a href="../Scar/Object.html">Object</a>
       
     </li>
@@ -469,12 +469,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">abstract class</span> Scar::Component
+  <span class="kind">abstract class</span> Scar::Object
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Scar/Component.html">Scar::Component</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Scar/Object.html">Scar::Object</a></li><li class="superclass"><a href="../Scar/Entity.html">Scar::Entity</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -488,7 +488,9 @@
     Overview
   </h2>
 
-  <p>A Component only adds data to an Entity. Systems are for functionality.</p>
+  <p>Object is the base class for OOP based Entities.
+It has the same functions as a system: <code><a href="../Scar/Object.html#init(app:App,space:Space)-instance-method">#init</a></code>, <code><a href="../Scar/Object.html#update(app:App,space:Space,dt)-instance-method">#update</a></code> and <code><a href="../Scar/Object.html#render(app:App,space:Space,dt)-instance-method">#render</a></code>, so all the functionality for an object can lie in one class.
+You can still add components like with a normal entity though.</p>
 
 
 
@@ -508,7 +510,7 @@
   </h2>
   <ul class="other-types-list">
     
-      <li class="other-type"><a href="../Scar/Components/Drawable.html">Scar::Components::Drawable</a></li>
+      <li class="other-type"><a href="../Scar/Objects/Camera.html">Scar::Objects::Camera</a></li>
     
   </ul>
 
@@ -527,8 +529,8 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/component.cr#L3" target="_blank">
-        scar/component.cr
+      <a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/object.cr#L5" target="_blank">
+        scar/object.cr
       </a>
     
     <br/>
@@ -542,11 +544,156 @@
 
 
 
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#init(app:App,space:Space)-instance-method" class="signature"><strong>#init</strong>(app : App, space : Space)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#initialized:Bool-instance-method" class="signature"><strong>#initialized</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#initialized=(initialized)-instance-method" class="signature"><strong>#initialized=</strong>(initialized)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render(app:App,space:Space,dt)-instance-method" class="signature"><strong>#render</strong>(app : App, space : Space, dt)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update(app:App,space:Space,dt)-instance-method" class="signature"><strong>#update</strong>(app : App, space : Space, dt)</a>
+        
+      </li>
+    
+  </ul>
+
 
 
 
 
 <div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Scar/Entity.html">Scar::Entity</a></code></h3>
+  
+  
+    <a href="../Scar/Entity.html#%3C%3C(*cs:Component)-instance-method" class="tooltip">
+      <span><<(*cs : Component)<br/><<(c : Component)</span>
+    <<</a>, 
+    
+  
+    <a href="../Scar/Entity.html#[](comp_type:T.class):TforallT-instance-method" class="tooltip">
+      <span>[](comp_type : <span class="t">T</span>.<span class="k">class</span>) : T forall T</span>
+    []</a>, 
+    
+  
+    <a href="../Scar/Entity.html#[]?(comp_type:T.class):T?forallT-instance-method" class="tooltip">
+      <span>[]?(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T? forall T</span>
+    []?</a>, 
+    
+  
+    <a href="../Scar/Entity.html#alive?:Bool-instance-method" class="tooltip">
+      <span>alive? : Bool</span>
+    alive?</a>, 
+    
+  
+    <a href="../Scar/Entity.html#components:Array(Scar::Component)-instance-method" class="tooltip">
+      <span>components : Array(Scar::Component)</span>
+    components</a>, 
+    
+  
+    <a href="../Scar/Entity.html#components=(components)-instance-method" class="tooltip">
+      <span>components=(components)</span>
+    components=</a>, 
+    
+  
+    <a href="../Scar/Entity.html#has?(c:Component.class):Bool-instance-method" class="tooltip">
+      <span>has?(c : <span class="t">Component</span>.<span class="k">class</span>) : Bool<br/>has?(cs : Array(<span class="t">Component</span>.<span class="k">class</span>)) : Bool<br/>has?(*cs : <span class="t">Component</span>.<span class="k">class</span>) : Bool</span>
+    has?</a>, 
+    
+  
+    <a href="../Scar/Entity.html#id:String-instance-method" class="tooltip">
+      <span>id : String</span>
+    id</a>, 
+    
+  
+    <a href="../Scar/Entity.html#position:SF::Vector2(Float32)-instance-method" class="tooltip">
+      <span>position : SF::Vector2(Float32)</span>
+    position</a>, 
+    
+  
+    <a href="../Scar/Entity.html#position=(position)-instance-method" class="tooltip">
+      <span>position=(position)</span>
+    position=</a>, 
+    
+  
+    <a href="../Scar/Entity.html#rotation:Float32-instance-method" class="tooltip">
+      <span>rotation : Float32</span>
+    rotation</a>, 
+    
+  
+    <a href="../Scar/Entity.html#rotation=(rotation)-instance-method" class="tooltip">
+      <span>rotation=(rotation)</span>
+    rotation=</a>, 
+    
+  
+    <a href="../Scar/Entity.html#scale:SF::Vector2(Float32)-instance-method" class="tooltip">
+      <span>scale : SF::Vector2(Float32)</span>
+    scale</a>, 
+    
+  
+    <a href="../Scar/Entity.html#scale=(scale)-instance-method" class="tooltip">
+      <span>scale=(scale)</span>
+    scale=</a>, 
+    
+  
+    <a href="../Scar/Entity.html#suicide-instance-method" class="tooltip">
+      <span>suicide</span>
+    suicide</a>, 
+    
+  
+    <a href="../Scar/Entity.html#z:Int32-instance-method" class="tooltip">
+      <span>z : Int32</span>
+    z</a>, 
+    
+  
+    <a href="../Scar/Entity.html#z=(z)-instance-method" class="tooltip">
+      <span>z=(z)</span>
+    z=</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../Scar/Entity.html">Scar::Entity</a></code></h3>
+  
+  
+    <a href="../Scar/Entity.html#new(id:String,components:Array(Component),*,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method" class="tooltip">
+      <span>new(id : String, components : Array(Component), *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *comps : Component, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</span>
+    new</a>
+    
+  
+
+
+    
+
+
   
     
 
@@ -574,6 +721,96 @@
 
 
 
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="init(app:App,space:Space)-instance-method">
+      <div class="signature">
+        
+        def <strong>init</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>)
+
+        <a class="method-permalink" href="#init(app:App,space:Space)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/object.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="initialized:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>initialized</strong> : Bool
+
+        <a class="method-permalink" href="#initialized:Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/object.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="initialized=(initialized)-instance-method">
+      <div class="signature">
+        
+        def <strong>initialized=</strong>(initialized)
+
+        <a class="method-permalink" href="#initialized=(initialized)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/object.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render(app:App,space:Space,dt)-instance-method">
+      <div class="signature">
+        
+        def <strong>render</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>, dt)
+
+        <a class="method-permalink" href="#render(app:App,space:Space,dt)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/object.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update(app:App,space:Space,dt)-instance-method">
+      <div class="signature">
+        
+        def <strong>update</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>, dt)
+
+        <a class="method-permalink" href="#update(app:App,space:Space,dt)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/object.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 

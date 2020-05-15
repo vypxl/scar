@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.28.0">
+<meta name="generator" content="Crystal Docs 0.33.0">
 
-
-<link href="../css/style.css" rel="stylesheet" type="text/css">
-
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/doc.js"></script>
-<script type="text/javascript">
-  CrystalDoc.base_path = "../";
-</script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 
   <meta id="repository-name" content="github.com/vypxl/scar">
   <title>Scar::Vec - github.com/vypxl/scar</title>
+  <script type="text/javascript">
+    CrystalDoc.base_path = "../";
+  </script>
 </head>
 <body>
 
@@ -116,11 +120,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Camera" data-name="scar::components::camera">
-      <a href="../Scar/Components/Camera.html">Camera</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Drawable" data-name="scar::components::drawable">
       <a href="../Scar/Components/Drawable.html">Drawable</a>
       
@@ -133,16 +132,6 @@
   
   <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Text" data-name="scar::components::text">
       <a href="../Scar/Components/Text.html">Text</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Transform" data-name="scar::components::transform">
-      <a href="../Scar/Components/Transform.html">Transform</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Z" data-name="scar::components::z">
-      <a href="../Scar/Components/Z.html">Z</a>
       
     </li>
   
@@ -381,6 +370,41 @@
       
     </li>
   
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Object" data-name="scar::object">
+      <a href="../Scar/Object.html">Object</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Objects" data-name="scar::objects">
+      <a href="../Scar/Objects.html">Objects</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Objects/Camera" data-name="scar::objects::camera">
+      <a href="../Scar/Objects/Camera.html">Camera</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Rect" data-name="scar::rect">
+      <a href="../Scar/Rect.html">Rect</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Rectf" data-name="scar::rectf">
+      <a href="../Scar/Rectf.html">Rectf</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Recti" data-name="scar::recti">
+      <a href="../Scar/Recti.html">Recti</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/vypxl/scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -403,21 +427,6 @@
   
   <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/AnimateSprites" data-name="scar::systems::animatesprites">
       <a href="../Scar/Systems/AnimateSprites.html">AnimateSprites</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/DrawSprites" data-name="scar::systems::drawsprites">
-      <a href="../Scar/Systems/DrawSprites.html">DrawSprites</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/DrawTexts" data-name="scar::systems::drawtexts">
-      <a href="../Scar/Systems/DrawTexts.html">DrawTexts</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/RenderCameras" data-name="scar::systems::rendercameras">
-      <a href="../Scar/Systems/RenderCameras.html">RenderCameras</a>
       
     </li>
   
@@ -460,30 +469,25 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Scar::Vec
+  <span class="kind">alias</span> Scar::Vec
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Scar/Vec.html">Scar::Vec</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
 
 
-
-
-
-  <h2>Included Modules</h2>
-  <ul class="other-types-list">
-  
-    <li class="other-type">Comparable(Float64)</li>
-  
-    <li class="other-type">Comparable(Float32)</li>
-  
-    <li class="other-type">Comparable(<a href="../Scar/Vec.html">Scar::Vec</a>)</li>
-  
-  </ul>
+  <h2>
+    <a id="alias-definition" class="anchor" href="#alias-definition">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Alias Definition
+  </h2>
+  <code><a href="../SF/Vector2.html">SF::Vector2(Float32)</a></code>
 
 
 
@@ -494,10 +498,19 @@
 
 
 
-  <h2>Defined in:</h2>
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L4" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/47fdbe3d46a3a026620a6c9426c9e60aa5efeead/src/scar/vec.cr#L2" target="_blank">
         scar/vec.cr
       </a>
     
@@ -508,248 +521,9 @@
 
 
 
-  <h2>Constructors</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new%28x%3AFloat32%2Cy%3AFloat32%29-class-method" class="signature"><strong>.new</strong>(x : Float32, y : Float32)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28x%2Cy%29-class-method" class="signature"><strong>.new</strong>(x, y)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
-        
-      </li>
-    
-  </ul>
 
 
 
-  <h2>Class Method Summary</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#from%28v%3ASF%3A%3AVector2%29-class-method" class="signature"><strong>.from</strong>(v : SF::Vector2)</a>
-        
-          <div class="summary"><p>From SF::Vector2</p></div>
-        
-      </li>
-    
-  </ul>
-
-
-
-  <h2>Instance Method Summary</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#%2A%28other%3AVec%29-instance-method" class="signature"><strong>#*</strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Component wise Multiplication</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%2A%28scalar%29-instance-method" class="signature"><strong>#*</strong>(scalar)</a>
-        
-          <div class="summary"><p>Scales the Vector by the scalar</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%2B%28other%3AVec%29-instance-method" class="signature"><strong>#+</strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Component wise Addition</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#-%28other%3AVec%29-instance-method" class="signature"><strong>#-</strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Component wise Substraction</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%2F%28other%3AVec%29-instance-method" class="signature"><strong>#/</strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Component wise Division</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%2F%28scalar%29-instance-method" class="signature"><strong>#/</strong>(scalar)</a>
-        
-          <div class="summary"><p>Scales the Vector by 1 / the scalar</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%28other%3AFloat32%29-instance-method" class="signature"><strong>#<=></strong>(other : Float32)</a>
-        
-          <div class="summary"><p>Comparison based on length</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%28other%29-instance-method" class="signature"><strong>#<=></strong>(other)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%28other%3AFloat64%29-instance-method" class="signature"><strong>#<=></strong>(other : Float64)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%28other%3AVec%29-instance-method" class="signature"><strong>#<=></strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Comparison between Vectors</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#%3D%3D%28other%3ANumber%29-instance-method" class="signature"><strong>#==</strong>(other : Number)</a>
-        
-          <div class="summary"><p>Length is within 1e-5 of other</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#abs-instance-method" class="signature"><strong>#abs</strong></a>
-        
-          <div class="summary"><p>Returns a Vector with the same x and y but both positive</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#angle-instance-method" class="signature"><strong>#angle</strong></a>
-        
-          <div class="summary"><p>Returns the angle between the Vector and the x-axis</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#angle_to%28other%3AVec%29-instance-method" class="signature"><strong>#angle_to</strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Returns the angle between this Vector and another (sign indicates which Vector is ahead)</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#cross%28other%3AVec%29-instance-method" class="signature"><strong>#cross</strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Z Component of Cross product</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#dot%28other%3AVec%29-instance-method" class="signature"><strong>#dot</strong>(other : Vec)</a>
-        
-          <div class="summary"><p>Dot product</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#length-instance-method" class="signature"><strong>#length</strong></a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#length_squared-instance-method" class="signature"><strong>#length_squared</strong></a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#magnitude-instance-method" class="signature"><strong>#magnitude</strong></a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#magnitude_squared-instance-method" class="signature"><strong>#magnitude_squared</strong></a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#manhattan-instance-method" class="signature"><strong>#manhattan</strong></a>
-        
-          <div class="summary"><p>Manhattan distance</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new_x%28nx%29-instance-method" class="signature"><strong>#new_x</strong>(nx)</a>
-        
-          <div class="summary"><p>Return copy of self with a new x value</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new_y%28ny%29-instance-method" class="signature"><strong>#new_y</strong>(ny)</a>
-        
-          <div class="summary"><p>Return copy of self with a new x value</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#normalized-instance-method" class="signature"><strong>#normalized</strong></a>
-        
-          <div class="summary"><p>Same vector, but length is one</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#rotate%28angle%29-instance-method" class="signature"><strong>#rotate</strong>(angle)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#rotate%28angle%3AFloat32%29-instance-method" class="signature"><strong>#rotate</strong>(angle : Float32)</a>
-        
-          <div class="summary"><p>Rotate by angle</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#sf-instance-method" class="signature"><strong>#sf</strong></a>
-        
-          <div class="summary"><p>Converts the vector to an SF::Vector2</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#unit-instance-method" class="signature"><strong>#unit</strong></a>
-        
-          <div class="summary"><p>Same vector, but length is one</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#x%3AFloat32-instance-method" class="signature"><strong>#x</strong> : Float32</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#x%3D%28x%29-instance-method" class="signature"><strong>#x=</strong>(x)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#y%3AFloat32-instance-method" class="signature"><strong>#y</strong> : Float32</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#y%3D%28y%29-instance-method" class="signature"><strong>#y=</strong>(y)</a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -757,701 +531,12 @@
 
 <div class="methods-inherited">
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
 
-  <h2>Constructor Detail</h2>
-  
-    <div class="entry-detail" id="new(x:Float32,y:Float32)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(x : Float32, y : Float32)
-
-        <a class="method-permalink" href="#new%28x%3AFloat32%2Cy%3AFloat32%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L12" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(x,y)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(x, y)
-
-        <a class="method-permalink" href="#new%28x%2Cy%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L15" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>
-
-        <a class="method-permalink" href="#new-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L19" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
-  <h2>Class Method Detail</h2>
-  
-    <div class="entry-detail" id="from(v:SF::Vector2)-class-method">
-      <div class="signature">
-        
-        def self.<strong>from</strong>(v : SF::Vector2)
-
-        <a class="method-permalink" href="#from%28v%3ASF%3A%3AVector2%29-class-method">#</a>
-      </div>
-      
-        <div class="doc"><p>From SF::Vector2</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L24" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-
-
-
-  <h2>Instance Method Detail</h2>
-  
-    <div class="entry-detail" id="*(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong>*</strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#%2A%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Component wise Multiplication</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L39" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="*(scalar)-instance-method">
-      <div class="signature">
-        
-        def <strong>*</strong>(scalar)
-
-        <a class="method-permalink" href="#%2A%28scalar%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Scales the Vector by the scalar</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L49" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="+(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong>+</strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#%2B%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Component wise Addition</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L29" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="-(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong>-</strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#-%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Component wise Substraction</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L34" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="/(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong>/</strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#%2F%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Component wise Division</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L44" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="/(scalar)-instance-method">
-      <div class="signature">
-        
-        def <strong>/</strong>(scalar)
-
-        <a class="method-permalink" href="#%2F%28scalar%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Scales the Vector by 1 / the scalar</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L54" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="(other:Float32)-instance-method">
-      <div class="signature">
-        
-        def <strong><=></strong>(other : Float32)
-
-        <a class="method-permalink" href="#%28other%3AFloat32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Comparison based on length</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L74" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="(other)-instance-method">
-      <div class="signature">
-        
-        def <strong><=></strong>(other)
-
-        <a class="method-permalink" href="#%28other%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L82" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="(other:Float64)-instance-method">
-      <div class="signature">
-        
-        def <strong><=></strong>(other : Float64)
-
-        <a class="method-permalink" href="#%28other%3AFloat64%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L78" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong><=></strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Comparison between Vectors</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L69" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="==(other:Number)-instance-method">
-      <div class="signature">
-        
-        def <strong>==</strong>(other : Number)
-
-        <a class="method-permalink" href="#%3D%3D%28other%3ANumber%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Length is within 1e-5 of other</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L88" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="abs-instance-method">
-      <div class="signature">
-        
-        def <strong>abs</strong>
-
-        <a class="method-permalink" href="#abs-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Returns a Vector with the same x and y but both positive</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L64" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="angle-instance-method">
-      <div class="signature">
-        
-        def <strong>angle</strong>
-
-        <a class="method-permalink" href="#angle-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Returns the angle between the Vector and the x-axis</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L140" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="angle_to(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong>angle_to</strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#angle_to%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Returns the angle between this Vector and another (sign indicates which Vector is ahead)</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L145" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="cross(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong>cross</strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#cross%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Z Component of Cross product</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L98" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="dot(other:Vec)-instance-method">
-      <div class="signature">
-        
-        def <strong>dot</strong>(other : <a href="../Scar/Vec.html">Vec</a>)
-
-        <a class="method-permalink" href="#dot%28other%3AVec%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Dot product</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L93" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="length-instance-method">
-      <div class="signature">
-        
-        def <strong>length</strong>
-
-        <a class="method-permalink" href="#length-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L102" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="length_squared-instance-method">
-      <div class="signature">
-        
-        def <strong>length_squared</strong>
-
-        <a class="method-permalink" href="#length_squared-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L110" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="magnitude-instance-method">
-      <div class="signature">
-        
-        def <strong>magnitude</strong>
-
-        <a class="method-permalink" href="#magnitude-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L106" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="magnitude_squared-instance-method">
-      <div class="signature">
-        
-        def <strong>magnitude_squared</strong>
-
-        <a class="method-permalink" href="#magnitude_squared-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L114" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="manhattan-instance-method">
-      <div class="signature">
-        
-        def <strong>manhattan</strong>
-
-        <a class="method-permalink" href="#manhattan-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Manhattan distance</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L59" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new_x(nx)-instance-method">
-      <div class="signature">
-        
-        def <strong>new_x</strong>(nx)
-
-        <a class="method-permalink" href="#new_x%28nx%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Return copy of self with a new x value</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L150" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new_y(ny)-instance-method">
-      <div class="signature">
-        
-        def <strong>new_y</strong>(ny)
-
-        <a class="method-permalink" href="#new_y%28ny%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Return copy of self with a new x value</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L155" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="normalized-instance-method">
-      <div class="signature">
-        
-        def <strong>normalized</strong>
-
-        <a class="method-permalink" href="#normalized-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Same vector, but length is one</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L125" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="rotate(angle)-instance-method">
-      <div class="signature">
-        
-        def <strong>rotate</strong>(angle)
-
-        <a class="method-permalink" href="#rotate%28angle%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L135" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="rotate(angle:Float32)-instance-method">
-      <div class="signature">
-        
-        def <strong>rotate</strong>(angle : Float32)
-
-        <a class="method-permalink" href="#rotate%28angle%3AFloat32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Rotate by angle</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L130" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="sf-instance-method">
-      <div class="signature">
-        
-        def <strong>sf</strong>
-
-        <a class="method-permalink" href="#sf-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Converts the vector to an SF::Vector2</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L160" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="unit-instance-method">
-      <div class="signature">
-        
-        def <strong>unit</strong>
-
-        <a class="method-permalink" href="#unit-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Same vector, but length is one</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L119" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="x:Float32-instance-method">
-      <div class="signature">
-        
-        def <strong>x</strong> : Float32
-
-        <a class="method-permalink" href="#x%3AFloat32-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L9" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="x=(x)-instance-method">
-      <div class="signature">
-        
-        def <strong>x=</strong>(x)
-
-        <a class="method-permalink" href="#x%3D%28x%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L9" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="y:Float32-instance-method">
-      <div class="signature">
-        
-        def <strong>y</strong> : Float32
-
-        <a class="method-permalink" href="#y%3AFloat32-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L10" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="y=(y)-instance-method">
-      <div class="signature">
-        
-        def <strong>y=</strong>(y)
-
-        <a class="method-permalink" href="#y%3D%28y%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/5c9609a967850f7bda5bea13b0467d913052260d/src/scar/vec.cr#L10" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.28.0">
+<meta name="generator" content="Crystal Docs 0.33.0">
 
-
-<link href="css/style.css" rel="stylesheet" type="text/css">
-
+<link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/doc.js"></script>
-<script type="text/javascript">
-  CrystalDoc.base_path = "";
-</script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 
   <meta id="repository-name" content="github.com/vypxl/scar">
   <title>README - github.com/vypxl/scar</title>
+  <script type="text/javascript">
+  CrystalDoc.base_path = "";
+  </script>
 </head>
 <body>
 
@@ -116,11 +120,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Camera" data-name="scar::components::camera">
-      <a href="Scar/Components/Camera.html">Camera</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Drawable" data-name="scar::components::drawable">
       <a href="Scar/Components/Drawable.html">Drawable</a>
       
@@ -133,16 +132,6 @@
   
   <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Text" data-name="scar::components::text">
       <a href="Scar/Components/Text.html">Text</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Transform" data-name="scar::components::transform">
-      <a href="Scar/Components/Transform.html">Transform</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Components/Z" data-name="scar::components::z">
-      <a href="Scar/Components/Z.html">Z</a>
       
     </li>
   
@@ -381,6 +370,41 @@
       
     </li>
   
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Object" data-name="scar::object">
+      <a href="Scar/Object.html">Object</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vypxl/scar/Scar/Objects" data-name="scar::objects">
+      <a href="Scar/Objects.html">Objects</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Objects/Camera" data-name="scar::objects::camera">
+      <a href="Scar/Objects/Camera.html">Camera</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Rect" data-name="scar::rect">
+      <a href="Scar/Rect.html">Rect</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Rectf" data-name="scar::rectf">
+      <a href="Scar/Rectf.html">Rectf</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vypxl/scar/Scar/Recti" data-name="scar::recti">
+      <a href="Scar/Recti.html">Recti</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/vypxl/scar/Scar/Scene" data-name="scar::scene">
       <a href="Scar/Scene.html">Scene</a>
       
@@ -403,21 +427,6 @@
   
   <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/AnimateSprites" data-name="scar::systems::animatesprites">
       <a href="Scar/Systems/AnimateSprites.html">AnimateSprites</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/DrawSprites" data-name="scar::systems::drawsprites">
-      <a href="Scar/Systems/DrawSprites.html">DrawSprites</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/DrawTexts" data-name="scar::systems::drawtexts">
-      <a href="Scar/Systems/DrawTexts.html">DrawTexts</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/vypxl/scar/Scar/Systems/RenderCameras" data-name="scar::systems::rendercameras">
-      <a href="Scar/Systems/RenderCameras.html">RenderCameras</a>
       
     </li>
   
@@ -458,63 +467,80 @@
 
 
 <div class="main-content">
-<h1>Scar - A Crystal Game Library/Engine with Batteries included</h1>
+<h1><a id="scar-a-crystal-game-libraryengine-with-batteries-included" class="anchor" href="#scar-a-crystal-game-libraryengine-with-batteries-included">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Scar - A Crystal Game Library/Engine with Batteries included</h1>
 
 <p><a href="https://github.com/vypxl/scar/releases" target="_blank"><img src="https://img.shields.io/github/release/vypxl/scar.svg" alt="GitHub release"/></a>
 <a href="https://travis-ci.org/vypxl/scar" target="_blank"><img src="https://travis-ci.org/vypxl/scar.svg?branch=master" alt="Build Status"/></a></p>
 
-<p>A 2D game engine written in Crystal using crsfml; inspired by Glove</p>
+<p>A 2D game engine written in Crystal using crsfml</p>
 
 <p><a href="https://vypxl.gitbook.io/scar/" target="_blank"><img src="https://img.shields.io/badge/Documentation-Gitbook-blueviolet.svg" alt="Book"/></a>
 <a href="https://vypxl.github.io/scar/" target="_blank"><img src="https://img.shields.io/badge/Reference-Crystal%20Docs-informational.svg" alt="Reference"/></a></p>
 
 <p>Examples can be found <a href="https://github.com/vypxl/scar_examples" target="_blank">here</a></p>
 
-<h2>Motivation</h2>
+<p><strong>Until version 1.0, everything is subject to change!</strong></p>
+
+<h2><a id="motivation" class="anchor" href="#motivation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Motivation</h2>
 
 <p>This library aims to offer a simple interface for game programming with less
 boilerplate code. I mainly create it for my own games, for my own education
 and of course for the fun.</p>
 
-<h2>Features</h2>
+<h2><a id="features" class="anchor" href="#features">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Features</h2>
 
 <ul><li>Event system</li><li>Configurable input handling</li><li>Universal 2D Vector class</li><li>Entity-Component-System</li><li>Configuration manager</li><li>Tween</li><li>Asset manager</li><li>Some Builtin Components and Systems, will be expanded in the future</li></ul>
 
-<h2>Not yet implemented features</h2>
+<h2><a id="not-yet-implemented-features" class="anchor" href="#not-yet-implemented-features">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Not yet implemented features</h2>
 
 <ul><li>Sound Manager</li><li>Video playback</li><li>More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions</li></ul>
 
-<h2>Installation</h2>
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
 
-<p>Use the <code>scripts/crsfml</code> script to install crsfml into <code>lib/</code></p>
-
-<p>OR</p>
-
-<p>Follow the <a href="https://github.com/oprypin/crsfml" target="_blank">Crsfml</a> manual installation instructions.</p>
-
-<p>Then add this to your application's <code>shard.yml</code>:</p>
+<p>Add this to your application's <code>shard.yml</code>:</p>
 
 <pre><code class="language-yaml">dependencies:
   scar:
-    github: vypxl/scar</code></pre>
+    github: vypxl/scar
+    branch: master</code></pre>
 
-<p>To run your application, you have to make voidcsfml visible to ld.
-To do that, you can either manually export the environment variables as
-described in the crsfml guide or prepend the <code>scripts/run</code> command to 
-everything you want to run. You can just copy the scripts from the folder
-inside this repo</p>
+<p>If you run into build/linking problems, please check if you have SFML installed properly, as described in the
+<a href="https://github.com/oprypin/crsfml/blob/master/README.md#Installation" target="_blank">CrSFML Guide</a>. You <strong>do not</strong> need to add
+CrSFML as a dependency!</p>
 
-<pre><code class="language-sh"># no
-crystal run src/main.cr
-
-# yes
-scripts/run crystal run src/main.cr</code></pre>
-
-<h2>Feature Requests</h2>
+<h2><a id="feature-requests" class="anchor" href="#feature-requests">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Feature Requests</h2>
 
 <p>Feature requests are welcome, just open an issue!</p>
 
-<h2>Contributing</h2>
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
 
 <ol><li>Create an [Feature Request] Issue</li><li>Fork it ( https://github.com/vypxl/scar/fork )</li></ol>
 
@@ -524,7 +550,11 @@ return 0.</p>
 
 <ol><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request and mention your issue</li></ol>
 
-<h2>Contributors</h2>
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
 
 <ul><li><a href="https://github.com/vypxl" target="_blank">vypxl</a> vypxl - creator, maintainer</li></ul>
 </div>
