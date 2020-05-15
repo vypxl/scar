@@ -4,6 +4,7 @@ module Scar
     property :spaces
 
     def initialize(@spaces : Array(Space))
+      @spaces.sort_by! &.z
     end
 
     def initialize
@@ -11,7 +12,7 @@ module Scar
     end
 
     def initialize(*spaces : Space)
-      @spaces = spaces.to_a
+      @spaces = spaces.to_a.sort_by &.z
     end
 
     # Scene update logic
@@ -44,13 +45,11 @@ module Scar
     # Shortcut for @spaces#pop
     def pop
       @spaces.pop
-      @spaces.sort_by! &.z
     end
 
     # Shortcut for @spaces#pop(&block)
     def pop(&block)
       @spaces.pop(block)
-      @spaces.sort_by! &.z
     end
 
     def [](id : String) : Space

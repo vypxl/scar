@@ -1,7 +1,7 @@
 module Scar
   # An entity is entirely defined by it's components.
   class Entity
-    property :components, :position, :scale, :rotation
+    property :components, :position, :scale, :rotation, :z
     getter :id
 
     @components : Array(Component)
@@ -11,26 +11,21 @@ module Scar
     @position : Vec = Vec.new(0, 0)
     @scale : Vec = Vec.new(1, 1)
     @rotation : Float32 = 0
+    @z : Int32 = 0
 
-    def initialize(@id : String, @components : Array(Component), *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil)
+    def initialize(@id : String, @components : Array(Component), *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil, z : Int32 = 0)
       @position = position if !position.nil?
       @scale = scale if !scale.nil?
       @rotation = rotation if !rotation.nil?
+      @z = z
     end
 
-    def initialize(@id : String, *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil)
-      @components = Array(Component).new
-      @position = position if !position.nil?
-      @scale = scale if !scale.nil?
-      @rotation = rotation if !rotation.nil?
+    def initialize(id : String, *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil, z : Int32 = 0)
+      initialize(id, Array(Component).new, position: position, scale: scale, rotation: rotation, z: z)
     end
 
-    def initialize(@id : String, *comps : Component, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil)
-      @components = Array(Component).new
-      comps.each { |c| @components << c }
-      @position = position if !position.nil?
-      @scale = scale if !scale.nil?
-      @rotation = rotation if !rotation.nil?
+    def initialize(id : String, *comps : Component, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil, z : Int32 = 0)
+      initialize(id, Array(Component).new(comps.size) { |i| comps[i] }, position: position, scale: scale, rotation: rotation, z: z)
     end
 
     # Shortcut for adding a component.
