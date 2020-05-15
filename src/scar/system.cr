@@ -1,7 +1,7 @@
 module Scar
   abstract class System
-    property :inited
-    @inited = false
+    property :initialized
+    @initialized = false
 
     def init(app : App, space : Space); end
 

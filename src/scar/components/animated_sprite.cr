@@ -2,10 +2,14 @@ require "./sprite.cr"
 
 module Scar
   class Components::AnimatedSprite < Components::Sprite
-    getter :sf, :size, :states, :state
+    getter :size, :states, :state
 
     @spritesheet_size : Tuple(Int32, Int32)
     @delta : Float32
+
+    def sf : SF::Drawable
+      @sf
+    end
 
     # Spritesheet, size of each frame, hash of states with corresponding beginning-index, framecount and framerate.
     def initialize(@texture : SF::Texture, @size : Tuple(Int32, Int32), @states : Hash(String, Tuple(Int32, Int32, Int32)))
