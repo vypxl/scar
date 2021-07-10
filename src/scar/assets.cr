@@ -1,4 +1,4 @@
-require "zip"
+require "compress/zip"
 
 # NOTE: Book: hint that music can be streamed from files
 # TODO: Video (Playback)
@@ -60,7 +60,7 @@ module Scar
     # Loads a zip entry into a IO::Memory
     private def read_zip_entry_into_memory(entry_name : String, zip_fname : String)
       data = IO::Memory.new("")
-      Zip::File.open(zip_fname) do |zfile|
+      Compress::Zip::File.open(zip_fname) do |zfile|
         zfile[entry_name].open do |entry_data|
           data = IO::Memory.new(entry_data.gets_to_end)
         end
@@ -74,7 +74,7 @@ module Scar
         index_folder_recursive(File.expand_path(file_or_folder_name), "")
       elsif File.exists? file_or_folder_name
         zip_file_path = File.expand_path file_or_folder_name
-        Zip::File.open(file_or_folder_name) do |zfile|
+        Compress::Zip::File.open(file_or_folder_name) do |zfile|
           zfile.entries.each do |entry|
             fname = entry.filename
             @@zip_index[fname] = zip_file_path unless entry.dir?
@@ -97,7 +97,7 @@ module Scar
     # Indexes a zip file and caches all contents of it. Use this to preload all assets in the file at once without reading each file on its own.
     def cache_zipfile(fname : String)
       use(fname)
-      Zip::Reader.open(fname) do |reader|
+      Compress::Zip::Reader.open(fname) do |reader|
         reader.each_entry do |entry|
           @@cache[entry.filename] = IO::Memory.new(entry.io.gets_to_end) if entry.file?
         end
