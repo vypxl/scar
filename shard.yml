@@ -1,5 +1,5 @@
 name: scar
-version: 0.3.0
+version: 0.3.1
 
 description: |
   A game engine with entity component system written in Crystal, built on top of CrSFML
@@ -7,7 +7,7 @@ description: |
 authors:
   - vypxl <thomas@vypxl.io>
 
-crystal: 0.34.0
+crystal: 1.0.0
 
 dependencies:
   crsfml:

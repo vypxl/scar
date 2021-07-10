@@ -10,8 +10,6 @@ A 2D game engine written in Crystal using crsfml
 
 Examples can be found [here](https://github.com/vypxl/scar_examples)
 
-**Until version 1.0, everything is subject to change!**
-
 ## Motivation
 
 This library aims to offer a simple interface for game programming with less
@@ -29,11 +27,10 @@ and of course for the fun.
 - Asset manager
 - Some Builtin Components and Systems, will be expanded in the future
 
-## Not yet implemented features
+## Planned Features
 
 - Sound Manager
 - Video playback
-- More features I cannot think of right now but will in my dev process ^^ + your proposals/contributions
 
 ## Installation
 
