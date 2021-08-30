@@ -7,5 +7,5 @@ require "json"
 module Scar
 end
 
-# require "./scar/serialization"
+require "./scar/util"
 require "./scar/**"

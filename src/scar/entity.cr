@@ -1,19 +1,20 @@
 module Scar
-  # An entity is entirely defined by it's components.
-  class Entity
-    property :components, :position, :scale, :rotation, :z
+  # TODO entities should be able to have children
+
+  # An entity is entirely defined by its components.
+  # Being a subclass of SF::Transformable, its `transform` is applied if this entity or any of its components is drawn
+  class Entity < SF::Transformable
+    property :components, :z
     getter :id
 
     @components : Array(Component)
     @id : String
     @alive = true
 
-    @position : Vec = Vec.new(0, 0)
-    @scale : Vec = Vec.new(1, 1)
-    @rotation : Float32 = 0
     @z : Int32 = 0
 
     def initialize(@id : String, @components : Array(Component), *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil, z : Int32 = 0)
+      super()
       @position = position if !position.nil?
       @scale = scale if !scale.nil?
       @rotation = rotation if !rotation.nil?
@@ -80,7 +81,7 @@ module Scar
     end
 
     # Marks this entity for removal
-    def suicide
+    def destroy
       @alive = false
     end
 

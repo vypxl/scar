@@ -1,5 +1,7 @@
 # A camera takes care of calling render() functions and drawing drawables.
-# A camera is essentially a wrapper around and `SF::View`. Its instance methods are delegated, so you can use them as normal instance methods.
+# A camera is essentially a wrapper around and `SF::View`.
+# Its instance methods are delegated, so you can use them as normal instance methods.
+# When drawing Entities or Objects, their transforms are applied automatically.
 class Scar::Objects::Camera < Scar::Object
   property :sf, :enabled, :simple
 
@@ -16,6 +18,8 @@ class Scar::Objects::Camera < Scar::Object
     @sf = SF::View.new
   end
 
+  # This method is called by the render method of Spaces
+  # It calls all render methods and draws all drawables onto the screen
   def render_view(app, space, dt)
     return if !enabled
 
@@ -23,26 +27,29 @@ class Scar::Objects::Camera < Scar::Object
     app.window.view = @sf if !@simple
 
     # call render functions
-    space.systems.each { |s| s.render(app, space, dt) }
-    space.entities.each do |e|
-      if e.is_a? Object
-        e.render(app, space, dt)
-      end
-    end
+    space.systems.each(&.render(app, space, dt))
 
-    # draw drawables
-    space.each_with(Scar::Components::Drawable) do |entity, drawable|
-      next if !drawable.visible
-      sf_drawable = drawable.sf
-      if sf_drawable.is_a? SF::Transformable
-        sf_drawable.position = entity.position
-        sf_drawable.scale = entity.scale
-        sf_drawable.rotation = entity.rotation
+    space.entities.each do |e|
+      # Draw drawable Objects
+      if e.is_a? Scar::Object
+        e.render(app, space, dt)
+        draw_drawable(e, app.window) if e.is_a? SF::Drawable
       end
-      app.window.draw(sf_drawable) if sf_drawable.is_a? SF::Drawable
+
+      # Draw drawable Components
+      states = SF::RenderStates.new(e.transform)
+      e.components.each { |c| draw_drawable(c, app.window, states) if c.is_a? SF::Drawable }
     end
 
     # reset view
     app.window.view = app.window.default_view if !@simple
+  end
+
+  private def draw_drawable(drawable : SF::Drawable, target, states = SF::RenderStates::Default)
+    if drawable.is_a? Scar::Drawable
+      return unless drawable.visible?
+    end
+
+    target.draw(drawable, states) if drawable.is_a? SF::Drawable
   end
 end

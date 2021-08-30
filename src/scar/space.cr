@@ -5,7 +5,8 @@ module Scar
   class Space
     property :entities, :systems, :z, :id, :camera
 
-    @camera : Objects::Camera = Objects::Camera.new("__camera")
+    # Make the default camera use it's SFML View, so it can be configured more easily
+    @camera : Objects::Camera = Objects::Camera.new("__camera").tap(&.simple = false)
 
     def initialize(@id : String, @z : Int32 = 0)
       @entities = Array(Entity).new
@@ -54,7 +55,7 @@ module Scar
         end
       end
 
-      @entities.select! { |e| e.alive? }
+      @entities.select!(&.alive?)
     end
 
     def render(app, dt)
@@ -110,7 +111,7 @@ module Scar
       if x.nil?
         Logger.fatal "No Entity with id '#{id}' found!"
       else
-        return x
+        x
       end
     end
 

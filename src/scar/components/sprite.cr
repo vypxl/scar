@@ -1,12 +1,10 @@
 require "./drawable.cr"
 
 class Scar::Components::Sprite < Scar::Components::Drawable
-  def initialize(@texture : SF::Texture, rect : SF::IntRect? = nil)
-    @sf = SF::Sprite.new(@texture)
-    @sf.texture_rect = rect if rect
-  end
+  getter drawable : SF::Sprite
 
-  def sf : SF::Drawable
-    @sf
+  def initialize(@texture : SF::Texture, rect : SF::IntRect? = nil)
+    @drawable = SF::Sprite.new(tex)
+    @drawable.texture_rect = rect if rect
   end
 end
