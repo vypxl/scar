@@ -7,16 +7,12 @@ module Scar
     @spritesheet_size : Tuple(Int32, Int32)
     @delta : Float32
 
-    def sf : SF::Drawable
-      @sf
-    end
-
     # Spritesheet, size of each frame, hash of states with corresponding beginning-index, framecount and framerate.
     def initialize(@texture : SF::Texture, @size : Tuple(Int32, Int32), @states : Hash(String, Tuple(Int32, Int32, Int32)))
       @state = ""
       rect = SF::IntRect.new(0, 0, @size[0], @size[1])
-      @sf = SF::Sprite.new(@texture)
-      @sf.texture_rect = rect
+      @drawable = SF::Sprite.new(@texture)
+      @drawable.texture_rect = rect
       @current = 0
       tsize = Vec.from @texture.size
       @spritesheet_size = {(tsize.x / @size[0]).floor.to_i, (tsize.y / @size[1]).floor.to_i}
@@ -42,7 +38,7 @@ module Scar
       x = @size[0] * (idx % @spritesheet_size[0])
       y = @size[1] * ((idx / @spritesheet_size[0]).to_i)
       rect = SF::IntRect.new(x, y, @size[0], @size[1])
-      @sf.texture_rect = rect
+      @drawable.texture_rect = rect
     end
 
     def state=(new_state : String)
