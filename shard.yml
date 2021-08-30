@@ -13,5 +13,7 @@ dependencies:
   crsfml:
     github: oprypin/crsfml
     branch: master
+  zstd:
+    github: didactic-drunk/zstd.cr
 
 license: MIT
