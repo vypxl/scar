@@ -226,7 +226,7 @@ module Scar
 
     # Unloads all loaded Assets.
     def unload_all
-      @@sounds.each { |s| s.finalize }
+      @@sounds.each(&.finalize)
       @@loaded.keys.each { |k| unload k }
     end
 
