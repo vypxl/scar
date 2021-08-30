@@ -42,7 +42,7 @@ module Scar
         new_time = Time.utc
         dt = (new_time - time).total_seconds
         # @window.clear(SF::Color::Black)
-        @tweens.each { |t| t.update dt }
+        @tweens.each(&.update dt)
         @tweens.select! { |t| !t.completed? }
         @actions.select! { |a| res = a.completed?(dt); a.on_end if res; !res }
         update dt
@@ -101,7 +101,7 @@ module Scar
     # or does anything that prevents the `Tween#complete?` check, it is NOT deleted!
     def tween(t : Tween)
       @tweens << t
-      return t
+      t
     end
 
     # Run an Action
