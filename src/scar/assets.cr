@@ -3,6 +3,7 @@ require "compress/zip"
 # NOTE: Book: hint that music can be streamed from files
 # TODO: Video (Playback)
 # TODO: make extendable
+# TODO: add Tilemaps as asset type
 
 module Scar
   module Assets
@@ -17,10 +18,11 @@ module Scar
     alias Font = SF::Font
     alias Yaml = YAML::Any
     alias Json = JSON::Any
+    alias Tilemap = Scar::Tiled::Map
 
-    alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json
+    alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json | Tilemap
 
-    KNOWN_EXTENSIONS = /\.(txt|png|wav|ogg|ttf|yml|yaml|json)$/
+    KNOWN_EXTENSIONS = /\.(txt|png|wav|ogg|ttf)$/
 
     @@dir_index : Hash(String, String) = Hash(String, String).new
     @@zip_index : Hash(String, String) = Hash(String, String).new
@@ -129,6 +131,7 @@ module Scar
       asset = if mem
                 mem.rewind
                 data = mem.to_slice
+                # Note to devs: yes, we need if/elsif here because case/when does not work somehow
                 if asset_type == Text
                   String.new data
                 elsif asset_type == Texture
@@ -143,6 +146,8 @@ module Scar
                   YAML.parse(String.new data)
                 elsif asset_type == Json
                   JSON.parse(String.new data)
+                elsif asset_type == Tilemap
+                  Tilemap.from_json(String.new data)
                 end
               else
                 if asset_type == Text
@@ -159,6 +164,8 @@ module Scar
                   YAML.parse(File.read fname)
                 elsif asset_type == Json
                   JSON.parse(File.read fname)
+                elsif asset_type == Tilemap
+                  Tilemap.from_json(File.read fname)
                 end
               end
 
@@ -175,31 +182,24 @@ module Scar
     # ".wav" => Sound
     # ".ogg" => Music
     # ".ttf" => Font
-    # ".yml", ".yaml" => Yaml
-    # ".json" => JSON
+    # ".yml", ".yaml" and ".json" are not loaded because these extensions are ambigous
     def load(name : String)
       ex = /.+(\.[a-zA-Z]+)$/.match name
       if ex
-        ed = case ex[ex.size - 1]
-             when ".txt"
-               load(name, Text)
-             when ".png"
-               load(name, Texture)
-             when ".wav"
-               load(name, Sound)
-             when ".ogg"
-               load(name, Music)
-             when ".ttf"
-               load(name, Font)
-             when ".yml"
-               load(name, Yaml)
-             when ".yaml"
-               load(name, Yaml)
-             when ".json"
-               load(name, Json)
-             else
-               raise "Unknown file extension #{ex[ex.size - 1]}!"
-             end
+        case ex[ex.size - 1]
+        when ".txt"
+          load(name, Text)
+        when ".png"
+          load(name, Texture)
+        when ".wav"
+          load(name, Sound)
+        when ".ogg"
+          load(name, Music)
+        when ".ttf"
+          load(name, Font)
+        else
+          raise "Unknown or ambigous file extension #{ex[ex.size - 1]}!"
+        end
       else
         Logger.fatal "No file extension to guess upon in #{name}!"
       end
@@ -269,6 +269,11 @@ module Scar
     # Fetches a loaded Json asset.
     def json(name) : Json
       self[name, Json]
+    end
+
+    # Fetches a loaded Tilemap asset.
+    def tilemap(name) : Tilemap
+      self[name, Tilemap]
     end
 
     # Keeps track of created SF::Sound instances so they can get unloaded properly.
