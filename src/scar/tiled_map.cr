@@ -599,15 +599,10 @@ module Scar::Tiled
       end)
 
       # Read the tile ids into an Array
-      arr = Array(Int32).new(initial_capacity: tile_count)
-
-      tile_count.times do
-        arr << io.read_bytes(Int32, IO::ByteFormat::LittleEndian)
-      end
-
+      src = Bytes.new(tile_count * sizeof(Int32))
+      io.read_fully(src)
       io.close
-
-      arr
+      src.unsafe_as(Slice(Int32)).to_a
     end
 
     # TODO: make data writeable (encode and compress data upon serialization) (tilelayer & chunk)
