@@ -6,6 +6,7 @@
 [![Reference](https://img.shields.io/badge/Reference-Crystal%20Docs-informational.svg)](https://vypxl.github.io/scar/)
 
 A 2D game engine written in Crystal using crsfml
+
 Examples can be found [here](https://github.com/vypxl/scar_examples)
 
 ## Motivation
