@@ -1,13 +1,11 @@
 # Scar - A Crystal Game Library/Engine with Batteries included
 
 [![GitHub release](https://img.shields.io/github/release/vypxl/scar.svg?sort=semver)](https://github.com/vypxl/scar/releases)
-[![Build Status](https://travis-ci.org/vypxl/scar.svg?branch=master)](https://travis-ci.org/vypxl/scar)
-
-A 2D game engine written in Crystal using crsfml
-
+[![Build Status](https://img.shields.io/github/workflow/status/vypxl/scar/on_push)](https://github.com/vypxl/scar/actions/workflows/on_push.yml)
 [![Book](https://img.shields.io/badge/Documentation-Gitbook-blueviolet.svg)](https://vypxl.gitbook.io/scar/)
 [![Reference](https://img.shields.io/badge/Reference-Crystal%20Docs-informational.svg)](https://vypxl.github.io/scar/)
 
+A 2D game engine written in Crystal using crsfml
 Examples can be found [here](https://github.com/vypxl/scar_examples)
 
 ## Motivation
