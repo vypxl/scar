@@ -29,6 +29,13 @@ class Scar::Components::Tilemap < Scar::Component
     update_buffer
   end
 
+  # Initialize the Component by loading a Tilemap from Assets.
+  # This function also enables hot-reloading of the Tilemap (if it is enabled in the App of course)
+  def initialize(asset_id : String)
+    asset = Assets.tilemap(asset_id) { |new_map| self.map = new_map }
+    initialize(asset)
+  end
+
   # Rebuilds the VertexBuffer used to draw the Tilemap
   def update_buffer
     tw = @map.tilewidth
