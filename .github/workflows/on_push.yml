@@ -1,34 +1,40 @@
 name: on_push
 on: [push, pull_request]
 jobs:
-  deps:
+  test_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt-get -qq update
-      - run: sudo apt-get install -y libxrandr-dev libudev-dev libopenal-dev libglew-dev libjpeg-dev libfreetype6-dev libsndfile-dev
-      - run: wget -O sfml.zip https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
-      - run: unzip sfml.zip
-      - run: cd SFML-2.5.1/
-      - run: cmake . && make && sudo make install
-      - run: export PATH=$PATH:/usr/local/lib
-      - run: export {LD_,}LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
-      - run: cd ..
-  test:
-    needs: deps
-    runs-on: ubuntu-latest
-    steps:
-      - run: crystal tool format ./src --check
-      - run: crystal tool format ./spec --check
-      - run: crystal spec
-  deploy-docs:
-    needs: deps
-    runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
-    steps:
-      - run: crystal docs
-      - name: Deploy to pages
+      - name: Install system dependencies
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get install -y cmake libxrandr-dev libudev-dev libopenal-dev libglew-dev libjpeg-dev libfreetype6-dev libsndfile-dev
+          curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+      - name: Download SFML
+        run: |
+          wget -O sfml.zip https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
+          unzip sfml.zip
+      - name: Setup environment variables
+        run: |
+          echo "/usr/local/lib" >> $GITHUB_PATH
+          echo "LIBRARY_PATH=${{ LIBRARY_PATH }}:/usr/local/lib" >> $GITHUB_ENV
+          echo "LD_LIBRARY_PATH=${{ LD_LIBRARY_PATH }}:/usr/local/lib" >> $GITHUB_ENV
+      - name: Build SFML
+        run: cmake . && make && sudo make install
+        working-directory: SFML-2.5.1/
+      - name: Install dependencies
+        run: shards install
+      - name: Format check & Test
+        run: |
+         crystal tool format ./src --check
+         crystal tool format ./spec --check
+         crystal spec
+      - name: Generate docs
+        run: |
+         crystal docs
+      - name: Deploy docs to pages
         uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           deploy_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./docs
