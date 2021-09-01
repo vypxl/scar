@@ -1,0 +1,34 @@
+name: on_push
+on: [push, pull_request]
+jobs:
+  deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sudo apt-get -qq update
+      - run: sudo apt-get install -y libxrandr-dev libudev-dev libopenal-dev libglew-dev libjpeg-dev libfreetype6-dev libsndfile-dev
+      - run: wget -O sfml.zip https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
+      - run: unzip sfml.zip
+      - run: cd SFML-2.5.1/
+      - run: cmake . && make && sudo make install
+      - run: export PATH=$PATH:/usr/local/lib
+      - run: export {LD_,}LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
+      - run: cd ..
+  test:
+    needs: deps
+    runs-on: ubuntu-latest
+    steps:
+      - run: crystal tool format ./src --check
+      - run: crystal tool format ./spec --check
+      - run: crystal spec
+  deploy-docs:
+    needs: deps
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    speps:
+      - run: crystal docs
+      - name: Deploy to pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./docs
