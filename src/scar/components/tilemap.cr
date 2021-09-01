@@ -13,7 +13,13 @@
 class Scar::Components::Tilemap < Scar::Component
   include Scar::Drawable
 
-  @map : Scar::Tiled::Map
+  getter map : Scar::Tiled::Map
+
+  def map=(new_map : Scar::Tiled::Map)
+    @map = new_map
+    update_buffer
+  end
+
   getter drawable : SF::VertexBuffer
 
   def initialize(@map)
