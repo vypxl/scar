@@ -4,7 +4,6 @@ require "./tiled_map.cr"
 # NOTE: Book: hint that music can be streamed from files
 # TODO: Video (Playback)
 # TODO: make extendable
-# TODO: add Tilemaps as asset type
 
 module Scar
   # This module provides a convenient interface for loading different kinds of assets
@@ -17,8 +16,10 @@ module Scar
   # ## Hot reloading
   #
   # The Assets module supports hot reloading of certain asset types.
+  # The asset types that are reloaded automatically are: Texture, Sound, Music, Font
+  # Tilemap components can also automatically reload their data if you use their String constructor
   # You can specify a block when retrieving assets, this block will get called
-  # when a change is detected.
+  # when a change is detected. This works for all asset types.
   # You can enable hot-reloading by setting App#hotreload to true.
   # Hot-reloading only works if you are loading assets from plain files (not zipped) without caching them.
   module Assets
@@ -26,31 +27,47 @@ module Scar
 
     class_property :default_font
 
-    alias Text = String
-    alias Texture = SF::Texture
-    alias Sound = SF::SoundBuffer
-    alias Music = SF::Music
-    alias Font = SF::Font
-    alias Yaml = YAML::Any
-    alias Json = JSON::Any
-    alias Tilemap = Scar::Tiled::Map
-
-    ASSET_TYPES = ["String", "SF::Texture", "SF::SoundBuffer", "SF::Music", "SF::Font", "YAML::Any", "JSON::Any", "Scar::Tiled::Map"]
-    alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json | Tilemap
-
+    ASSET_TYPES = {
+      "Text":    "String",
+      "Texture": "SF::Texture",
+      "Sound":   "SF::SoundBuffer",
+      "Music":   "SF::Music",
+      "Font":    "SF::Font",
+      "Yaml":    "YAML::Any",
+      "Json":    "JSON::Any",
+      "Tilemap": "Scar::Tiled::Map",
+    }
     KNOWN_EXTENSIONS = /\.(txt|png|wav|ogg|ttf)$/
+
+    {% for k, v in ASSET_TYPES %}
+      alias {{ k.id }} = {{ v.id }}
+    {% end %}
+
+    {% begin %}
+      alias Asset = {{ ASSET_TYPES.keys.join(" | ").id }}
+    {% end %}
 
     @@dir_index : Hash(String, String) = Hash(String, String).new
     @@zip_index : Hash(String, String) = Hash(String, String).new
 
     @@cache : Hash(String, IO::Memory) = Hash(String, IO::Memory).new
 
-    # Used to store references to currently loaded assets
-    @@loaded : Hash(String, Asset) = Hash(String, Asset).new
+    {% for t in ASSET_TYPES.keys %}
+      # Used to store references to currently loaded assets
+      @@loaded_{{ t.id }} : Hash(String, {{ t.id }}) = Hash(String, {{ t.id }}).new
 
-    @@hotreloadable : Set(String) = Set(String).new
-    @@hotreloadfunctions : Hash(String, Array(Asset ->)) = Hash(String, Array(Asset ->)).new
-    @@hotreloadtimes : Hash(String, Time) = Hash(String, Time).new
+      class HotreloadData{{ t.id }}
+        property listeners : Array({{ t.id }}->)
+        property timestamp : Time
+
+        def initialize(@timestamp)
+          @listeners = Array({{ t.id }}->).new
+        end
+      end
+
+      # Used to store timestamps and listener functions for hot-reloading
+      @@hotreload_{{ t.id }} : Hash(String, HotreloadData{{ t.id }}) = Hash(String, HotreloadData{{ t.id }}).new
+    {% end %}
 
     # Define this to automatically choose the font when creating e.g. text components
     @@default_font : Font?
@@ -131,89 +148,88 @@ module Scar
       @@cache.delete name
     end
 
-    # Loads an Asset. See details.
-    # You must provide the correct Asset Type for it to work (Or use the guessing load function).
-    # Accepted types are all in Alias Asset.
-    # Must be called before using the Asset.
-    # Uses cached data if available.
-    # Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-    # Loads from indexed zip file entries before indexed folders!
-    def load(name : String, asset_type : T.class) forall T
-      if @@hotreloadable.includes?(name)
-        asset = @@loaded[name]
-        if asset.is_a? Texture | Sound | Music | Font
-          fname = @@dir_index[name]
-          asset.load_from_file fname if asset.is_a? Texture | Sound | Font
-          asset.open_from_file fname if asset.is_a? Music
+    {% for t in ASSET_TYPES.keys %}
+      # Loads an Asset. See details.
+      # You must provide the correct Asset Type for it to work (Or use the guessing load function).
+      # Accepted types are all that are listed in Assets::ASSET_TYPES.
+      # Must be called before using the Asset.
+      # Uses cached data if available.
+      # Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
+      # Loads from indexed zip file entries before indexed folders!
+      def load(name : String, asset_type : {{ t.id }}.class)
+        {% if ["Texture", "Sound", "Music", "Font"].map(&.id).includes? t %}
+          if @@hotreload_{{ t.id }}.has_key?(name)
+            asset = @@loaded_{{ t.id }}[name]
+            fname = @@dir_index[name]
+            {% if t == "Music" %}
+              asset.open_from_file fname
+            {% else %}
+              asset.load_from_file fname
+            {% end %}
 
-          @@hotreloadfunctions[name].each(&.call(asset))
-          return
+            @@hotreload_{{ t.id }}[name].listeners.each(&.call(asset))
+            return
+          end
+        {% end %}
+
+        raise "no asset named #{name} was indexed!" if !@@zip_index[name]? && !@@dir_index[name]?
+        fname = @@zip_index[name]? ? @@zip_index[name] : @@dir_index[name]
+
+        # Raise if not cached but in zip file
+        if @@cache[name]? == nil && fname == @@zip_index[name]?
+          raise "Cannot load single Asset '#{name}' from zip file #{fname}! You have to cache it first or use Assets#cache_zipfile."
         end
-      end
 
-      raise "no asset named #{name} was indexed!" if !@@zip_index[name]? && !@@dir_index[name]?
-      fname = @@zip_index[name]? ? @@zip_index[name] : @@dir_index[name]
-
-      # Raise if not cached but in zip file
-      if @@cache[name]? == nil && fname == @@zip_index[name]?
-        raise "Cannot load single Asset '#{name}' from zip file #{fname}! You have to cache it first or use Assets#cache_zipfile."
-      end
-
-      mem = @@cache[name]?
-      asset = if mem
-                mem.rewind
-                data = mem.to_slice
-                # Note to devs: yes, we need if/elsif here because case/when does not work somehow
-                if asset_type == Text
-                  String.new data
-                elsif asset_type == Texture
-                  SF::Texture.from_memory data
-                elsif asset_type == Sound
-                  SF::SoundBuffer.from_memory data
-                elsif asset_type == Music
-                  SF::Music.from_memory data
-                elsif asset_type == Font
-                  SF::Font.from_memory data
-                elsif asset_type == Yaml
-                  YAML.parse(String.new data)
-                elsif asset_type == Json
-                  JSON.parse(String.new data)
-                elsif asset_type == Tilemap
-                  Tilemap.from_json(String.new data)
+        mem = @@cache[name]?
+        asset = if mem
+                  mem.rewind
+                  data = mem.to_slice
+                  {% if t == "Text" %}
+                    String.new data
+                  {% elsif t == "Texture" %}
+                    SF::Texture.from_memory data
+                  {% elsif t == "Sound" %}
+                    SF::SoundBuffer.from_memory data
+                  {% elsif t == "Music" %}
+                    SF::Music.from_memory data
+                  {% elsif t == "Font" %}
+                    SF::Font.from_memory data
+                  {% elsif t == "Yaml" %}
+                    YAML.parse(String.new data)
+                  {% elsif t == "Json" %}
+                    JSON.parse(String.new data)
+                  {% elsif t == "Tilemap" %}
+                    Tilemap.from_json(String.new data)
+                  {% end %}
+                else
+                  {% if t == "Text" %}
+                    File.read fname
+                  {% elsif t == "Texture" %}
+                    SF::Texture.from_file fname
+                  {% elsif t == "Sound" %}
+                    SF::SoundBuffer.from_file fname
+                  {% elsif t == "Music" %}
+                    SF::Music.from_file fname
+                  {% elsif t == "Font" %}
+                    SF::Font.from_file fname
+                  {% elsif t == "Yaml" %}
+                    YAML.parse(File.read fname)
+                  {% elsif t == "Json" %}
+                    JSON.parse(File.read fname)
+                  {% elsif t == "Tilemap" %}
+                    Tilemap.from_json(File.read fname)
+                  {% end %}
                 end
-              else
-                if asset_type == Text
-                  File.read fname
-                elsif asset_type == Texture
-                  SF::Texture.from_file fname
-                elsif asset_type == Sound
-                  SF::SoundBuffer.from_file fname
-                elsif asset_type == Music
-                  SF::Music.from_file fname
-                elsif asset_type == Font
-                  SF::Font.from_file fname
-                elsif asset_type == Yaml
-                  YAML.parse(File.read fname)
-                elsif asset_type == Json
-                  JSON.parse(File.read fname)
-                elsif asset_type == Tilemap
-                  Tilemap.from_json(File.read fname)
-                end
-              end
 
-      if asset.is_a? T && asset.is_a? Asset
-        @@loaded[name] = asset
-        if @@hotreloadable.includes?(name)
-          @@hotreloadfunctions[name].each(&.call(asset))
+        @@loaded_{{ t.id }}[name] = asset
+        if @@hotreload_{{ t.id }}.has_key?(name)
+          @@hotreload_{{ t.id }}[name].listeners.each(&.call(asset))
         else
-          @@hotreloadable.add(name)
-          @@hotreloadfunctions[name] = [] of Asset ->
-          @@hotreloadtimes[name] = File.info(fname).modification_time
+          @@hotreload_{{ t.id }}[name] = HotreloadData{{ t.id }}.new(File.info(fname).modification_time)
         end
-      else
-        raise "Incompatible Asset Type #{T}!"
       end
-    end
+
+    {% end %}
 
     # Same as load but guesses the type based upon file extension.
     # ".txt" => Text
@@ -255,20 +271,31 @@ module Scar
       end
     end
 
+    {% for t in ASSET_TYPES.keys %}
+      private def unload_{{ t.id }}(name)
+        asset = @@loaded_{{ t.id }}[name]
+        asset.stop if asset.responds_to?(:stop)
+        asset.finalize if asset.responds_to?(:finalize)
+        @@loaded_{{ t.id }}.delete name
+        @@hotreload_{{ t.id }}.delete name
+      end
+    {% end %}
+
     # Unloads (destroys) an loaded Asset. Caution with assets like Textures or SoundBuffers, they could be referenced by Sprites or Sounds!
     def unload(name : String)
-      a = @@loaded[name]
-      a.stop if a.responds_to?(:stop)
-      a.finalize if a.responds_to?(:finalize)
-      @@loaded.delete name
-      @@hotreloadable.delete name
-      @@hotreloadfunctions.delete name
+      {% for t in ASSET_TYPES.keys %}
+        if @@loaded_{{ t.id }}.has_key? name
+          unload_{{ t.id }} name
+          return
+        end
+      {% end %}
     end
 
     # Unloads all loaded Assets.
     def unload_all
-      @@sounds.each(&.finalize)
-      @@loaded.keys.each { |k| unload k }
+      {% for t in ASSET_TYPES.keys %}
+        @@loaded_{{ t.id }}.keys.each { |k| unload_{{ t.id }} k }
+      {% end %}
     end
 
     @@hotreload_timer = 0.0
@@ -279,40 +306,66 @@ module Scar
       return if @@hotreload_timer < 0.5
       @@hotreload_timer = 0
 
-      @@hotreloadable.each do |name|
-        new_time = File.info(@@dir_index[name]).modification_time
-        if new_time != @@hotreloadtimes[name]
-          @@hotreloadtimes[name] = new_time
-          {% for t in ASSET_TYPES %}
-          load(name, {{ t.id }}) if @@loaded[name].is_a? {{ t.id }}
-          {% end %}
+      {% for t in ASSET_TYPES.keys %}
+        @@hotreload_{{ t.id }}.each do |name, data|
+          new_time = File.info(@@dir_index[name]).modification_time
+          if new_time != data.timestamp
+            data.timestamp = new_time
+            load(name, {{ t.id }})
+          end
         end
-      end
+      {% end %}
     end
 
-    # Fetches an loaded asset. Use asset_type to specify the return type.
-    # Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)
-    def [](name : String, asset_type : T.class, on_reload : (Asset -> Nil) | Nil = nil) : T forall T
-      asset = @@loaded[name]?
-      Logger.fatal "No Asset named #{name} was loaded!" if asset == nil
-      if asset.is_a? T && asset.is_a? Asset
-        @@hotreloadfunctions[name] << on_reload unless on_reload.nil?
+    {% for t in ASSET_TYPES.keys %}
+      # Fetches an loaded asset.
+      # You have to specify the type of the asset type,
+      # or use the more specific functions.
+      # Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)
+      def []?(name : String, asset_type : {{ t.id }}.class, on_reload : ({{ t.id }}->) | Nil = nil) : {{ t.id }}?
+        asset = @@loaded_{{ t.id }}[name]?
+        return nil if asset.nil?
+        @@hotreload_{{ t.id }}[name].listeners << on_reload unless on_reload.nil?
+
         asset
-      else
-        raise "Incompatible Asset Type #{T}!"
-      end
-    end
-
-    {% for kind in [:Text, :Texture, :Music, :Font, :Yaml, :Json, :Tilemap] %}
-      # Fetches a loaded {{kind}} asset.
-      def {{kind.id.downcase}}(name) : {{kind.id}}
-        self[name, {{kind.id}}]
       end
 
-      # Fetches a loaded {{kind}} asset.
+      # :ditto:
+      def [](name : String, asset_type : {{ t.id }}.class, on_reload : ({{ t.id }}->) | Nil = nil) : {{ t.id }}
+        asset = self[name, asset_type, on_reload]?
+        Logger.fatal "No Asset named #{name} was loaded!" if asset.nil?
+        asset
+      end
+
+      # Same as #[], but with a block argument
+      def [](name : String, asset_type : {{ t.id }}.class, &block : ({{ t.id }}->)) : {{ t.id }}
+        self[name, {{ t.id }}, block]
+      end
+
+      # :ditto:
+      def []?(name : String, asset_type : {{ t.id }}.class, &block : ({{ t.id }}->)) : {{ t.id }}?
+        self[name, {{ t.id }}, block]?
+      end
+
+      # Fetches a loaded {{ t }} asset.
+      def {{ t.id.downcase }}(name) : {{ t.id }}
+        self[name, {{ t.id }}]
+      end
+
+      # :ditto
+      def {{ t.id.downcase }}?(name) : {{ t.id }}?
+        self[name, {{ t.id }}]?
+      end
+
+      # Fetches a loaded {{ t }} asset.
       # Add a block to execute some code when the asset is modified on disk (see hot-reloading)
-      def {{kind.id.downcase}}(name, &block : Asset->Nil) : {{kind.id}}
-        self[name, {{kind.id}}, block]
+      def {{ t.id.downcase }}(name, &block : {{ t.id }}->) : {{ t.id }}
+        self[name, {{ t.id }}, block]
+      end
+
+      # :ditto
+      def {{ t.id.downcase }}?(name, &block : {{ t.id }}->) : {{ t.id }}?
+        self[name, {{ t.id }}, block]?
       end
     {% end %}
 
