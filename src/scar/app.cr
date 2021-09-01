@@ -10,6 +10,9 @@ module Scar
     # Returns the current running actions
     getter :actions
 
+    # Enable or disable hot-reloading of assets
+    property hotreload = false
+
     # App specific initialization (load config, bind inputs(based on config), load textures...).
     abstract def init
 
@@ -41,7 +44,7 @@ module Scar
 
         new_time = Time.utc
         dt = (new_time - time).total_seconds
-        # @window.clear(SF::Color::Black)
+        Assets.check_hotreload(dt)
         @tweens.each(&.update dt)
         @tweens.select! { |t| !t.completed? }
         @actions.select! { |a| res = a.completed?(dt); a.on_end if res; !res }

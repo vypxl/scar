@@ -1,4 +1,5 @@
 require "compress/zip"
+require "./tiled_map.cr"
 
 # NOTE: Book: hint that music can be streamed from files
 # TODO: Video (Playback)
@@ -6,6 +7,20 @@ require "compress/zip"
 # TODO: add Tilemaps as asset type
 
 module Scar
+  # This module provides a convenient interface for loading different kinds of assets
+  # Usage:
+  # 1. `Assets#use` a folder or zip file to index their contents
+  # (1.5 Use `Assets#cache` (or `#cache_zipfile`) to preload assets into memory without instatiating the respective asset types)
+  # 2. `Assets#load` (or `#load_all`) the assets you want to use in you application
+  # 3. Use `Assets#[]` to retrieve the loaded instances of your assets
+  #
+  # ## Hot reloading
+  #
+  # The Assets module supports hot reloading of certain asset types.
+  # You can specify a block when retrieving assets, this block will get called
+  # when a change is detected.
+  # You can enable hot-reloading by setting App#hotreload to true.
+  # Hot-reloading only works if you are loading assets from plain files (not zipped) without caching them.
   module Assets
     extend self
 
@@ -20,6 +35,7 @@ module Scar
     alias Json = JSON::Any
     alias Tilemap = Scar::Tiled::Map
 
+    ASSET_TYPES = ["String", "SF::Texture", "SF::SoundBuffer", "SF::Music", "SF::Font", "YAML::Any", "JSON::Any", "Scar::Tiled::Map"]
     alias Asset = Text | Texture | Sound | Music | Font | Yaml | Json | Tilemap
 
     KNOWN_EXTENSIONS = /\.(txt|png|wav|ogg|ttf)$/
@@ -31,6 +47,10 @@ module Scar
 
     # Used to store references to currently loaded assets
     @@loaded : Hash(String, Asset) = Hash(String, Asset).new
+
+    @@hotreloadable : Set(String) = Set(String).new
+    @@hotreloadfunctions : Hash(String, Array(Asset ->)) = Hash(String, Array(Asset ->)).new
+    @@hotreloadtimes : Hash(String, Time) = Hash(String, Time).new
 
     # Define this to automatically choose the font when creating e.g. text components
     @@default_font : Font?
@@ -119,6 +139,18 @@ module Scar
     # Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
     # Loads from indexed zip file entries before indexed folders!
     def load(name : String, asset_type : T.class) forall T
+      if @@hotreloadable.includes?(name)
+        asset = @@loaded[name]
+        if asset.is_a? Texture | Sound | Music | Font
+          fname = @@dir_index[name]
+          asset.load_from_file fname if asset.is_a? Texture | Sound | Font
+          asset.open_from_file fname if asset.is_a? Music
+
+          @@hotreloadfunctions[name].each(&.call(asset))
+          return
+        end
+      end
+
       raise "no asset named #{name} was indexed!" if !@@zip_index[name]? && !@@dir_index[name]?
       fname = @@zip_index[name]? ? @@zip_index[name] : @@dir_index[name]
 
@@ -171,6 +203,13 @@ module Scar
 
       if asset.is_a? T && asset.is_a? Asset
         @@loaded[name] = asset
+        if @@hotreloadable.includes?(name)
+          @@hotreloadfunctions[name].each(&.call(asset))
+        else
+          @@hotreloadable.add(name)
+          @@hotreloadfunctions[name] = [] of Asset ->
+          @@hotreloadtimes[name] = File.info(fname).modification_time
+        end
       else
         raise "Incompatible Asset Type #{T}!"
       end
@@ -222,6 +261,8 @@ module Scar
       a.stop if a.responds_to?(:stop)
       a.finalize if a.responds_to?(:finalize)
       @@loaded.delete name
+      @@hotreloadable.delete name
+      @@hotreloadfunctions.delete name
     end
 
     # Unloads all loaded Assets.
@@ -230,51 +271,50 @@ module Scar
       @@loaded.keys.each { |k| unload k }
     end
 
+    @@hotreload_timer = 0.0
+
+    # :nodoc:
+    def check_hotreload(dt = 1.0)
+      @@hotreload_timer += dt
+      return if @@hotreload_timer < 0.5
+      @@hotreload_timer = 0
+
+      @@hotreloadable.each do |name|
+        new_time = File.info(@@dir_index[name]).modification_time
+        if new_time != @@hotreloadtimes[name]
+          @@hotreloadtimes[name] = new_time
+          {% for t in ASSET_TYPES %}
+          load(name, {{ t.id }}) if @@loaded[name].is_a? {{ t.id }}
+          {% end %}
+        end
+      end
+    end
+
     # Fetches an loaded asset. Use asset_type to specify the return type.
-    def [](name : String, asset_type : T.class) : T forall T
+    # Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)
+    def [](name : String, asset_type : T.class, on_reload : (Asset -> Nil) | Nil = nil) : T forall T
       asset = @@loaded[name]?
       Logger.fatal "No Asset named #{name} was loaded!" if asset == nil
       if asset.is_a? T && asset.is_a? Asset
+        @@hotreloadfunctions[name] << on_reload unless on_reload.nil?
         asset
       else
         raise "Incompatible Asset Type #{T}!"
       end
     end
 
-    # Fetches a loaded Text asset.
-    def text(name) : Text
-      self[name, Text]
-    end
+    {% for kind in [:Text, :Texture, :Music, :Font, :Yaml, :Json, :Tilemap] %}
+      # Fetches a loaded {{kind}} asset.
+      def {{kind.id.downcase}}(name) : {{kind.id}}
+        self[name, {{kind.id}}]
+      end
 
-    # Fetches a loaded Texture asset.
-    def texture(name) : Texture
-      self[name, Texture]
-    end
-
-    # Fetches a loaded Music asset.
-    def music(name) : Music
-      self[name, Music]
-    end
-
-    # Fetches a loaded Font asset.
-    def font(name) : Font
-      self[name, Font]
-    end
-
-    # Fetches a loaded Yaml asset.
-    def yaml(name) : Yaml
-      self[name, Yaml]
-    end
-
-    # Fetches a loaded Json asset.
-    def json(name) : Json
-      self[name, Json]
-    end
-
-    # Fetches a loaded Tilemap asset.
-    def tilemap(name) : Tilemap
-      self[name, Tilemap]
-    end
+      # Fetches a loaded {{kind}} asset.
+      # Add a block to execute some code when the asset is modified on disk (see hot-reloading)
+      def {{kind.id.downcase}}(name, &block : Asset->Nil) : {{kind.id}}
+        self[name, {{kind.id}}, block]
+      end
+    {% end %}
 
     # Keeps track of created SF::Sound instances so they can get unloaded properly.
     @@sounds : Array(SF::Sound) = Array(SF::Sound).new
