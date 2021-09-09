@@ -12,9 +12,18 @@ module SF
     include Comparable(Float32)
     include Comparable(Float64)
 
+    def initialize(x, y)
+      initialize(x.to_f32, y.to_f32)
+    end
+
     # Creates a vector from polar coordinates
     def self.from_polar(angle, radius = 1.0)
       self.new(radius * Math.cos(angle), radius * Math.sin(angle))
+    end
+
+    # Memberwise division of two vectors
+    def /(other : SF::Vector2)
+      SF::Vector2.new(x / other.x, y / other.y)
     end
 
     # Returns the [manhattan distance](https://en.wikipedia.org/wiki/Taxicab_geometry) of this vector's destination from the origin
