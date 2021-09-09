@@ -1,27 +1,35 @@
-# This Component is a simple way to draw a Tiled Tilemap.
-# It only supports ungrouped TileLayers (finite or infinite)
-# with an embedded Tileset referencing an Image whose path
-# is recognized by `Scar::Assets`
+# This component provides a simple way to draw a [Tiled](https://github.com/mapeditor/tiled) tilemap.
 #
-# Does NOT support:
+# It only supports ungrouped TileLayers (finite or infinite)
+# with an embedded Tileset referencing an image whose path
+# is corresponds to a loaded texture asset (see `Assets`)
+#
+# This component does **not** support:
 # - Layer Groups
 # - External or multiple Tilesets
 # - Renderorder other than right-down
 # - Anything except orthogonal orientation
 # - Tile transformations
 # - Parallax effects
-class Scar::Components::Tilemap < Scar::Component
-  include Scar::Drawable
-
+# - Objects
+#
+# This component is intended as an easy way to draw tilemaps for prototyping and as an example
+# of how you could implement the drawing of a tilemap youself. You can use it in more mature
+# applications as well of course.
+class Scar::Components::Tilemap < Scar::Components::Drawable
+  # Returns the underlying `Scar::Tiled::Map`
   getter map : Scar::Tiled::Map
 
+  # Replaces the underlying `Scar::Tiled::Map`
   def map=(new_map : Scar::Tiled::Map)
     @map = new_map
     update_buffer
   end
 
+  # Returns the `SF::VertexBuffer` that is used to draw the tilemap
   getter drawable : SF::VertexBuffer
 
+  # Creates a new tilemap component with the given `Scar::Tiled::Map`
   def initialize(@map)
     @texture = Assets.texture @map.tilesets[0].image
     @drawable = SF::VertexBuffer.new(SF::PrimitiveType::Triangles, SF::VertexBuffer::Usage::Static)
@@ -29,14 +37,14 @@ class Scar::Components::Tilemap < Scar::Component
     update_buffer
   end
 
-  # Initialize the Component by loading a Tilemap from Assets.
-  # This function also enables hot-reloading of the Tilemap (if it is enabled in the App of course)
+  # Creates a new tilemap component by loading a tilemap from `Assets`.
+  # This function also enables hot-reloading of the tilemap (if it is enabled in the `App` of course)
   def initialize(asset_id : String)
     asset = Assets.tilemap(asset_id) { |new_map| self.map = new_map }
     initialize(asset)
   end
 
-  # Rebuilds the VertexBuffer used to draw the Tilemap
+  # Rebuilds the `SF::VertexBuffer` used to draw the tilemap
   def update_buffer
     tw = @map.tilewidth
     th = @map.tileheight

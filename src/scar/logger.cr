@@ -1,6 +1,9 @@
 module Scar
-  # A Logging Helper
-  # All methods put messages prefixed with `[<method name>] `
+  # A Logging Helper.
+  #
+  # Every method in this module outputs the given message to stdout while appending the prefix of `[&lt;method name&gt;]`
+  #
+  # `Logger#fatal` indicates a fatal error, therefore it raises.
   class Logger
     def self.info(msg)
       puts "[info]  #{msg}"

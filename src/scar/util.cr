@@ -2,15 +2,22 @@ module Scar
   module Util
     extend self
 
+    # :nodoc:
     USER_DIR = {% if flag?(:windows) %}ENV["appdata"]{% else %}"#{ENV["HOME"]}/.local/share"{% end %}
     @@dir : String = File.join(USER_DIR, "scar")
 
-    # Sets the subdirectory to write files to. In windows: %appdata%\<dir>\ | In linux: ~/.local/share/<dir>/. Issue this before writing any files!!
+    # Sets the subdirectory to write files to
+    #
+    # The given path is appended to the user directory:
+    # - On windows: `%appdata%\&lt;dir&gt;\`
+    # - On linux: `~/.local/share/&lt;dir&gt;/`
+    #
+    # It is recommended to set your own subfolder via this method before writing to or reading from any files to avoid conficts.
     def dir=(dir : String)
       @@dir = File.join(USER_DIR, dir)
     end
 
-    # Writes a string to given filename in the specified directory
+    # Writes a `String` to given filename in the specified directory
     def write_file(name : String, content : String)
       Dir.mkdir_p(@@dir)
       fname = File.join(@@dir, name)
@@ -22,7 +29,7 @@ module Scar
       end
     end
 
-    # Same as write_file but content is Bytes
+    # Same as write_file but content is `Bytes`
     def write_file_bytes(name : String, content : Bytes)
       Dir.mkdir_p(@@dir)
       fname = File.join(@@dir, name)
@@ -34,13 +41,13 @@ module Scar
       end
     end
 
-    # Reads filename in the specified directory as string
+    # Reads filename in the specified directory as a `String`
     def read_file(name : String)
       fname = File.join(@@dir, name)
       File.read(fname)
     end
 
-    # Same as read_file but reads it as Bytes
+    # Same as read_file but reads it as `Bytes`
     def read_file_bytes(name : String)
       fname = File.join(@@dir, name)
       f = File.open(fname, mode = "r")

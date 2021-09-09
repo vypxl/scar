@@ -1,39 +1,74 @@
 module Scar
-  # A Scar powered application.
+  # Base class for Scar powered applications
+  #
+  # Example usage:
+  # ```
+  # # Define your app
+  # class MyApp < Scar::App
+  #   @counter = 0
+  #
+  #   def init
+  #     puts "Loading Assets..."
+  #     puts "Setting up the scene..."
+  #   end
+  #
+  #   def update
+  #     @counter += 1
+  #   end
+  #
+  #   def render
+  #     puts "Rendering the scene..."
+  #   end
+  # end
+  #
+  # # Create a window to render to
+  # window = SF::RenderWindow.new(SF::VideoMode.new(1600, 900), "MyApp", SF::Style::Close)
+  #
+  # # Instatiate your app
+  # app = MyApp.new(window)
+  #
+  # # Run your app
+  # app.run
+  # ```
   abstract class App
-    # Returns the SFML RenderWindow of the app.
+    # Returns the `SF::RenderWindow` of the app.
     getter :window
     # Returns the input handler of the app.
     getter :input
     # Returns the current scenes
     getter :scene_stack
-    # Returns the current running actions
+    # Returns all currently running actions
     getter :actions
 
-    # Enable or disable hot-reloading of assets
+    # Set this to `true` to enable hot-reloading of assets
     property hotreload = false
 
-    # App specific initialization (load config, bind inputs(based on config), load textures...).
+    # App specific initialization
+    #
+    # e. g. loading configuration, binding inputs, loading textures, ..
     abstract def init
 
-    # General App update logic; executed before all System updates.
+    # App update logic
+    #
+    # This method is executed on every frame **before** all `System` and `Object` update methods.
     abstract def update(dt)
 
-    # General App rendering logic; executed before all System rendering.
+    # App rendering logic
+    #
+    # This method is executed on every frame **before** all `System` and `Object` rendering methods.
     abstract def render(dt)
 
-    # Initializes the app with an RenderWindow and an input handler.
-    def initialize(@window : SF::RenderWindow, @input : Input)
+    # Initializes the app with a RenderWindow as a render target and an input handler
+    def initialize(@window : SF::RenderWindow, @input : Input = Input.new)
       @next_id = 0u64
       @time = Time.utc
       @scene_stack = Array(Scene).new
       @tweens = Array(Tween).new
       @actions = Array(Action).new
       init()
-    end # End initialize
+    end
 
-    # Starts the app.
-    # Update and render based on scene stack
+    # Starts the app and begins running the event loop
     def run
       time = Time.utc
       while window.open?
@@ -57,63 +92,95 @@ module Scar
         @window.display
         time = new_time
       end
-    end # End run
+    end
 
-    # Unloads Assets and exits the program. Override if you have specific exit logic.
+    # Unloads assets and exits the program.
+    #
+    # Override this method if you have specific exit logic.
+    # Note that it is recommended that you call super() during you custom exit method.
     def exit(status = 0)
       Assets.unload_all
       window.close
       window.finalize
       Process.exit(status)
-    end # End exit
+    end
+
+    # The following methods are just there for the docs generator,
+    # the actual implementation is inside the `finished` macro later
+
+    # Adds an event handler for the specified event type and returns its id
+    #
+    # The block must have a type of `Proc(event_type, Nil)`.
+    # This method is defined for every subtype of Scar::Event, other types will generate a compiler error.
+    # Exampe usage:
+    # ```
+    # app.subscibe(Scar::Event::Resized) { |evt| puts "Resized!" }
+    # ```
+    def subscribe(event_type, &block) : UInt64
+      {% raise "Invalid event type" %}
+    end
+
+    # Broadcasts the given event (calls all event listeners)
+    #
+    # Example usage:
+    # ```
+    # app.broadcast(Scar::Event::Closed.new)
+    # ```
+    def broadcast(event : Scar::Event::Event)
+      {% raise "Invalid event type" %}
+    end
 
     macro finished
       {% for evt in Event::Event.subclasses %}
         @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}} = Hash(UInt64, ({{evt}}->)).new
 
-        # Adds an event handler for {{evt}} and returns its id.
-        def subscribe(%event_type : {{evt}}.class, &block : {{evt}} ->) : UInt64
+        # :nodoc:
+        def subscribe(event_type : {{evt}}.class, &block : {{evt}}->) : UInt64
           @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}[@next_id] = block
           @next_id += 1
           @next_id - 1
-        end # End subscribe
+        end
 
-        # Broadcasts an {{evt}} Event.
-        def broadcast(%event : {{evt}})
+        # :nodoc:
+        def broadcast(event : {{evt}})
           @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}.each do |_, handler|
-            handler.call(%event)
+            handler.call(event)
           end
-        end # End broadcast
+        end
       {% end %} # End macro-for
 
-      # Deletes the event handler with the given id.
-      def unsubscribe(%id)
+      # Deletes the event handler with the given id
+      def unsubscribe(id)
         {% for evt in Event::Event.subclasses %}
-          if @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}[%id]?
-            @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}.delete %id
+          if @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}[id]?
+            @event_handlers_{{evt.id.gsub(/::/, "__").id.downcase}}.delete id
           end
         {% end %}
-      end # End unsubscribe
+      end
     end # End macro finished
 
+    # Push a scene onto the scene stack
     delegate :<<, to: @scene_stack
+    # Pop a scene from the scene stack
     delegate pop, to: @scene_stack
 
-    # Registers a tween which is then updated simultaneously with the app. Is deleted when #complete? after update. See details.
-    # If the Tween restarts itself in on_complete (by calling `Tween#reset` for example)
-    # or does anything that prevents the `Tween#complete?` check, it is NOT deleted!
+    # Registers a `Tween` which is then updated on every frame.
+    #
+    # The `Tween` will be deleted when `Tween#completed?` returns true after an update.
+    # If the Tween restarts itself in `Tween#on_completed` (e. g. by calling `Tween#reset`)
+    # or does anything that prevents the `Tween#completed?` check, it will not be deleted.
     def tween(t : Tween)
       @tweens << t
       t
     end
 
-    # Run an Action
+    # Begin running an `Action`
     def act(action : Action)
       @actions << action
       action.on_start
     end
 
-    # Returns current scene for convenience
+    # Returns the topmost scene on the scene stack (convenience method)
     def scene
       @scene_stack.last
     end
