@@ -9,8 +9,6 @@
 class Scar::Objects::Camera < Scar::Object
   # Can be used to turn a camera off
   property enabled = true
-  # If true, the camera will not use its `SF::View`
-  property simple = true
 
   # The underlying `SF::View`
   property sf : SF::View
@@ -30,7 +28,7 @@ class Scar::Objects::Camera < Scar::Object
     return if !enabled
 
     # change view
-    app.window.view = @sf if !@simple
+    app.window.view = @sf
 
     # call render functions
     space.systems.each(&.render(app, space, dt))
@@ -48,7 +46,7 @@ class Scar::Objects::Camera < Scar::Object
     end
 
     # reset view
-    app.window.view = app.window.default_view if !@simple
+    app.window.view = app.window.default_view
   end
 
   private def draw_drawable(drawable : SF::Drawable, target, states = SF::RenderStates::Default)
@@ -59,5 +57,3 @@ class Scar::Objects::Camera < Scar::Object
     target.draw(drawable, states) if drawable.is_a? SF::Drawable
   end
 end
-
-# TODO remove simple
