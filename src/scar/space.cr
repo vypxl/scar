@@ -25,7 +25,7 @@ module Scar
     property camera
 
     # Make the default camera use it's SFML View, so it can be configured more easily
-    @camera : Objects::Camera = Objects::Camera.new("__camera").tap(&.simple = false)
+    @camera : Objects::Camera = Objects::Camera.new("__camera")
 
     def initialize(@id : String, @z : Int32 = 0)
       @entities = Array(Entity).new
