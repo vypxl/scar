@@ -796,14 +796,14 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/lib/crsfml/src/system/system.cr#L38" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/lib/crsfml/src/system/system.cr#L38" target="_blank">
         lib/crsfml/src/system/system.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L10" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L10" target="_blank">
         scar/vec.cr
       </a>
     
@@ -847,6 +847,13 @@
         <a href="#from_polar(angle,radius=1.0)-class-method" class="signature"><strong>.from_polar</strong>(angle, radius = <span class="n">1.0</span>)</a>
         
           <div class="summary"><p>Creates a vector from polar coordinates</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#from_polar_deg(angle,radius=1.0)-class-method" class="signature"><strong>.from_polar_deg</strong>(angle, radius = <span class="n">1.0</span>)</a>
+        
+          <div class="summary"><p>Creates a vector from polar coordinates (angle in degrees)</p></div>
         
       </li>
     
@@ -921,9 +928,23 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#angle_deg-instance-method" class="signature"><strong>#angle_deg</strong></a>
+        
+          <div class="summary"><p>Returns the angle between the vector and the x-axis in degrees</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#angle_to(other:SF::Vector2f)-instance-method" class="signature"><strong>#angle_to</strong>(other : SF::Vector2f)</a>
         
           <div class="summary"><p>Returns the angle between this Vector and another (the sign indicates which Vector is ahead)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#angle_to_deg(other:SF::Vector2f)-instance-method" class="signature"><strong>#angle_to_deg</strong>(other : SF::Vector2f)</a>
+        
+          <div class="summary"><p>Returns the angle between this Vector and another in degrees (the sign indicates which Vector is ahead)</p></div>
         
       </li>
     
@@ -1129,7 +1150,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1162,7 +1183,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="from_polar_deg(angle,radius=1.0)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_polar_deg</strong>(angle, radius = <span class="n">1.0</span>)
+
+        <a class="method-permalink" href="#from_polar_deg(angle,radius=1.0)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a vector from polar coordinates (angle in degrees)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1195,7 +1237,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1216,7 +1258,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1237,7 +1279,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1258,7 +1300,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L66" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1279,7 +1321,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1302,7 +1344,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1323,7 +1365,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1344,7 +1386,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L133" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="angle_deg-instance-method">
+      <div class="signature">
+        
+        def <strong>angle_deg</strong>
+
+        <a class="method-permalink" href="#angle_deg-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the angle between the vector and the x-axis in degrees</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L138" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1365,7 +1428,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L132" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="angle_to_deg(other:SF::Vector2f)-instance-method">
+      <div class="signature">
+        
+        def <strong>angle_to_deg</strong>(other : SF::Vector2f)
+
+        <a class="method-permalink" href="#angle_to_deg(other:SF::Vector2f)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the angle between this Vector and another in degrees (the sign indicates which Vector is ahead)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1386,7 +1470,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1407,7 +1491,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1428,7 +1512,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1444,7 +1528,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L92" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1460,7 +1544,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L95" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1481,7 +1565,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1502,7 +1586,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1523,7 +1607,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1544,7 +1628,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1565,7 +1649,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L137" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L153" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1586,7 +1670,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L142" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L158" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1607,7 +1691,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1628,7 +1712,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L116" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L122" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1649,7 +1733,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L122" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1670,7 +1754,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/vec.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>

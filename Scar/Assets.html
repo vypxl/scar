@@ -755,6 +755,15 @@ Usage:</p>
 <p>Loading the assets should be done in bulk at the start of the application or while a loading screen is shown,
 so that there are no mid-gameplay slowdowns</p>
 
+<h3><a id="music-and-sound" class="anchor" href="#music-and-sound">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Music and Sound</h3>
+
+<p>Music and sound are somewhat special kinds of assets. It is recommended to use the <code><a href="../Scar/Assets/Music.html">Music</a></code>
+and the <code><a href="../Scar/Assets/Sound.html">Sound</a></code> (coming soon) module to handle them. See the respective documentation for details.</p>
+
 <h3><a id="hot-reloading" class="anchor" href="#hot-reloading">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
@@ -822,7 +831,7 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L41" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L45" target="_blank">
         scar/assets.cr
       </a>
     
@@ -1028,9 +1037,30 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#sound(name):SF::Sound-instance-method" class="signature"><strong>#sound</strong>(name) : SF::Sound</a>
+        <a href="#sound(name):Sound-instance-method" class="signature"><strong>#sound</strong>(name) : Sound</a>
         
-          <div class="summary"><p>Creates a SF::Sound from a loaded Sound asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>]</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sound(name,&block:Sound-%3E):Sound-instance-method" class="signature"><strong>#sound</strong>(name, &block : Sound -> ) : Sound</a>
+        
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>, block]</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sound?(name):Sound?-instance-method" class="signature"><strong>#sound?</strong>(name) : Sound?</a>
+        
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>]?</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sound?(name,&block:Sound-%3E):Sound?-instance-method" class="signature"><strong>#sound?</strong>(name, &block : Sound -> ) : Sound?</a>
+        
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>, block]?</code></p></div>
         
       </li>
     
@@ -1209,7 +1239,7 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1234,7 +1264,7 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1272,7 +1302,7 @@ Specify <em>on_reload</em> (type: <code>Proc(asset_type, Nil)</code>) to execute
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L373" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L376" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1298,7 +1328,7 @@ Specify a block (type: <code>Proc(asset_type, Nil)</code>) to execute some code 
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L383" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L386" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1319,7 +1349,7 @@ Specify a block (type: <code>Proc(asset_type, Nil)</code>) to execute some code 
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L388" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L391" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1340,7 +1370,7 @@ Specify a block (type: <code>Proc(asset_type, Nil)</code>) to execute some code 
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L393" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L396" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1364,7 +1394,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L159" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1387,7 +1417,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L168" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L172" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1408,7 +1438,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L182" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1429,7 +1459,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1450,7 +1480,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1471,7 +1501,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1492,7 +1522,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1513,7 +1543,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1534,7 +1564,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1555,7 +1585,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1576,7 +1606,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1605,7 +1635,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L193" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1630,7 +1660,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L283" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L287" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1651,7 +1681,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L306" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L310" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1672,7 +1702,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1693,7 +1723,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1714,7 +1744,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1735,29 +1765,91 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="sound(name):SF::Sound-instance-method">
+    <div class="entry-detail" id="sound(name):Sound-instance-method">
       <div class="signature">
         
-        def <strong>sound</strong>(name) : SF::Sound
+        def <strong>sound</strong>(name) : <a href="../Scar/Assets/Sound.html">Sound</a>
 
-        <a class="method-permalink" href="#sound(name):SF::Sound-instance-method">#</a>
+        <a class="method-permalink" href="#sound(name):Sound-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Creates a SF::Sound from a loaded Sound asset.
-This is necessary because SF::Sound has to get finalized explicitly.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L452" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sound(name,&amp;block:Sound-&gt;):Sound-instance-method">
+      <div class="signature">
+        
+        def <strong>sound</strong>(name, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a>
+
+        <a class="method-permalink" href="#sound(name,&block:Sound-%3E):Sound-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>, block]</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sound?(name):Sound?-instance-method">
+      <div class="signature">
+        
+        def <strong>sound?</strong>(name) : <a href="../Scar/Assets/Sound.html">Sound</a>?
+
+        <a class="method-permalink" href="#sound?(name):Sound?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>]?</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sound?(name,&amp;block:Sound-&gt;):Sound?-instance-method">
+      <div class="signature">
+        
+        def <strong>sound?</strong>(name, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a>?
+
+        <a class="method-permalink" href="#sound?(name,&block:Sound-%3E):Sound?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>, block]?</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1778,7 +1870,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1799,7 +1891,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1820,7 +1912,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1841,7 +1933,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1862,7 +1954,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1883,7 +1975,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1904,7 +1996,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1925,7 +2017,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1946,7 +2038,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1967,7 +2059,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1988,7 +2080,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2009,7 +2101,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2032,7 +2124,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L329" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L333" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2053,7 +2145,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L339" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L343" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2074,7 +2166,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L143" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2095,7 +2187,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2116,7 +2208,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2137,7 +2229,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2158,7 +2250,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/dd5c5a22ac1574933c529cd8c801d83a8a25acbd/src/scar/assets.cr#L397" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
