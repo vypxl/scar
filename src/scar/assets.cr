@@ -1,7 +1,6 @@
 require "compress/zip"
 require "./tiled_map.cr"
 
-# NOTE: Book: hint that music can be streamed from files
 # TODO: Video (Playback)
 # TODO: make extendable
 # TODO: add more string constructors like in Components::Tilemap
@@ -15,6 +14,11 @@ require "./tiled_map.cr"
 #
 # Loading the assets should be done in bulk at the start of the application or while a loading screen is shown,
 # so that there are no mid-gameplay slowdowns
+#
+# ### Music and Sound
+#
+# Music and sound are somewhat special kinds of assets. It is recommended to use the `Music`
+# and the `Sound` (coming soon) module to handle them. See the respective documentation for details.
 #
 # ### Hot reloading
 #
@@ -337,7 +341,6 @@ module Scar::Assets
 
   # Unloads all loaded assets
   def unload_all
-    @@sounds.each(&.finalize)
     {% for t in ASSET_TYPES.keys %}
       @@loaded_{{ t.id }}.keys.each { |k| unload_{{ t.id }} k }
     {% end %}
@@ -395,67 +398,50 @@ module Scar::Assets
   end
 
   {% for t in ASSET_TYPES.keys %}
-    {% unless t.id.stringify == "Sound" %}
-      # :nodoc:
-      def []?(name : String, asset_type : {{ t.id }}.class, on_reload : ({{ t.id }}->) | Nil = nil) : {{ t.id }}?
-        asset = @@loaded_{{ t.id }}[name]?
-        return nil if asset.nil?
-        @@hotreload_{{ t.id }}[name].listeners << on_reload unless on_reload.nil?
+    # :nodoc:
+    def []?(name : String, asset_type : {{ t.id }}.class, on_reload : ({{ t.id }}->) | Nil = nil) : {{ t.id }}?
+      asset = @@loaded_{{ t.id }}[name]?
+      return nil if asset.nil?
+      @@hotreload_{{ t.id }}[name].listeners << on_reload unless on_reload.nil?
 
-        asset
-      end
+      asset
+    end
 
-      # :nodoc:
-      def [](name : String, asset_type : {{ t.id }}.class, on_reload : ({{ t.id }}->) | Nil = nil) : {{ t.id }}
-        asset = self[name, asset_type, on_reload]?
-        Logger.fatal "No Asset named #{name} was loaded!" if asset.nil?
-        asset
-      end
+    # :nodoc:
+    def [](name : String, asset_type : {{ t.id }}.class, on_reload : ({{ t.id }}->) | Nil = nil) : {{ t.id }}
+      asset = self[name, asset_type, on_reload]?
+      Logger.fatal "No Asset named #{name} was loaded!" if asset.nil?
+      asset
+    end
 
-      # :nodoc:
-      def [](name : String, asset_type : {{ t.id }}.class, &block : ({{ t.id }}->)) : {{ t.id }}
-        self[name, {{ t.id }}, block]
-      end
+    # :nodoc:
+    def [](name : String, asset_type : {{ t.id }}.class, &block : ({{ t.id }}->)) : {{ t.id }}
+      self[name, {{ t.id }}, block]
+    end
 
-      # :nodoc:
-      def []?(name : String, asset_type : {{ t.id }}.class, &block : ({{ t.id }}->)) : {{ t.id }}?
-        self[name, {{ t.id }}, block]?
-      end
+    # :nodoc:
+    def []?(name : String, asset_type : {{ t.id }}.class, &block : ({{ t.id }}->)) : {{ t.id }}?
+      self[name, {{ t.id }}, block]?
+    end
 
-      # Same as `#[name, {{ t }}]`
-      def {{ t.id.downcase }}(name) : {{ t.id }}
-        self[name, {{ t.id }}]
-      end
+    # Same as `#[name, {{ t }}]`
+    def {{ t.id.downcase }}(name) : {{ t.id }}
+      self[name, {{ t.id }}]
+    end
 
-      # Same as `#[name, {{ t }}]?`
-      def {{ t.id.downcase }}?(name) : {{ t.id }}?
-        self[name, {{ t.id }}]?
-      end
+    # Same as `#[name, {{ t }}]?`
+    def {{ t.id.downcase }}?(name) : {{ t.id }}?
+      self[name, {{ t.id }}]?
+    end
 
-      # Same as `#[name, {{ t }}, block]`
-      def {{ t.id.downcase }}(name, &block : {{ t.id }}->) : {{ t.id }}
-        self[name, {{ t.id }}, block]
-      end
+    # Same as `#[name, {{ t }}, block]`
+    def {{ t.id.downcase }}(name, &block : {{ t.id }}->) : {{ t.id }}
+      self[name, {{ t.id }}, block]
+    end
 
-      # Same as `#[name, {{ t }}, block]?`
-      def {{ t.id.downcase }}?(name, &block : {{ t.id }}->) : {{ t.id }}?
-        self[name, {{ t.id }}, block]?
-      end
-      {% end %}
+    # Same as `#[name, {{ t }}, block]?`
+    def {{ t.id.downcase }}?(name, &block : {{ t.id }}->) : {{ t.id }}?
+      self[name, {{ t.id }}, block]?
+    end
   {% end %}
-
-  # Keeps track of created SF::Sound instances so they can get unloaded properly.
-  @@sounds : Array(SF::Sound) = Array(SF::Sound).new
-
-  # Creates a SF::Sound from a loaded Sound asset.
-  # This is necessary because SF::Sound has to get finalized explicitly.
-  def sound(name) : SF::Sound
-    buffer = self[name, Sound]
-    s = SF::Sound.new(buffer)
-    @@sounds << s
-    s
-  end
-
-  # TODO implement the three missing sound methods
-  # TODO implement sound-unloading
 end
