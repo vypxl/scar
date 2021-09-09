@@ -5,33 +5,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install system dependencies
-        run: |
-          sudo apt-get -qq update
-          sudo apt-get install -y cmake libxrandr-dev libudev-dev libopenal-dev libglew-dev libjpeg-dev libfreetype6-dev libsndfile-dev
-          curl -fsSL https://crystal-lang.org/install.sh | sudo bash
-      - name: Download SFML
-        run: |
-          wget -O sfml.zip https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip
-          unzip sfml.zip
+
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1
+
+      - name: Install SFML
+        id: sfml
+        uses: oprypin/install-sfml@v1
+        with:
+          sfml: 2.5.1
+
       - name: Setup environment variables
         run: |
-          echo "/usr/local/lib" >> $GITHUB_PATH
-          echo "LIBRARY_PATH=/usr/local/lib" >> $GITHUB_ENV
-          echo "LD_LIBRARY_PATH=/usr/local/lib" >> $GITHUB_ENV
-      - name: Build SFML
-        run: cmake . && make && sudo make install
-        working-directory: SFML-2.5.1/
+          echo "LIBRARY_PATH=${{ steps.sfml.outputs.path }}/lib" >> $GITHUB_ENV
+          echo "LD_LIBRARY_PATH=${{ steps.sfml.outputs.path }}/lib" >> $GITHUB_ENV
+          echo "SFML_INCLUDE_DIR=${{ steps.sfml.outputs.path }}/include" >> $GITHUB_ENV
+
+      - name: Cache shards
+        uses: actions/cache@v2
+        with:
+          path: lib
+          key: ${{ runner.os }}-shards-${{ hashFiles('shard.lock', '**/shard.lock') }}
+          restore-keys: ${{ runner.os }}-shards-
+
       - name: Install dependencies
-        run: shards install
-      - name: Format check & Test
-        run: |
-         crystal tool format ./src --check
-         crystal tool format ./spec --check
-         crystal spec
+        run: shards check || shards install
+
+      - name: Format check
+        run: crystal tool format --check ./src ./spec
+
+      - name: Run tests
+        run: crystal spec
+
       - name: Generate docs
-        run: |
-         crystal docs
+        run: crystal docs
+
       - name: Deploy docs to pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
