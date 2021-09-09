@@ -21,6 +21,11 @@ class Scar::Objects::Camera < Scar::Object
     @sf = SF::View.new
   end
 
+  # :nodoc:
+  def init(app, space)
+    @sf.reset(SF::Rect(Float32).new(0f32, 0f32, app.window.size.x.to_f32, app.window.size.y.to_f32))
+  end
+
   # This method is called by the render method of `Space`s
   #
   # It calls all render methods and draws all drawables onto the screen.
