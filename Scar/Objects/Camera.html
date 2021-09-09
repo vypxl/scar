@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -779,10 +749,14 @@
     Overview
   </h2>
 
-  <p>A camera takes care of calling render() functions and drawing drawables.
-A camera is essentially a wrapper around and <code>SF::View</code>.
+  <p>A camera takes care of calling render() functions and drawing drawables.</p>
+
+<p>A camera is essentially a wrapper around and <code>SF::View</code>.
 Its instance methods are delegated, so you can use them as normal instance methods.
-When drawing Entities or Objects, their transforms are applied automatically.</p>
+When drawing <code><a href="../../Scar/Entity.html">Entity</a></code>s or <code><a href="../../Scar/Object.html">Object</a></code>s, their transforms are applied automatically.</p>
+
+<p>Each space has a default camera, so there is no need to use this class explicitly in your
+application, except if you need custom views. See the <a href="https://oprypin.github.io/crsfml/api/SF/View.html">CrSFML documentation</a> for that.</p>
 
 
 
@@ -807,7 +781,7 @@ When drawing Entities or Objects, their transforms are applied automatically.</p
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L5" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L9" target="_blank">
         scar/objects/camera.cr
       </a>
     
@@ -852,60 +826,55 @@ When drawing Entities or Objects, their transforms are applied automatically.</p
       <li class="entry-summary">
         <a href="#enabled:Bool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
         
+          <div class="summary"><p>Can be used to turn a camera off</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#enabled=(enabled)-instance-method" class="signature"><strong>#enabled=</strong>(enabled)</a>
+        
+          <div class="summary"><p>Can be used to turn a camera off</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#render_view(app,space,dt)-instance-method" class="signature"><strong>#render_view</strong>(app, space, dt)</a>
         
-          <div class="summary"><p>This method is called by the render method of Spaces It calls all render methods and draws all drawables onto the screen</p></div>
+          <div class="summary"><p>This method is called by the render method of <code><a href="../../Scar/Space.html">Space</a></code>s</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#sf:SF::View-instance-method" class="signature"><strong>#sf</strong> : SF::View</a>
         
+          <div class="summary"><p>The underlying <code>SF::View</code></p></div>
+        
       </li>
     
       <li class="entry-summary">
-        <a href="#sf=(sf)-instance-method" class="signature"><strong>#sf=</strong>(sf)</a>
+        <a href="#sf=(sf:SF::View)-instance-method" class="signature"><strong>#sf=</strong>(sf : SF::View)</a>
+        
+          <div class="summary"><p>The underlying <code>SF::View</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#simple:Bool-instance-method" class="signature"><strong>#simple</strong> : Bool</a>
         
+          <div class="summary"><p>If true, the camera will not use its <code>SF::View</code></p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#simple=(simple)-instance-method" class="signature"><strong>#simple=</strong>(simple)</a>
         
-      </li>
-    
-  </ul>
-
-
-
-  <h2>
-    <a id="macro-summary" class="anchor" href="#macro-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Macro Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#method_missing(call)-macro" class="signature"><strong>method_missing</strong>(call)</a>
+          <div class="summary"><p>If true, the camera will not use its <code>SF::View</code></p></div>
         
       </li>
     
   </ul>
+
+
 
 
 
@@ -1081,7 +1050,7 @@ When drawing Entities or Objects, their transforms are applied automatically.</p
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1108,10 +1077,15 @@ When drawing Entities or Objects, their transforms are applied automatically.</p
         <a class="method-permalink" href="#enabled:Bool-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Can be used to turn a camera off</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1124,10 +1098,15 @@ When drawing Entities or Objects, their transforms are applied automatically.</p
         <a class="method-permalink" href="#enabled=(enabled)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Can be used to turn a camera off</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1142,14 +1121,15 @@ When drawing Entities or Objects, their transforms are applied automatically.</p
       
         <div class="doc">
           
-          <p>This method is called by the render method of Spaces
-It calls all render methods and draws all drawables onto the screen</p>
+          <p>This method is called by the render method of <code><a href="../../Scar/Space.html">Space</a></code>s</p>
+
+<p>It calls all render methods and draws all drawables onto the screen.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1162,26 +1142,36 @@ It calls all render methods and draws all drawables onto the screen</p>
         <a class="method-permalink" href="#sf:SF::View-instance-method">#</a>
       </div>
       
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L6" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="sf=(sf)-instance-method">
-      <div class="signature">
-        
-        def <strong>sf=</strong>(sf)
-
-        <a class="method-permalink" href="#sf=(sf)-instance-method">#</a>
-      </div>
+        <div class="doc">
+          
+          <p>The underlying <code>SF::View</code></p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sf=(sf:SF::View)-instance-method">
+      <div class="signature">
+        
+        def <strong>sf=</strong>(sf : SF::View)
+
+        <a class="method-permalink" href="#sf=(sf:SF::View)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The underlying <code>SF::View</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1194,10 +1184,15 @@ It calls all render methods and draws all drawables onto the screen</p>
         <a class="method-permalink" href="#simple:Bool-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>If true, the camera will not use its <code>SF::View</code></p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1210,42 +1205,21 @@ It calls all render methods and draws all drawables onto the screen</p>
         <a class="method-permalink" href="#simple=(simple)-instance-method">#</a>
       </div>
       
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L6" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-
-
-
-  <h2>
-    <a id="macro-detail" class="anchor" href="#macro-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Macro Detail
-  </h2>
-  
-    <div class="entry-detail" id="method_missing(call)-macro">
-      <div class="signature">
-        
-        macro <strong>method_missing</strong>(call)
-
-        <a class="method-permalink" href="#method_missing(call)-macro">#</a>
-      </div>
+        <div class="doc">
+          
+          <p>If true, the camera will not use its <code>SF::View</code></p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/objects/camera.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/objects/camera.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
   
+
+
 
 
 </div>

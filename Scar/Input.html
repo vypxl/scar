@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -779,7 +749,16 @@
     Overview
   </h2>
 
-  <p>An input handler.</p>
+  <p>A simple class to be used in conjunction with <code><a href="../Scar/App.html">App</a></code>, which provides simple digital and analogue input bindings.</p>
+
+<p>You can also get creative with your input sources, you could e. g. implement an analogue input that changes with the current time.</p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal">input.bind_digital <span class="n">:jump</span> { <span class="t">Scar</span><span class="t">::</span><span class="t">Input</span>.sf_key <span class="n">:Space</span> }
+input.bind_axis <span class="n">:time</span> { <span class="t">Time</span>.utc.millisecond <span class="o">/</span> <span class="n">1000</span> }
+
+input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)</span></code></pre>
 
 
 
@@ -804,7 +783,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/input.cr#L5" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/input.cr#L16" target="_blank">
         scar/input.cr
       </a>
     
@@ -814,25 +793,6 @@
 
 
 
-
-  <h2>
-    <a id="constructors" class="anchor" href="#constructors">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructors
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
-        
-          <div class="summary"><p>Initializes both digital and analog binding collections.</p></div>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -851,28 +811,28 @@
       <li class="entry-summary">
         <a href="#active?(which:Symbol)-instance-method" class="signature"><strong>#active?</strong>(which : Symbol)</a>
         
-          <div class="summary"><p>Returns if the given input symbol is active.</p></div>
+          <div class="summary"><p>Returns true if the specified digital input is currently active</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#axis(which:Symbol)-instance-method" class="signature"><strong>#axis</strong>(which : Symbol)</a>
         
-          <div class="summary"><p>Returns the axis value for the given input symbol.</p></div>
+          <div class="summary"><p>Returns the value for the specified analogue input</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#bind_axis(which:Symbol,&block:-%3EFloat32)-instance-method" class="signature"><strong>#bind_axis</strong>(which : Symbol, &block :  -> Float32)</a>
         
-          <div class="summary"><p>Binds an input Symbol to a axis Check.</p></div>
+          <div class="summary"><p>Binds a <code>Symbol</code> to an analogue input</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#bind_digital(which:Symbol,&block:-%3EBool)-instance-method" class="signature"><strong>#bind_digital</strong>(which : Symbol, &block :  -> Bool)</a>
         
-          <div class="summary"><p>Binds an input Symbol to a check.</p></div>
+          <div class="summary"><p>Binds a <code>Symbol</code> to a digital input</p></div>
         
       </li>
     
@@ -893,7 +853,7 @@
       <li class="entry-summary">
         <a href="#sf_key(which)-macro" class="signature"><strong>sf_key</strong>(which)</a>
         
-          <div class="summary"><p>Shortcut for digital checks <code></code>` SF::Keyboard.key_pressed? SF::Keyboard::{{which.id}} <code></code>`</p></div>
+          <div class="summary"><p>Shortcut for digital inputs based on keys</p></div>
         
       </li>
     
@@ -926,37 +886,6 @@
 </div>
 
 
-  <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructor Detail
-  </h2>
-  
-    <div class="entry-detail" id="new-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>
-
-        <a class="method-permalink" href="#new-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Initializes both digital and analog binding collections.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/input.cr#L7" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-
 
 
 
@@ -980,13 +909,13 @@
       
         <div class="doc">
           
-          <p>Returns if the given input symbol is active.</p>
+          <p>Returns true if the specified digital input is currently active</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/input.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/input.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1001,13 +930,13 @@
       
         <div class="doc">
           
-          <p>Returns the axis value for the given input symbol.</p>
+          <p>Returns the value for the specified analogue input</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/input.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/input.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1022,15 +951,15 @@
       
         <div class="doc">
           
-          <p>Binds an input Symbol to a axis Check.
-Similar to #bind_digital, but here the Check needs to return a Float32
-instead of a Bool.</p>
+          <p>Binds a <code>Symbol</code> to an analogue input</p>
+
+<p>Similar to <code><a href="../Scar/Input.html#bind_digital(which:Symbol,&block:-%3EBool)-instance-method">#bind_digital</a></code>, but here the check has to return a float instead of a boolean</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/input.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/input.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1045,21 +974,19 @@ instead of a Bool.</p>
       
         <div class="doc">
           
-          <p>Binds an input Symbol to a check.
-A Check returns a boolean representation of the input.
-For example:</p>
+          <p>Binds a <code>Symbol</code> to a digital input</p>
 
-<pre><code class="language-crystal"><span class="k">do</span>
-  <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span>.key_pressed? <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span><span class="t">::</span><span class="t">Space</span>
-<span class="k">end</span></code></pre>
+<p>The check should return true if the input is currently active and false if not</p>
 
-<p>could be a Check for the jump Symbol.</p>
+<p>Example usage:</p>
+
+<pre><code class="language-crystal">input.bind_digital <span class="n">:jump</span> { <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span>.key_pressed? <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span><span class="t">::</span><span class="t">Space</span> }</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/input.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/input.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1086,7 +1013,9 @@ For example:</p>
       
         <div class="doc">
           
-          <p>Shortcut for digital checks</p>
+          <p>Shortcut for digital inputs based on keys</p>
+
+<p>Example usage:</p>
 
 <pre><code class="language-crystal"><span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span>.key_pressed? <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span><span class="t">::</span>{{which.id}}</code></pre>
         </div>
@@ -1094,7 +1023,7 @@ For example:</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/input.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/input.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>

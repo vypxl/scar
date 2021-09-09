@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="scar">
-  <title>Scar::Object - scar main</title>
+  <title>SF::Vector2(T) - scar main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -51,7 +51,7 @@
   <div class="types-list">
     <ul>
   
-  <li class="parent open current" data-id="scar/Scar" data-name="scar">
+  <li class="parent " data-id="scar/Scar" data-name="scar">
       <a href="../Scar.html">Scar</a>
       
         <ul>
@@ -411,7 +411,7 @@
       
     </li>
   
-  <li class=" current" data-id="scar/Scar/Object" data-name="scar::object">
+  <li class=" " data-id="scar/Scar/Object" data-name="scar::object">
       <a href="../Scar/Object.html">Object</a>
       
     </li>
@@ -706,12 +706,12 @@
       
     </li>
   
-  <li class="parent " data-id="scar/SF" data-name="sf">
+  <li class="parent open current" data-id="scar/SF" data-name="sf">
       <a href="../SF.html">SF</a>
       
         <ul>
   
-  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+  <li class=" current" data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
       <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
@@ -730,12 +730,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">abstract class</span> Scar::Object
+  <span class="kind">struct</span> SF::Vector2(T)
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Scar/Object.html">Scar::Object</a></li><li class="superclass"><a href="../Scar/Entity.html">Scar::Entity</a></li><li class="superclass">SF::Transformable</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../SF/Vector2.html">SF::Vector2(T)</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -749,36 +749,37 @@
     Overview
   </h2>
 
-  <p>Base class for OOP based Entities</p>
+  <p>The utility methods <code><a href="../Scar.html">Scar</a></code> adds to <code><a href="../SF/Vector2.html">SF::Vector2</a></code> are documented here</p>
 
-<p>An object has the same methods as a system: <code><a href="../Scar/Object.html#init(app:App,space:Space)-instance-method">#init</a></code>, <code><a href="../Scar/Object.html#update(app:App,space:Space,dt)-instance-method">#update</a></code> and <code><a href="../Scar/Object.html#render(app:App,space:Space,dt)-instance-method">#render</a></code>,
-so all the behaviour and data can be in the same place.
-You can still add components like with a normal entity though.</p>
-
-<p>You do not need to implement the <code><a href="../Scar/Object.html#render(app:App,space:Space,dt)-instance-method">#render</a></code> method to draw something, you can also just use regular
-drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawable</a></code> (see <code><a href="../Scar/Drawable.html">Drawable</a></code> documentation).</p>
-
-
-
-
+<p>See also <a href="https://oprypin.github.io/crsfml/api/SF/Vector2.html">CrSFML Documentation</a></p>
 
 
 
 
 
   <h2>
-    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
+    <a id="included-modules" class="anchor" href="#included-modules">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Direct Known Subclasses
+    Included Modules
   </h2>
   <ul class="other-types-list">
     
-      <li class="other-type"><a href="../Scar/Objects/Camera.html">Scar::Objects::Camera</a></li>
+      <li class="other-type">Comparable(Float64)</li>
+    
+      <li class="other-type">Comparable(Float32)</li>
+    
+      <li class="other-type">Comparable(<a href="../SF/Vector2.html">SF::Vector2(T)</a>)</li>
+    
+      <li class="other-type">Enumerable(T)</li>
     
   </ul>
+
+
+
+
 
 
 
@@ -795,8 +796,15 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/object.cr#L10" target="_blank">
-        scar/object.cr
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/lib/crsfml/src/system/system.cr#L38" target="_blank">
+        lib/crsfml/src/system/system.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L10" target="_blank">
+        scar/vec.cr
       </a>
     
     <br/>
@@ -806,7 +814,43 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
 
 
 
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(x,y)-class-method" class="signature"><strong>.new</strong>(x, y)</a>
+        
+      </li>
+    
+  </ul>
 
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from_polar(angle,radius=1.0)-class-method" class="signature"><strong>.from_polar</strong>(angle, radius = <span class="n">1.0</span>)</a>
+        
+          <div class="summary"><p>Creates a vector from polar coordinates</p></div>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -821,33 +865,166 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#init(app:App,space:Space)-instance-method" class="signature"><strong>#init</strong>(app : App, space : Space)</a>
+        <a href="#/(other:SF::Vector2)-instance-method" class="signature"><strong>#/</strong>(other : SF::Vector2)</a>
         
-          <div class="summary"><p>For initialization (called once when this object is added to a space)</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#initialized:Bool-instance-method" class="signature"><strong>#initialized</strong> : Bool</a>
+          <div class="summary"><p>Memberwise division of two vectors</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#initialized=(initialized)-instance-method" class="signature"><strong>#initialized=</strong>(initialized)</a>
+        <a href="#%3C=%3E(other:SF::Vector2f)-instance-method" class="signature"><strong>#<=></strong>(other : SF::Vector2f)</a>
+        
+          <div class="summary"><p>Compares two Vectors based on length</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#render(app:App,space:Space,dt)-instance-method" class="signature"><strong>#render</strong>(app : App, space : Space, dt)</a>
+        <a href="#%3C=%3E(length:Float32)-instance-method" class="signature"><strong>#<=></strong>(length : Float32)</a>
         
-          <div class="summary"><p>For drawing logic (called on every frame <em>after</em> <code><a href="../Scar/Object.html#update(app:App,space:Space,dt)-instance-method">#update</a></code>)</p></div>
+          <div class="summary"><p>Compares this vector's length to the given scalar</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(app:App,space:Space,dt)-instance-method" class="signature"><strong>#update</strong>(app : App, space : Space, dt)</a>
+        <a href="#%3C=%3E(other:Float64)-instance-method" class="signature"><strong>#<=></strong>(other : Float64)</a>
         
-          <div class="summary"><p>For update logic (called on every frame)</p></div>
+          <div class="summary"><p>Compares this vector's length to the given scalar</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3C=%3E(other)-instance-method" class="signature"><strong>#<=></strong>(other)</a>
+        
+          <div class="summary"><p>Compares this vector's length to the given scalar</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#==(other:Number)-instance-method" class="signature"><strong>#==</strong>(other : Number)</a>
+        
+          <div class="summary"><p>Equality to a scalar: returns true if length is equal to <em>other</em></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#abs-instance-method" class="signature"><strong>#abs</strong></a>
+        
+          <div class="summary"><p>Returns a vector with the same x and y but both positive</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#angle-instance-method" class="signature"><strong>#angle</strong></a>
+        
+          <div class="summary"><p>Returns the angle between the vector and the x-axis</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#angle_to(other:SF::Vector2f)-instance-method" class="signature"><strong>#angle_to</strong>(other : SF::Vector2f)</a>
+        
+          <div class="summary"><p>Returns the angle between this Vector and another (the sign indicates which Vector is ahead)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cross(other:SF::Vector2(T))-instance-method" class="signature"><strong>#cross</strong>(other : SF::Vector2(T))</a>
+        
+          <div class="summary"><p>Returns the <code>z</code> component of the cross product of two vectors</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dist(other:SF::Vector2(T))-instance-method" class="signature"><strong>#dist</strong>(other : SF::Vector2(T))</a>
+        
+          <div class="summary"><p>Returns the euclidean distance to another point</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dot(other:SF::Vector2(T))-instance-method" class="signature"><strong>#dot</strong>(other : SF::Vector2(T))</a>
+        
+          <div class="summary"><p>Returns the dot product between two vectors</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#length-instance-method" class="signature"><strong>#length</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#length_squared-instance-method" class="signature"><strong>#length_squared</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#magnitude-instance-method" class="signature"><strong>#magnitude</strong></a>
+        
+          <div class="summary"><p>Same as length</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#magnitude_squared-instance-method" class="signature"><strong>#magnitude_squared</strong></a>
+        
+          <div class="summary"><p>Same as length_squared</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#manhattan(other:SF::Vector2(T))-instance-method" class="signature"><strong>#manhattan</strong>(other : SF::Vector2(T))</a>
+        
+          <div class="summary"><p>Returns the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> to another point</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#manhattan-instance-method" class="signature"><strong>#manhattan</strong></a>
+        
+          <div class="summary"><p>Returns the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> of this vector's destination from the origin</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new_x(nx)-instance-method" class="signature"><strong>#new_x</strong>(nx)</a>
+        
+          <div class="summary"><p>Returns a copy of self with a new x value</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new_y(ny)-instance-method" class="signature"><strong>#new_y</strong>(ny)</a>
+        
+          <div class="summary"><p>Returns a copy of self with a new y value</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#normalized-instance-method" class="signature"><strong>#normalized</strong></a>
+        
+          <div class="summary"><p>Returns a vector with the same direction of the original vector, but with a length of one unit</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rotate(angle:Float32)-instance-method" class="signature"><strong>#rotate</strong>(angle : Float32)</a>
+        
+          <div class="summary"><p>Returns this vector rotated by the given angle around the origin</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rotate(angle)-instance-method" class="signature"><strong>#rotate</strong>(angle)</a>
+        
+          <div class="summary"><p>Returns this vector rotated by the given angle around the origin</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unit-instance-method" class="signature"><strong>#unit</strong></a>
+        
+          <div class="summary"><p>Returns a vector with the same direction of the original vector, but with a length of one unit</p></div>
         
       </li>
     
@@ -861,76 +1038,38 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
   
     
 
-  <h3>Instance methods inherited from class <code><a href="../Scar/Entity.html">Scar::Entity</a></code></h3>
-  
-  
-    <a href="../Scar/Entity.html#%3C%3C(c:Component)-instance-method" class="tooltip">
-      <span><<(c : Component)<br/><<(*cs : Component)</span>
-    <<</a>, 
+
     
-  
-    <a href="../Scar/Entity.html#[](comp_type:T.class):TforallT-instance-method" class="tooltip">
-      <span>[](comp_type : <span class="t">T</span>.<span class="k">class</span>) : T forall T</span>
-    []</a>, 
-    
-  
-    <a href="../Scar/Entity.html#[]?(comp_type:T.class):T?forallT-instance-method" class="tooltip">
-      <span>[]?(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T? forall T</span>
-    []?</a>, 
-    
-  
-    <a href="../Scar/Entity.html#alive?:Bool-instance-method" class="tooltip">
-      <span>alive? : Bool</span>
-    alive?</a>, 
-    
-  
-    <a href="../Scar/Entity.html#components:Array(Scar::Component)-instance-method" class="tooltip">
-      <span>components : Array(Scar::Component)</span>
-    components</a>, 
-    
-  
-    <a href="../Scar/Entity.html#components=(components)-instance-method" class="tooltip">
-      <span>components=(components)</span>
-    components=</a>, 
-    
-  
-    <a href="../Scar/Entity.html#destroy-instance-method" class="tooltip">
-      <span>destroy</span>
-    destroy</a>, 
-    
-  
-    <a href="../Scar/Entity.html#has?(c:Component.class):Bool-instance-method" class="tooltip">
-      <span>has?(c : <span class="t">Component</span>.<span class="k">class</span>) : Bool<br/>has?(cs : Array(<span class="t">Component</span>.<span class="k">class</span>)) : Bool<br/>has?(*cs : <span class="t">Component</span>.<span class="k">class</span>) : Bool</span>
-    has?</a>, 
-    
-  
-    <a href="../Scar/Entity.html#id:String-instance-method" class="tooltip">
-      <span>id : String</span>
-    id</a>, 
-    
-  
-    <a href="../Scar/Entity.html#z:Int32-instance-method" class="tooltip">
-      <span>z : Int32</span>
-    z</a>, 
-    
-  
-    <a href="../Scar/Entity.html#z=(z)-instance-method" class="tooltip">
-      <span>z=(z)</span>
-    z=</a>
-    
-  
 
 
     
 
-  <h3>Constructor methods inherited from class <code><a href="../Scar/Entity.html">Scar::Entity</a></code></h3>
+
   
-  
-    <a href="../Scar/Entity.html#new(id:String,components:Array(Component),*,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method" class="tooltip">
-      <span>new(id : String, components : Array(Component), *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *comps : Component, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</span>
-    new</a>
     
+
+
+    
+
+
+    
+
+
   
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
 
 
     
@@ -970,7 +1109,64 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
 </div>
 
 
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(x,y)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(x, y)
 
+        <a class="method-permalink" href="#new(x,y)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="from_polar(angle,radius=1.0)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_polar</strong>(angle, radius = <span class="n">1.0</span>)
+
+        <a class="method-permalink" href="#from_polar(angle,radius=1.0)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a vector from polar coordinates</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
@@ -983,97 +1179,498 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="init(app:App,space:Space)-instance-method">
+    <div class="entry-detail" id="/(other:SF::Vector2)-instance-method">
       <div class="signature">
         
-        def <strong>init</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>)
+        def <strong>/</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>)
 
-        <a class="method-permalink" href="#init(app:App,space:Space)-instance-method">#</a>
+        <a class="method-permalink" href="#/(other:SF::Vector2)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>For initialization (called once when this object is added to a space)</p>
+          <p>Memberwise division of two vectors</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/object.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="initialized:Bool-instance-method">
+    <div class="entry-detail" id="&lt;=&gt;(other:SF::Vector2f)-instance-method">
       <div class="signature">
         
-        def <strong>initialized</strong> : Bool
+        def <strong><=></strong>(other : SF::Vector2f)
 
-        <a class="method-permalink" href="#initialized:Bool-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/object.cr#L11" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="initialized=(initialized)-instance-method">
-      <div class="signature">
-        
-        def <strong>initialized=</strong>(initialized)
-
-        <a class="method-permalink" href="#initialized=(initialized)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/object.cr#L11" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="render(app:App,space:Space,dt)-instance-method">
-      <div class="signature">
-        
-        def <strong>render</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>, dt)
-
-        <a class="method-permalink" href="#render(app:App,space:Space,dt)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C=%3E(other:SF::Vector2f)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>For drawing logic (called on every frame <em>after</em> <code><a href="../Scar/Object.html#update(app:App,space:Space,dt)-instance-method">#update</a></code>)</p>
+          <p>Compares two Vectors based on length</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/object.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="update(app:App,space:Space,dt)-instance-method">
+    <div class="entry-detail" id="&lt;=&gt;(length:Float32)-instance-method">
       <div class="signature">
         
-        def <strong>update</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>, dt)
+        def <strong><=></strong>(length : Float32)
 
-        <a class="method-permalink" href="#update(app:App,space:Space,dt)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C=%3E(length:Float32)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>For update logic (called on every frame)</p>
+          <p>Compares this vector's length to the given scalar</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/object.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=&gt;(other:Float64)-instance-method">
+      <div class="signature">
+        
+        def <strong><=></strong>(other : Float64)
+
+        <a class="method-permalink" href="#%3C=%3E(other:Float64)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Compares this vector's length to the given scalar</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="&lt;=&gt;(other)-instance-method">
+      <div class="signature">
+        
+        def <strong><=></strong>(other)
+
+        <a class="method-permalink" href="#%3C=%3E(other)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Compares this vector's length to the given scalar</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="==(other:Number)-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : Number)
+
+        <a class="method-permalink" href="#==(other:Number)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Equality to a scalar: returns true if length is equal to <em>other</em></p>
+
+<p>Epsilon is 1e-5</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="abs-instance-method">
+      <div class="signature">
+        
+        def <strong>abs</strong>
+
+        <a class="method-permalink" href="#abs-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a vector with the same x and y but both positive</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="angle-instance-method">
+      <div class="signature">
+        
+        def <strong>angle</strong>
+
+        <a class="method-permalink" href="#angle-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the angle between the vector and the x-axis</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="angle_to(other:SF::Vector2f)-instance-method">
+      <div class="signature">
+        
+        def <strong>angle_to</strong>(other : SF::Vector2f)
+
+        <a class="method-permalink" href="#angle_to(other:SF::Vector2f)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the angle between this Vector and another (the sign indicates which Vector is ahead)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L132" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cross(other:SF::Vector2(T))-instance-method">
+      <div class="signature">
+        
+        def <strong>cross</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
+
+        <a class="method-permalink" href="#cross(other:SF::Vector2(T))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the <code>z</code> component of the cross product of two vectors</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dist(other:SF::Vector2(T))-instance-method">
+      <div class="signature">
+        
+        def <strong>dist</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
+
+        <a class="method-permalink" href="#dist(other:SF::Vector2(T))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the euclidean distance to another point</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L40" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dot(other:SF::Vector2(T))-instance-method">
+      <div class="signature">
+        
+        def <strong>dot</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
+
+        <a class="method-permalink" href="#dot(other:SF::Vector2(T))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the dot product between two vectors</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L77" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="length-instance-method">
+      <div class="signature">
+        
+        def <strong>length</strong>
+
+        <a class="method-permalink" href="#length-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L86" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="length_squared-instance-method">
+      <div class="signature">
+        
+        def <strong>length_squared</strong>
+
+        <a class="method-permalink" href="#length_squared-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L95" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="magnitude-instance-method">
+      <div class="signature">
+        
+        def <strong>magnitude</strong>
+
+        <a class="method-permalink" href="#magnitude-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Same as length</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="magnitude_squared-instance-method">
+      <div class="signature">
+        
+        def <strong>magnitude_squared</strong>
+
+        <a class="method-permalink" href="#magnitude_squared-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Same as length_squared</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L100" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="manhattan(other:SF::Vector2(T))-instance-method">
+      <div class="signature">
+        
+        def <strong>manhattan</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
+
+        <a class="method-permalink" href="#manhattan(other:SF::Vector2(T))-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> to another point</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="manhattan-instance-method">
+      <div class="signature">
+        
+        def <strong>manhattan</strong>
+
+        <a class="method-permalink" href="#manhattan-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> of this vector's destination from the origin</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new_x(nx)-instance-method">
+      <div class="signature">
+        
+        def <strong>new_x</strong>(nx)
+
+        <a class="method-permalink" href="#new_x(nx)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a copy of self with a new x value</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L137" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new_y(ny)-instance-method">
+      <div class="signature">
+        
+        def <strong>new_y</strong>(ny)
+
+        <a class="method-permalink" href="#new_y(ny)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a copy of self with a new y value</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L142" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="normalized-instance-method">
+      <div class="signature">
+        
+        def <strong>normalized</strong>
+
+        <a class="method-permalink" href="#normalized-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a vector with the same direction of the original vector, but with a length of one unit</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L111" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rotate(angle:Float32)-instance-method">
+      <div class="signature">
+        
+        def <strong>rotate</strong>(angle : Float32)
+
+        <a class="method-permalink" href="#rotate(angle:Float32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns this vector rotated by the given angle around the origin</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L116" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rotate(angle)-instance-method">
+      <div class="signature">
+        
+        def <strong>rotate</strong>(angle)
+
+        <a class="method-permalink" href="#rotate(angle)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns this vector rotated by the given angle around the origin</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L122" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unit-instance-method">
+      <div class="signature">
+        
+        def <strong>unit</strong>
+
+        <a class="method-permalink" href="#unit-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns a vector with the same direction of the original vector, but with a length of one unit</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/vec.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>

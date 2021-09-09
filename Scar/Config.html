@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -777,28 +747,33 @@
     Overview
   </h2>
 
-  <p>Use this to store basic configuration like Keybindings, resolutions..
-Can store all types of the YAML::Any alias.
-Usage example: <code></code>`
-  # At Toplevel!
-  Scar::Config.define_standards({</p>
+  <p>This module aims to be a simple interface for storing
+basic key-value configuration like keybindings, window settings, ..</p>
 
-<pre><code class="language-crystal">int: <span class="n">7331</span>,
-str: <span class="s">&quot;hello world&quot;</span>,
-arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">7</span>],</code></pre>
+<p>You can store everything that can be represented by <code>YAML::Any</code>.</p>
 
-<p>})</p>
+<p>Example usage:</p>
 
-<p>puts Config.dump
-  Scar::Config[:int] = 1337
-  Scar::Config[:str] = "lol"
-  puts Config.dump
-  Scar::Config.reset(:int)
-  puts Config.dump
-  Scar::Config.reset(:str)
-  puts Config.dump</p>
+<pre><code class="language-crystal"><span class="c"># At toplevel</span>
+<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.define_standards({
+  int: <span class="n">7331</span>,
+  str: <span class="s">&quot;hello world&quot;</span>,
+  arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">7</span>],
+})
 
-<pre><code class="language-crystal"></code></pre>
+puts <span class="t">Config</span>[<span class="n">:int</span>] <span class="c"># =&gt; 7331</span>
+
+<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>[<span class="n">:str</span>] <span class="o">=</span> <span class="s">&quot;lol&quot;</span>
+puts <span class="t">Config</span>[<span class="n">:str</span>] <span class="c"># =&gt; lol</span>
+
+<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.save <span class="s">&quot;config.yml&quot;</span>
+
+<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.reset(<span class="n">:str</span>)
+puts <span class="t">Config</span>[<span class="n">:str</span>] <span class="c"># =&gt; hello world</span>
+
+<span class="c"># By loading the saved config from before, the `:str` entry is &quot;lol&quot; again</span>
+<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.load <span class="s">&quot;config.yml&quot;</span>
+puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>[<span class="n">:str</span>] <span class="c"># =&gt; lol</span></code></pre>
 
 
 
@@ -837,7 +812,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L20" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L29" target="_blank">
         scar/config.cr
       </a>
     
@@ -865,49 +840,49 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <li class="entry-summary">
         <a href="#[](key):YAML::Type-instance-method" class="signature"><strong>#[]</strong>(key) : YAML::Type</a>
         
-          <div class="summary"><p>Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.</p></div>
+          <div class="summary"><p>Returns the value for the given configuration entry</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#[]=(key,value)-instance-method" class="signature"><strong>#[]=</strong>(key, value)</a>
         
-          <div class="summary"><p>Sets a given key to a new value</p></div>
+          <div class="summary"><p>Sets a given configuration entry to a new value</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#dump-instance-method" class="signature"><strong>#dump</strong></a>
         
-          <div class="summary"><p>Returns the yaml dump of the config data</p></div>
+          <div class="summary"><p>Returns the yaml dump of the configuration data</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#load(fname:String)-instance-method" class="signature"><strong>#load</strong>(fname : String)</a>
         
-          <div class="summary"><p>Loads in config values from given filename (using <code><a href="../Scar/Util.html#read_file(name:String)-instance-method">Util#read_file</a></code>)</p></div>
+          <div class="summary"><p>Loads configuration values from the given file (using <code><a href="../Scar/Util.html#read_file(name:String)-instance-method">Util#read_file</a></code>)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#load_standards-instance-method" class="signature"><strong>#load_standards</strong></a>
         
-          <div class="summary"><p>Resets all configuration to the standard values.</p></div>
+          <div class="summary"><p>Resets all configuration entries to their standard value</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#reset(key)-instance-method" class="signature"><strong>#reset</strong>(key)</a>
         
-          <div class="summary"><p>Sets given key to it's standard.</p></div>
+          <div class="summary"><p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards(standards)-macro">Config#define_standards</a></code>)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#save(fname:String)-instance-method" class="signature"><strong>#save</strong>(fname : String)</a>
         
-          <div class="summary"><p>Saves config to file with given file name (using <code><a href="../Scar/Util.html#write_file(name:String,content:String)-instance-method">Util#write_file</a></code>)</p></div>
+          <div class="summary"><p>Saves the configuration to a file with given file name (using <code><a href="../Scar/Util.html#write_file(name:String,content:String)-instance-method">Util#write_file</a></code>)</p></div>
         
       </li>
     
@@ -928,7 +903,7 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       <li class="entry-summary">
         <a href="#define_standards(standards)-macro" class="signature"><strong>define_standards</strong>(standards)</a>
         
-          <div class="summary"><p>ONLY ON TOPLEVEL! Defines standard values to keys.</p></div>
+          <div class="summary"><p>Defines standard values for configuration entries to fall back to.</p></div>
         
       </li>
     
@@ -964,13 +939,16 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.</p>
+          <p>Returns the value for the given configuration entry</p>
+
+<p>You can pass strings or symbols to this method.
+Returns the standard value if the configuration entry is not set.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -985,13 +963,13 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>Sets a given key to a new value</p>
+          <p>Sets a given configuration entry to a new value</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1006,13 +984,13 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>Returns the yaml dump of the config data</p>
+          <p>Returns the yaml dump of the configuration data</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L110" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1027,13 +1005,13 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>Loads in config values from given filename (using <code><a href="../Scar/Util.html#read_file(name:String)-instance-method">Util#read_file</a></code>)</p>
+          <p>Loads configuration values from the given file (using <code><a href="../Scar/Util.html#read_file(name:String)-instance-method">Util#read_file</a></code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L115" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1048,13 +1026,13 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>Resets all configuration to the standard values.</p>
+          <p>Resets all configuration entries to their standard value</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1069,13 +1047,13 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>Sets given key to it's standard. (<code><a href="../Scar/Config.html#define_standards(standards)-macro">Config#define_standards</a></code>)</p>
+          <p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards(standards)-macro">Config#define_standards</a></code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1090,13 +1068,13 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>Saves config to file with given file name (using <code><a href="../Scar/Util.html#write_file(name:String,content:String)-instance-method">Util#write_file</a></code>)</p>
+          <p>Saves the configuration to a file with given file name (using <code><a href="../Scar/Util.html#write_file(name:String,content:String)-instance-method">Util#write_file</a></code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1123,9 +1101,11 @@ arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</spa
       
         <div class="doc">
           
-          <p>ONLY ON TOPLEVEL! Defines standard values to keys. See details.
-Specify the standards via a NamedTuple of format '&lt;keyname>: &lt;value>'.
-Usage:</p>
+          <p>Defines standard values for configuration entries to fall back to.</p>
+
+<p>Specify the standards as a <code>NamedTuple</code> of format <code>{entry name}: {value}</code>.</p>
+
+<p>Example:</p>
 
 <pre><code class="language-crystal"><span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.define_standards({
   str: <span class="s">&quot;hello world&quot;</span>,
@@ -1136,7 +1116,7 @@ Usage:</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/config.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/config.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>

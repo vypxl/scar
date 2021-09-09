@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -779,7 +749,30 @@
     Overview
   </h2>
 
-  <p>Use this for one time actions.</p>
+  <p>Base class for one-off actions</p>
+
+<p>Sample usage:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">MyAction</span> <span class="o">&lt;</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Action</span>
+  <span class="k">def</span> <span class="m">completed?</span>(dt)
+    <span class="n">true</span> <span class="c"># This action completes instantly</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">on_start</span>
+    puts <span class="s">&quot;MyAction start!&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">on_end</span>
+    puts <span class="s">&quot;MyAction end!&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c"># Somewhere in your application</span>
+app.act <span class="t">MyAction</span>.<span class="k">new</span>
+
+<span class="c"># Output:</span>
+<span class="c"># MyAction start!</span>
+<span class="c"># MyAction end!</span></code></pre>
 
 
 
@@ -799,7 +792,7 @@
   </h2>
   <ul class="other-types-list">
     
-      <li class="other-type"><a href="../Scar/TimedAction.html">Scar::TimedAction</a></li>
+      <li class="other-type"><a href="../Scar/Actions/Timed.html">Scar::Actions::Timed</a></li>
     
   </ul>
 
@@ -818,7 +811,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/action.cr#L3" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/action.cr#L26" target="_blank">
         scar/action.cr
       </a>
     
@@ -846,15 +839,21 @@
       <li class="entry-summary">
         <a href="#completed?(dt:Float32)-instance-method" class="signature"><strong>#completed?</strong>(dt : Float32)</a>
         
+          <div class="summary"><p>Should return true as soon as the action has finished</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#on_end-instance-method" class="signature"><strong>#on_end</strong></a>
         
+          <div class="summary"><p>This method is called immediately after <code><a href="../Scar/Action.html#completed?(dt:Float32)-instance-method">#completed?</a></code> returned true on a frame</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#on_start-instance-method" class="signature"><strong>#on_start</strong></a>
+        
+          <div class="summary"><p>This method is called immediately after the action was activated via <code><a href="../Scar/App.html#act(action:Action)-instance-method">Scar::App#act</a></code></p></div>
         
       </li>
     
@@ -904,16 +903,25 @@
   
     <div class="entry-detail" id="completed?(dt:Float32)-instance-method">
       <div class="signature">
-        abstract 
+        
         def <strong>completed?</strong>(dt : Float32)
 
         <a class="method-permalink" href="#completed?(dt:Float32)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Should return true as soon as the action has finished</p>
+
+<p>This method is called on each frame with the delta time as an argument.
+<code><a href="../Scar/Action.html#on_end-instance-method">#on_end</a></code> is called after this method returns true.
+By default, an action completes immediately.</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/action.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/action.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -926,10 +934,15 @@
         <a class="method-permalink" href="#on_end-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>This method is called immediately after <code><a href="../Scar/Action.html#completed?(dt:Float32)-instance-method">#completed?</a></code> returned true on a frame</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/action.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/action.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -942,10 +955,15 @@
         <a class="method-permalink" href="#on_start-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>This method is called immediately after the action was activated via <code><a href="../Scar/App.html#act(action:Action)-instance-method">Scar::App#act</a></code></p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/action.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/action.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>

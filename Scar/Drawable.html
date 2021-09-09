@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -777,11 +747,18 @@
     Overview
   </h2>
 
-  <p>Include and implement #drawable to display components or objects onto the screen
-You can use <code>visible</code>, <code><a href="../Scar/Drawable.html#texture:SF::Texture-instance-method">#texture</a></code>, <code><a href="../Scar/Drawable.html#shader:SF::Shader-instance-method">#shader</a></code> and <code><a href="../Scar/Drawable.html#blend_mode:SF::BlendMode-instance-method">#blend_mode</a></code> to customize drawing.
-If you want to be able to transform a drawable, include SF::Transformable</p>
+  <p>This module provides an easy way to use SFML drawables in your application.</p>
 
-<p>Instead of using this Module, you can also include SF::Drawable and implement the #draw method if you prefer</p>
+<p>If this module is included in your <code><a href="../Scar/Component.html">Component</a></code> or <code><a href="../Scar/Object.html">Object</a></code>, any <code><a href="../Scar/Objects/Camera.html">Objects::Camera</a></code> in
+the space containing your entity will draw it to the screen.</p>
+
+<p>Use <code><a href="../Scar/Drawable.html#visible=(visible)-instance-method">#visible=</a></code>, <code><a href="../Scar/Drawable.html#texture:SF::Texture-instance-method">#texture</a></code>, <code><a href="../Scar/Drawable.html#shader:SF::Shader-instance-method">#shader</a></code> and <code><a href="../Scar/Drawable.html#blend_mode:SF::BlendMode-instance-method">#blend_mode</a></code> to customize drawing.
+If you want to be able to transform your drawable component, include <code>SF::Transformable</code>.</p>
+
+<p>Instead of using this module, you can also include <code>SF::Drawable</code> and implement the <code>#draw</code> method yourself if you prefer.</p>
+
+<p>Example usage: See <code><a href="../Scar/Components/Sprite.html">Components::Sprite</a></code> (<a href="https://github.com/vypxl/scar/blob/main/src/scar/components/sprite.cr">source</a>),
+<code><a href="../Scar/Components/Tilemap.html">Components::Tilemap</a></code> (<a href="https://github.com/vypxl/scar/blob/main/src/scar/components/tilemap.cr">source</a>) or other builtin components.</p>
 
 
 
@@ -819,8 +796,6 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
     
       <li class="other-type"><a href="../Scar/Components/Drawable.html">Scar::Components::Drawable</a></li>
     
-      <li class="other-type"><a href="../Scar/Components/Tilemap.html">Scar::Components::Tilemap</a></li>
-    
   </ul>
 
 
@@ -836,7 +811,7 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L6" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L13" target="_blank">
         scar/drawable.cr
       </a>
     
@@ -864,40 +839,49 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
       <li class="entry-summary">
         <a href="#blend_mode:SF::BlendMode-instance-method" class="signature"><strong>#blend_mode</strong> : SF::BlendMode</a>
         
+          <div class="summary"><p>Set this to use a blend mode while drawing</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#blend_mode=(blend_mode:SF::BlendMode)-instance-method" class="signature"><strong>#blend_mode=</strong>(blend_mode : SF::BlendMode)</a>
         
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#draw(target,states)-instance-method" class="signature"><strong>#draw</strong>(target, states)</a>
+          <div class="summary"><p>Set this to use a blend mode while drawing</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#drawable:SF::Drawable-instance-method" class="signature"><strong>#drawable</strong> : SF::Drawable</a>
         
+          <div class="summary"><p>Should return the underlying <code>SF::Drawable</code>, e.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#shader:SF::Shader-instance-method" class="signature"><strong>#shader</strong> : SF::Shader</a>
+        
+          <div class="summary"><p>Set this to use a shader while drawing</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#shader=(shader:SF::Shader)-instance-method" class="signature"><strong>#shader=</strong>(shader : SF::Shader)</a>
         
+          <div class="summary"><p>Set this to use a shader while drawing</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#texture:SF::Texture-instance-method" class="signature"><strong>#texture</strong> : SF::Texture</a>
         
+          <div class="summary"><p>Set this to use a texture while drawing</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#texture=(texture:SF::Texture)-instance-method" class="signature"><strong>#texture=</strong>(texture : SF::Texture)</a>
+        
+          <div class="summary"><p>Set this to use a texture while drawing</p></div>
         
       </li>
     
@@ -955,10 +939,15 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
         <a class="method-permalink" href="#blend_mode:SF::BlendMode-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Set this to use a blend mode while drawing</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -971,26 +960,15 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
         <a class="method-permalink" href="#blend_mode=(blend_mode:SF::BlendMode)-instance-method">#</a>
       </div>
       
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L15" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="draw(target,states)-instance-method">
-      <div class="signature">
-        
-        def <strong>draw</strong>(target, states)
-
-        <a class="method-permalink" href="#draw(target,states)-instance-method">#</a>
-      </div>
+        <div class="doc">
+          
+          <p>Set this to use a blend mode while drawing</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1003,10 +981,15 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
         <a class="method-permalink" href="#drawable:SF::Drawable-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Should return the underlying <code>SF::Drawable</code>, e. g. <code>SF::Sprite</code> or <code>SF::Text</code></p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1019,10 +1002,15 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
         <a class="method-permalink" href="#shader:SF::Shader-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Set this to use a shader while drawing</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1035,10 +1023,15 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
         <a class="method-permalink" href="#shader=(shader:SF::Shader)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Set this to use a shader while drawing</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1051,10 +1044,15 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
         <a class="method-permalink" href="#texture:SF::Texture-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Set this to use a texture while drawing</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1067,10 +1065,15 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
         <a class="method-permalink" href="#texture=(texture:SF::Texture)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Set this to use a texture while drawing</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1091,7 +1094,7 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1107,7 +1110,7 @@ If you want to be able to transform a drawable, include SF::Transformable</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/drawable.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/drawable.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>

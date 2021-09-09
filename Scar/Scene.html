@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" current" data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -779,7 +749,21 @@
     Overview
   </h2>
 
-  <p>A Scene is a game state with multiple spaces</p>
+  <p>A Scene is a container for one independent state of your application, like title screen, in-game, pause menu, ...</p>
+
+<p>A Scene contains <code><a href="../Scar/Space.html">Space</a></code>s.</p>
+
+<p>Scenes live on an <code><a href="../Scar/App.html">App</a></code>'s scene stack, while only the topmost scene is updated and rendered. This means that you can
+e. g. push your pause scene onto the stack and pop it off later and your ingame scene will get paused automatically.
+You could also implement a system that updates and/or renders other scenes, so that your pause scene shows your game
+in the background.</p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal">sc <span class="o">=</span> <span class="t">Scene</span>.<span class="k">new</span>
+sc <span class="o">&lt;&lt;</span> <span class="t">Space</span>.<span class="k">new</span>(<span class="s">&quot;ui&quot;</span>, ...)
+sc <span class="o">&lt;&lt;</span> <span class="t">Space</span>.<span class="k">new</span>(<span class="s">&quot;game&quot;</span>, ...)
+app <span class="o">&lt;&lt;</span> sc</code></pre>
 
 
 
@@ -804,7 +788,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L3" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L18" target="_blank">
         scar/scene.cr
       </a>
     
@@ -859,60 +843,33 @@
       <li class="entry-summary">
         <a href="#%3C%3C(*spaces:Space)-instance-method" class="signature"><strong>#<<</strong>(*spaces : Space)</a>
         
-          <div class="summary"><p>Shortcut for <code>@spaces#push(*values : T)</code></p></div>
+          <div class="summary"><p>Adds one or more spaces to the scene and returns self</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#[](id:String):Space-instance-method" class="signature"><strong>#[]</strong>(id : String) : Space</a>
         
+          <div class="summary"><p>Returns the space with the given id</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#[]?(id:String):Space?-instance-method" class="signature"><strong>#[]?</strong>(id : String) : Space?</a>
         
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#pop-instance-method" class="signature"><strong>#pop</strong></a>
-        
-          <div class="summary"><p>Shortcut for @spaces#pop</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#pop(&block)-instance-method" class="signature"><strong>#pop</strong>(&block)</a>
-        
-          <div class="summary"><p>Shortcut for @spaces#pop(&block)</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#render(app,dt)-instance-method" class="signature"><strong>#render</strong>(app, dt)</a>
-        
-          <div class="summary"><p>Scene rendering logic</p></div>
+          <div class="summary"><p>Returns the space with the given id or nil when it is not found</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#reorder_spaces-instance-method" class="signature"><strong>#reorder_spaces</strong></a>
         
+          <div class="summary"><p>Sorts the spaces in the scene by their z value</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#spaces:Array(Scar::Space)-instance-method" class="signature"><strong>#spaces</strong> : Array(Scar::Space)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#spaces=(spaces)-instance-method" class="signature"><strong>#spaces=</strong>(spaces)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#update(app,dt)-instance-method" class="signature"><strong>#update</strong>(app, dt)</a>
-        
-          <div class="summary"><p>Scene update logic</p></div>
         
       </li>
     
@@ -967,7 +924,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -983,7 +940,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -999,7 +956,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1028,13 +985,13 @@
       
         <div class="doc">
           
-          <p>Shortcut for <code>@spaces#push(*values : T)</code></p>
+          <p>Adds one or more spaces to the scene and returns self</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1047,10 +1004,15 @@
         <a class="method-permalink" href="#[](id:String):Space-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Returns the space with the given id</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1063,73 +1025,15 @@
         <a class="method-permalink" href="#[]?(id:String):Space?-instance-method">#</a>
       </div>
       
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L68" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="pop-instance-method">
-      <div class="signature">
-        
-        def <strong>pop</strong>
-
-        <a class="method-permalink" href="#pop-instance-method">#</a>
-      </div>
-      
         <div class="doc">
           
-          <p>Shortcut for @spaces#pop</p>
+          <p>Returns the space with the given id or nil when it is not found</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L50" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="pop(&amp;block)-instance-method">
-      <div class="signature">
-        
-        def <strong>pop</strong>(&block)
-
-        <a class="method-permalink" href="#pop(&block)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Shortcut for @spaces#pop(&block)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L55" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="render(app,dt)-instance-method">
-      <div class="signature">
-        
-        def <strong>render</strong>(app, dt)
-
-        <a class="method-permalink" href="#render(app,dt)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Scene rendering logic</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1142,10 +1046,15 @@
         <a class="method-permalink" href="#reorder_spaces-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Sorts the spaces in the scene by their z value</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1161,44 +1070,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L4" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="spaces=(spaces)-instance-method">
-      <div class="signature">
-        
-        def <strong>spaces=</strong>(spaces)
-
-        <a class="method-permalink" href="#spaces=(spaces)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L4" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="update(app,dt)-instance-method">
-      <div class="signature">
-        
-        def <strong>update</strong>(app, dt)
-
-        <a class="method-permalink" href="#update(app,dt)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Scene update logic</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/scene.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/scene.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>

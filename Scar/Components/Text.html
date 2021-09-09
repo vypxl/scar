@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -770,6 +740,24 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>This component is a wrapper around <code>SF::Text</code></p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal"><span class="t">Assets</span>.default_font <span class="o">=</span> <span class="t">Assets</span>.font <span class="s">&quot;fonts/arial.ttf&quot;</span>
+title_text <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Text</span>.<span class="k">new</span>(<span class="s">&quot;Game Title&quot;</span>)
+title <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Entity</span>.<span class="k">new</span>(<span class="s">&quot;title&quot;</span>, title_text)
+title.position <span class="o">=</span> <span class="t">Vec</span>.<span class="k">new</span>(<span class="n">100</span>, <span class="n">100</span>)</code></pre>
+
 
 
 
@@ -793,7 +781,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/components/text.cr#L1" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/components/text.cr#L10" target="_blank">
         scar/components/text.cr
       </a>
     
@@ -817,6 +805,8 @@
       <li class="entry-summary">
         <a href="#new(text:String,font:SF::Font?=nil)-class-method" class="signature"><strong>.new</strong>(text : String, font : SF::Font? = <span class="n">nil</span>)</a>
         
+          <div class="summary"><p>Creates a new text component with the given <code>String</code> content and font</p></div>
+        
       </li>
     
   </ul>
@@ -838,25 +828,35 @@
       <li class="entry-summary">
         <a href="#drawable:SF::Text-instance-method" class="signature"><strong>#drawable</strong> : SF::Text</a>
         
+          <div class="summary"><p>Returns the underlying <code>SF::Text</code></p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#font:SF::Font?-instance-method" class="signature"><strong>#font</strong> : SF::Font?</a>
+        
+          <div class="summary"><p>Returns the <code>SF::Font</code> this component uses</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#font=(new_font:SF::Font)-instance-method" class="signature"><strong>#font=</strong>(new_font : SF::Font)</a>
         
+          <div class="summary"><p>Sets the font this component should use</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#text:String-instance-method" class="signature"><strong>#text</strong> : String</a>
         
+          <div class="summary"><p>Returns the <code>String</code> contents of this component</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#text=(new_text:String)-instance-method" class="signature"><strong>#text=</strong>(new_text : String)</a>
+        
+          <div class="summary"><p>Replaces the components' <code>String</code> content with the provided new one</p></div>
         
       </li>
     
@@ -891,11 +891,6 @@
     <a href="../../Scar/Drawable.html#blend_mode=(blend_mode:SF::BlendMode)-instance-method" class="tooltip">
       <span>blend_mode=(blend_mode : SF::BlendMode)</span>
     blend_mode=</a>, 
-    
-  
-    <a href="../../Scar/Drawable.html#draw(target,states)-instance-method" class="tooltip">
-      <span>draw(target, states)</span>
-    draw</a>, 
     
   
     <a href="../../Scar/Drawable.html#drawable:SF::Drawable-instance-method" class="tooltip">
@@ -1002,10 +997,18 @@
         <a class="method-permalink" href="#new(text:String,font:SF::Font?=nil)-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Creates a new text component with the given <code>String</code> content and font</p>
+
+<p>If no font is given, the component will try to use <code><a href="../../Scar/Assets.html#default_font:Font?-class-method">Assets#default_font</a></code>.
+This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-class-method">Assets#default_font</a></code> is set.</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/components/text.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/components/text.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1032,10 +1035,15 @@
         <a class="method-permalink" href="#drawable:SF::Text-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Returns the underlying <code>SF::Text</code></p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/components/text.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/components/text.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1048,10 +1056,15 @@
         <a class="method-permalink" href="#font:SF::Font?-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Returns the <code>SF::Font</code> this component uses</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/components/text.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/components/text.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1064,10 +1077,15 @@
         <a class="method-permalink" href="#font=(new_font:SF::Font)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Sets the font this component should use</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/components/text.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/components/text.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1080,10 +1098,15 @@
         <a class="method-permalink" href="#text:String-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Returns the <code>String</code> contents of this component</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/components/text.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/components/text.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1096,10 +1119,15 @@
         <a class="method-permalink" href="#text=(new_text:String)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Replaces the components' <code>String</code> content with the provided new one</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/components/text.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/components/text.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>

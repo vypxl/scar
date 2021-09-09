@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -769,6 +739,37 @@
 
 
 
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Base class for Systems</p>
+
+<p>Systems define behaviours in the application
+e. g. player movement, ai updates, ..</p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">MySystem</span> <span class="o">&lt;</span> <span class="t">Scar</span><span class="t">::</span><span class="t">System</span>
+  <span class="k">def</span> <span class="m">init</span>(app, space)
+    puts <span class="s">&quot;MySystem initialized!&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">update</span>(app, space, dt)
+    <span class="c"># Move the player entity</span>
+    space[<span class="s">&quot;player&quot;</span>].move(<span class="t">Vec</span>.<span class="k">new</span>(<span class="n">10</span>, <span class="n">0</span>) <span class="o">*</span> dt)
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">render</span>(app, space, dt)
+    puts <span class="s">&quot;Executing custom rendering logic...&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
 
 
 
@@ -807,7 +808,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/system.cr#L2" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/system.cr#L23" target="_blank">
         scar/system.cr
       </a>
     
@@ -835,25 +836,35 @@
       <li class="entry-summary">
         <a href="#init(app:App,space:Space)-instance-method" class="signature"><strong>#init</strong>(app : App, space : Space)</a>
         
+          <div class="summary"><p>Override this for one-time initialization</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#initialized:Bool-instance-method" class="signature"><strong>#initialized</strong> : Bool</a>
+        
+          <div class="summary"><p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#initialized=(initialized)-instance-method" class="signature"><strong>#initialized=</strong>(initialized)</a>
         
+          <div class="summary"><p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#render(app:App,space:Space,dt)-instance-method" class="signature"><strong>#render</strong>(app : App, space : Space, dt)</a>
         
+          <div class="summary"><p>Override this for custom rendering logic</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#update(app:App,space:Space,dt)-instance-method" class="signature"><strong>#update</strong>(app : App, space : Space, dt)</a>
+        
+          <div class="summary"><p>Override this for any behaviour you want in you application</p></div>
         
       </li>
     
@@ -909,10 +920,17 @@
         <a class="method-permalink" href="#init(app:App,space:Space)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Override this for one-time initialization</p>
+
+<p>This method is called by the space containing this System on the first frame after it was added.</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/system.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/system.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -925,10 +943,15 @@
         <a class="method-permalink" href="#initialized:Bool-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/system.cr#L3" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/system.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -941,10 +964,15 @@
         <a class="method-permalink" href="#initialized=(initialized)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/system.cr#L3" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/system.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -957,10 +985,17 @@
         <a class="method-permalink" href="#render(app:App,space:Space,dt)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Override this for custom rendering logic</p>
+
+<p>This method is called by the space containing this System on every frame before any rendering occurs.</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/system.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/system.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -973,10 +1008,17 @@
         <a class="method-permalink" href="#update(app:App,space:Space,dt)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Override this for any behaviour you want in you application</p>
+
+<p>This method is called by the space containing this System on every frame before any rendering occurs.</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/system.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/system.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>

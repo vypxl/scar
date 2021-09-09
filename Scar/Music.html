@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -767,6 +737,29 @@
 
 
 
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>This module provides simple methods to manage music playback.</p>
+
+<p>It utilizes a stack to enable simple continuation of previous music.
+This behaviour can be used to e. g. play pause music and continue playing
+the game music easily after unpausing the game.</p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal"><span class="t">Scar</span><span class="t">::</span><span class="t">Music</span>.play <span class="s">&quot;music/menu.ogg&quot;</span>
+<span class="c"># Game starts</span>
+<span class="t">Scar</span><span class="t">::</span><span class="t">Music</span>.play <span class="s">&quot;music/overworld.ogg&quot;</span>
+<span class="c"># Player returns to menu</span>
+<span class="t">Scar</span><span class="t">::</span><span class="t">Music</span>.pop_continue</code></pre>
 
 
 
@@ -805,7 +798,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/music.cr#L2" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/music.cr#L15" target="_blank">
         scar/music.cr
       </a>
     
@@ -833,17 +826,21 @@
       <li class="entry-summary">
         <a href="#current-instance-method" class="signature"><strong>#current</strong></a>
         
+          <div class="summary"><p>Returns the song that is currently playing / on top of the song stack</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#current?-instance-method" class="signature"><strong>#current?</strong></a>
+        
+          <div class="summary"><p>Returns the song that is currently playing / on top of the song stack, or nil if the song stack is empty</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#play(asset_name:String)-instance-method" class="signature"><strong>#play</strong>(asset_name : String)</a>
         
-          <div class="summary"><p>Pauses current music, pushes new music and starts playing it</p></div>
+          <div class="summary"><p>Pauses the current song, pushes the new song onto the song stack and starts playing it</p></div>
         
       </li>
     
@@ -857,7 +854,7 @@
       <li class="entry-summary">
         <a href="#pop_continue-instance-method" class="signature"><strong>#pop_continue</strong></a>
         
-          <div class="summary"><p>Stops current music, removes it from the stack and continues previous music if any</p></div>
+          <div class="summary"><p>Stops current song, removes it from the stack and continues playing the previous music (if present)</p></div>
         
       </li>
     
@@ -893,10 +890,15 @@
         <a class="method-permalink" href="#current-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Returns the song that is currently playing / on top of the song stack</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/music.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/music.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -909,10 +911,15 @@
         <a class="method-permalink" href="#current?-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Returns the song that is currently playing / on top of the song stack, or nil if the song stack is empty</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/music.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/music.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -927,13 +934,13 @@
       
         <div class="doc">
           
-          <p>Pauses current music, pushes new music and starts playing it</p>
+          <p>Pauses the current song, pushes the new song onto the song stack and starts playing it</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/music.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/music.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -954,7 +961,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/music.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/music.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -969,13 +976,13 @@
       
         <div class="doc">
           
-          <p>Stops current music, removes it from the stack and continues previous music if any</p>
+          <p>Stops current song, removes it from the stack and continues playing the previous music (if present)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/music.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/music.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>

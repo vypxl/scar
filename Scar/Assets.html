@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -780,22 +750,40 @@
   <p>This module provides a convenient interface for loading different kinds of assets
 Usage:</p>
 
-<ol><li><code><a href="../Scar/Assets.html#use(file_or_folder_name:String)-instance-method">Assets#use</a></code> a folder or zip file to index their contents
-(1.5 Use <code><a href="../Scar/Assets.html#cache(name:String)-instance-method">Assets#cache</a></code> (or <code><a href="../Scar/Assets.html#cache_zipfile(fname:String)-instance-method">#cache_zipfile</a></code>) to preload assets into memory without instatiating the respective asset types)</li><li><code><a href="../Scar/Assets.html#load(name:String,asset_type:Text.class)-instance-method">Assets#load</a></code> (or <code><a href="../Scar/Assets.html#load_all-instance-method">#load_all</a></code>) the assets you want to use in you application</li><li>Use <code><a href="../Scar/Assets.html#[](name:String,asset_type:Text.class,on_reload:Text-%3E?=nil):Text-instance-method">Assets#[]</a></code> to retrieve the loaded instances of your assets</li></ol>
+<ol><li><code><a href="../Scar/Assets.html#use(file_or_folder_name:String)-instance-method">#use</a></code> a folder or zip file to index their contents</li><li>(optional) Use <code><a href="../Scar/Assets.html#cache(name:String)-instance-method">#cache</a></code> (or <code><a href="../Scar/Assets.html#cache_zipfile(fname:String)-instance-method">#cache_zipfile</a></code>) to preload assets into memory without instatiating the respective asset types</li><li><code><a href="../Scar/Assets.html#load(name:String,asset_type)-instance-method">#load</a></code> (or <code><a href="../Scar/Assets.html#load_all-instance-method">#load_all</a></code>) the assets you want to use in your application</li><li>Use <code><a href="../Scar/Assets.html#[](name:String,asset_type,on_reload)-instance-method">#[]</a></code> or the more specific methods like <code><a href="../Scar/Assets.html#text(name):Text-instance-method">#text</a></code> to retrieve the loaded instances of your assets</li></ol>
 
-<h2><a id="hot-reloading" class="anchor" href="#hot-reloading">
+<p>Loading the assets should be done in bulk at the start of the application or while a loading screen is shown,
+so that there are no mid-gameplay slowdowns</p>
+
+<h3><a id="hot-reloading" class="anchor" href="#hot-reloading">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
-</a>Hot reloading</h2>
+</a>Hot reloading</h3>
 
-<p>The Assets module supports hot reloading of certain asset types.
-The asset types that are reloaded automatically are: Texture, Sound, Music, Font
-Tilemap components can also automatically reload their data if you use their String constructor
-You can specify a block when retrieving assets, this block will get called
-when a change is detected. This works for all asset types.
-You can enable hot-reloading by setting App#hotreload to true.
+<p>The <code><a href="../Scar/Assets.html">Assets</a></code> module supports hot reloading of certain asset types.</p>
+
+<p>The asset types that are reloaded automatically are: <code><a href="../Scar/Assets/Texture.html">Texture</a></code>, <code><a href="../Scar/Assets/Sound.html">Sound</a></code>, <code><a href="../Scar/Assets/Music.html">Music</a></code>, <code><a href="../Scar/Assets/Font.html">Font</a></code></p>
+
+<p><code><a href="../Scar/Components/Tilemap.html">Components::Tilemap</a></code> components can also automatically reload their data if you use their <code>String</code> constructor (<code><a href="../Scar/Components/Tilemap.html#new(asset_id:String)-class-method">Components::Tilemap#new(String)</a></code>)</p>
+
+<p>You can specify a block when retrieving assets, this block will get called
+when a change is detected. This works for all asset types.</p>
+
+<p>To enable hot-reloading, set <code><a href="../Scar/App.html#hotreload:Bool-instance-method">App#hotreload</a></code> to <code>true</code>.
 Hot-reloading only works if you are loading assets from plain files (not zipped) without caching them.</p>
+
+<h3><a id="exampe-usage" class="anchor" href="#exampe-usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Exampe usage:</h3>
+
+<pre><code class="language-crystal"><span class="t">Scar</span><span class="t">::</span><span class="t">Assets</span>.use <span class="s">&quot;./assets&quot;</span>
+<span class="t">Scar</span><span class="t">::</span><span class="t">Assets</span>.load <span class="s">&quot;textures/player.png&quot;</span>
+
+tex <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Assets</span>.texture(<span class="s">&quot;textures/player.png&quot;</span>) { <span class="o">|</span>new_tex<span class="o">|</span> puts <span class="s">&quot;Player texture was modified&quot;</span> }
+playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>.<span class="k">new</span> tex</code></pre>
 
 
 
@@ -834,7 +822,7 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L25" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L41" target="_blank">
         scar/assets.cr
       </a>
     
@@ -842,30 +830,6 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
   
 
 
-
-  
-    <h2>
-      <a id="constant-summary" class="anchor" href="#constant-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-      Constant Summary
-    </h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="ASSET_TYPES">
-        <strong>ASSET_TYPES</strong> = <code>{<span class="t">Text</span>: <span class="s">&quot;String&quot;</span>, <span class="t">Texture</span>: <span class="s">&quot;SF::Texture&quot;</span>, <span class="t">Sound</span>: <span class="s">&quot;SF::SoundBuffer&quot;</span>, <span class="t">Music</span>: <span class="s">&quot;SF::Music&quot;</span>, <span class="t">Font</span>: <span class="s">&quot;SF::Font&quot;</span>, <span class="t">Yaml</span>: <span class="s">&quot;YAML::Any&quot;</span>, <span class="t">Json</span>: <span class="s">&quot;JSON::Any&quot;</span>, <span class="t">Tilemap</span>: <span class="s">&quot;Scar::Tiled::Map&quot;</span>}</code>
-      </dt>
-      
-    
-      <dt class="entry-const" id="KNOWN_EXTENSIONS">
-        <strong>KNOWN_EXTENSIONS</strong> = <code><span class="s">/\.(txt|png|wav|ogg|ttf)$/</span></code>
-      </dt>
-      
-    
-  </dl>
 
 
 
@@ -882,12 +846,16 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#default_font-class-method" class="signature"><strong>.default_font</strong></a>
+        <a href="#default_font:Font?-class-method" class="signature"><strong>.default_font</strong> : Font?</a>
+        
+          <div class="summary"><p>If you set this property, <code><a href="../Scar/Components/Text.html">Components::Text</a></code> components can be created without specifying a font.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_font=(default_font)-class-method" class="signature"><strong>.default_font=</strong>(default_font)</a>
+        <a href="#default_font=(default_font:Font?)-class-method" class="signature"><strong>.default_font=</strong>(default_font : Font?)</a>
+        
+          <div class="summary"><p>If you set this property, <code><a href="../Scar/Components/Text.html">Components::Text</a></code> components can be created without specifying a font.</p></div>
         
       </li>
     
@@ -906,357 +874,112 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Text.class,on_reload:Text-%3E?=nil):Text-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, on_reload : Text -> ? = <span class="n">nil</span>) : Text</a>
+        <a href="#[](name:String,asset_type,on_reload)-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type, on_reload)</a>
         
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Text.class,&block:Text-%3E):Text-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, &block : Text -> ) : Text</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
+          <div class="summary"><p>Fetches a loaded asset</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Texture.class,on_reload:Texture-%3E?=nil):Texture-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, on_reload : Texture -> ? = <span class="n">nil</span>) : Texture</a>
+        <a href="#[](name:String,asset_type,&)-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type, &)</a>
         
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Texture.class,&block:Texture-%3E):Texture-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, &block : Texture -> ) : Texture</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
+          <div class="summary"><p>Fetches a loaded asset</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Sound.class,on_reload:Sound-%3E?=nil):Sound-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, on_reload : Sound -> ? = <span class="n">nil</span>) : Sound</a>
+        <a href="#[]?(name:String,asset_type,on_reload)-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type, on_reload)</a>
         
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Sound.class,&block:Sound-%3E):Sound-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, &block : Sound -> ) : Sound</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
+          <div class="summary"><p>Same as <code><a href="../Scar/Assets.html#[](name:String,asset_type,on_reload)-instance-method">#[]</a></code>, but returns nil if <em>name</em> does not correspond to a loaded asset</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Music.class,on_reload:Music-%3E?=nil):Music-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, on_reload : Music -> ? = <span class="n">nil</span>) : Music</a>
+        <a href="#[]?(name:String,asset_type,&)-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type, &)</a>
         
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Music.class,&block:Music-%3E):Music-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, &block : Music -> ) : Music</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Font.class,on_reload:Font-%3E?=nil):Font-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, on_reload : Font -> ? = <span class="n">nil</span>) : Font</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Font.class,&block:Font-%3E):Font-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, &block : Font -> ) : Font</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Yaml.class,on_reload:Yaml-%3E?=nil):Yaml-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, on_reload : Yaml -> ? = <span class="n">nil</span>) : Yaml</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Yaml.class,&block:Yaml-%3E):Yaml-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, &block : Yaml -> ) : Yaml</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Json.class,on_reload:Json-%3E?=nil):Json-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, on_reload : Json -> ? = <span class="n">nil</span>) : Json</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Json.class,&block:Json-%3E):Json-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, &block : Json -> ) : Json</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Tilemap.class,on_reload:Tilemap-%3E?=nil):Tilemap-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, on_reload : Tilemap -> ? = <span class="n">nil</span>) : Tilemap</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[](name:String,asset_type:Tilemap.class,&block:Tilemap-%3E):Tilemap-instance-method" class="signature"><strong>#[]</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, &block : Tilemap -> ) : Tilemap</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Text.class,on_reload:Text-%3E?=nil):Text?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, on_reload : Text -> ? = <span class="n">nil</span>) : Text?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Text.class,&block:Text-%3E):Text?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, &block : Text -> ) : Text?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Texture.class,on_reload:Texture-%3E?=nil):Texture?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, on_reload : Texture -> ? = <span class="n">nil</span>) : Texture?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Texture.class,&block:Texture-%3E):Texture?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, &block : Texture -> ) : Texture?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Sound.class,on_reload:Sound-%3E?=nil):Sound?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, on_reload : Sound -> ? = <span class="n">nil</span>) : Sound?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Sound.class,&block:Sound-%3E):Sound?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, &block : Sound -> ) : Sound?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Music.class,on_reload:Music-%3E?=nil):Music?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, on_reload : Music -> ? = <span class="n">nil</span>) : Music?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Music.class,&block:Music-%3E):Music?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, &block : Music -> ) : Music?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Font.class,on_reload:Font-%3E?=nil):Font?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, on_reload : Font -> ? = <span class="n">nil</span>) : Font?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Font.class,&block:Font-%3E):Font?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, &block : Font -> ) : Font?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Yaml.class,on_reload:Yaml-%3E?=nil):Yaml?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, on_reload : Yaml -> ? = <span class="n">nil</span>) : Yaml?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Yaml.class,&block:Yaml-%3E):Yaml?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, &block : Yaml -> ) : Yaml?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Json.class,on_reload:Json-%3E?=nil):Json?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, on_reload : Json -> ? = <span class="n">nil</span>) : Json?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Json.class,&block:Json-%3E):Json?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, &block : Json -> ) : Json?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Tilemap.class,on_reload:Tilemap-%3E?=nil):Tilemap?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, on_reload : Tilemap -> ? = <span class="n">nil</span>) : Tilemap?</a>
-        
-          <div class="summary"><p>Fetches an loaded asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#[]?(name:String,asset_type:Tilemap.class,&block:Tilemap-%3E):Tilemap?-instance-method" class="signature"><strong>#[]?</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, &block : Tilemap -> ) : Tilemap?</a>
-        
-          <div class="summary"><p>Same as #[], but with a block argument</p></div>
+          <div class="summary"><p>Same as <code><a href="../Scar/Assets.html#[](name:String,asset_type,on_reload)-instance-method">#[]</a></code>, but returns nil if <em>name</em> does not correspond to a loaded asset</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#cache(name:String)-instance-method" class="signature"><strong>#cache</strong>(name : String)</a>
         
-          <div class="summary"><p>Loads an indexed assets data into memory so it is not loaded from the filesystem.</p></div>
+          <div class="summary"><p>Loads an indexed assets' data into memory so it does not need to be loaded from the filesystem</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#cache_zipfile(fname:String)-instance-method" class="signature"><strong>#cache_zipfile</strong>(fname : String)</a>
         
-          <div class="summary"><p>Indexes a zip file and caches all contents of it.</p></div>
+          <div class="summary"><p>Indexes a zip file and caches all its contents.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#decache(name:String)-instance-method" class="signature"><strong>#decache</strong>(name : String)</a>
         
-          <div class="summary"><p>Removes an assets data from the cache</p></div>
+          <div class="summary"><p>Removes an assets' cache data</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#font(name):Font-instance-method" class="signature"><strong>#font</strong>(name) : Font</a>
         
-          <div class="summary"><p>Fetches a loaded Font asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#font(name,&block:Font-%3E):Font-instance-method" class="signature"><strong>#font</strong>(name, &block : Font -> ) : Font</a>
         
-          <div class="summary"><p>Fetches a loaded Font asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>, block]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#font?(name):Font?-instance-method" class="signature"><strong>#font?</strong>(name) : Font?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#font?(name,&block:Font-%3E):Font?-instance-method" class="signature"><strong>#font?</strong>(name, &block : Font -> ) : Font?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>, block]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#json(name):Json-instance-method" class="signature"><strong>#json</strong>(name) : Json</a>
         
-          <div class="summary"><p>Fetches a loaded Json asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#json(name,&block:Json-%3E):Json-instance-method" class="signature"><strong>#json</strong>(name, &block : Json -> ) : Json</a>
         
-          <div class="summary"><p>Fetches a loaded Json asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>, block]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#json?(name):Json?-instance-method" class="signature"><strong>#json?</strong>(name) : Json?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#json?(name,&block:Json-%3E):Json?-instance-method" class="signature"><strong>#json?</strong>(name, &block : Json -> ) : Json?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>, block]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Text.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>)</a>
-        
-          <div class="summary"><p>Loads an Asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Texture.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>)</a>
-        
-          <div class="summary"><p>Loads an Asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Sound.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>)</a>
-        
-          <div class="summary"><p>Loads an Asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Music.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>)</a>
-        
-          <div class="summary"><p>Loads an Asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Font.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>)</a>
-        
-          <div class="summary"><p>Loads an Asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Yaml.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>)</a>
-        
-          <div class="summary"><p>Loads an Asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Json.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>)</a>
-        
-          <div class="summary"><p>Loads an Asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load(name:String,asset_type:Tilemap.class)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>)</a>
+        <a href="#load(name:String,asset_type)-instance-method" class="signature"><strong>#load</strong>(name : String, asset_type)</a>
         
           <div class="summary"><p>Loads an Asset.</p></div>
         
@@ -1265,7 +988,7 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
       <li class="entry-summary">
         <a href="#load(name:String)-instance-method" class="signature"><strong>#load</strong>(name : String)</a>
         
-          <div class="summary"><p>Same as load but guesses the type based upon file extension.</p></div>
+          <div class="summary"><p>Same as <code><a href="../Scar/Assets.html#load(name:String,asset_type)-instance-method">#load</a></code>, but guesses the asset type based upon its file extension</p></div>
         
       </li>
     
@@ -1279,28 +1002,28 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
       <li class="entry-summary">
         <a href="#music(name):Music-instance-method" class="signature"><strong>#music</strong>(name) : Music</a>
         
-          <div class="summary"><p>Fetches a loaded Music asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#music(name,&block:Music-%3E):Music-instance-method" class="signature"><strong>#music</strong>(name, &block : Music -> ) : Music</a>
         
-          <div class="summary"><p>Fetches a loaded Music asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>, block]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#music?(name):Music?-instance-method" class="signature"><strong>#music?</strong>(name) : Music?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#music?(name,&block:Music-%3E):Music?-instance-method" class="signature"><strong>#music?</strong>(name, &block : Music -> ) : Music?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>, block]?</code></p></div>
         
       </li>
     
@@ -1312,156 +1035,135 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
       </li>
     
       <li class="entry-summary">
-        <a href="#sound(name,&block:Sound-%3E):Sound-instance-method" class="signature"><strong>#sound</strong>(name, &block : Sound -> ) : Sound</a>
-        
-          <div class="summary"><p>Fetches a loaded Sound asset.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#sound?(name):Sound?-instance-method" class="signature"><strong>#sound?</strong>(name) : Sound?</a>
-        
-          <div class="summary"><p>:ditto</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#sound?(name,&block:Sound-%3E):Sound?-instance-method" class="signature"><strong>#sound?</strong>(name, &block : Sound -> ) : Sound?</a>
-        
-          <div class="summary"><p>:ditto</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#text(name):Text-instance-method" class="signature"><strong>#text</strong>(name) : Text</a>
         
-          <div class="summary"><p>Fetches a loaded Text asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#text(name,&block:Text-%3E):Text-instance-method" class="signature"><strong>#text</strong>(name, &block : Text -> ) : Text</a>
         
-          <div class="summary"><p>Fetches a loaded Text asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>, block]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#text?(name):Text?-instance-method" class="signature"><strong>#text?</strong>(name) : Text?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#text?(name,&block:Text-%3E):Text?-instance-method" class="signature"><strong>#text?</strong>(name, &block : Text -> ) : Text?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>, block]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#texture(name):Texture-instance-method" class="signature"><strong>#texture</strong>(name) : Texture</a>
         
-          <div class="summary"><p>Fetches a loaded Texture asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#texture(name,&block:Texture-%3E):Texture-instance-method" class="signature"><strong>#texture</strong>(name, &block : Texture -> ) : Texture</a>
         
-          <div class="summary"><p>Fetches a loaded Texture asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>, block]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#texture?(name):Texture?-instance-method" class="signature"><strong>#texture?</strong>(name) : Texture?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#texture?(name,&block:Texture-%3E):Texture?-instance-method" class="signature"><strong>#texture?</strong>(name, &block : Texture -> ) : Texture?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>, block]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#tilemap(name):Tilemap-instance-method" class="signature"><strong>#tilemap</strong>(name) : Tilemap</a>
         
-          <div class="summary"><p>Fetches a loaded Tilemap asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#tilemap(name,&block:Tilemap-%3E):Tilemap-instance-method" class="signature"><strong>#tilemap</strong>(name, &block : Tilemap -> ) : Tilemap</a>
         
-          <div class="summary"><p>Fetches a loaded Tilemap asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>, block]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#tilemap?(name):Tilemap?-instance-method" class="signature"><strong>#tilemap?</strong>(name) : Tilemap?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#tilemap?(name,&block:Tilemap-%3E):Tilemap?-instance-method" class="signature"><strong>#tilemap?</strong>(name, &block : Tilemap -> ) : Tilemap?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>, block]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#unload(name:String)-instance-method" class="signature"><strong>#unload</strong>(name : String)</a>
         
-          <div class="summary"><p>Unloads (destroys) an loaded Asset.</p></div>
+          <div class="summary"><p>Unloads (destroys) a loaded Asset</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#unload_all-instance-method" class="signature"><strong>#unload_all</strong></a>
         
-          <div class="summary"><p>Unloads all loaded Assets.</p></div>
+          <div class="summary"><p>Unloads all loaded assets</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#use(file_or_folder_name:String)-instance-method" class="signature"><strong>#use</strong>(file_or_folder_name : String)</a>
         
-          <div class="summary"><p>Indexes a folder or zip file containing assets.</p></div>
+          <div class="summary"><p>Indexes a folder or zip file containing assets</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#yaml(name):Yaml-instance-method" class="signature"><strong>#yaml</strong>(name) : Yaml</a>
         
-          <div class="summary"><p>Fetches a loaded Yaml asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#yaml(name,&block:Yaml-%3E):Yaml-instance-method" class="signature"><strong>#yaml</strong>(name, &block : Yaml -> ) : Yaml</a>
         
-          <div class="summary"><p>Fetches a loaded Yaml asset.</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>, block]</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#yaml?(name):Yaml?-instance-method" class="signature"><strong>#yaml?</strong>(name) : Yaml?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#yaml?(name,&block:Yaml-%3E):Yaml?-instance-method" class="signature"><strong>#yaml?</strong>(name, &block : Yaml -> ) : Yaml?</a>
         
-          <div class="summary"><p>:ditto</p></div>
+          <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>, block]?</code></p></div>
         
       </li>
     
@@ -1487,34 +1189,52 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="default_font-class-method">
+    <div class="entry-detail" id="default_font:Font?-class-method">
       <div class="signature">
         
-        def self.<strong>default_font</strong>
+        def self.<strong>default_font</strong> : <a href="../Scar/Assets/Font.html">Font</a>?
 
-        <a class="method-permalink" href="#default_font-class-method">#</a>
+        <a class="method-permalink" href="#default_font:Font?-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>If you set this property, <code><a href="../Scar/Components/Text.html">Components::Text</a></code> components can be created without specifying a font. They will use this font as a default.</p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal"><span class="t">Assets</span>.default_font <span class="o">=</span> <span class="t">Assets</span>.font <span class="s">&quot;fonts/arial.ttf&quot;</span></code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="default_font=(default_font)-class-method">
+    <div class="entry-detail" id="default_font=(default_font:Font?)-class-method">
       <div class="signature">
         
-        def self.<strong>default_font=</strong>(default_font)
+        def self.<strong>default_font=</strong>(default_font : <a href="../Scar/Assets/Font.html">Font</a>?)
 
-        <a class="method-permalink" href="#default_font=(default_font)-class-method">#</a>
+        <a class="method-permalink" href="#default_font=(default_font:Font?)-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>If you set this property, <code><a href="../Scar/Components/Text.html">Components::Text</a></code> components can be created without specifying a font. They will use this font as a default.</p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal"><span class="t">Assets</span>.default_font <span class="o">=</span> <span class="t">Assets</span>.font <span class="s">&quot;fonts/arial.ttf&quot;</span></code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1531,722 +1251,96 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="[](name:String,asset_type:Text.class,on_reload:Text-&gt;?=nil):Text-instance-method">
+    <div class="entry-detail" id="[](name:String,asset_type,on_reload)-instance-method">
       <div class="signature">
         
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Text.html">Text</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Text.html">Text</a>
+        def <strong>[]</strong>(name : String, asset_type, on_reload)
 
-        <a class="method-permalink" href="#[](name:String,asset_type:Text.class,on_reload:Text-%3E?=nil):Text-instance-method">#</a>
+        <a class="method-permalink" href="#[](name:String,asset_type,on_reload)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Fetches a loaded asset</p>
+
+<p>You have to specify the type of the asset type, or use the more specific functions.
+Specify <em>on_reload</em> (type: <code>Proc(asset_type, Nil)</code>) to execute some code when the asset is modified on disk (see hot-reloading).</p>
+
+<p>Return type is <em>asset_type</em>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L373" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="[](name:String,asset_type:Text.class,&amp;block:Text-&gt;):Text-instance-method">
+    <div class="entry-detail" id="[](name:String,asset_type,&amp;)-instance-method">
       <div class="signature">
         
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Text.html">Text</a> -> ) : <a href="../Scar/Assets/Text.html">Text</a>
+        def <strong>[]</strong>(name : String, asset_type, &)
 
-        <a class="method-permalink" href="#[](name:String,asset_type:Text.class,&block:Text-%3E):Text-instance-method">#</a>
+        <a class="method-permalink" href="#[](name:String,asset_type,&)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Same as #[], but with a block argument</p>
+          <p>Fetches a loaded asset</p>
+
+<p>You have to specify the type of the asset type, or use the more specific functions.
+Specify a block (type: <code>Proc(asset_type, Nil)</code>) to execute some code when the asset is modified on disk (see hot-reloading).</p>
+
+<p>Return type is <em>asset_type</em>.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L383" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="[](name:String,asset_type:Texture.class,on_reload:Texture-&gt;?=nil):Texture-instance-method">
+    <div class="entry-detail" id="[]?(name:String,asset_type,on_reload)-instance-method">
       <div class="signature">
         
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Texture.html">Texture</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Texture.html">Texture</a>
+        def <strong>[]?</strong>(name : String, asset_type, on_reload)
 
-        <a class="method-permalink" href="#[](name:String,asset_type:Texture.class,on_reload:Texture-%3E?=nil):Texture-instance-method">#</a>
+        <a class="method-permalink" href="#[]?(name:String,asset_type,on_reload)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code><a href="../Scar/Assets.html#[](name:String,asset_type,on_reload)-instance-method">#[]</a></code>, but returns nil if <em>name</em> does not correspond to a loaded asset</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L388" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="[](name:String,asset_type:Texture.class,&amp;block:Texture-&gt;):Texture-instance-method">
+    <div class="entry-detail" id="[]?(name:String,asset_type,&amp;)-instance-method">
       <div class="signature">
         
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Texture.html">Texture</a> -> ) : <a href="../Scar/Assets/Texture.html">Texture</a>
+        def <strong>[]?</strong>(name : String, asset_type, &)
 
-        <a class="method-permalink" href="#[](name:String,asset_type:Texture.class,&block:Texture-%3E):Texture-instance-method">#</a>
+        <a class="method-permalink" href="#[]?(name:String,asset_type,&)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Same as #[], but with a block argument</p>
+          <p>Same as <code><a href="../Scar/Assets.html#[](name:String,asset_type,on_reload)-instance-method">#[]</a></code>, but returns nil if <em>name</em> does not correspond to a loaded asset</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Sound.class,on_reload:Sound-&gt;?=nil):Sound-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Sound.html">Sound</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Sound.html">Sound</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Sound.class,on_reload:Sound-%3E?=nil):Sound-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Sound.class,&amp;block:Sound-&gt;):Sound-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Sound.class,&block:Sound-%3E):Sound-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Music.class,on_reload:Music-&gt;?=nil):Music-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Music.html">Music</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Music.html">Music</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Music.class,on_reload:Music-%3E?=nil):Music-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Music.class,&amp;block:Music-&gt;):Music-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Music.html">Music</a> -> ) : <a href="../Scar/Assets/Music.html">Music</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Music.class,&block:Music-%3E):Music-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Font.class,on_reload:Font-&gt;?=nil):Font-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Font.html">Font</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Font.html">Font</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Font.class,on_reload:Font-%3E?=nil):Font-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Font.class,&amp;block:Font-&gt;):Font-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Font.html">Font</a> -> ) : <a href="../Scar/Assets/Font.html">Font</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Font.class,&block:Font-%3E):Font-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Yaml.class,on_reload:Yaml-&gt;?=nil):Yaml-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Yaml.html">Yaml</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Yaml.html">Yaml</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Yaml.class,on_reload:Yaml-%3E?=nil):Yaml-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Yaml.class,&amp;block:Yaml-&gt;):Yaml-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Yaml.html">Yaml</a> -> ) : <a href="../Scar/Assets/Yaml.html">Yaml</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Yaml.class,&block:Yaml-%3E):Yaml-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Json.class,on_reload:Json-&gt;?=nil):Json-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Json.html">Json</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Json.html">Json</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Json.class,on_reload:Json-%3E?=nil):Json-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Json.class,&amp;block:Json-&gt;):Json-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Json.html">Json</a> -> ) : <a href="../Scar/Assets/Json.html">Json</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Json.class,&block:Json-%3E):Json-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Tilemap.class,on_reload:Tilemap-&gt;?=nil):Tilemap-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Tilemap.class,on_reload:Tilemap-%3E?=nil):Tilemap-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[](name:String,asset_type:Tilemap.class,&amp;block:Tilemap-&gt;):Tilemap-instance-method">
-      <div class="signature">
-        
-        def <strong>[]</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> -> ) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a>
-
-        <a class="method-permalink" href="#[](name:String,asset_type:Tilemap.class,&block:Tilemap-%3E):Tilemap-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Text.class,on_reload:Text-&gt;?=nil):Text?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Text.html">Text</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Text.html">Text</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Text.class,on_reload:Text-%3E?=nil):Text?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Text.class,&amp;block:Text-&gt;):Text?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Text.html">Text</a> -> ) : <a href="../Scar/Assets/Text.html">Text</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Text.class,&block:Text-%3E):Text?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Texture.class,on_reload:Texture-&gt;?=nil):Texture?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Texture.html">Texture</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Texture.html">Texture</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Texture.class,on_reload:Texture-%3E?=nil):Texture?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Texture.class,&amp;block:Texture-&gt;):Texture?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Texture.html">Texture</a> -> ) : <a href="../Scar/Assets/Texture.html">Texture</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Texture.class,&block:Texture-%3E):Texture?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Sound.class,on_reload:Sound-&gt;?=nil):Sound?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Sound.html">Sound</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Sound.html">Sound</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Sound.class,on_reload:Sound-%3E?=nil):Sound?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Sound.class,&amp;block:Sound-&gt;):Sound?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Sound.class,&block:Sound-%3E):Sound?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Music.class,on_reload:Music-&gt;?=nil):Music?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Music.html">Music</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Music.html">Music</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Music.class,on_reload:Music-%3E?=nil):Music?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Music.class,&amp;block:Music-&gt;):Music?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Music.html">Music</a> -> ) : <a href="../Scar/Assets/Music.html">Music</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Music.class,&block:Music-%3E):Music?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Font.class,on_reload:Font-&gt;?=nil):Font?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Font.html">Font</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Font.html">Font</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Font.class,on_reload:Font-%3E?=nil):Font?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Font.class,&amp;block:Font-&gt;):Font?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Font.html">Font</a> -> ) : <a href="../Scar/Assets/Font.html">Font</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Font.class,&block:Font-%3E):Font?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Yaml.class,on_reload:Yaml-&gt;?=nil):Yaml?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Yaml.html">Yaml</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Yaml.html">Yaml</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Yaml.class,on_reload:Yaml-%3E?=nil):Yaml?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Yaml.class,&amp;block:Yaml-&gt;):Yaml?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Yaml.html">Yaml</a> -> ) : <a href="../Scar/Assets/Yaml.html">Yaml</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Yaml.class,&block:Yaml-%3E):Yaml?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Json.class,on_reload:Json-&gt;?=nil):Json?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Json.html">Json</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Json.html">Json</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Json.class,on_reload:Json-%3E?=nil):Json?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Json.class,&amp;block:Json-&gt;):Json?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Json.html">Json</a> -> ) : <a href="../Scar/Assets/Json.html">Json</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Json.class,&block:Json-%3E):Json?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Tilemap.class,on_reload:Tilemap-&gt;?=nil):Tilemap?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, on_reload : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> -> ? = <span class="n">nil</span>) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Tilemap.class,on_reload:Tilemap-%3E?=nil):Tilemap?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches an loaded asset.
-You have to specify the type of the asset type,
-or use the more specific functions.
-Specify on_reload to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="[]?(name:String,asset_type:Tilemap.class,&amp;block:Tilemap-&gt;):Tilemap?-instance-method">
-      <div class="signature">
-        
-        def <strong>[]?</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>, &block : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> -> ) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a>?
-
-        <a class="method-permalink" href="#[]?(name:String,asset_type:Tilemap.class,&block:Tilemap-%3E):Tilemap?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Same as #[], but with a block argument</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L393" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2261,15 +1355,16 @@ Specify on_reload to execute some code when the asset is modified on disk (see h
       
         <div class="doc">
           
-          <p>Loads an indexed assets data into memory so it is not loaded from the filesystem.
-Only use this for preloading as it DOES NOT LOAD THE ASSET, it only stores the raw data
-for it to be accesible more quickly!</p>
+          <p>Loads an indexed assets' data into memory so it does not need to be loaded from the filesystem</p>
+
+<p>This method is for preloading; It <strong>does not</strong> load the asset, it only stores its raw data
+in memory for it to be quickly accesible.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L159" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2284,13 +1379,15 @@ for it to be accesible more quickly!</p>
       
         <div class="doc">
           
-          <p>Indexes a zip file and caches all contents of it. Use this to preload all assets in the file at once without reading each file on its own.</p>
+          <p>Indexes a zip file and caches all its contents.</p>
+
+<p>You can use this to preload all assets in the file at once.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L137" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L168" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2305,13 +1402,13 @@ for it to be accesible more quickly!</p>
       
         <div class="doc">
           
-          <p>Removes an assets data from the cache</p>
+          <p>Removes an assets' cache data</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L147" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2326,13 +1423,13 @@ for it to be accesible more quickly!</p>
       
         <div class="doc">
           
-          <p>Fetches a loaded Font asset.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2347,14 +1444,13 @@ for it to be accesible more quickly!</p>
       
         <div class="doc">
           
-          <p>Fetches a loaded Font asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>, block]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2369,13 +1465,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2390,13 +1486,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>, block]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2411,13 +1507,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Json asset.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2432,14 +1528,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Json asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>, block]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2454,13 +1549,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2475,229 +1570,42 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>, block]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="load(name:String,asset_type:Text.class)-instance-method">
+    <div class="entry-detail" id="load(name:String,asset_type)-instance-method">
       <div class="signature">
         
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Text</span>.<span class="k">class</span>)
+        def <strong>load</strong>(name : String, asset_type)
 
-        <a class="method-permalink" href="#load(name:String,asset_type:Text.class)-instance-method">#</a>
+        <a class="method-permalink" href="#load(name:String,asset_type)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
+          <p>Loads an Asset. See details</p>
+
+<p>You must provide the correct asset_type for this method to work (or you can use the guessing load function).</p>
+
+<p>Accepted types are all types of the <code><a href="../Scar/Assets/Asset.html">Asset</a></code> Union.
+An asset must be loaded via this method before using it.
+This method utilizes cached data if it is available.
+Zip entries that are not cached are implicitly cached because Assets cannot be created directly from zip entries (this is not recommended, cache the zipfile first!).
+Zip file entries take precedence over plain files.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(name:String,asset_type:Texture.class)-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Texture</span>.<span class="k">class</span>)
-
-        <a class="method-permalink" href="#load(name:String,asset_type:Texture.class)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(name:String,asset_type:Sound.class)-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Sound</span>.<span class="k">class</span>)
-
-        <a class="method-permalink" href="#load(name:String,asset_type:Sound.class)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(name:String,asset_type:Music.class)-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Music</span>.<span class="k">class</span>)
-
-        <a class="method-permalink" href="#load(name:String,asset_type:Music.class)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(name:String,asset_type:Font.class)-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Font</span>.<span class="k">class</span>)
-
-        <a class="method-permalink" href="#load(name:String,asset_type:Font.class)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(name:String,asset_type:Yaml.class)-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Yaml</span>.<span class="k">class</span>)
-
-        <a class="method-permalink" href="#load(name:String,asset_type:Yaml.class)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(name:String,asset_type:Json.class)-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Json</span>.<span class="k">class</span>)
-
-        <a class="method-permalink" href="#load(name:String,asset_type:Json.class)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(name:String,asset_type:Tilemap.class)-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(name : String, asset_type : <span class="t">Tilemap</span>.<span class="k">class</span>)
-
-        <a class="method-permalink" href="#load(name:String,asset_type:Tilemap.class)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Loads an Asset. See details.
-You must provide the correct Asset Type for it to work (Or use the guessing load function).
-Accepted types are all that are listed in Assets::ASSET_TYPES.
-Must be called before using the Asset.
-Uses cached data if available.
-Implicitly caches data from zip files because Assets cannot be created from zip entries (this is not recommended, cache the zipfile first!).
-Loads from indexed zip file entries before indexed folders!</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L151" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2712,19 +1620,17 @@ Loads from indexed zip file entries before indexed folders!</p>
       
         <div class="doc">
           
-          <p>Same as load but guesses the type based upon file extension.
-".txt" => Text
-".png" => Texture
-".wav" => Sound
-".ogg" => Music
-".ttf" => Font
-".yml", ".yaml" and ".json" are not loaded because these extensions are ambigous</p>
+          <p>Same as <code><a href="../Scar/Assets.html#load(name:String,asset_type)-instance-method">#load</a></code>, but guesses the asset type based upon its file extension</p>
+
+<ul><li>".txt" => Text</li><li>".png" => Texture</li><li>".wav" => Sound</li><li>".ogg" => Music</li><li>".ttf" => Font</li></ul>
+
+<p>".yml", ".yaml" and ".json" are not loaded because these extensions are ambigous.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L241" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L283" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2745,7 +1651,7 @@ Loads from indexed zip file entries before indexed folders!</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L264" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L306" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2760,13 +1666,13 @@ Loads from indexed zip file entries before indexed folders!</p>
       
         <div class="doc">
           
-          <p>Fetches a loaded Music asset.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2781,14 +1687,13 @@ Loads from indexed zip file entries before indexed folders!</p>
       
         <div class="doc">
           
-          <p>Fetches a loaded Music asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>, block]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2803,13 +1708,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2824,13 +1729,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>, block]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2852,71 +1757,7 @@ This is necessary because SF::Sound has to get finalized explicitly.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L377" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="sound(name,&amp;block:Sound-&gt;):Sound-instance-method">
-      <div class="signature">
-        
-        def <strong>sound</strong>(name, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a>
-
-        <a class="method-permalink" href="#sound(name,&block:Sound-%3E):Sound-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fetches a loaded Sound asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="sound?(name):Sound?-instance-method">
-      <div class="signature">
-        
-        def <strong>sound?</strong>(name) : <a href="../Scar/Assets/Sound.html">Sound</a>?
-
-        <a class="method-permalink" href="#sound?(name):Sound?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>:ditto</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="sound?(name,&amp;block:Sound-&gt;):Sound?-instance-method">
-      <div class="signature">
-        
-        def <strong>sound?</strong>(name, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a>?
-
-        <a class="method-permalink" href="#sound?(name,&block:Sound-%3E):Sound?-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>:ditto</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L452" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2931,13 +1772,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Text asset.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2952,14 +1793,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Text asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>, block]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2974,13 +1814,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2995,13 +1835,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>, block]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3016,13 +1856,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Texture asset.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3037,14 +1877,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Texture asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>, block]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3059,13 +1898,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3080,13 +1919,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>, block]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3101,13 +1940,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Tilemap asset.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3122,14 +1961,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Tilemap asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>, block]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3144,13 +1982,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3165,13 +2003,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>, block]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3186,13 +2024,15 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Unloads (destroys) an loaded Asset. Caution with assets like Textures or SoundBuffers, they could be referenced by Sprites or Sounds!</p>
+          <p>Unloads (destroys) a loaded Asset</p>
+
+<p>Caution with assets like Textures or SoundBuffers, they could be referenced by Sprites or Sounds!</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L285" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L329" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3207,13 +2047,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Unloads all loaded Assets.</p>
+          <p>Unloads all loaded assets</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L295" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L339" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3228,13 +2068,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Indexes a folder or zip file containing assets.</p>
+          <p>Indexes a folder or zip file containing assets</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L139" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3249,13 +2089,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Yaml asset.</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3270,14 +2110,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>Fetches a loaded Yaml asset.
-Add a block to execute some code when the asset is modified on disk (see hot-reloading)</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>, block]</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3292,13 +2131,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3313,13 +2152,13 @@ Add a block to execute some code when the asset is modified on disk (see hot-rel
       
         <div class="doc">
           
-          <p>:ditto</p>
+          <p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>, block]?</code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/assets.cr#L320" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/assets.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>

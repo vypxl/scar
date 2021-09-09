@@ -61,6 +61,21 @@
       
     </li>
   
+  <li class="parent " data-id="scar/Scar/Actions" data-name="scar::actions">
+      <a href="../Scar/Actions.html">Actions</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/Scar/Actions/Timed" data-name="scar::actions::timed">
+      <a href="../Scar/Actions/Timed.html">Timed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
   <li class=" " data-id="scar/Scar/App" data-name="scar::app">
       <a href="../Scar/App.html">App</a>
       
@@ -78,46 +93,6 @@
   
   <li class=" " data-id="scar/Scar/Assets/Font" data-name="scar::assets::font">
       <a href="../Scar/Assets/Font.html">Font</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataFont" data-name="scar::assets::hotreloaddatafont">
-      <a href="../Scar/Assets/HotreloadDataFont.html">HotreloadDataFont</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataJson" data-name="scar::assets::hotreloaddatajson">
-      <a href="../Scar/Assets/HotreloadDataJson.html">HotreloadDataJson</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataMusic" data-name="scar::assets::hotreloaddatamusic">
-      <a href="../Scar/Assets/HotreloadDataMusic.html">HotreloadDataMusic</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataSound" data-name="scar::assets::hotreloaddatasound">
-      <a href="../Scar/Assets/HotreloadDataSound.html">HotreloadDataSound</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataText" data-name="scar::assets::hotreloaddatatext">
-      <a href="../Scar/Assets/HotreloadDataText.html">HotreloadDataText</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTexture" data-name="scar::assets::hotreloaddatatexture">
-      <a href="../Scar/Assets/HotreloadDataTexture.html">HotreloadDataTexture</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataTilemap" data-name="scar::assets::hotreloaddatatilemap">
-      <a href="../Scar/Assets/HotreloadDataTilemap.html">HotreloadDataTilemap</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Assets/HotreloadDataYaml" data-name="scar::assets::hotreloaddatayaml">
-      <a href="../Scar/Assets/HotreloadDataYaml.html">HotreloadDataYaml</a>
       
     </li>
   
@@ -456,21 +431,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/Rect" data-name="scar::rect">
-      <a href="../Scar/Rect.html">Rect</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Rectf" data-name="scar::rectf">
-      <a href="../Scar/Rectf.html">Rectf</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Recti" data-name="scar::recti">
-      <a href="../Scar/Recti.html">Recti</a>
-      
-    </li>
-  
   <li class=" " data-id="scar/Scar/Scene" data-name="scar::scene">
       <a href="../Scar/Scene.html">Scene</a>
       
@@ -726,11 +686,6 @@
       
     </li>
   
-  <li class=" " data-id="scar/Scar/TimedAction" data-name="scar::timedaction">
-      <a href="../Scar/TimedAction.html">TimedAction</a>
-      
-    </li>
-  
   <li class=" current" data-id="scar/Scar/Tween" data-name="scar::tween">
       <a href="../Scar/Tween.html">Tween</a>
       
@@ -743,6 +698,21 @@
   
   <li class=" " data-id="scar/Scar/Vec" data-name="scar::vec">
       <a href="../Scar/Vec.html">Vec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="scar/SF" data-name="sf">
+      <a href="../SF.html">SF</a>
+      
+        <ul>
+  
+  <li class=" " data-id="scar/SF/Vector2" data-name="sf::vector2(t)">
+      <a href="../SF/Vector2.html">Vector2</a>
       
     </li>
   
@@ -770,6 +740,35 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>This class provides simple <a href="https://en.wikipedia.org/wiki/Inbetweening">inbe<strong>tween</strong>ing</a> functionality.</p>
+
+<p>You create a <code><a href="../Scar/Tween.html">Tween</a></code> with the parameters of animation duration and easing function.
+The obviously determines how long the <code><a href="../Scar/Tween.html">Tween</a></code> takes to complete,
+the easing function determines how the tween calculates its values.</p>
+
+<p>A <code><a href="../Scar/Tween.html">Tween</a></code> is handled by an <code><a href="../Scar/App.html">App</a></code> after you register it via <code><a href="../Scar/App.html#tween(t:Tween)-instance-method">App#tween</a></code>.</p>
+
+<p>Example usage:</p>
+
+<pre><code class="language-crystal"><span class="c"># Move the player 100 pixels to the right over the course of 5 seconds</span>
+origin <span class="o">=</span> player.x
+t <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Tween</span>.<span class="k">new</span>(
+  <span class="n">5</span>,
+  <span class="t">Scar</span><span class="t">::</span><span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuad</span>,
+  ->(t : <span class="t">Tween</span>) { player.x <span class="o">=</span> origin <span class="o">+</span> t.fraction },
+  ->(t : <span class="t">Tweeen</span>) { puts <span class="s">&quot;Player movement complete.&quot;</span> }
+)
+app.tween(t)</code></pre>
+
 
 
 
@@ -793,7 +792,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L133" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L180" target="_blank">
         scar/tween.cr
       </a>
     
@@ -819,6 +818,8 @@
 <span class="k">end</span>, on_completed : Proc(Tween, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
 <span class="k">end</span>)</a>
         
+          <div class="summary"><p>Creates a new tween with the following parameters (see details):</p></div>
+        
       </li>
     
   </ul>
@@ -840,17 +841,12 @@
       <li class="entry-summary">
         <a href="#abort-instance-method" class="signature"><strong>#abort</strong></a>
         
-          <div class="summary"><p>Ends the tween WITHOUT calling the on_completed hook</p></div>
+          <div class="summary"><p>Ends the tween <strong>without</strong> calling the <code><a href="../Scar/Tween.html#on_completed:Scar::Tween-%3ENil-instance-method">#on_completed</a></code> hook</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#aborted:Bool-instance-method" class="signature"><strong>#aborted</strong> : Bool</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#aborted=(aborted)-instance-method" class="signature"><strong>#aborted=</strong>(aborted)</a>
         
       </li>
     
@@ -862,14 +858,14 @@
       <li class="entry-summary">
         <a href="#fraction:Float32-instance-method" class="signature"><strong>#fraction</strong> : Float32</a>
         
-          <div class="summary"><p>Returns the current interpolated fraction (defined by the kind)</p></div>
+          <div class="summary"><p>Returns the current interpolated fraction (calculated by the <code><a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a></code>)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#linear_fraction-instance-method" class="signature"><strong>#linear_fraction</strong></a>
         
-          <div class="summary"><p>Returns the current linear interpolated fraction</p></div>
+          <div class="summary"><p>Returns the current linear interpolated fraction (time spent / duration)</p></div>
         
       </li>
     
@@ -896,10 +892,14 @@
       <li class="entry-summary">
         <a href="#paused:Bool-instance-method" class="signature"><strong>#paused</strong> : Bool</a>
         
+          <div class="summary"><p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#paused=(paused)-instance-method" class="signature"><strong>#paused=</strong>(paused)</a>
+        
+          <div class="summary"><p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p></div>
         
       </li>
     
@@ -912,6 +912,8 @@
     
       <li class="entry-summary">
         <a href="#update(delta_time)-instance-method" class="signature"><strong>#update</strong>(delta_time)</a>
+        
+          <div class="summary"><p>(used internally) Advances the <code><a href="../Scar/Tween.html">Tween</a></code> by the given delta time</p></div>
         
       </li>
     
@@ -967,10 +969,17 @@ end)-class-method">
         <a class="method-permalink" href="#new(duration:Number,ease:Easing::EasingDefinition,on_update:Proc(Tween,Nil)=-%3E(t:Tween)do%0Aend,on_completed:Proc(Tween,Nil)=-%3E(t:Tween)do%0Aend)-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Creates a new tween with the following parameters (see details):</p>
+
+<ul><li><em>duration</em>: The tweening duration</li><li><em>ease</em>: The <code><a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a></code> used to calculate the Tweens' values</li><li>(optional) <em>on_update</em>: This hook is called on every frame, implement whatever tweening logic you have in here</li><li>(optional) <em>on_completed</em>: This hook is called when the Tweens' duration is over (you could e. g. use this to chain Tweens)</li></ul>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L143" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -999,13 +1008,13 @@ end)-class-method">
       
         <div class="doc">
           
-          <p>Ends the tween WITHOUT calling the on_completed hook</p>
+          <p>Ends the tween <strong>without</strong> calling the <code><a href="../Scar/Tween.html#on_completed:Scar::Tween-%3ENil-instance-method">#on_completed</a></code> hook</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L169" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L223" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1021,23 +1030,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L137" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="aborted=(aborted)-instance-method">
-      <div class="signature">
-        
-        def <strong>aborted=</strong>(aborted)
-
-        <a class="method-permalink" href="#aborted=(aborted)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L137" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L185" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1053,7 +1046,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L159" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L213" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1068,13 +1061,13 @@ end)-class-method">
       
         <div class="doc">
           
-          <p>Returns the current interpolated fraction (defined by the kind)</p>
+          <p>Returns the current interpolated fraction (calculated by the <code><a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a></code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L155" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L209" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1089,13 +1082,13 @@ end)-class-method">
       
         <div class="doc">
           
-          <p>Returns the current linear interpolated fraction</p>
+          <p>Returns the current linear interpolated fraction (time spent / duration)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L149" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L203" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1111,7 +1104,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L135" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L182" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1127,7 +1120,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L135" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L182" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1143,7 +1136,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L134" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L181" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1159,7 +1152,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L134" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L181" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1172,10 +1165,15 @@ end)-class-method">
         <a class="method-permalink" href="#paused:Bool-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L136" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L184" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1188,10 +1186,15 @@ end)-class-method">
         <a class="method-permalink" href="#paused=(paused)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L136" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L184" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1212,7 +1215,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L164" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L218" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1225,10 +1228,15 @@ end)-class-method">
         <a class="method-permalink" href="#update(delta_time)-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>(used internally) Advances the <code><a href="../Scar/Tween.html">Tween</a></code> by the given delta time</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/fca1641ff6ceb00ec148dc3e0addcf7703bf9738/src/scar/tween.cr#L173" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/c052218fa50a8ded2b74562677f729e0134f9753/src/scar/tween.cr#L228" target="_blank">View source</a>]
         
       </div>
     </div>
