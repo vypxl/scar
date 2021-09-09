@@ -60,7 +60,7 @@ class Scar::Components::AnimatedSprite < Scar::Components::Sprite
     @drawable = SF::Sprite.new(@texture)
     @drawable.texture_rect = rect
     @current = 0
-    tsize = Vec.from @texture.size
+    tsize = @texture.size
     @spritesheet_size = {(tsize.x / @size[0]).floor.to_i, (tsize.y / @size[1]).floor.to_i}
     @delta = 0f32
   end
