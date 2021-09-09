@@ -21,6 +21,12 @@ module SF
       self.new(radius * Math.cos(angle), radius * Math.sin(angle))
     end
 
+    # Creates a vector from polar coordinates (angle in degrees)
+    def self.from_polar_deg(angle, radius = 1.0)
+      ang = angle * Math::PI / 180
+      self.new(radius * Math.cos(ang), radius * Math.sin(ang))
+    end
+
     # Memberwise division of two vectors
     def /(other : SF::Vector2)
       SF::Vector2.new(x / other.x, y / other.y)
@@ -128,9 +134,19 @@ module SF
       Math.atan2(y, x)
     end
 
+    # Returns the angle between the vector and the x-axis in degrees
+    def angle_deg
+      Math.atan2(y, x) * 180 / Math::PI
+    end
+
     # Returns the angle between this Vector and another (the sign indicates which Vector is ahead)
     def angle_to(other : SF::Vector2f)
       Math.atan2(other.y, other.x) - Math.atan2(y, x)
+    end
+
+    # Returns the angle between this Vector and another in degrees (the sign indicates which Vector is ahead)
+    def angle_to_deg(other : SF::Vector2f)
+      (Math.atan2(other.y, other.x) - Math.atan2(y, x)) * 180 / Math::PI
     end
 
     # Returns a copy of self with a new x value
