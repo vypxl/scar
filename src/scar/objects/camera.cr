@@ -1,16 +1,21 @@
 # A camera takes care of calling render() functions and drawing drawables.
+#
 # A camera is essentially a wrapper around and `SF::View`.
 # Its instance methods are delegated, so you can use them as normal instance methods.
-# When drawing Entities or Objects, their transforms are applied automatically.
+# When drawing `Entity`s or `Object`s, their transforms are applied automatically.
+#
+# Each space has a default camera, so there is no need to use this class explicitly in your
+# application, except if you need custom views. See the [CrSFML documentation](https://oprypin.github.io/crsfml/api/SF/View.html) for that.
 class Scar::Objects::Camera < Scar::Object
-  property :sf, :enabled, :simple
-
   # Can be used to turn a camera off
-  @enabled = true
+  property enabled = true
   # If true, the camera will not use its `SF::View`
-  @simple = true
-  @sf : SF::View
+  property simple = true
 
+  # The underlying `SF::View`
+  property sf : SF::View
+
+  # :nodoc:
   forward_missing_to @sf
 
   def initialize(id : String)
@@ -18,8 +23,9 @@ class Scar::Objects::Camera < Scar::Object
     @sf = SF::View.new
   end
 
-  # This method is called by the render method of Spaces
-  # It calls all render methods and draws all drawables onto the screen
+  # This method is called by the render method of `Space`s
+  #
+  # It calls all render methods and draws all drawables onto the screen.
   def render_view(app, space, dt)
     return if !enabled
 
@@ -53,3 +59,5 @@ class Scar::Objects::Camera < Scar::Object
     target.draw(drawable, states) if drawable.is_a? SF::Drawable
   end
 end
+
+# TODO remove simple

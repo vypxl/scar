@@ -1,16 +1,24 @@
 module Scar
+  # This module contains the abstract base struct for all events in the Scar game library `Scar::Event::Event`
+  # and all builtin events (including wrappers for all SFML events).
   module Event
     extend self
 
-    # An event only has content, not functionality. Inherit from it to define your own.
-    # See App for usage.
+    # Base class for events
+    #
+    # An event can be triggered by anything in an application.
+    # An event should only contain data, no methods.
+    #
+    # Inherit from this to define your own events.
+    #
+    # See `App` for usage.
     abstract struct Event; end
 
     # Predefined events
 
     # SFML Event Wrappers
 
-    # Converts a raw SFML Event to the matching Event wrapper.
+    # Converts a raw SFML Event to the matching event wrapper (used internally)
     def from_sfml_event(e)
       case e
       when SF::Event::Closed
@@ -58,33 +66,37 @@ module Scar
       end
     end
 
-    # Window got an exit signal.
+    # Window received an exit signal
     struct Closed < Event; end
 
-    # Window got Resized (size : Vec).
+    # Window was resized
     struct Resized < Event
+      # The new size
       getter :size
 
       def initialize(@size : Vec); end
     end
 
-    # Window lost Focus.
+    # Window lost Focus
     struct LostFocus < Event; end
 
-    # Window gained Focus.
+    # Window gained Focus
     struct GainedFocus < Event; end
 
-    # Window got unicode char entered (unicode : UInt32).
-    # This is not a Key event, it captures any entered unicode char entered by
-    # any input method. This can capture things like ^+e => ê.
+    # A unicode char was entered
+    #
+    # This is not a key event, it captures any entered unicode char entered by
+    # any input method. This captures things like ^+e => ê.
     struct TextEntered < Event
+      # The entered unicode character
       getter :unicode
 
       def initialize(@unicode : UInt32); end
     end
 
-    # Key was pressed (code : SF::Keyboard::Key, alt control shift system : Bool).
+    # A key was pressed
     struct KeyPressed < Event
+      # The keycode of the pressed key
       getter :code
       getter :alt
       getter :control
@@ -94,8 +106,9 @@ module Scar
       def initialize(@code : SF::Keyboard::Key, @alt : Bool, @control : Bool, @shift : Bool, @system : Bool); end
     end
 
-    # Same as KeyPressed but it was released.
+    # A key was released
     struct KeyReleased < Event
+      # The keycode of the released key
       getter :code
       getter :alt
       getter :control
@@ -105,7 +118,7 @@ module Scar
       def initialize(@code : SF::Keyboard::Key, @alt : Bool, @control : Bool, @shift : Bool, @system : Bool); end
     end
 
-    # Mouse wheel got scrolled (wheel : SF::Mouse::Wheel, delta : Float32, x y : Int32).
+    # The mouse wheel was scrolled
     struct MouseWheelScrolled < Event
       getter :wheel
       getter :delta
@@ -115,7 +128,7 @@ module Scar
       def initialize(@wheel : SF::Mouse::Wheel, @delta : Float32, @x : Int32, @y : Int32); end
     end
 
-    # Mouse button was pressed (button : SF::Mouse::Button, x y : Int32).
+    # A mouse button was pressed
     struct MouseButtonPressed < Event
       getter :button
       getter :x
@@ -124,7 +137,7 @@ module Scar
       def initialize(@button : SF::Mouse::Button, @x : Int32, @y : Int32); end
     end
 
-    # Same as MouseButtonPressed but it was released.
+    # A mouse button was released
     struct MouseButtonReleased < Event
       getter :button
       getter :x
@@ -133,7 +146,7 @@ module Scar
       def initialize(@button : SF::Mouse::Button, @x : Int32, @y : Int32); end
     end
 
-    # Mouse was moved (x y : Int32).
+    # The mouse was moved
     struct MouseMoved < Event
       getter :x
       getter :y
@@ -141,13 +154,13 @@ module Scar
       def initialize(@x : Int32, @y : Int32); end
     end
 
-    # Mouse entered the window.
+    # The mouse cursor entered the window
     struct MouseEntered < Event; end
 
-    # Mouse left the window.
+    # The mouse cursor left the window
     struct MouseLeft < Event; end
 
-    # Joystick button got pressed (joystick_id button : UInt32).
+    # A joystick button was pressed
     struct JoystickButtonPressed < Event
       getter :joystick_id
       getter :button
@@ -155,7 +168,7 @@ module Scar
       def initialize(@joystick_id : UInt32, @button : UInt32); end
     end
 
-    # Same as JoystickButtonPressed but it was released.
+    # A joystick button was released
     struct JoystickButtonReleased < Event
       getter :joystick_id
       getter :button
@@ -163,21 +176,21 @@ module Scar
       def initialize(@joystick_id : UInt32, @button : UInt32); end
     end
 
-    # A Joystick connected (joystick_id : UInt32).
+    # A joystick was connected
     struct JoystickConnected < Event
       getter :joystick_id
 
       def initialize(@joystick_id : UInt32); end
     end
 
-    # Same as JoystickConnected but it disconnected.
+    # A joystick was disconnected
     struct JoystickDisconnected < Event
       getter :joystick_id
 
       def initialize(@joystick_id : UInt32); end
     end
 
-    # A touch began (finger : UInt32, x y : Int32).
+    # A touch began
     struct TouchBegan < Event
       getter :finger
       getter :x
@@ -186,7 +199,7 @@ module Scar
       def initialize(@finger : UInt32, @x : Int32, @y : Int32); end
     end
 
-    # Same as TouchBegan but it moved.
+    # An existing touch moved
     struct TouchMoved < Event
       getter :finger
       getter :x
@@ -195,7 +208,7 @@ module Scar
       def initialize(@finger : UInt32, @x : Int32, @y : Int32); end
     end
 
-    # Same as TouchBegan but it ended.
+    # A touch ended
     struct TouchEnded < Event
       getter :finger
       getter :x

@@ -3,9 +3,18 @@ require "compress/zlib"
 require "compress/gzip"
 require "zstd"
 
-# This module contains definitions for Tiled's JSON map format
-# Refer to https://doc.mapeditor.org/en/stable/reference/json-map-format/ for more explaination
+# This module contains definitions for [Tiled](https://github.com/mapeditor/tiled)'s JSON map format.
+#
+# Refer to the Tiled [documentation](https://doc.mapeditor.org/en/stable/reference/json-map-format/) for more explaination
 # Last updated for Tiled v1.7.2
+#
+# Example usage:
+# ```
+# map = Scar::Tiled::Map.from_json(File.read("map.json"))
+# puts map.layers[0].data
+# ```
+#
+# It is recommended to use this in conjunction with `Scar::Assets`
 module Scar::Tiled
   class Map
     include JSON::Serializable

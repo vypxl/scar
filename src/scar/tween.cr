@@ -1,18 +1,33 @@
 module Scar
-  # Basic easing functions
+  # This module contains basic easing definitions like `EaseInOut`
   module Easing
-    # Inherit from this to create your own easing.
+    # Base struct for an easing definition
     abstract struct EasingDefinition
+      # Implement whatever your easing needs in this function
+      #
+      # *lf* is the linear fraction the `Tween` currently is at.
       abstract def calc(lf : Float32) : Float32
-
-      def test(lf)
-        0f32
-      end
     end
 
-    # Creates a EasingDefinition inherited struct with the given name and calc function as String
+    # Creates a struct inheriting `EasingDefinition` with the given name and `#calc` method
+    #
+    # Example usage (defining quadratic ease-in):
+    # ```
+    # simple_easing_function(:EaseInQuad, "lf ** 2")
+    #
+    # # This becomes:
+    # struct EaseInQuad < EasingDefinition
+    #   def calc(lf : Float32) : Float32
+    #     lf ** 2
+    #   end
+    # end
+    # ```
     macro simple_easing_function(name, fn)
+      # Simple easing definition ({{ name.id }})
       struct {{name.id}} < EasingDefinition
+        # The empty comment below is used to hide the docstring from `EasingDefinition`
+
+        #
         def calc(lf : Float32) : Float32
           {{fn.id}}
         end
@@ -33,6 +48,8 @@ module Scar
     simple_easing_function(:EaseOutQuint, "1 + (lf - 1) ** 5")
     simple_easing_function(:EaseInOutQuint, "lf < 0.5 ? 16 * lf ** 5 : 1 + 16 * (lf - 1) ** 5")
 
+    # TODO remove
+
     # Use this instead of simple_easing_function ONLY if you need dynamically created easing functions.
     # Usage:
     # ```
@@ -46,8 +63,10 @@ module Scar
       end
     end
 
+    # TODO: revise use of epsilon in `CubicBezier`
+
     # Can compute a 4 point Bezier curve easing.
-    # Adapted from css browser implementations.
+    # Adapted from CSS browser implementations.
     struct CubicBezier < EasingDefinition
       @cx : Float64
       @bx : Float64
@@ -61,6 +80,7 @@ module Scar
         initialize(x1.to_f64, y1.to_f64, x2.to_f64, y2.to_f64)
       end
 
+      # :nodoc:
       def initialize(@x1 : Float64, @y1 : Float64, @x2 : Float64, @y2 : Float64)
         @cx = 3.0 * @x1
         @bx = 3.0 * (@x2 - @x1) - @cx
@@ -71,19 +91,19 @@ module Scar
         @ay = 1.0 - @cy - @by
       end
 
-      def sample_curve_x(t)
+      private def sample_curve_x(t)
         ((@ax * t + @bx) * t + @cx) * t
       end
 
-      def sample_curve_y(t)
+      private def sample_curve_y(t)
         ((@ay * t + @by) * t + @cy) * t
       end
 
-      def sample_curve_derivative_x(t)
+      private def sample_curve_derivative_x(t)
         ((3 * @ax * t + 2 * @bx) * t + @cx)
       end
 
-      def solve_curve_x(x, epsilon)
+      private def solve_curve_x(x, epsilon)
         t0 = 0.0
         t1 = 0.0
         t2 = x
@@ -119,10 +139,12 @@ module Scar
         t2
       end
 
+      #
       def calc(lf : Float32) : Float32
         calc(lf, 1.0)
       end
 
+      # Sample the curve with the given *epsilon* value
       def calc(lf : Float32, epsilon : Float64) : Float32
         return lf if @x1 == @y1 && @x2 == @y2
         sample_curve_y(solve_curve_x(lf, epsilon)).to_f32
@@ -130,28 +152,60 @@ module Scar
     end
   end
 
+  # TODO revise tween members and their getters/setters
+  # TODO maybe pass fraction to the hooks
+  # TODO on_update should not be optional
+  # TODO macro to easily link a tween to a value without needing to implement on_update
+
+  # This class provides simple [inbe**tween**ing](https://en.wikipedia.org/wiki/Inbetweening) functionality.
+  #
+  # You create a `Tween` with the parameters of animation duration and easing function.
+  # The obviously determines how long the `Tween` takes to complete,
+  # the easing function determines how the tween calculates its values.
+  #
+  # A `Tween` is handled by an `App` after you register it via `App#tween`.
+  #
+  # Example usage:
+  # ```
+  # # Move the player 100 pixels to the right over the course of 5 seconds
+  # origin = player.x
+  # t = Scar::Tween.new(
+  #   5,
+  #   Scar::Easing::EaseInOutQuad,
+  #   ->(t : Tween) { player.x = origin + t.fraction },
+  #   ->(t : Tweeen) { puts "Player movement complete." }
+  # )
+  # app.tween(t)
+  # ```
   class Tween
     property :on_update
     property :on_completed
+    # Can be used to pause the Tween, meaning that its `#fraction` will stay the same until `#paused` is false again
     property :paused
-    property :aborted
+    getter :aborted
 
     @paused = false
     @aborted = false
     @duration : Float32
 
+    # Creates a new tween with the following parameters (see details):
+    #
+    # - *duration*: The tweening duration
+    # - *ease*: The `Easing::EasingDefinition` used to calculate the Tweens' values
+    # - (optional) *on_update*: This hook is called on every frame, implement whatever tweening logic you have in here
+    # - (optional) *on_completed*: This hook is called when the Tweens' duration is over (you could e. g. use this to chain Tweens)
     def initialize(duration : Number, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->(t : Tween) {}, @on_completed : Proc(Tween, Nil) = ->(t : Tween) {})
       @duration = duration.to_f32
       @time_spent = 0f32
     end
 
-    # Returns the current linear interpolated fraction
+    # Returns the current linear interpolated fraction (time spent / duration)
     def linear_fraction
       raw_fraction = @time_spent / @duration
       raw_fraction > 1f32 ? 1f32 : raw_fraction
     end
 
-    # Returns the current interpolated fraction (defined by the kind)
+    # Returns the current interpolated fraction (calculated by the `Easing::EasingDefinition`)
     def fraction : Float32
       @ease.calc(linear_fraction)
     end
@@ -165,11 +219,12 @@ module Scar
       @time_spent = 0f32
     end
 
-    # Ends the tween WITHOUT calling the on_completed hook
+    # Ends the tween **without** calling the `on_completed` hook
     def abort
       @aborted = true
     end
 
+    # (used internally) Advances the `Tween` by the given delta time
     def update(delta_time)
       return if @aborted
       if !@paused

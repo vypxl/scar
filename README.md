@@ -20,15 +20,16 @@ and of course for the fun.
 - Event system
 - Configurable input handling
 - Universal 2D Vector class
-- Entity-Component-System
+- Entity-Component-System architecture
 - Configuration manager
-- Tween
-- Asset manager
-- Some Builtin Components and Systems, will be expanded in the future
+- Asset manager with hot-reloading
+- Inbetweening
+- [Tiled](https://github.com/mapeditor/tiled) map support
+- Some builtin components and systems
 
 ## Planned Features
 
-- Sound Manager
+- Sound manager
 - Video playback
 
 ## Installation
@@ -39,7 +40,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   scar:
     github: vypxl/scar
-    branch: master
+    branch: main
 ```
 
 If you run into build/linking problems, please check if you have SFML installed properly, as described in the
@@ -54,15 +55,13 @@ Feature requests are welcome, just open an issue!
 
 1. Create an [Feature Request] Issue
 2. Fork it ( https://github.com/vypxl/scar/fork )
+3. (optional) Create the git hook checks via `$ scripts/create-git-hooks`
+4. Create your feature branch (git checkout -b my-new-feature)
+5. Commit your changes (git commit -am 'Add some feature')
+6. Push to the branch (git push origin my-new-feature)
+7. Create a new Pull Request and mention your issue
 
-Then create the git hook checks via `$ scripts/create-git-hooks`.
-You have to ensure that `crystal spec` and `crystal tool format [./src / ./spec]`
-return 0.
-
-3. Create your feature branch (git checkout -b my-new-feature)
-4. Commit your changes (git commit -am 'Add some feature')
-5. Push to the branch (git push origin my-new-feature)
-6. Create a new Pull Request and mention your issue
+You have to ensure that `crystal spec` and `crystal tool format --check ./src ./spec` return 0.
 
 ## Contributors
 

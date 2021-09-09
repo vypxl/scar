@@ -1,21 +1,30 @@
-# Use this to store basic configuration like Keybindings, resolutions..
-# Can store all types of the YAML::Any alias.
-# Usage example: ```
-#   # At Toplevel!
-#   Scar::Config.define_standards({
-#     int: 7331,
-#     str: "hello world",
-#     arr: [1, 3, 3, 7],
-#   })
+# This module aims to be a simple interface for storing
+# basic key-value configuration like keybindings, window settings, ..
 #
-#   puts Config.dump
-#   Scar::Config[:int] = 1337
-#   Scar::Config[:str] = "lol"
-#   puts Config.dump
-#   Scar::Config.reset(:int)
-#   puts Config.dump
-#   Scar::Config.reset(:str)
-#   puts Config.dump
+# You can store everything that can be represented by `YAML::Any`.
+#
+# Example usage:
+# ```
+# # At toplevel
+# Scar::Config.define_standards({
+#   int: 7331,
+#   str: "hello world",
+#   arr: [1, 3, 3, 7],
+# })
+#
+# puts Config[:int] # => 7331
+#
+# Scar::Config[:str] = "lol"
+# puts Config[:str] # => lol
+#
+# Scar::Config.save "config.yml"
+#
+# Scar::Config.reset(:str)
+# puts Config[:str] # => hello world
+#
+# # By loading the saved config from before, the `:str` entry is "lol" again
+# Scar::Config.load "config.yml"
+# puts Scar::Config[:str] # => lol
 # ```
 module Scar::Config
   extend self
@@ -23,14 +32,16 @@ module Scar::Config
   @@data : Hash(String, YAML::Any) = Hash(String, YAML::Any).new
   @@standards : Hash(String, YAML::Any) = Hash(String, YAML::Any).new
 
-  # Sets given key to it's standard. (`Config#define_standards`)
+  # Resets the value of a configuration entry to it's standard (see `Config#define_standards`)
   def reset(key)
     @@data[key.to_s] = convert(@@standards[key.to_s]?)
   end
 
-  # ONLY ON TOPLEVEL! Defines standard values to keys. See details.
-  # Specify the standards via a NamedTuple of format '<keyname>: <value>'.
-  # Usage:
+  # Defines standard values for configuration entries to fall back to.
+  #
+  # Specify the standards as a `NamedTuple` of format `{entry name}: {value}`.
+  #
+  # Example:
   # ```
   # Scar::Config.define_standards({
   #   str: "hello world",
@@ -47,13 +58,16 @@ module Scar::Config
     end
   end
 
-  # Resets all configuration to the standard values.
+  # Resets all configuration entries to their standard value
   def load_standards
     @@data = Hash(String, YAML::Any).new
     @@standards.each_key { |key| @@data[key] = @@standards[key] }
   end
 
-  # Returns the value for the given key (String representation is used: 'Config[:test]' is possible) or if nil the standard value.
+  # Returns the value for the given configuration entry
+  #
+  # You can pass strings or symbols to this method.
+  # Returns the standard value if the configuration entry is not set.
   def [](key) : YAML::Type
     query = @@data[key.to_s]?
     if query
@@ -63,7 +77,7 @@ module Scar::Config
     end
   end
 
-  # Sets a given key to a new value
+  # Sets a given configuration entry to a new value
   def []=(key, value)
     @@data[key.to_s] = convert(value)
   end
@@ -87,17 +101,17 @@ module Scar::Config
     end).as(YAML::Any)
   end
 
-  # Saves config to file with given file name (using `Util#write_file`)
+  # Saves the configuration to a file with given file name (using `Util#write_file`)
   def save(fname : String)
     Util.write_file(fname, YAML.dump(@@data))
   end
 
-  # Returns the yaml dump of the config data
+  # Returns the yaml dump of the configuration data
   def dump
     YAML.dump(@@data)
   end
 
-  # Loads in config values from given filename (using `Util#read_file`)
+  # Loads configuration values from the given file (using `Util#read_file`)
   def load(fname : String)
     data = YAML.parse(Util.read_file(fname)).as_h
     keys = data.keys.map(&.to_s)
@@ -106,4 +120,7 @@ module Scar::Config
     Logger.error "Error loading config file! Loading standards. Exception: #{ex}"
     load_standards()
   end
-end # End module Scar::Config
+end
+
+# TODO rename standards to defaults
+# TODO default file name for save/load
