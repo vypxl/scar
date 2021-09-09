@@ -13,7 +13,7 @@ class Scar::Components::Sprite < Scar::Components::Drawable
 
   # Creates a new sprite component. Specify *rect* if you need to set the sprites `texture_rect`
   def initialize(@texture : SF::Texture, rect : SF::IntRect? = nil)
-    @drawable = SF::Sprite.new(tex)
+    @drawable = SF::Sprite.new(@texture)
     @drawable.texture_rect = rect if rect
   end
 end

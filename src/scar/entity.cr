@@ -25,9 +25,9 @@ class Scar::Entity < SF::Transformable
 
   def initialize(@id : String, @components : Array(Component), *, position : Vec? = nil, scale : Vec? = nil, rotation : Float32? = nil, z : Int32 = 0)
     super()
-    @position = position if !position.nil?
-    @scale = scale if !scale.nil?
-    @rotation = rotation if !rotation.nil?
+    self.position = position if !position.nil?
+    self.scale = scale if !scale.nil?
+    self.rotation = rotation if !rotation.nil?
     @z = z
   end
 

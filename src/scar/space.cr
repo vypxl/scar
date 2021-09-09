@@ -23,6 +23,8 @@ module Scar
     property id
     # The default `Camera` object
     property camera
+    # :nodoc:
+    getter :systems, :entities
 
     # Make the default camera use it's SFML View, so it can be configured more easily
     @camera : Objects::Camera = Objects::Camera.new("__camera")

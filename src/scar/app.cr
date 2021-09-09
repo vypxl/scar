@@ -126,8 +126,8 @@ module Scar
     # ```
     # app.broadcast(Scar::Event::Closed.new)
     # ```
-    def broadcast(event : Scar::Event::Event)
-      {% raise "Invalid event type" %}
+    def broadcast(event)
+      raise "Invalid event type"
     end
 
     macro finished
