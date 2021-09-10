@@ -48,21 +48,6 @@ module Scar
     simple_easing_function(:EaseOutQuint, "1 + (lf - 1) ** 5")
     simple_easing_function(:EaseInOutQuint, "lf < 0.5 ? 16 * lf ** 5 : 1 + 16 * (lf - 1) ** 5")
 
-    # TODO remove
-
-    # Use this instead of simple_easing_function ONLY if you need dynamically created easing functions.
-    # Usage:
-    # ```
-    # Tween.new(1f32, EaseWithFunction.new(->(lf : Float32) { lf - 0.2 ** 3 }))
-    # ```
-    struct EaseWithFunction < EasingDefinition
-      def initialize(@fn : Proc(Float32, Float32)); end
-
-      def calc(lf : Float32) : Float32
-        @fn.call(lf)
-      end
-    end
-
     # TODO: revise use of epsilon in `CubicBezier`
 
     # Can compute a 4 point Bezier curve easing.
