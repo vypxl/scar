@@ -60,15 +60,15 @@ class Scar::Input
     @analog_bindings[which] = block
   end
 
-  # TODO rename to bind_key
-
   # Shortcut for digital inputs based on keys
   #
   # Example usage:
   # ```
-  # SF::Keyboard.key_pressed? SF::Keyboard::{{which.id}}
+  # input.bind_digital(:jump) { Scar::Input.key_pressed? :Space }
+  # # This turns into
+  # input.bind_digital(:jump) { SF::Keyboard.key_pressed? SF::Keyboard::{{which.id}} }
   # ```
-  macro sf_key(which)
+  macro key_pressed?(which)
     SF::Keyboard.key_pressed? SF::Keyboard::{{which.id}}
   end
 end
