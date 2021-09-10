@@ -135,8 +135,6 @@ module Scar
     end
   end
 
-  # TODO macro to easily link a tween to a value without needing to implement on_update
-
   # This class provides simple [inbe**tween**ing](https://en.wikipedia.org/wiki/Inbetweening) functionality.
   #
   # You create a `Tween` with the parameters of animation duration and easing function.
@@ -219,6 +217,21 @@ module Scar
       if completed?
         @on_completed.call(self)
       end
+    end
+
+    # This macro can be used for very simple value tweening
+    #
+    # Example usage:
+    # ```
+    # tween Tween.bind_value(3, Easing::EaseInOutQuint.new, x, "80 *")
+    # # This expands to
+    # Tween.new(3, Easing::EaseInOutQuint.new, ->(t : Tween) { x = 80 * t.fraction }, ->(t : Tween) {})
+    # ```
+    #
+    # Note that this does not work with individual entity transform components like `e.position.x`, as updating
+    # these directly does not update the underlying `SF::Transform`. You have to set `e.position` as a whole.
+    macro bind_value(duration, ease, val, modifier = "", on_completed = ->(t : Tween) {})
+      Tween.new({{ duration }}, {{ ease }}, ->(t: Tween) { {{ val.id }} = {{ modifier.id }} t.fraction }, {{ on_completed }})
     end
   end # End class Tween
 end   # End module Scar
