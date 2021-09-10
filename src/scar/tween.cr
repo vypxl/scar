@@ -48,8 +48,6 @@ module Scar
     simple_easing_function(:EaseOutQuint, "1 + (lf - 1) ** 5")
     simple_easing_function(:EaseInOutQuint, "lf < 0.5 ? 16 * lf ** 5 : 1 + 16 * (lf - 1) ** 5")
 
-    # TODO: revise use of epsilon in `CubicBezier`
-
     # Can compute a 4 point Bezier curve easing.
     # Adapted from CSS browser implementations.
     struct CubicBezier < EasingDefinition
@@ -126,7 +124,7 @@ module Scar
 
       #
       def calc(lf : Float32) : Float32
-        calc(lf, 1.0)
+        calc(lf, 1e-5)
       end
 
       # Sample the curve with the given *epsilon* value
@@ -137,9 +135,6 @@ module Scar
     end
   end
 
-  # TODO revise tween members and their getters/setters
-  # TODO maybe pass fraction to the hooks
-  # TODO on_update should not be optional
   # TODO macro to easily link a tween to a value without needing to implement on_update
 
   # This class provides simple [inbe**tween**ing](https://en.wikipedia.org/wiki/Inbetweening) functionality.
@@ -163,10 +158,15 @@ module Scar
   # app.tween(t)
   # ```
   class Tween
-    property :on_update
-    property :on_completed
-    # Can be used to pause the Tween, meaning that its `#fraction` will stay the same until `#paused` is false again
-    property :paused
+    getter :on_update
+    getter :on_completed
+    # Can be used to pause the Tween, meaning that its `#fraction` will stay the same until `@paused` is false again
+    setter :paused
+
+    def paused?
+      @paused
+    end
+
     getter :aborted
 
     @paused = false
@@ -177,9 +177,9 @@ module Scar
     #
     # - *duration*: The tweening duration
     # - *ease*: The `Easing::EasingDefinition` used to calculate the Tweens' values
-    # - (optional) *on_update*: This hook is called on every frame, implement whatever tweening logic you have in here
+    # - *on_update*: This hook is called on every frame, implement whatever tweening logic you have in here
     # - (optional) *on_completed*: This hook is called when the Tweens' duration is over (you could e. g. use this to chain Tweens)
-    def initialize(duration : Number, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil) = ->(t : Tween) {}, @on_completed : Proc(Tween, Nil) = ->(t : Tween) {})
+    def initialize(duration : Number, @ease : Easing::EasingDefinition, @on_update : Proc(Tween, Nil), @on_completed : Proc(Tween, Nil) = ->(t : Tween) {})
       @duration = duration.to_f32
       @time_spent = 0f32
     end
@@ -212,7 +212,7 @@ module Scar
     # (used internally) Advances the `Tween` by the given delta time
     def update(delta_time)
       return if @aborted
-      if !@paused
+      unless paused?
         @time_spent += delta_time
         @on_update.call(self)
       end
