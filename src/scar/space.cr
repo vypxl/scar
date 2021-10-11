@@ -26,6 +26,9 @@ module Scar
     # :nodoc:
     getter :systems, :entities
 
+    # Contains the ids of all entities currently in this space
+    @entity_ids : Set(String) = Set(String).new
+
     # Make the default camera use it's SFML View, so it can be configured more easily
     @camera : Objects::Camera = Objects::Camera.new("__camera")
 
@@ -66,7 +69,14 @@ module Scar
         end
       end
 
-      @entities.select!(&.alive?)
+      @entities.select! { |e|
+        if e.alive?
+          true
+        else
+          @entity_ids.remove e.id
+          false
+        end
+      }
     end
 
     # :nodoc:
@@ -76,15 +86,16 @@ module Scar
       end
     end
 
-    # TODO: fail at entity id duplicates
-
     # Adds an Entity to the space and returns self
     def <<(entity : Entity)
+      raise "Duplicate entity id #{entity.id}!" if @entity_ids.include? entity.id
+
       idx = 0
       @entities.each_with_index do |e, i|
         idx = i
         break if e.z > entity.z
       end
+      @entity_ids.insert(entity.id)
       @entities.insert(idx, entity)
       self
     end
