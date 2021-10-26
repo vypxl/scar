@@ -747,7 +747,7 @@ basic key-value configuration like keybindings, window settings, ..</p>
 <p>You can store everything that can be represented by <code>YAML::Any</code>.</p>
 <p>Example usage:</p>
 <pre><code class="language-crystal"><span class="c"># At toplevel</span>
-<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.define_standards({
+<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.set_defaults({
   int: <span class="n">7331</span>,
   str: <span class="s">&quot;hello world&quot;</span>,
   arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">7</span>],
@@ -758,7 +758,8 @@ puts <span class="t">Config</span>[<span class="n">:int</span>] <span class="c">
 <span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>[<span class="n">:str</span>] <span class="o">=</span> <span class="s">&quot;lol&quot;</span>
 puts <span class="t">Config</span>[<span class="n">:str</span>] <span class="c"># =&gt; lol</span>
 
-<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.save <span class="s">&quot;config.yml&quot;</span>
+<span class="t">Scar</span><span class="t">::</span><span class="t">Util</span>.dir <span class="o">=</span> <span class="s">&quot;config-examle&quot;</span> <span class="c"># don&#39;t forget to specify a data directory for your files!</span>
+<span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.save                <span class="c"># using default filename &quot;config.yml&quot;</span>
 
 <span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.reset(<span class="n">:str</span>)
 puts <span class="t">Config</span>[<span class="n">:str</span>] <span class="c"># =&gt; hello world</span>
@@ -804,7 +805,7 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L29" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L30" target="_blank">
         scar/config.cr
       </a>
     
@@ -851,14 +852,14 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
       </li>
     
       <li class="entry-summary">
-        <a href="#load%28fname%3AString%29-instance-method" class="signature"><strong>#load</strong>(fname : String)</a>
+        <a href="#load%28fname%3AString%3D%22config.yml%22%29-instance-method" class="signature"><strong>#load</strong>(fname : String = <span class="s">&quot;config.yml&quot;</span>)</a>
         
           <div class="summary"><p>Loads configuration values from the given file (using <code><a href="../Scar/Util.html#read_file%28name%3AString%29-instance-method">Util#read_file</a></code>)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#load_standards-instance-method" class="signature"><strong>#load_standards</strong></a>
+        <a href="#load_defaults-instance-method" class="signature"><strong>#load_defaults</strong></a>
         
           <div class="summary"><p>Resets all configuration entries to their standard value</p></div>
         
@@ -867,12 +868,12 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
       <li class="entry-summary">
         <a href="#reset%28key%29-instance-method" class="signature"><strong>#reset</strong>(key)</a>
         
-          <div class="summary"><p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards%28standards%29-macro">Config#define_standards</a></code>)</p></div>
+          <div class="summary"><p>Resets the value of a configuration entry to it's standard (see <code>Config#define_defaults</code>)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#save%28fname%3AString%29-instance-method" class="signature"><strong>#save</strong>(fname : String)</a>
+        <a href="#save%28fname%3AString%3D%22config.yml%22%29-instance-method" class="signature"><strong>#save</strong>(fname : String = <span class="s">&quot;config.yml&quot;</span>)</a>
         
           <div class="summary"><p>Saves the configuration to a file with given file name (using <code><a href="../Scar/Util.html#write_file%28name%3AString%2Ccontent%3AString%29-instance-method">Util#write_file</a></code>)</p></div>
         
@@ -893,7 +894,7 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#define_standards%28standards%29-macro" class="signature"><strong>define_standards</strong>(standards)</a>
+        <a href="#set_defaults%28defaults%29-macro" class="signature"><strong>set_defaults</strong>(defaults)</a>
         
           <div class="summary"><p>Defines standard values for configuration entries to fall back to.</p></div>
         
@@ -939,7 +940,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -960,7 +961,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L81" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -981,17 +982,17 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L110" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="load(fname:String)-instance-method">
+    <div class="entry-detail" id="load(fname:String=&quot;config.yml&quot;)-instance-method">
       <div class="signature">
         
-        def <strong>load</strong>(fname : String)
+        def <strong>load</strong>(fname : String = <span class="s">&quot;config.yml&quot;</span>)
 
-        <a class="method-permalink" href="#load%28fname%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#load%28fname%3AString%3D%22config.yml%22%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1002,17 +1003,17 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="load_standards-instance-method">
+    <div class="entry-detail" id="load_defaults-instance-method">
       <div class="signature">
         
-        def <strong>load_standards</strong>
+        def <strong>load_defaults</strong>
 
-        <a class="method-permalink" href="#load_standards-instance-method">#</a>
+        <a class="method-permalink" href="#load_defaults-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1023,7 +1024,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1038,23 +1039,23 @@ Returns the standard value if the configuration entry is not set.</p>
       
         <div class="doc">
           
-          <p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards%28standards%29-macro">Config#define_standards</a></code>)</p>
+          <p>Resets the value of a configuration entry to it's standard (see <code>Config#define_defaults</code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="save(fname:String)-instance-method">
+    <div class="entry-detail" id="save(fname:String=&quot;config.yml&quot;)-instance-method">
       <div class="signature">
         
-        def <strong>save</strong>(fname : String)
+        def <strong>save</strong>(fname : String = <span class="s">&quot;config.yml&quot;</span>)
 
-        <a class="method-permalink" href="#save%28fname%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#save%28fname%3AString%3D%22config.yml%22%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1065,7 +1066,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1082,20 +1083,20 @@ Returns the standard value if the configuration entry is not set.</p>
     Macro Detail
   </h2>
   
-    <div class="entry-detail" id="define_standards(standards)-macro">
+    <div class="entry-detail" id="set_defaults(defaults)-macro">
       <div class="signature">
         
-        macro <strong>define_standards</strong>(standards)
+        macro <strong>set_defaults</strong>(defaults)
 
-        <a class="method-permalink" href="#define_standards%28standards%29-macro">#</a>
+        <a class="method-permalink" href="#set_defaults%28defaults%29-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines standard values for configuration entries to fall back to.</p>
-<p>Specify the standards as a <code>NamedTuple</code> of format <code>{entry name}: {value}</code>.</p>
+<p>Specify the defaults as a <code>NamedTuple</code> of format <code>{entry name}: {value}</code>.</p>
 <p>Example:</p>
-<pre><code class="language-crystal"><span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.define_standards({
+<pre><code class="language-crystal"><span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.define_defaults({
   str: <span class="s">&quot;hello world&quot;</span>,
   arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">7</span>],
 })</code></pre>
@@ -1104,7 +1105,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/d9556e1e8406ae08f98e6da7208d5e249d37acc8/src/scar/config.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
