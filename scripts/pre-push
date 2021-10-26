@@ -10,4 +10,11 @@ cd "$(git rev-parse --show-toplevel)"
 export LIBRARY_PATH="$PWD/lib/crsfml/voidcsfml"    # Used during linking
 export LD_LIBRARY_PATH="$LIBRARY_PATH"             # Used when running a binary
 
+echo "Running specs..."
 crystal spec
+for d in examples/*/main.cr ; do
+    echo "Building $d..."
+    crystal build -o /dev/null "$d"
+done
+
+echo "Ready to push!"
