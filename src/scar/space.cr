@@ -73,7 +73,7 @@ module Scar
         if e.alive?
           true
         else
-          @entity_ids.remove e.id
+          @entity_ids.delete e.id
           false
         end
       }
@@ -88,14 +88,14 @@ module Scar
 
     # Adds an Entity to the space and returns self
     def <<(entity : Entity)
-      raise "Duplicate entity id #{entity.id}!" if @entity_ids.include? entity.id
+      raise "Duplicate entity id #{entity.id}!" if @entity_ids.includes? entity.id
 
       idx = 0
       @entities.each_with_index do |e, i|
         idx = i
         break if e.z > entity.z
       end
-      @entity_ids.insert(entity.id)
+      @entity_ids.add(entity.id)
       @entities.insert(idx, entity)
       self
     end
