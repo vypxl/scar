@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,9 +745,7 @@
   </h2>
 
   <p>This component is a wrapper around <code>SF::Sprite</code></p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal">player_sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>.<span class="k">new</span>(<span class="t">Assets</span>.texture <span class="s">&quot;textures/player.png&quot;</span>)
 player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Entity</span>.<span class="k">new</span>(<span class="s">&quot;player&quot;</span>, player_sprite)</code></pre>
 
@@ -793,7 +786,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/sprite.cr#L10" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/sprite.cr#L10" target="_blank">
         scar/components/sprite.cr
       </a>
     
@@ -815,7 +808,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(texture:SF::Texture,rect:SF::IntRect?=nil)-class-method" class="signature"><strong>.new</strong>(texture : SF::Texture, rect : SF::IntRect? = <span class="n">nil</span>)</a>
+        <a href="#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(texture : SF::Texture, rect : SF::IntRect? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Creates a new sprite component.</p></div>
         
@@ -838,14 +831,14 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#drawable:SF::Sprite-instance-method" class="signature"><strong>#drawable</strong> : SF::Sprite</a>
+        <a href="#drawable%3ASF%3A%3ASprite-instance-method" class="signature"><strong>#drawable</strong> : SF::Sprite</a>
         
           <div class="summary"><p>The <code>SF::Sprite</code> associated with this component</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drawable=(drawable:SF::Sprite)-instance-method" class="signature"><strong>#drawable=</strong>(drawable : SF::Sprite)</a>
+        <a href="#drawable%3D%28drawable%3ASF%3A%3ASprite%29-instance-method" class="signature"><strong>#drawable=</strong>(drawable : SF::Sprite)</a>
         
           <div class="summary"><p>The <code>SF::Sprite</code> associated with this component</p></div>
         
@@ -874,47 +867,47 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   <h3>Instance methods inherited from module <code><a href="../../Scar/Drawable.html">Scar::Drawable</a></code></h3>
   
   
-    <a href="../../Scar/Drawable.html#blend_mode:SF::BlendMode-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3ASF%3A%3ABlendMode-instance-method" class="tooltip">
       <span>blend_mode : SF::BlendMode</span>
     blend_mode</a>, 
     
   
-    <a href="../../Scar/Drawable.html#blend_mode=(blend_mode:SF::BlendMode)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3D%28blend_mode%3ASF%3A%3ABlendMode%29-instance-method" class="tooltip">
       <span>blend_mode=(blend_mode : SF::BlendMode)</span>
     blend_mode=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#drawable:SF::Drawable-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#drawable%3ASF%3A%3ADrawable-instance-method" class="tooltip">
       <span>drawable : SF::Drawable</span>
     drawable</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader:SF::Shader-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3ASF%3A%3AShader-instance-method" class="tooltip">
       <span>shader : SF::Shader</span>
     shader</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader=(shader:SF::Shader)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3D%28shader%3ASF%3A%3AShader%29-instance-method" class="tooltip">
       <span>shader=(shader : SF::Shader)</span>
     shader=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture:SF::Texture-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3ASF%3A%3ATexture-instance-method" class="tooltip">
       <span>texture : SF::Texture</span>
     texture</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture=(texture:SF::Texture)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3D%28texture%3ASF%3A%3ATexture%29-instance-method" class="tooltip">
       <span>texture=(texture : SF::Texture)</span>
     texture=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible=(visible)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3D%28visible%29-instance-method" class="tooltip">
       <span>visible=(visible)</span>
     visible=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible?-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3F-instance-method" class="tooltip">
       <span>visible?</span>
     visible?</a>
     
@@ -985,7 +978,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def self.<strong>new</strong>(texture : SF::Texture, rect : SF::IntRect? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(texture:SF::Texture,rect:SF::IntRect?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%3F%3Dnil%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -996,7 +989,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/sprite.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/sprite.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1020,7 +1013,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>drawable</strong> : SF::Sprite
 
-        <a class="method-permalink" href="#drawable:SF::Sprite-instance-method">#</a>
+        <a class="method-permalink" href="#drawable%3ASF%3A%3ASprite-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1031,7 +1024,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1041,7 +1034,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>drawable=</strong>(drawable : SF::Sprite)
 
-        <a class="method-permalink" href="#drawable=(drawable:SF::Sprite)-instance-method">#</a>
+        <a class="method-permalink" href="#drawable%3D%28drawable%3ASF%3A%3ASprite%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1052,7 +1045,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,9 +745,7 @@
   </h2>
 
   <p>Base class for one-off actions</p>
-
 <p>Sample usage:</p>
-
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">MyAction</span> <span class="o">&lt;</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Action</span>
   <span class="k">def</span> <span class="m">completed?</span>(dt)
     <span class="n">true</span> <span class="c"># This action completes instantly</span>
@@ -811,7 +804,7 @@ app.act <span class="t">MyAction</span>.<span class="k">new</span>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/action.cr#L26" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/action.cr#L26" target="_blank">
         scar/action.cr
       </a>
     
@@ -837,7 +830,7 @@ app.act <span class="t">MyAction</span>.<span class="k">new</span>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#completed?(dt:Float32)-instance-method" class="signature"><strong>#completed?</strong>(dt : Float32)</a>
+        <a href="#completed%3F%28dt%3AFloat32%29-instance-method" class="signature"><strong>#completed?</strong>(dt : Float32)</a>
         
           <div class="summary"><p>Should return true as soon as the action has finished</p></div>
         
@@ -846,14 +839,14 @@ app.act <span class="t">MyAction</span>.<span class="k">new</span>
       <li class="entry-summary">
         <a href="#on_end-instance-method" class="signature"><strong>#on_end</strong></a>
         
-          <div class="summary"><p>This method is called immediately after <code><a href="../Scar/Action.html#completed?(dt:Float32)-instance-method">#completed?</a></code> returned true on a frame</p></div>
+          <div class="summary"><p>This method is called immediately after <code><a href="../Scar/Action.html#completed%3F%28dt%3AFloat32%29-instance-method">#completed?</a></code> returned true on a frame</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#on_start-instance-method" class="signature"><strong>#on_start</strong></a>
         
-          <div class="summary"><p>This method is called immediately after the action was activated via <code><a href="../Scar/App.html#act(action:Action)-instance-method">Scar::App#act</a></code></p></div>
+          <div class="summary"><p>This method is called immediately after the action was activated via <code><a href="../Scar/App.html#act%28action%3AAction%29-instance-method">Scar::App#act</a></code></p></div>
         
       </li>
     
@@ -906,13 +899,12 @@ app.act <span class="t">MyAction</span>.<span class="k">new</span>
         
         def <strong>completed?</strong>(dt : Float32)
 
-        <a class="method-permalink" href="#completed?(dt:Float32)-instance-method">#</a>
+        <a class="method-permalink" href="#completed%3F%28dt%3AFloat32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Should return true as soon as the action has finished</p>
-
 <p>This method is called on each frame with the delta time as an argument.
 <code><a href="../Scar/Action.html#on_end-instance-method">#on_end</a></code> is called after this method returns true.
 By default, an action completes immediately.</p>
@@ -921,7 +913,7 @@ By default, an action completes immediately.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/action.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/action.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -936,13 +928,13 @@ By default, an action completes immediately.</p>
       
         <div class="doc">
           
-          <p>This method is called immediately after <code><a href="../Scar/Action.html#completed?(dt:Float32)-instance-method">#completed?</a></code> returned true on a frame</p>
+          <p>This method is called immediately after <code><a href="../Scar/Action.html#completed%3F%28dt%3AFloat32%29-instance-method">#completed?</a></code> returned true on a frame</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/action.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/action.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -957,13 +949,13 @@ By default, an action completes immediately.</p>
       
         <div class="doc">
           
-          <p>This method is called immediately after the action was activated via <code><a href="../Scar/App.html#act(action:Action)-instance-method">Scar::App#act</a></code></p>
+          <p>This method is called immediately after the action was activated via <code><a href="../Scar/App.html#act%28action%3AAction%29-instance-method">Scar::App#act</a></code></p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/action.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/action.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>

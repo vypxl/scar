@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,16 +745,12 @@
   </h2>
 
   <p>This component is a more advanced wrapper around <code>SF::Sprite</code>.</p>
-
 <p>It supports multi-state animation based on a spritesheet. It is supposed to be used in conjunction with <code><a href="../../Scar/Systems/AnimateSprites.html">Systems::AnimateSprites</a></code>.</p>
-
 <p>The spritesheet must such a layout that each animation state can be described as an index range
 inside the spritesheet. This means that each frame must have the same pixel size and all frames
 of an animation state must appear in sequence in the spritesheet (right-down order).
 See <a href="https://github.com/vypxl/scar_examples">Scar examples</a> for real-world examples.</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="c"># The example spritesheet could be lay out like this:</span>
 <span class="c">#</span>
 <span class="c"># AAAABB</span>
@@ -776,16 +767,17 @@ sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
 )
 
 sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span class="c"># Necessary, there is no default animation state</span></code></pre>
-
 <p>Note that animation states can share frames, but only if both states' frames remain in sequence.</p>
-
 <p>Example:</p>
-
-<blockquote>Spritesheet layout: <code>AASSBB</code>.</blockquote>
-
-<blockquote>Animation states <code>A</code> and <code>B</code> share the frames <code>S</code> in the middle.</blockquote>
-
-<blockquote>State <code>A</code> uses the frames 0-3 and state <code>B</code> uses the frames 2-5.</blockquote>
+<blockquote>
+<p>Spritesheet layout: <code>AASSBB</code>.</p>
+</blockquote>
+<blockquote>
+<p>Animation states <code>A</code> and <code>B</code> share the frames <code>S</code> in the middle.</p>
+</blockquote>
+<blockquote>
+<p>State <code>A</code> uses the frames 0-3 and state <code>B</code> uses the frames 2-5.</p>
+</blockquote>
 
 
 
@@ -810,7 +802,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L40" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L40" target="_blank">
         scar/components/animated_sprite.cr
       </a>
     
@@ -832,7 +824,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(texture:SF::Texture,size:Tuple(Int32,Int32),states:Hash(String,Tuple(Int32,Int32,Int32)))-class-method" class="signature"><strong>.new</strong>(texture : SF::Texture, size : Tuple(Int32, Int32), states : Hash(String, Tuple(Int32, Int32, Int32)))</a>
+        <a href="#new%28texture%3ASF%3A%3ATexture%2Csize%3ATuple%28Int32%2CInt32%29%2Cstates%3AHash%28String%2CTuple%28Int32%2CInt32%2CInt32%29%29%29-class-method" class="signature"><strong>.new</strong>(texture : SF::Texture, size : Tuple(Int32, Int32), states : Hash(String, Tuple(Int32, Int32, Int32)))</a>
         
           <div class="summary"><p>Creates a new animated sprite</p></div>
         
@@ -862,35 +854,35 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       </li>
     
       <li class="entry-summary">
-        <a href="#size:%7BInt32,Int32%7D-instance-method" class="signature"><strong>#size</strong> : {Int32, Int32}</a>
+        <a href="#size%3A%7BInt32%2CInt32%7D-instance-method" class="signature"><strong>#size</strong> : {Int32, Int32}</a>
         
           <div class="summary"><p>Returns the frame size in pixels</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#state:String-instance-method" class="signature"><strong>#state</strong> : String</a>
+        <a href="#state%3AString-instance-method" class="signature"><strong>#state</strong> : String</a>
         
           <div class="summary"><p>Returns the name of the current animation state</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#state=(new_state:String)-instance-method" class="signature"><strong>#state=</strong>(new_state : String)</a>
+        <a href="#state%3D%28new_state%3AString%29-instance-method" class="signature"><strong>#state=</strong>(new_state : String)</a>
         
           <div class="summary"><p>Sets the current animation state</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#states:Hash(String,%7BInt32,Int32,Int32%7D)-instance-method" class="signature"><strong>#states</strong> : Hash(String, {Int32, Int32, Int32})</a>
+        <a href="#states%3AHash%28String%2C%7BInt32%2CInt32%2CInt32%7D%29-instance-method" class="signature"><strong>#states</strong> : Hash(String, {Int32, Int32, Int32})</a>
         
           <div class="summary"><p>Returns the hash of animation states</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(dt)-instance-method" class="signature"><strong>#update</strong>(dt)</a>
+        <a href="#update%28dt%29-instance-method" class="signature"><strong>#update</strong>(dt)</a>
         
           <div class="summary"><p>Advances the current animation by the given delta time</p></div>
         
@@ -909,12 +901,12 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
   <h3>Instance methods inherited from class <code><a href="../../Scar/Components/Sprite.html">Scar::Components::Sprite</a></code></h3>
   
   
-    <a href="../../Scar/Components/Sprite.html#drawable:SF::Sprite-instance-method" class="tooltip">
+    <a href="../../Scar/Components/Sprite.html#drawable%3ASF%3A%3ASprite-instance-method" class="tooltip">
       <span>drawable : SF::Sprite</span>
     drawable</a>, 
     
   
-    <a href="../../Scar/Components/Sprite.html#drawable=(drawable:SF::Sprite)-instance-method" class="tooltip">
+    <a href="../../Scar/Components/Sprite.html#drawable%3D%28drawable%3ASF%3A%3ASprite%29-instance-method" class="tooltip">
       <span>drawable=(drawable : SF::Sprite)</span>
     drawable=</a>
     
@@ -926,7 +918,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
   <h3>Constructor methods inherited from class <code><a href="../../Scar/Components/Sprite.html">Scar::Components::Sprite</a></code></h3>
   
   
-    <a href="../../Scar/Components/Sprite.html#new(texture:SF::Texture,rect:SF::IntRect?=nil)-class-method" class="tooltip">
+    <a href="../../Scar/Components/Sprite.html#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%3F%3Dnil%29-class-method" class="tooltip">
       <span>new(texture : SF::Texture, rect : SF::IntRect? = <span class="n">nil</span>)</span>
     new</a>
     
@@ -952,47 +944,47 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
   <h3>Instance methods inherited from module <code><a href="../../Scar/Drawable.html">Scar::Drawable</a></code></h3>
   
   
-    <a href="../../Scar/Drawable.html#blend_mode:SF::BlendMode-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3ASF%3A%3ABlendMode-instance-method" class="tooltip">
       <span>blend_mode : SF::BlendMode</span>
     blend_mode</a>, 
     
   
-    <a href="../../Scar/Drawable.html#blend_mode=(blend_mode:SF::BlendMode)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3D%28blend_mode%3ASF%3A%3ABlendMode%29-instance-method" class="tooltip">
       <span>blend_mode=(blend_mode : SF::BlendMode)</span>
     blend_mode=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#drawable:SF::Drawable-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#drawable%3ASF%3A%3ADrawable-instance-method" class="tooltip">
       <span>drawable : SF::Drawable</span>
     drawable</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader:SF::Shader-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3ASF%3A%3AShader-instance-method" class="tooltip">
       <span>shader : SF::Shader</span>
     shader</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader=(shader:SF::Shader)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3D%28shader%3ASF%3A%3AShader%29-instance-method" class="tooltip">
       <span>shader=(shader : SF::Shader)</span>
     shader=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture:SF::Texture-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3ASF%3A%3ATexture-instance-method" class="tooltip">
       <span>texture : SF::Texture</span>
     texture</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture=(texture:SF::Texture)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3D%28texture%3ASF%3A%3ATexture%29-instance-method" class="tooltip">
       <span>texture=(texture : SF::Texture)</span>
     texture=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible=(visible)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3D%28visible%29-instance-method" class="tooltip">
       <span>visible=(visible)</span>
     visible=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible?-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3F-instance-method" class="tooltip">
       <span>visible?</span>
     visible?</a>
     
@@ -1063,22 +1055,24 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
         
         def self.<strong>new</strong>(texture : SF::Texture, size : Tuple(Int32, Int32), states : Hash(String, Tuple(Int32, Int32, Int32)))
 
-        <a class="method-permalink" href="#new(texture:SF::Texture,size:Tuple(Int32,Int32),states:Hash(String,Tuple(Int32,Int32,Int32)))-class-method">#</a>
+        <a class="method-permalink" href="#new%28texture%3ASF%3A%3ATexture%2Csize%3ATuple%28Int32%2CInt32%29%2Cstates%3AHash%28String%2CTuple%28Int32%2CInt32%2CInt32%29%29%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates a new animated sprite</p>
-
 <p>Parameters:</p>
-
-<ul><li><em>texture</em>: Source spritesheet</li><li><em>size</em>: size of a frame in pixels {width, height}</li><li><em>states</em>: list of animation states {start-index, framecount, framerate} (see overview for an example)</li></ul>
+<ul>
+<li><em>texture</em>: Source spritesheet</li>
+<li><em>size</em>: size of a frame in pixels {width, height}</li>
+<li><em>states</em>: list of animation states {start-index, framecount, framerate} (see overview for an example)</li>
+</ul>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L57" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1113,7 +1107,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1123,7 +1117,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
         
         def <strong>size</strong> : {Int32, Int32}
 
-        <a class="method-permalink" href="#size:%7BInt32,Int32%7D-instance-method">#</a>
+        <a class="method-permalink" href="#size%3A%7BInt32%2CInt32%7D-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1134,7 +1128,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1144,7 +1138,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
         
         def <strong>state</strong> : String
 
-        <a class="method-permalink" href="#state:String-instance-method">#</a>
+        <a class="method-permalink" href="#state%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1155,7 +1149,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1165,17 +1159,14 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
         
         def <strong>state=</strong>(new_state : String)
 
-        <a class="method-permalink" href="#state=(new_state:String)-instance-method">#</a>
+        <a class="method-permalink" href="#state%3D%28new_state%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets the current animation state</p>
-
 <p>Takes the name of an animation state specified in the <em>states</em> parameter of the constructor</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal">an_sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">AnimatedSprite</span>.<span class="k">new</span>(... <span class="s">&quot;idle&quot;</span> => {...} ...)
 an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span></code></pre>
         </div>
@@ -1183,7 +1174,7 @@ an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L99" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1193,7 +1184,7 @@ an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span>
         
         def <strong>states</strong> : Hash(String, {Int32, Int32, Int32})
 
-        <a class="method-permalink" href="#states:Hash(String,%7BInt32,Int32,Int32%7D)-instance-method">#</a>
+        <a class="method-permalink" href="#states%3AHash%28String%2C%7BInt32%2CInt32%2CInt32%7D%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1204,7 +1195,7 @@ an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1214,7 +1205,7 @@ an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span>
         
         def <strong>update</strong>(dt)
 
-        <a class="method-permalink" href="#update(dt)-instance-method">#</a>
+        <a class="method-permalink" href="#update%28dt%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1225,7 +1216,7 @@ an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/animated_sprite.cr#L69" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/animated_sprite.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>

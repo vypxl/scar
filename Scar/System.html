@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,12 +745,9 @@
   </h2>
 
   <p>Base class for Systems</p>
-
 <p>Systems define behaviours in the application
 e. g. player movement, ai updates, ..</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">MySystem</span> <span class="o">&lt;</span> <span class="t">Scar</span><span class="t">::</span><span class="t">System</span>
   <span class="k">def</span> <span class="m">init</span>(app, space)
     puts <span class="s">&quot;MySystem initialized!&quot;</span>
@@ -808,7 +800,7 @@ e. g. player movement, ai updates, ..</p>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/system.cr#L23" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/system.cr#L23" target="_blank">
         scar/system.cr
       </a>
     
@@ -834,35 +826,35 @@ e. g. player movement, ai updates, ..</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#init(app:App,space:Space)-instance-method" class="signature"><strong>#init</strong>(app : App, space : Space)</a>
+        <a href="#init%28app%3AApp%2Cspace%3ASpace%29-instance-method" class="signature"><strong>#init</strong>(app : App, space : Space)</a>
         
           <div class="summary"><p>Override this for one-time initialization</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#initialized:Bool-instance-method" class="signature"><strong>#initialized</strong> : Bool</a>
+        <a href="#initialized%3ABool-instance-method" class="signature"><strong>#initialized</strong> : Bool</a>
         
-          <div class="summary"><p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#initialized=(initialized)-instance-method" class="signature"><strong>#initialized=</strong>(initialized)</a>
-        
-          <div class="summary"><p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p></div>
+          <div class="summary"><p>This property keeps track of wether <code><a href="../Scar/System.html#init%28app%3AApp%2Cspace%3ASpace%29-instance-method">#init</a></code> has been called</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#render(app:App,space:Space,dt)-instance-method" class="signature"><strong>#render</strong>(app : App, space : Space, dt)</a>
+        <a href="#initialized%3D%28initialized%29-instance-method" class="signature"><strong>#initialized=</strong>(initialized)</a>
+        
+          <div class="summary"><p>This property keeps track of wether <code><a href="../Scar/System.html#init%28app%3AApp%2Cspace%3ASpace%29-instance-method">#init</a></code> has been called</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render%28app%3AApp%2Cspace%3ASpace%2Cdt%29-instance-method" class="signature"><strong>#render</strong>(app : App, space : Space, dt)</a>
         
           <div class="summary"><p>Override this for custom rendering logic</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(app:App,space:Space,dt)-instance-method" class="signature"><strong>#update</strong>(app : App, space : Space, dt)</a>
+        <a href="#update%28app%3AApp%2Cspace%3ASpace%2Cdt%29-instance-method" class="signature"><strong>#update</strong>(app : App, space : Space, dt)</a>
         
           <div class="summary"><p>Override this for any behaviour you want in you application</p></div>
         
@@ -917,20 +909,19 @@ e. g. player movement, ai updates, ..</p>
         
         def <strong>init</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>)
 
-        <a class="method-permalink" href="#init(app:App,space:Space)-instance-method">#</a>
+        <a class="method-permalink" href="#init%28app%3AApp%2Cspace%3ASpace%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Override this for one-time initialization</p>
-
 <p>This method is called by the space containing this System on the first frame after it was added.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/system.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/system.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -940,18 +931,18 @@ e. g. player movement, ai updates, ..</p>
         
         def <strong>initialized</strong> : Bool
 
-        <a class="method-permalink" href="#initialized:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#initialized%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p>
+          <p>This property keeps track of wether <code><a href="../Scar/System.html#init%28app%3AApp%2Cspace%3ASpace%29-instance-method">#init</a></code> has been called</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/system.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/system.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -961,18 +952,18 @@ e. g. player movement, ai updates, ..</p>
         
         def <strong>initialized=</strong>(initialized)
 
-        <a class="method-permalink" href="#initialized=(initialized)-instance-method">#</a>
+        <a class="method-permalink" href="#initialized%3D%28initialized%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>This property keeps track of wether <code><a href="../Scar/System.html#init(app:App,space:Space)-instance-method">#init</a></code> has been called</p>
+          <p>This property keeps track of wether <code><a href="../Scar/System.html#init%28app%3AApp%2Cspace%3ASpace%29-instance-method">#init</a></code> has been called</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/system.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/system.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -982,20 +973,19 @@ e. g. player movement, ai updates, ..</p>
         
         def <strong>render</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>, dt)
 
-        <a class="method-permalink" href="#render(app:App,space:Space,dt)-instance-method">#</a>
+        <a class="method-permalink" href="#render%28app%3AApp%2Cspace%3ASpace%2Cdt%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Override this for custom rendering logic</p>
-
 <p>This method is called by the space containing this System on every frame before any rendering occurs.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/system.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/system.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1005,20 +995,19 @@ e. g. player movement, ai updates, ..</p>
         
         def <strong>update</strong>(app : <a href="../Scar/App.html">App</a>, space : <a href="../Scar/Space.html">Space</a>, dt)
 
-        <a class="method-permalink" href="#update(app:App,space:Space,dt)-instance-method">#</a>
+        <a class="method-permalink" href="#update%28app%3AApp%2Cspace%3ASpace%2Cdt%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Override this for any behaviour you want in you application</p>
-
 <p>This method is called by the space containing this System on every frame before any rendering occurs.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/system.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/system.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,9 +745,7 @@
   </h2>
 
   <p>This component is a wrapper around <code>SF::Text</code></p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="t">Assets</span>.default_font <span class="o">=</span> <span class="t">Assets</span>.font <span class="s">&quot;fonts/arial.ttf&quot;</span>
 title_text <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Text</span>.<span class="k">new</span>(<span class="s">&quot;Game Title&quot;</span>)
 title <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Entity</span>.<span class="k">new</span>(<span class="s">&quot;title&quot;</span>, title_text)
@@ -781,7 +774,7 @@ title.position <span class="o">=</span> <span class="t">Vec</span>.<span class="
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/text.cr#L10" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/text.cr#L10" target="_blank">
         scar/components/text.cr
       </a>
     
@@ -803,7 +796,7 @@ title.position <span class="o">=</span> <span class="t">Vec</span>.<span class="
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(text:String,font:SF::Font?=nil)-class-method" class="signature"><strong>.new</strong>(text : String, font : SF::Font? = <span class="n">nil</span>)</a>
+        <a href="#new%28text%3AString%2Cfont%3ASF%3A%3AFont%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(text : String, font : SF::Font? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Creates a new text component with the given <code>String</code> content and font</p></div>
         
@@ -826,35 +819,35 @@ title.position <span class="o">=</span> <span class="t">Vec</span>.<span class="
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#drawable:SF::Text-instance-method" class="signature"><strong>#drawable</strong> : SF::Text</a>
+        <a href="#drawable%3ASF%3A%3AText-instance-method" class="signature"><strong>#drawable</strong> : SF::Text</a>
         
           <div class="summary"><p>Returns the underlying <code>SF::Text</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#font:SF::Font?-instance-method" class="signature"><strong>#font</strong> : SF::Font?</a>
+        <a href="#font%3ASF%3A%3AFont%3F-instance-method" class="signature"><strong>#font</strong> : SF::Font?</a>
         
           <div class="summary"><p>Returns the <code>SF::Font</code> this component uses</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#font=(new_font:SF::Font)-instance-method" class="signature"><strong>#font=</strong>(new_font : SF::Font)</a>
+        <a href="#font%3D%28new_font%3ASF%3A%3AFont%29-instance-method" class="signature"><strong>#font=</strong>(new_font : SF::Font)</a>
         
           <div class="summary"><p>Sets the font this component should use</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#text:String-instance-method" class="signature"><strong>#text</strong> : String</a>
+        <a href="#text%3AString-instance-method" class="signature"><strong>#text</strong> : String</a>
         
           <div class="summary"><p>Returns the <code>String</code> contents of this component</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#text=(new_text:String)-instance-method" class="signature"><strong>#text=</strong>(new_text : String)</a>
+        <a href="#text%3D%28new_text%3AString%29-instance-method" class="signature"><strong>#text=</strong>(new_text : String)</a>
         
           <div class="summary"><p>Replaces the components' <code>String</code> content with the provided new one</p></div>
         
@@ -883,47 +876,47 @@ title.position <span class="o">=</span> <span class="t">Vec</span>.<span class="
   <h3>Instance methods inherited from module <code><a href="../../Scar/Drawable.html">Scar::Drawable</a></code></h3>
   
   
-    <a href="../../Scar/Drawable.html#blend_mode:SF::BlendMode-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3ASF%3A%3ABlendMode-instance-method" class="tooltip">
       <span>blend_mode : SF::BlendMode</span>
     blend_mode</a>, 
     
   
-    <a href="../../Scar/Drawable.html#blend_mode=(blend_mode:SF::BlendMode)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3D%28blend_mode%3ASF%3A%3ABlendMode%29-instance-method" class="tooltip">
       <span>blend_mode=(blend_mode : SF::BlendMode)</span>
     blend_mode=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#drawable:SF::Drawable-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#drawable%3ASF%3A%3ADrawable-instance-method" class="tooltip">
       <span>drawable : SF::Drawable</span>
     drawable</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader:SF::Shader-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3ASF%3A%3AShader-instance-method" class="tooltip">
       <span>shader : SF::Shader</span>
     shader</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader=(shader:SF::Shader)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3D%28shader%3ASF%3A%3AShader%29-instance-method" class="tooltip">
       <span>shader=(shader : SF::Shader)</span>
     shader=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture:SF::Texture-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3ASF%3A%3ATexture-instance-method" class="tooltip">
       <span>texture : SF::Texture</span>
     texture</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture=(texture:SF::Texture)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3D%28texture%3ASF%3A%3ATexture%29-instance-method" class="tooltip">
       <span>texture=(texture : SF::Texture)</span>
     texture=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible=(visible)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3D%28visible%29-instance-method" class="tooltip">
       <span>visible=(visible)</span>
     visible=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible?-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3F-instance-method" class="tooltip">
       <span>visible?</span>
     visible?</a>
     
@@ -994,21 +987,20 @@ title.position <span class="o">=</span> <span class="t">Vec</span>.<span class="
         
         def self.<strong>new</strong>(text : String, font : SF::Font? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(text:String,font:SF::Font?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28text%3AString%2Cfont%3ASF%3A%3AFont%3F%3Dnil%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates a new text component with the given <code>String</code> content and font</p>
-
-<p>If no font is given, the component will try to use <code><a href="../../Scar/Assets.html#default_font:Font?-class-method">Assets#default_font</a></code>.
-This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-class-method">Assets#default_font</a></code> is set.</p>
+<p>If no font is given, the component will try to use <code><a href="../../Scar/Assets.html#default_font%3AFont%3F-class-method">Assets#default_font</a></code>.
+This only works if <code><a href="../../Scar/Assets.html#default_font%3AFont%3F-class-method">Assets#default_font</a></code> is set.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/text.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/text.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1032,7 +1024,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
         
         def <strong>drawable</strong> : SF::Text
 
-        <a class="method-permalink" href="#drawable:SF::Text-instance-method">#</a>
+        <a class="method-permalink" href="#drawable%3ASF%3A%3AText-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1043,7 +1035,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/text.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/text.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1053,7 +1045,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
         
         def <strong>font</strong> : SF::Font?
 
-        <a class="method-permalink" href="#font:SF::Font?-instance-method">#</a>
+        <a class="method-permalink" href="#font%3ASF%3A%3AFont%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1064,7 +1056,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/text.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/text.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1074,7 +1066,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
         
         def <strong>font=</strong>(new_font : SF::Font)
 
-        <a class="method-permalink" href="#font=(new_font:SF::Font)-instance-method">#</a>
+        <a class="method-permalink" href="#font%3D%28new_font%3ASF%3A%3AFont%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1085,7 +1077,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/text.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/text.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1095,7 +1087,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
         
         def <strong>text</strong> : String
 
-        <a class="method-permalink" href="#text:String-instance-method">#</a>
+        <a class="method-permalink" href="#text%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1106,7 +1098,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/text.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/text.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1116,7 +1108,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
         
         def <strong>text=</strong>(new_text : String)
 
-        <a class="method-permalink" href="#text=(new_text:String)-instance-method">#</a>
+        <a class="method-permalink" href="#text%3D%28new_text%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1127,7 +1119,7 @@ This only works if <code><a href="../../Scar/Assets.html#default_font:Font?-clas
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/text.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/text.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>

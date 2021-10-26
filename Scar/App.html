@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,9 +745,7 @@
   </h2>
 
   <p>Base class for Scar powered applications</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="c"># Define your app</span>
 <span class="k">class</span> <span class="t">MyApp</span> <span class="o">&lt;</span> <span class="t">Scar</span><span class="t">::</span><span class="t">App</span>
   @counter <span class="o">=</span> <span class="n">0</span>
@@ -803,7 +796,7 @@ app.run</code></pre>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L33" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L32" target="_blank">
         scar/app.cr
       </a>
     
@@ -825,9 +818,9 @@ app.run</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(window:SF::RenderWindow,input:Input=Input.new)-class-method" class="signature"><strong>.new</strong>(window : SF::RenderWindow, input : Input = <span class="t">Input</span>.<span class="k">new</span>)</a>
+        <a href="#new%28window%3ASF%3A%3ARenderWindow%29-class-method" class="signature"><strong>.new</strong>(window : SF::RenderWindow)</a>
         
-          <div class="summary"><p>Initializes the app with a RenderWindow as a render target and an input handler</p></div>
+          <div class="summary"><p>Initializes the app with a RenderWindow as a render target</p></div>
         
       </li>
     
@@ -848,56 +841,56 @@ app.run</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%3C%3C(*args,**options)-instance-method" class="signature"><strong>#<<</strong>(*args, **options)</a>
+        <a href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#<<</strong>(*args, **options)</a>
         
           <div class="summary"><p>Push a scene onto the scene stack</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C%3C(*args,**options,&)-instance-method" class="signature"><strong>#<<</strong>(*args, **options, &)</a>
+        <a href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#<<</strong>(*args, **options, &)</a>
         
           <div class="summary"><p>Push a scene onto the scene stack</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#act(action:Action)-instance-method" class="signature"><strong>#act</strong>(action : Action)</a>
+        <a href="#act%28action%3AAction%29-instance-method" class="signature"><strong>#act</strong>(action : Action)</a>
         
           <div class="summary"><p>Begin running an <code><a href="../Scar/Action.html">Action</a></code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#actions:Array(Scar::Action)-instance-method" class="signature"><strong>#actions</strong> : Array(Scar::Action)</a>
+        <a href="#actions%3AArray%28Scar%3A%3AAction%29-instance-method" class="signature"><strong>#actions</strong> : Array(Scar::Action)</a>
         
           <div class="summary"><p>Returns all currently running actions</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#broadcast(event)-instance-method" class="signature"><strong>#broadcast</strong>(event)</a>
+        <a href="#broadcast%28event%29-instance-method" class="signature"><strong>#broadcast</strong>(event)</a>
         
           <div class="summary"><p>Broadcasts the given event (calls all event listeners)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#exit(status=0)-instance-method" class="signature"><strong>#exit</strong>(status = <span class="n">0</span>)</a>
+        <a href="#exit%28status%3D0%29-instance-method" class="signature"><strong>#exit</strong>(status = <span class="n">0</span>)</a>
         
           <div class="summary"><p>Unloads assets and exits the program.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#hotreload:Bool-instance-method" class="signature"><strong>#hotreload</strong> : Bool</a>
+        <a href="#hotreload%3ABool-instance-method" class="signature"><strong>#hotreload</strong> : Bool</a>
         
           <div class="summary"><p>Set this to <code>true</code> to enable hot-reloading of assets</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#hotreload=(hotreload)-instance-method" class="signature"><strong>#hotreload=</strong>(hotreload)</a>
+        <a href="#hotreload%3D%28hotreload%29-instance-method" class="signature"><strong>#hotreload=</strong>(hotreload)</a>
         
           <div class="summary"><p>Set this to <code>true</code> to enable hot-reloading of assets</p></div>
         
@@ -911,28 +904,21 @@ app.run</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#input:Scar::Input-instance-method" class="signature"><strong>#input</strong> : Scar::Input</a>
-        
-          <div class="summary"><p>Returns the input handler of the app.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#pop(*args,**options)-instance-method" class="signature"><strong>#pop</strong>(*args, **options)</a>
+        <a href="#pop%28%2Aargs%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#pop</strong>(*args, **options)</a>
         
           <div class="summary"><p>Pop a scene from the scene stack</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#pop(*args,**options,&)-instance-method" class="signature"><strong>#pop</strong>(*args, **options, &)</a>
+        <a href="#pop%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method" class="signature"><strong>#pop</strong>(*args, **options, &)</a>
         
           <div class="summary"><p>Pop a scene from the scene stack</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#render(dt)-instance-method" class="signature"><strong>#render</strong>(dt)</a>
+        <a href="#render%28dt%29-instance-method" class="signature"><strong>#render</strong>(dt)</a>
         
           <div class="summary"><p>App rendering logic</p></div>
         
@@ -953,42 +939,42 @@ app.run</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#scene_stack:Array(Scar::Scene)-instance-method" class="signature"><strong>#scene_stack</strong> : Array(Scar::Scene)</a>
+        <a href="#scene_stack%3AArray%28Scar%3A%3AScene%29-instance-method" class="signature"><strong>#scene_stack</strong> : Array(Scar::Scene)</a>
         
           <div class="summary"><p>Returns the current scenes</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#subscribe(event_type,&):UInt64-instance-method" class="signature"><strong>#subscribe</strong>(event_type, &) : UInt64</a>
+        <a href="#subscribe%28event_type%2C%26%29%3AUInt64-instance-method" class="signature"><strong>#subscribe</strong>(event_type, &) : UInt64</a>
         
           <div class="summary"><p>Adds an event handler for the specified event type and returns its id</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tween(t:Tween)-instance-method" class="signature"><strong>#tween</strong>(t : Tween)</a>
+        <a href="#tween%28t%3ATween%29-instance-method" class="signature"><strong>#tween</strong>(t : Tween)</a>
         
           <div class="summary"><p>Registers a <code><a href="../Scar/Tween.html">Tween</a></code> which is then updated on every frame.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsubscribe(id)-instance-method" class="signature"><strong>#unsubscribe</strong>(id)</a>
+        <a href="#unsubscribe%28id%29-instance-method" class="signature"><strong>#unsubscribe</strong>(id)</a>
         
           <div class="summary"><p>Deletes the event handler with the given id</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update(dt)-instance-method" class="signature"><strong>#update</strong>(dt)</a>
+        <a href="#update%28dt%29-instance-method" class="signature"><strong>#update</strong>(dt)</a>
         
           <div class="summary"><p>App update logic</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#window:SF::RenderWindow-instance-method" class="signature"><strong>#window</strong> : SF::RenderWindow</a>
+        <a href="#window%3ASF%3A%3ARenderWindow-instance-method" class="signature"><strong>#window</strong> : SF::RenderWindow</a>
         
           <div class="summary"><p>Returns the <code>SF::RenderWindow</code> of the app.</p></div>
         
@@ -1034,23 +1020,23 @@ app.run</code></pre>
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(window:SF::RenderWindow,input:Input=Input.new)-class-method">
+    <div class="entry-detail" id="new(window:SF::RenderWindow)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(window : SF::RenderWindow, input : <a href="../Scar/Input.html">Input</a> = <span class="t">Input</span>.<span class="k">new</span>)
+        def self.<strong>new</strong>(window : SF::RenderWindow)
 
-        <a class="method-permalink" href="#new(window:SF::RenderWindow,input:Input=Input.new)-class-method">#</a>
+        <a class="method-permalink" href="#new%28window%3ASF%3A%3ARenderWindow%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Initializes the app with a RenderWindow as a render target and an input handler</p>
+          <p>Initializes the app with a RenderWindow as a render target</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1074,7 +1060,7 @@ app.run</code></pre>
         
         def <strong><<</strong>(*args, **options)
 
-        <a class="method-permalink" href="#%3C%3C(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1085,7 +1071,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L163" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1095,7 +1081,7 @@ app.run</code></pre>
         
         def <strong><<</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#%3C%3C(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1106,7 +1092,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L163" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1116,7 +1102,7 @@ app.run</code></pre>
         
         def <strong>act</strong>(action : <a href="../Scar/Action.html">Action</a>)
 
-        <a class="method-permalink" href="#act(action:Action)-instance-method">#</a>
+        <a class="method-permalink" href="#act%28action%3AAction%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1127,7 +1113,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L175" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1137,7 +1123,7 @@ app.run</code></pre>
         
         def <strong>actions</strong> : Array(<a href="../Scar/Action.html">Scar::Action</a>)
 
-        <a class="method-permalink" href="#actions:Array(Scar::Action)-instance-method">#</a>
+        <a class="method-permalink" href="#actions%3AArray%28Scar%3A%3AAction%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1148,7 +1134,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1158,22 +1144,20 @@ app.run</code></pre>
         
         def <strong>broadcast</strong>(event)
 
-        <a class="method-permalink" href="#broadcast(event)-instance-method">#</a>
+        <a class="method-permalink" href="#broadcast%28event%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Broadcasts the given event (calls all event listeners)</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal">app.broadcast(<span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Closed</span>.<span class="k">new</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L129" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L126" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1183,13 +1167,12 @@ app.run</code></pre>
         
         def <strong>exit</strong>(status = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#exit(status=0)-instance-method">#</a>
+        <a class="method-permalink" href="#exit%28status%3D0%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Unloads assets and exits the program.</p>
-
 <p>Override this method if you have specific exit logic.
 Note that it is recommended that you call super() during you custom exit method.</p>
         </div>
@@ -1197,7 +1180,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L98" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1207,7 +1190,7 @@ Note that it is recommended that you call super() during you custom exit method.
         
         def <strong>hotreload</strong> : Bool
 
-        <a class="method-permalink" href="#hotreload:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#hotreload%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1218,7 +1201,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1228,7 +1211,7 @@ Note that it is recommended that you call super() during you custom exit method.
         
         def <strong>hotreload=</strong>(hotreload)
 
-        <a class="method-permalink" href="#hotreload=(hotreload)-instance-method">#</a>
+        <a class="method-permalink" href="#hotreload%3D%28hotreload%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1239,7 +1222,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1255,35 +1238,13 @@ Note that it is recommended that you call super() during you custom exit method.
         <div class="doc">
           
           <p>App specific initialization</p>
-
 <p>e. g. loading configuration, binding inputs, loading textures, ..</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L49" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="input:Scar::Input-instance-method">
-      <div class="signature">
-        
-        def <strong>input</strong> : <a href="../Scar/Input.html">Scar::Input</a>
-
-        <a class="method-permalink" href="#input:Scar::Input-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Returns the input handler of the app.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1293,7 +1254,7 @@ Note that it is recommended that you call super() during you custom exit method.
         
         def <strong>pop</strong>(*args, **options)
 
-        <a class="method-permalink" href="#pop(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#pop%28%2Aargs%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1304,7 +1265,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L165" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1314,7 +1275,7 @@ Note that it is recommended that you call super() during you custom exit method.
         
         def <strong>pop</strong>(*args, **options, &)
 
-        <a class="method-permalink" href="#pop(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#pop%28%2Aargs%2C%2A%2Aoptions%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1325,7 +1286,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L165" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1335,20 +1296,19 @@ Note that it is recommended that you call super() during you custom exit method.
         abstract 
         def <strong>render</strong>(dt)
 
-        <a class="method-permalink" href="#render(dt)-instance-method">#</a>
+        <a class="method-permalink" href="#render%28dt%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>App rendering logic</p>
-
 <p>This method is executed on every frame <strong>before</strong> all <code><a href="../Scar/System.html">System</a></code> and <code><a href="../Scar/Object.html">Object</a></code> rendering methods.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1369,7 +1329,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1390,7 +1350,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L184" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L181" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1400,7 +1360,7 @@ Note that it is recommended that you call super() during you custom exit method.
         
         def <strong>scene_stack</strong> : Array(<a href="../Scar/Scene.html">Scar::Scene</a>)
 
-        <a class="method-permalink" href="#scene_stack:Array(Scar::Scene)-instance-method">#</a>
+        <a class="method-permalink" href="#scene_stack%3AArray%28Scar%3A%3AScene%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1411,7 +1371,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1421,24 +1381,22 @@ Note that it is recommended that you call super() during you custom exit method.
         
         def <strong>subscribe</strong>(event_type, &) : UInt64
 
-        <a class="method-permalink" href="#subscribe(event_type,&):UInt64-instance-method">#</a>
+        <a class="method-permalink" href="#subscribe%28event_type%2C%26%29%3AUInt64-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Adds an event handler for the specified event type and returns its id</p>
-
 <p>The block must have a type of <code>Proc(event_type, Nil)</code>.
 This method is defined for every subtype of Scar::Event, other types will generate a compiler error.
 Exampe usage:</p>
-
 <pre><code class="language-crystal">app.subscibe(<span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Resized</span>) { <span class="o">|</span>evt<span class="o">|</span> puts <span class="s">&quot;Resized!&quot;</span> }</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1448,22 +1406,21 @@ Exampe usage:</p>
         
         def <strong>tween</strong>(t : <a href="../Scar/Tween.html">Tween</a>)
 
-        <a class="method-permalink" href="#tween(t:Tween)-instance-method">#</a>
+        <a class="method-permalink" href="#tween%28t%3ATween%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Registers a <code><a href="../Scar/Tween.html">Tween</a></code> which is then updated on every frame.</p>
-
-<p>The <code><a href="../Scar/Tween.html">Tween</a></code> will be deleted when <code><a href="../Scar/Tween.html#completed?-instance-method">Tween#completed?</a></code> returns true after an update.
-If the Tween restarts itself in <code><a href="../Scar/Tween.html#on_completed:Scar::Tween-%3ENil-instance-method">Tween#on_completed</a></code> (e. g. by calling <code><a href="../Scar/Tween.html#reset-instance-method">Tween#reset</a></code>)
-or does anything that prevents the <code><a href="../Scar/Tween.html#completed?-instance-method">Tween#completed?</a></code> check, it will not be deleted.</p>
+<p>The <code><a href="../Scar/Tween.html">Tween</a></code> will be deleted when <code><a href="../Scar/Tween.html#completed%3F-instance-method">Tween#completed?</a></code> returns true after an update.
+If the Tween restarts itself in <code><a href="../Scar/Tween.html#on_completed%3AScar%3A%3ATween-%3ENil-instance-method">Tween#on_completed</a></code> (e. g. by calling <code><a href="../Scar/Tween.html#reset-instance-method">Tween#reset</a></code>)
+or does anything that prevents the <code><a href="../Scar/Tween.html#completed%3F-instance-method">Tween#completed?</a></code> check, it will not be deleted.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L172" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L169" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1473,7 +1430,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed?-
         
         def <strong>unsubscribe</strong>(id)
 
-        <a class="method-permalink" href="#unsubscribe(id)-instance-method">#</a>
+        <a class="method-permalink" href="#unsubscribe%28id%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1484,7 +1441,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed?-
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L133" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1494,20 +1451,19 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed?-
         abstract 
         def <strong>update</strong>(dt)
 
-        <a class="method-permalink" href="#update(dt)-instance-method">#</a>
+        <a class="method-permalink" href="#update%28dt%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>App update logic</p>
-
 <p>This method is executed on every frame <strong>before</strong> all <code><a href="../Scar/System.html">System</a></code> and <code><a href="../Scar/Object.html">Object</a></code> update methods.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1517,7 +1473,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed?-
         
         def <strong>window</strong> : SF::RenderWindow
 
-        <a class="method-permalink" href="#window:SF::RenderWindow-instance-method">#</a>
+        <a class="method-permalink" href="#window%3ASF%3A%3ARenderWindow-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1528,7 +1484,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed?-
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/app.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/app.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>

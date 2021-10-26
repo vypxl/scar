@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,15 +745,11 @@
   </h2>
 
   <p>This class provides simple <a href="https://en.wikipedia.org/wiki/Inbetweening">inbe<strong>tween</strong>ing</a> functionality.</p>
-
 <p>You create a <code><a href="../Scar/Tween.html">Tween</a></code> with the parameters of animation duration and easing function.
 The obviously determines how long the <code><a href="../Scar/Tween.html">Tween</a></code> takes to complete,
 the easing function determines how the tween calculates its values.</p>
-
-<p>A <code><a href="../Scar/Tween.html">Tween</a></code> is handled by an <code><a href="../Scar/App.html">App</a></code> after you register it via <code><a href="../Scar/App.html#tween(t:Tween)-instance-method">App#tween</a></code>.</p>
-
+<p>A <code><a href="../Scar/Tween.html">Tween</a></code> is handled by an <code><a href="../Scar/App.html">App</a></code> after you register it via <code><a href="../Scar/App.html#tween%28t%3ATween%29-instance-method">App#tween</a></code>.</p>
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="c"># Move the player 100 pixels to the right over the course of 5 seconds</span>
 origin <span class="o">=</span> player.x
 t <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Tween</span>.<span class="k">new</span>(
@@ -792,7 +783,7 @@ app.tween(t)</code></pre>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L180" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L158" target="_blank">
         scar/tween.cr
       </a>
     
@@ -814,8 +805,7 @@ app.tween(t)</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(duration:Number,ease:Easing::EasingDefinition,on_update:Proc(Tween,Nil)=-%3E(t:Tween)do%0Aend,on_completed:Proc(Tween,Nil)=-%3E(t:Tween)do%0Aend)-class-method" class="signature"><strong>.new</strong>(duration : Number, ease : Easing::EasingDefinition, on_update : Proc(Tween, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
-<span class="k">end</span>, on_completed : Proc(Tween, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+        <a href="#new%28duration%3ANumber%2Cease%3AEasing%3A%3AEasingDefinition%2Con_update%3AProc%28Tween%2CNil%29%2Con_completed%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%29-class-method" class="signature"><strong>.new</strong>(duration : Number, ease : Easing::EasingDefinition, on_update : Proc(Tween, Nil), on_completed : Proc(Tween, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
 <span class="k">end</span>)</a>
         
           <div class="summary"><p>Creates a new tween with the following parameters (see details):</p></div>
@@ -841,22 +831,22 @@ app.tween(t)</code></pre>
       <li class="entry-summary">
         <a href="#abort-instance-method" class="signature"><strong>#abort</strong></a>
         
-          <div class="summary"><p>Ends the tween <strong>without</strong> calling the <code><a href="../Scar/Tween.html#on_completed:Scar::Tween-%3ENil-instance-method">#on_completed</a></code> hook</p></div>
+          <div class="summary"><p>Ends the tween <strong>without</strong> calling the <code><a href="../Scar/Tween.html#on_completed%3AScar%3A%3ATween-%3ENil-instance-method">#on_completed</a></code> hook</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#aborted:Bool-instance-method" class="signature"><strong>#aborted</strong> : Bool</a>
+        <a href="#aborted%3ABool-instance-method" class="signature"><strong>#aborted</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#completed?-instance-method" class="signature"><strong>#completed?</strong></a>
+        <a href="#completed%3F-instance-method" class="signature"><strong>#completed?</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fraction:Float32-instance-method" class="signature"><strong>#fraction</strong> : Float32</a>
+        <a href="#fraction%3AFloat32-instance-method" class="signature"><strong>#fraction</strong> : Float32</a>
         
           <div class="summary"><p>Returns the current interpolated fraction (calculated by the <code><a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a></code>)</p></div>
         
@@ -870,36 +860,24 @@ app.tween(t)</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#on_completed:Scar::Tween-%3ENil-instance-method" class="signature"><strong>#on_completed</strong> : Scar::Tween -> Nil</a>
+        <a href="#on_completed%3AScar%3A%3ATween-%3ENil-instance-method" class="signature"><strong>#on_completed</strong> : Scar::Tween -> Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_completed=(on_completed)-instance-method" class="signature"><strong>#on_completed=</strong>(on_completed)</a>
+        <a href="#on_update%3AScar%3A%3ATween-%3ENil-instance-method" class="signature"><strong>#on_update</strong> : Scar::Tween -> Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_update:Scar::Tween-%3ENil-instance-method" class="signature"><strong>#on_update</strong> : Scar::Tween -> Nil</a>
+        <a href="#paused%3D%28paused%29-instance-method" class="signature"><strong>#paused=</strong>(paused)</a>
+        
+          <div class="summary"><p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction%3AFloat32-instance-method">#fraction</a></code> will stay the same until <code>@paused</code> is false again</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#on_update=(on_update)-instance-method" class="signature"><strong>#on_update=</strong>(on_update)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#paused:Bool-instance-method" class="signature"><strong>#paused</strong> : Bool</a>
-        
-          <div class="summary"><p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#paused=(paused)-instance-method" class="signature"><strong>#paused=</strong>(paused)</a>
-        
-          <div class="summary"><p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p></div>
+        <a href="#paused%3F%3ABool-instance-method" class="signature"><strong>#paused?</strong> : Bool</a>
         
       </li>
     
@@ -911,7 +889,7 @@ app.tween(t)</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#update(delta_time)-instance-method" class="signature"><strong>#update</strong>(delta_time)</a>
+        <a href="#update%28delta_time%29-instance-method" class="signature"><strong>#update</strong>(delta_time)</a>
         
           <div class="summary"><p>(used internally) Advances the <code><a href="../Scar/Tween.html">Tween</a></code> by the given delta time</p></div>
         
@@ -920,6 +898,26 @@ app.tween(t)</code></pre>
   </ul>
 
 
+
+  <h2>
+    <a id="macro-summary" class="anchor" href="#macro-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#bind_value%28duration%2Cease%2Cval%2Cmodifier%3D%22%22%2Con_completed%3D-%3E%28t%3ATween%29do%0Aend%29-macro" class="signature"><strong>bind_value</strong>(duration, ease, val, modifier = <span class="s">&quot;&quot;</span>, on_completed = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+<span class="k">end</span>)</a>
+        
+          <div class="summary"><p>This macro can be used for very simple value tweening</p></div>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -957,29 +955,31 @@ app.tween(t)</code></pre>
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(duration:Number,ease:Easing::EasingDefinition,on_update:Proc(Tween,Nil)=-&gt;(t:Tween)do
-end,on_completed:Proc(Tween,Nil)=-&gt;(t:Tween)do
+    <div class="entry-detail" id="new(duration:Number,ease:Easing::EasingDefinition,on_update:Proc(Tween,Nil),on_completed:Proc(Tween,Nil)=-&gt;(t:Tween)do
 end)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(duration : Number, ease : <a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a>, on_update : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
-<span class="k">end</span>, on_completed : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+        def self.<strong>new</strong>(duration : Number, ease : <a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a>, on_update : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil), on_completed : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
 <span class="k">end</span>)
 
-        <a class="method-permalink" href="#new(duration:Number,ease:Easing::EasingDefinition,on_update:Proc(Tween,Nil)=-%3E(t:Tween)do%0Aend,on_completed:Proc(Tween,Nil)=-%3E(t:Tween)do%0Aend)-class-method">#</a>
+        <a class="method-permalink" href="#new%28duration%3ANumber%2Cease%3AEasing%3A%3AEasingDefinition%2Con_update%3AProc%28Tween%2CNil%29%2Con_completed%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates a new tween with the following parameters (see details):</p>
-
-<ul><li><em>duration</em>: The tweening duration</li><li><em>ease</em>: The <code><a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a></code> used to calculate the Tweens' values</li><li>(optional) <em>on_update</em>: This hook is called on every frame, implement whatever tweening logic you have in here</li><li>(optional) <em>on_completed</em>: This hook is called when the Tweens' duration is over (you could e. g. use this to chain Tweens)</li></ul>
+<ul>
+<li><em>duration</em>: The tweening duration</li>
+<li><em>ease</em>: The <code><a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a></code> used to calculate the Tweens' values</li>
+<li><em>on_update</em>: This hook is called on every frame, implement whatever tweening logic you have in here</li>
+<li>(optional) <em>on_completed</em>: This hook is called when the Tweens' duration is over (you could e. g. use this to chain Tweens)</li>
+</ul>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L197" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L180" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1008,13 +1008,13 @@ end)-class-method">
       
         <div class="doc">
           
-          <p>Ends the tween <strong>without</strong> calling the <code><a href="../Scar/Tween.html#on_completed:Scar::Tween-%3ENil-instance-method">#on_completed</a></code> hook</p>
+          <p>Ends the tween <strong>without</strong> calling the <code><a href="../Scar/Tween.html#on_completed%3AScar%3A%3ATween-%3ENil-instance-method">#on_completed</a></code> hook</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L223" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L206" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1024,13 +1024,13 @@ end)-class-method">
         
         def <strong>aborted</strong> : Bool
 
-        <a class="method-permalink" href="#aborted:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#aborted%3ABool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L185" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L168" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1040,13 +1040,13 @@ end)-class-method">
         
         def <strong>completed?</strong>
 
-        <a class="method-permalink" href="#completed?-instance-method">#</a>
+        <a class="method-permalink" href="#completed%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L213" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L196" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1056,7 +1056,7 @@ end)-class-method">
         
         def <strong>fraction</strong> : Float32
 
-        <a class="method-permalink" href="#fraction:Float32-instance-method">#</a>
+        <a class="method-permalink" href="#fraction%3AFloat32-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1067,7 +1067,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L209" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L192" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1088,7 +1088,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L203" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1098,29 +1098,13 @@ end)-class-method">
         
         def <strong>on_completed</strong> : <a href="../Scar/Tween.html">Scar::Tween</a> -> Nil
 
-        <a class="method-permalink" href="#on_completed:Scar::Tween-%3ENil-instance-method">#</a>
+        <a class="method-permalink" href="#on_completed%3AScar%3A%3ATween-%3ENil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L182" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="on_completed=(on_completed)-instance-method">
-      <div class="signature">
-        
-        def <strong>on_completed=</strong>(on_completed)
-
-        <a class="method-permalink" href="#on_completed=(on_completed)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L182" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1130,50 +1114,13 @@ end)-class-method">
         
         def <strong>on_update</strong> : <a href="../Scar/Tween.html">Scar::Tween</a> -> Nil
 
-        <a class="method-permalink" href="#on_update:Scar::Tween-%3ENil-instance-method">#</a>
+        <a class="method-permalink" href="#on_update%3AScar%3A%3ATween-%3ENil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L181" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="on_update=(on_update)-instance-method">
-      <div class="signature">
-        
-        def <strong>on_update=</strong>(on_update)
-
-        <a class="method-permalink" href="#on_update=(on_update)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L181" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="paused:Bool-instance-method">
-      <div class="signature">
-        
-        def <strong>paused</strong> : Bool
-
-        <a class="method-permalink" href="#paused:Bool-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L184" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L159" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1183,18 +1130,34 @@ end)-class-method">
         
         def <strong>paused=</strong>(paused)
 
-        <a class="method-permalink" href="#paused=(paused)-instance-method">#</a>
+        <a class="method-permalink" href="#paused%3D%28paused%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction:Float32-instance-method">#fraction</a></code> will stay the same until <code><a href="../Scar/Tween.html#paused:Bool-instance-method">#paused</a></code> is false again</p>
+          <p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction%3AFloat32-instance-method">#fraction</a></code> will stay the same until <code>@paused</code> is false again</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L184" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L162" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="paused?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>paused?</strong> : Bool
+
+        <a class="method-permalink" href="#paused%3F%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L164" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1215,7 +1178,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L218" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L201" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1225,7 +1188,7 @@ end)-class-method">
         
         def <strong>update</strong>(delta_time)
 
-        <a class="method-permalink" href="#update(delta_time)-instance-method">#</a>
+        <a class="method-permalink" href="#update%28delta_time%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1236,13 +1199,52 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/tween.cr#L228" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L211" target="_blank">View source</a>]
         
       </div>
     </div>
   
 
 
+
+  <h2>
+    <a id="macro-detail" class="anchor" href="#macro-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Detail
+  </h2>
+  
+    <div class="entry-detail" id="bind_value(duration,ease,val,modifier=&quot;&quot;,on_completed=-&gt;(t:Tween)do
+end)-macro">
+      <div class="signature">
+        
+        macro <strong>bind_value</strong>(duration, ease, val, modifier = <span class="s">&quot;&quot;</span>, on_completed = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+<span class="k">end</span>)
+
+        <a class="method-permalink" href="#bind_value%28duration%2Cease%2Cval%2Cmodifier%3D%22%22%2Con_completed%3D-%3E%28t%3ATween%29do%0Aend%29-macro">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>This macro can be used for very simple value tweening</p>
+<p>Example usage:</p>
+<pre><code class="language-crystal">tween <span class="t">Tween</span>.bind_value(<span class="n">3</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuint</span>.<span class="k">new</span>, x, <span class="s">&quot;80 *&quot;</span>)
+<span class="c"># This expands to</span>
+<span class="t">Tween</span>.<span class="k">new</span>(<span class="n">3</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuint</span>.<span class="k">new</span>, ->(t : <span class="t">Tween</span>) { x <span class="o">=</span> <span class="n">80</span> <span class="o">*</span> t.fraction }, ->(t : <span class="t">Tween</span>) {})</code></pre>
+<p>Note that this does not work with individual entity transform components like <code>e.position.x</code>, as updating
+these directly does not update the underlying <code>SF::Transform</code>. You have to set <code>e.position</code> as a whole.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/tween.cr#L233" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,7 +745,6 @@
   </h2>
 
   <p>The utility methods <code><a href="../Scar.html">Scar</a></code> adds to <code><a href="../SF/Vector2.html">SF::Vector2</a></code> are documented here</p>
-
 <p>See also <a href="https://oprypin.github.io/crsfml/api/SF/Vector2.html">CrSFML Documentation</a></p>
 
 
@@ -796,14 +790,14 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/lib/crsfml/src/system/system.cr#L38" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/lib/crsfml/src/system/system.cr#L38" target="_blank">
         lib/crsfml/src/system/system.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L10" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L10" target="_blank">
         scar/vec.cr
       </a>
     
@@ -825,7 +819,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(x,y)-class-method" class="signature"><strong>.new</strong>(x, y)</a>
+        <a href="#new%28x%2Cy%29-class-method" class="signature"><strong>.new</strong>(x, y)</a>
         
       </li>
     
@@ -844,14 +838,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#from_polar(angle,radius=1.0)-class-method" class="signature"><strong>.from_polar</strong>(angle, radius = <span class="n">1.0</span>)</a>
+        <a href="#from_polar%28angle%2Cradius%3D1.0%29-class-method" class="signature"><strong>.from_polar</strong>(angle, radius = <span class="n">1.0</span>)</a>
         
           <div class="summary"><p>Creates a vector from polar coordinates</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#from_polar_deg(angle,radius=1.0)-class-method" class="signature"><strong>.from_polar_deg</strong>(angle, radius = <span class="n">1.0</span>)</a>
+        <a href="#from_polar_deg%28angle%2Cradius%3D1.0%29-class-method" class="signature"><strong>.from_polar_deg</strong>(angle, radius = <span class="n">1.0</span>)</a>
         
           <div class="summary"><p>Creates a vector from polar coordinates (angle in degrees)</p></div>
         
@@ -872,42 +866,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#/(other:SF::Vector2)-instance-method" class="signature"><strong>#/</strong>(other : SF::Vector2)</a>
+        <a href="#/%28other%3ASF%3A%3AVector2%29-instance-method" class="signature"><strong>#/</strong>(other : SF::Vector2)</a>
         
           <div class="summary"><p>Memberwise division of two vectors</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C=%3E(other:SF::Vector2f)-instance-method" class="signature"><strong>#<=></strong>(other : SF::Vector2f)</a>
+        <a href="#%3C%3D%3E%28other%3ASF%3A%3AVector2f%29-instance-method" class="signature"><strong>#<=></strong>(other : SF::Vector2f)</a>
         
           <div class="summary"><p>Compares two Vectors based on length</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C=%3E(length:Float32)-instance-method" class="signature"><strong>#<=></strong>(length : Float32)</a>
+        <a href="#%3C%3D%3E%28length%3AFloat32%29-instance-method" class="signature"><strong>#<=></strong>(length : Float32)</a>
         
           <div class="summary"><p>Compares this vector's length to the given scalar</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C=%3E(other:Float64)-instance-method" class="signature"><strong>#<=></strong>(other : Float64)</a>
+        <a href="#%3C%3D%3E%28other%3AFloat64%29-instance-method" class="signature"><strong>#<=></strong>(other : Float64)</a>
         
           <div class="summary"><p>Compares this vector's length to the given scalar</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C=%3E(other)-instance-method" class="signature"><strong>#<=></strong>(other)</a>
+        <a href="#%3C%3D%3E%28other%29-instance-method" class="signature"><strong>#<=></strong>(other)</a>
         
           <div class="summary"><p>Compares this vector's length to the given scalar</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#==(other:Number)-instance-method" class="signature"><strong>#==</strong>(other : Number)</a>
+        <a href="#%3D%3D%28other%3ANumber%29-instance-method" class="signature"><strong>#==</strong>(other : Number)</a>
         
           <div class="summary"><p>Equality to a scalar: returns true if length is equal to <em>other</em></p></div>
         
@@ -935,35 +929,35 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#angle_to(other:SF::Vector2f)-instance-method" class="signature"><strong>#angle_to</strong>(other : SF::Vector2f)</a>
+        <a href="#angle_to%28other%3ASF%3A%3AVector2f%29-instance-method" class="signature"><strong>#angle_to</strong>(other : SF::Vector2f)</a>
         
           <div class="summary"><p>Returns the angle between this Vector and another (the sign indicates which Vector is ahead)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#angle_to_deg(other:SF::Vector2f)-instance-method" class="signature"><strong>#angle_to_deg</strong>(other : SF::Vector2f)</a>
+        <a href="#angle_to_deg%28other%3ASF%3A%3AVector2f%29-instance-method" class="signature"><strong>#angle_to_deg</strong>(other : SF::Vector2f)</a>
         
           <div class="summary"><p>Returns the angle between this Vector and another in degrees (the sign indicates which Vector is ahead)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#cross(other:SF::Vector2(T))-instance-method" class="signature"><strong>#cross</strong>(other : SF::Vector2(T))</a>
+        <a href="#cross%28other%3ASF%3A%3AVector2%28T%29%29-instance-method" class="signature"><strong>#cross</strong>(other : SF::Vector2(T))</a>
         
           <div class="summary"><p>Returns the <code>z</code> component of the cross product of two vectors</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#dist(other:SF::Vector2(T))-instance-method" class="signature"><strong>#dist</strong>(other : SF::Vector2(T))</a>
+        <a href="#dist%28other%3ASF%3A%3AVector2%28T%29%29-instance-method" class="signature"><strong>#dist</strong>(other : SF::Vector2(T))</a>
         
           <div class="summary"><p>Returns the euclidean distance to another point</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#dot(other:SF::Vector2(T))-instance-method" class="signature"><strong>#dot</strong>(other : SF::Vector2(T))</a>
+        <a href="#dot%28other%3ASF%3A%3AVector2%28T%29%29-instance-method" class="signature"><strong>#dot</strong>(other : SF::Vector2(T))</a>
         
           <div class="summary"><p>Returns the dot product between two vectors</p></div>
         
@@ -994,7 +988,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#manhattan(other:SF::Vector2(T))-instance-method" class="signature"><strong>#manhattan</strong>(other : SF::Vector2(T))</a>
+        <a href="#manhattan%28other%3ASF%3A%3AVector2%28T%29%29-instance-method" class="signature"><strong>#manhattan</strong>(other : SF::Vector2(T))</a>
         
           <div class="summary"><p>Returns the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> to another point</p></div>
         
@@ -1008,14 +1002,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#new_x(nx)-instance-method" class="signature"><strong>#new_x</strong>(nx)</a>
+        <a href="#new_x%28nx%29-instance-method" class="signature"><strong>#new_x</strong>(nx)</a>
         
           <div class="summary"><p>Returns a copy of self with a new x value</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new_y(ny)-instance-method" class="signature"><strong>#new_y</strong>(ny)</a>
+        <a href="#new_y%28ny%29-instance-method" class="signature"><strong>#new_y</strong>(ny)</a>
         
           <div class="summary"><p>Returns a copy of self with a new y value</p></div>
         
@@ -1029,14 +1023,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#rotate(angle:Float32)-instance-method" class="signature"><strong>#rotate</strong>(angle : Float32)</a>
+        <a href="#rotate%28angle%3AFloat32%29-instance-method" class="signature"><strong>#rotate</strong>(angle : Float32)</a>
         
           <div class="summary"><p>Returns this vector rotated by the given angle around the origin</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rotate(angle)-instance-method" class="signature"><strong>#rotate</strong>(angle)</a>
+        <a href="#rotate%28angle%29-instance-method" class="signature"><strong>#rotate</strong>(angle)</a>
         
           <div class="summary"><p>Returns this vector rotated by the given angle around the origin</p></div>
         
@@ -1144,13 +1138,13 @@
         
         def self.<strong>new</strong>(x, y)
 
-        <a class="method-permalink" href="#new(x,y)-class-method">#</a>
+        <a class="method-permalink" href="#new%28x%2Cy%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1172,7 +1166,7 @@
         
         def self.<strong>from_polar</strong>(angle, radius = <span class="n">1.0</span>)
 
-        <a class="method-permalink" href="#from_polar(angle,radius=1.0)-class-method">#</a>
+        <a class="method-permalink" href="#from_polar%28angle%2Cradius%3D1.0%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1183,7 +1177,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1193,7 +1187,7 @@
         
         def self.<strong>from_polar_deg</strong>(angle, radius = <span class="n">1.0</span>)
 
-        <a class="method-permalink" href="#from_polar_deg(angle,radius=1.0)-class-method">#</a>
+        <a class="method-permalink" href="#from_polar_deg%28angle%2Cradius%3D1.0%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1204,7 +1198,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1226,7 +1220,7 @@
         
         def <strong>/</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>)
 
-        <a class="method-permalink" href="#/(other:SF::Vector2)-instance-method">#</a>
+        <a class="method-permalink" href="#/%28other%3ASF%3A%3AVector2%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1237,7 +1231,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1247,7 +1241,7 @@
         
         def <strong><=></strong>(other : SF::Vector2f)
 
-        <a class="method-permalink" href="#%3C=%3E(other:SF::Vector2f)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%3E%28other%3ASF%3A%3AVector2f%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1258,7 +1252,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1268,7 +1262,7 @@
         
         def <strong><=></strong>(length : Float32)
 
-        <a class="method-permalink" href="#%3C=%3E(length:Float32)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%3E%28length%3AFloat32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1279,7 +1273,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L61" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1289,7 +1283,7 @@
         
         def <strong><=></strong>(other : Float64)
 
-        <a class="method-permalink" href="#%3C=%3E(other:Float64)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%3E%28other%3AFloat64%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1300,7 +1294,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L66" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1310,7 +1304,7 @@
         
         def <strong><=></strong>(other)
 
-        <a class="method-permalink" href="#%3C=%3E(other)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3D%3E%28other%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1321,7 +1315,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1331,20 +1325,19 @@
         
         def <strong>==</strong>(other : Number)
 
-        <a class="method-permalink" href="#==(other:Number)-instance-method">#</a>
+        <a class="method-permalink" href="#%3D%3D%28other%3ANumber%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Equality to a scalar: returns true if length is equal to <em>other</em></p>
-
 <p>Epsilon is 1e-5</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1365,7 +1358,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1386,7 +1379,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L133" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1407,7 +1400,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L138" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L138" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1417,7 +1410,7 @@
         
         def <strong>angle_to</strong>(other : SF::Vector2f)
 
-        <a class="method-permalink" href="#angle_to(other:SF::Vector2f)-instance-method">#</a>
+        <a class="method-permalink" href="#angle_to%28other%3ASF%3A%3AVector2f%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1428,7 +1421,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L143" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L143" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1438,7 +1431,7 @@
         
         def <strong>angle_to_deg</strong>(other : SF::Vector2f)
 
-        <a class="method-permalink" href="#angle_to_deg(other:SF::Vector2f)-instance-method">#</a>
+        <a class="method-permalink" href="#angle_to_deg%28other%3ASF%3A%3AVector2f%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1449,7 +1442,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1459,7 +1452,7 @@
         
         def <strong>cross</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
 
-        <a class="method-permalink" href="#cross(other:SF::Vector2(T))-instance-method">#</a>
+        <a class="method-permalink" href="#cross%28other%3ASF%3A%3AVector2%28T%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1470,7 +1463,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1480,7 +1473,7 @@
         
         def <strong>dist</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
 
-        <a class="method-permalink" href="#dist(other:SF::Vector2(T))-instance-method">#</a>
+        <a class="method-permalink" href="#dist%28other%3ASF%3A%3AVector2%28T%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1491,7 +1484,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1501,7 +1494,7 @@
         
         def <strong>dot</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
 
-        <a class="method-permalink" href="#dot(other:SF::Vector2(T))-instance-method">#</a>
+        <a class="method-permalink" href="#dot%28other%3ASF%3A%3AVector2%28T%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1512,7 +1505,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L83" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1528,7 +1521,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L92" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L92" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1544,7 +1537,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1565,7 +1558,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L97" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1586,7 +1579,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1596,7 +1589,7 @@
         
         def <strong>manhattan</strong>(other : <a href="../SF/Vector2.html">SF::Vector2</a>(T))
 
-        <a class="method-permalink" href="#manhattan(other:SF::Vector2(T))-instance-method">#</a>
+        <a class="method-permalink" href="#manhattan%28other%3ASF%3A%3AVector2%28T%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1607,7 +1600,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1628,7 +1621,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1638,7 +1631,7 @@
         
         def <strong>new_x</strong>(nx)
 
-        <a class="method-permalink" href="#new_x(nx)-instance-method">#</a>
+        <a class="method-permalink" href="#new_x%28nx%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1649,7 +1642,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L153" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L153" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1659,7 +1652,7 @@
         
         def <strong>new_y</strong>(ny)
 
-        <a class="method-permalink" href="#new_y(ny)-instance-method">#</a>
+        <a class="method-permalink" href="#new_y%28ny%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1670,7 +1663,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L158" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L158" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1691,7 +1684,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1701,7 +1694,7 @@
         
         def <strong>rotate</strong>(angle : Float32)
 
-        <a class="method-permalink" href="#rotate(angle:Float32)-instance-method">#</a>
+        <a class="method-permalink" href="#rotate%28angle%3AFloat32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1712,7 +1705,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L122" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L122" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1722,7 +1715,7 @@
         
         def <strong>rotate</strong>(angle)
 
-        <a class="method-permalink" href="#rotate(angle)-instance-method">#</a>
+        <a class="method-permalink" href="#rotate%28angle%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1733,7 +1726,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L128" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1754,7 +1747,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/vec.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/vec.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>

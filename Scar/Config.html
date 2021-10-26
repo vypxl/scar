@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -749,11 +744,8 @@
 
   <p>This module aims to be a simple interface for storing
 basic key-value configuration like keybindings, window settings, ..</p>
-
 <p>You can store everything that can be represented by <code>YAML::Any</code>.</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="c"># At toplevel</span>
 <span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.define_standards({
   int: <span class="n">7331</span>,
@@ -812,7 +804,7 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L29" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L29" target="_blank">
         scar/config.cr
       </a>
     
@@ -838,14 +830,14 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#[](key):YAML::Type-instance-method" class="signature"><strong>#[]</strong>(key) : YAML::Type</a>
+        <a href="#%5B%5D%28key%29%3AYAML%3A%3AType-instance-method" class="signature"><strong>#[]</strong>(key) : YAML::Type</a>
         
           <div class="summary"><p>Returns the value for the given configuration entry</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[]=(key,value)-instance-method" class="signature"><strong>#[]=</strong>(key, value)</a>
+        <a href="#%5B%5D%3D%28key%2Cvalue%29-instance-method" class="signature"><strong>#[]=</strong>(key, value)</a>
         
           <div class="summary"><p>Sets a given configuration entry to a new value</p></div>
         
@@ -859,9 +851,9 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
       </li>
     
       <li class="entry-summary">
-        <a href="#load(fname:String)-instance-method" class="signature"><strong>#load</strong>(fname : String)</a>
+        <a href="#load%28fname%3AString%29-instance-method" class="signature"><strong>#load</strong>(fname : String)</a>
         
-          <div class="summary"><p>Loads configuration values from the given file (using <code><a href="../Scar/Util.html#read_file(name:String)-instance-method">Util#read_file</a></code>)</p></div>
+          <div class="summary"><p>Loads configuration values from the given file (using <code><a href="../Scar/Util.html#read_file%28name%3AString%29-instance-method">Util#read_file</a></code>)</p></div>
         
       </li>
     
@@ -873,16 +865,16 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
       </li>
     
       <li class="entry-summary">
-        <a href="#reset(key)-instance-method" class="signature"><strong>#reset</strong>(key)</a>
+        <a href="#reset%28key%29-instance-method" class="signature"><strong>#reset</strong>(key)</a>
         
-          <div class="summary"><p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards(standards)-macro">Config#define_standards</a></code>)</p></div>
+          <div class="summary"><p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards%28standards%29-macro">Config#define_standards</a></code>)</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#save(fname:String)-instance-method" class="signature"><strong>#save</strong>(fname : String)</a>
+        <a href="#save%28fname%3AString%29-instance-method" class="signature"><strong>#save</strong>(fname : String)</a>
         
-          <div class="summary"><p>Saves the configuration to a file with given file name (using <code><a href="../Scar/Util.html#write_file(name:String,content:String)-instance-method">Util#write_file</a></code>)</p></div>
+          <div class="summary"><p>Saves the configuration to a file with given file name (using <code><a href="../Scar/Util.html#write_file%28name%3AString%2Ccontent%3AString%29-instance-method">Util#write_file</a></code>)</p></div>
         
       </li>
     
@@ -901,7 +893,7 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#define_standards(standards)-macro" class="signature"><strong>define_standards</strong>(standards)</a>
+        <a href="#define_standards%28standards%29-macro" class="signature"><strong>define_standards</strong>(standards)</a>
         
           <div class="summary"><p>Defines standard values for configuration entries to fall back to.</p></div>
         
@@ -934,13 +926,12 @@ puts <span class="t">Scar</span><span class="t">::</span><span class="t">Config<
         
         def <strong>[]</strong>(key) : YAML::Type
 
-        <a class="method-permalink" href="#[](key):YAML::Type-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%28key%29%3AYAML%3A%3AType-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns the value for the given configuration entry</p>
-
 <p>You can pass strings or symbols to this method.
 Returns the standard value if the configuration entry is not set.</p>
         </div>
@@ -948,7 +939,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -958,7 +949,7 @@ Returns the standard value if the configuration entry is not set.</p>
         
         def <strong>[]=</strong>(key, value)
 
-        <a class="method-permalink" href="#[]=(key,value)-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3D%28key%2Cvalue%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -969,7 +960,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L81" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -990,7 +981,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L110" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L110" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1000,18 +991,18 @@ Returns the standard value if the configuration entry is not set.</p>
         
         def <strong>load</strong>(fname : String)
 
-        <a class="method-permalink" href="#load(fname:String)-instance-method">#</a>
+        <a class="method-permalink" href="#load%28fname%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Loads configuration values from the given file (using <code><a href="../Scar/Util.html#read_file(name:String)-instance-method">Util#read_file</a></code>)</p>
+          <p>Loads configuration values from the given file (using <code><a href="../Scar/Util.html#read_file%28name%3AString%29-instance-method">Util#read_file</a></code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L115" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1032,7 +1023,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1042,18 +1033,18 @@ Returns the standard value if the configuration entry is not set.</p>
         
         def <strong>reset</strong>(key)
 
-        <a class="method-permalink" href="#reset(key)-instance-method">#</a>
+        <a class="method-permalink" href="#reset%28key%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards(standards)-macro">Config#define_standards</a></code>)</p>
+          <p>Resets the value of a configuration entry to it's standard (see <code><a href="../Scar/Config.html#define_standards%28standards%29-macro">Config#define_standards</a></code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1063,18 +1054,18 @@ Returns the standard value if the configuration entry is not set.</p>
         
         def <strong>save</strong>(fname : String)
 
-        <a class="method-permalink" href="#save(fname:String)-instance-method">#</a>
+        <a class="method-permalink" href="#save%28fname%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Saves the configuration to a file with given file name (using <code><a href="../Scar/Util.html#write_file(name:String,content:String)-instance-method">Util#write_file</a></code>)</p>
+          <p>Saves the configuration to a file with given file name (using <code><a href="../Scar/Util.html#write_file%28name%3AString%2Ccontent%3AString%29-instance-method">Util#write_file</a></code>)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1096,17 +1087,14 @@ Returns the standard value if the configuration entry is not set.</p>
         
         macro <strong>define_standards</strong>(standards)
 
-        <a class="method-permalink" href="#define_standards(standards)-macro">#</a>
+        <a class="method-permalink" href="#define_standards%28standards%29-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Defines standard values for configuration entries to fall back to.</p>
-
 <p>Specify the standards as a <code>NamedTuple</code> of format <code>{entry name}: {value}</code>.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Scar</span><span class="t">::</span><span class="t">Config</span>.define_standards({
   str: <span class="s">&quot;hello world&quot;</span>,
   arr: [<span class="n">1</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">7</span>],
@@ -1116,7 +1104,7 @@ Returns the standard value if the configuration entry is not set.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/config.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/config.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>

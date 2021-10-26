@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,11 +745,9 @@
   </h2>
 
   <p>A camera takes care of calling render() functions and drawing drawables.</p>
-
 <p>A camera is essentially a wrapper around and <code>SF::View</code>.
 Its instance methods are delegated, so you can use them as normal instance methods.
 When drawing <code><a href="../../Scar/Entity.html">Entity</a></code>s or <code><a href="../../Scar/Object.html">Object</a></code>s, their transforms are applied automatically.</p>
-
 <p>Each space has a default camera, so there is no need to use this class explicitly in your
 application, except if you need custom views. See the <a href="https://oprypin.github.io/crsfml/api/SF/View.html">CrSFML documentation</a> for that.</p>
 
@@ -781,7 +774,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/objects/camera.cr#L9" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/objects/camera.cr#L9" target="_blank">
         scar/objects/camera.cr
       </a>
     
@@ -803,7 +796,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(id:String)-class-method" class="signature"><strong>.new</strong>(id : String)</a>
+        <a href="#new%28id%3AString%29-class-method" class="signature"><strong>.new</strong>(id : String)</a>
         
       </li>
     
@@ -824,35 +817,35 @@ application, except if you need custom views. See the <a href="https://oprypin.g
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#enabled:Bool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
+        <a href="#enabled%3ABool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
         
           <div class="summary"><p>Can be used to turn a camera off</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#enabled=(enabled)-instance-method" class="signature"><strong>#enabled=</strong>(enabled)</a>
+        <a href="#enabled%3D%28enabled%29-instance-method" class="signature"><strong>#enabled=</strong>(enabled)</a>
         
           <div class="summary"><p>Can be used to turn a camera off</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#render_view(app,space,dt)-instance-method" class="signature"><strong>#render_view</strong>(app, space, dt)</a>
+        <a href="#render_view%28app%2Cspace%2Cdt%29-instance-method" class="signature"><strong>#render_view</strong>(app, space, dt)</a>
         
           <div class="summary"><p>This method is called by the render method of <code><a href="../../Scar/Space.html">Space</a></code>s</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sf:SF::View-instance-method" class="signature"><strong>#sf</strong> : SF::View</a>
+        <a href="#sf%3ASF%3A%3AView-instance-method" class="signature"><strong>#sf</strong> : SF::View</a>
         
           <div class="summary"><p>The underlying <code>SF::View</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sf=(sf:SF::View)-instance-method" class="signature"><strong>#sf=</strong>(sf : SF::View)</a>
+        <a href="#sf%3D%28sf%3ASF%3A%3AView%29-instance-method" class="signature"><strong>#sf=</strong>(sf : SF::View)</a>
         
           <div class="summary"><p>The underlying <code>SF::View</code></p></div>
         
@@ -871,27 +864,27 @@ application, except if you need custom views. See the <a href="https://oprypin.g
   <h3>Instance methods inherited from class <code><a href="../../Scar/Object.html">Scar::Object</a></code></h3>
   
   
-    <a href="../../Scar/Object.html#init(app:App,space:Space)-instance-method" class="tooltip">
+    <a href="../../Scar/Object.html#init%28app%3AApp%2Cspace%3ASpace%29-instance-method" class="tooltip">
       <span>init(app : App, space : Space)</span>
     init</a>, 
     
   
-    <a href="../../Scar/Object.html#initialized:Bool-instance-method" class="tooltip">
+    <a href="../../Scar/Object.html#initialized%3ABool-instance-method" class="tooltip">
       <span>initialized : Bool</span>
     initialized</a>, 
     
   
-    <a href="../../Scar/Object.html#initialized=(initialized)-instance-method" class="tooltip">
+    <a href="../../Scar/Object.html#initialized%3D%28initialized%29-instance-method" class="tooltip">
       <span>initialized=(initialized)</span>
     initialized=</a>, 
     
   
-    <a href="../../Scar/Object.html#render(app:App,space:Space,dt)-instance-method" class="tooltip">
+    <a href="../../Scar/Object.html#render%28app%3AApp%2Cspace%3ASpace%2Cdt%29-instance-method" class="tooltip">
       <span>render(app : App, space : Space, dt)</span>
     render</a>, 
     
   
-    <a href="../../Scar/Object.html#update(app:App,space:Space,dt)-instance-method" class="tooltip">
+    <a href="../../Scar/Object.html#update%28app%3AApp%2Cspace%3ASpace%2Cdt%29-instance-method" class="tooltip">
       <span>update(app : App, space : Space, dt)</span>
     update</a>
     
@@ -910,32 +903,32 @@ application, except if you need custom views. See the <a href="https://oprypin.g
   <h3>Instance methods inherited from class <code><a href="../../Scar/Entity.html">Scar::Entity</a></code></h3>
   
   
-    <a href="../../Scar/Entity.html#%3C%3C(c:Component)-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#%3C%3C%28c%3AComponent%29-instance-method" class="tooltip">
       <span><<(c : Component)<br/><<(*cs : Component)</span>
     <<</a>, 
     
   
-    <a href="../../Scar/Entity.html#[](comp_type:T.class):TforallT-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#%5B%5D%28comp_type%3AT.class%29%3ATforallT-instance-method" class="tooltip">
       <span>[](comp_type : <span class="t">T</span>.<span class="k">class</span>) : T forall T</span>
     []</a>, 
     
   
-    <a href="../../Scar/Entity.html#[]?(comp_type:T.class):T?forallT-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#%5B%5D%3F%28comp_type%3AT.class%29%3AT%3FforallT-instance-method" class="tooltip">
       <span>[]?(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T? forall T</span>
     []?</a>, 
     
   
-    <a href="../../Scar/Entity.html#alive?:Bool-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#alive%3F%3ABool-instance-method" class="tooltip">
       <span>alive? : Bool</span>
     alive?</a>, 
     
   
-    <a href="../../Scar/Entity.html#components:Array(Scar::Component)-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#components%3AArray%28Scar%3A%3AComponent%29-instance-method" class="tooltip">
       <span>components : Array(Scar::Component)</span>
     components</a>, 
     
   
-    <a href="../../Scar/Entity.html#components=(components)-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#components%3D%28components%29-instance-method" class="tooltip">
       <span>components=(components)</span>
     components=</a>, 
     
@@ -945,22 +938,22 @@ application, except if you need custom views. See the <a href="https://oprypin.g
     destroy</a>, 
     
   
-    <a href="../../Scar/Entity.html#has?(c:Component.class):Bool-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#has%3F%28c%3AComponent.class%29%3ABool-instance-method" class="tooltip">
       <span>has?(c : <span class="t">Component</span>.<span class="k">class</span>) : Bool<br/>has?(cs : Array(<span class="t">Component</span>.<span class="k">class</span>)) : Bool<br/>has?(*cs : <span class="t">Component</span>.<span class="k">class</span>) : Bool</span>
     has?</a>, 
     
   
-    <a href="../../Scar/Entity.html#id:String-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#id%3AString-instance-method" class="tooltip">
       <span>id : String</span>
     id</a>, 
     
   
-    <a href="../../Scar/Entity.html#z:Int32-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#z%3AInt32-instance-method" class="tooltip">
       <span>z : Int32</span>
     z</a>, 
     
   
-    <a href="../../Scar/Entity.html#z=(z)-instance-method" class="tooltip">
+    <a href="../../Scar/Entity.html#z%3D%28z%29-instance-method" class="tooltip">
       <span>z=(z)</span>
     z=</a>
     
@@ -972,7 +965,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
   <h3>Constructor methods inherited from class <code><a href="../../Scar/Entity.html">Scar::Entity</a></code></h3>
   
   
-    <a href="../../Scar/Entity.html#new(id:String,components:Array(Component),*,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method" class="tooltip">
+    <a href="../../Scar/Entity.html#new%28id%3AString%2Ccomponents%3AArray%28Component%29%2C%2A%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method" class="tooltip">
       <span>new(id : String, components : Array(Component), *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *comps : Component, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</span>
     new</a>
     
@@ -1030,13 +1023,13 @@ application, except if you need custom views. See the <a href="https://oprypin.g
         
         def self.<strong>new</strong>(id : String)
 
-        <a class="method-permalink" href="#new(id:String)-class-method">#</a>
+        <a class="method-permalink" href="#new%28id%3AString%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/objects/camera.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/objects/camera.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1060,7 +1053,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
         
         def <strong>enabled</strong> : Bool
 
-        <a class="method-permalink" href="#enabled:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#enabled%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1071,7 +1064,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/objects/camera.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/objects/camera.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1081,7 +1074,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
         
         def <strong>enabled=</strong>(enabled)
 
-        <a class="method-permalink" href="#enabled=(enabled)-instance-method">#</a>
+        <a class="method-permalink" href="#enabled%3D%28enabled%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1092,7 +1085,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/objects/camera.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/objects/camera.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1102,20 +1095,19 @@ application, except if you need custom views. See the <a href="https://oprypin.g
         
         def <strong>render_view</strong>(app, space, dt)
 
-        <a class="method-permalink" href="#render_view(app,space,dt)-instance-method">#</a>
+        <a class="method-permalink" href="#render_view%28app%2Cspace%2Cdt%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>This method is called by the render method of <code><a href="../../Scar/Space.html">Space</a></code>s</p>
-
 <p>It calls all render methods and draws all drawables onto the screen.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/objects/camera.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/objects/camera.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1125,7 +1117,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
         
         def <strong>sf</strong> : SF::View
 
-        <a class="method-permalink" href="#sf:SF::View-instance-method">#</a>
+        <a class="method-permalink" href="#sf%3ASF%3A%3AView-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1136,7 +1128,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/objects/camera.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/objects/camera.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1146,7 +1138,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
         
         def <strong>sf=</strong>(sf : SF::View)
 
-        <a class="method-permalink" href="#sf=(sf:SF::View)-instance-method">#</a>
+        <a class="method-permalink" href="#sf%3D%28sf%3ASF%3A%3AView%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1157,7 +1149,7 @@ application, except if you need custom views. See the <a href="https://oprypin.g
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/objects/camera.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/objects/camera.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>

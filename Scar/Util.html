@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -775,7 +770,7 @@
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/util.cr#L2" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/util.cr#L2" target="_blank">
         scar/util.cr
       </a>
     
@@ -801,35 +796,35 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#dir=(dir:String)-instance-method" class="signature"><strong>#dir=</strong>(dir : String)</a>
+        <a href="#dir%3D%28dir%3AString%29-instance-method" class="signature"><strong>#dir=</strong>(dir : String)</a>
         
           <div class="summary"><p>Sets the subdirectory to write files to</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read_file(name:String)-instance-method" class="signature"><strong>#read_file</strong>(name : String)</a>
+        <a href="#read_file%28name%3AString%29-instance-method" class="signature"><strong>#read_file</strong>(name : String)</a>
         
           <div class="summary"><p>Reads filename in the specified directory as a <code>String</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#read_file_bytes(name:String)-instance-method" class="signature"><strong>#read_file_bytes</strong>(name : String)</a>
+        <a href="#read_file_bytes%28name%3AString%29-instance-method" class="signature"><strong>#read_file_bytes</strong>(name : String)</a>
         
           <div class="summary"><p>Same as read_file but reads it as <code>Bytes</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#write_file(name:String,content:String)-instance-method" class="signature"><strong>#write_file</strong>(name : String, content : String)</a>
+        <a href="#write_file%28name%3AString%2Ccontent%3AString%29-instance-method" class="signature"><strong>#write_file</strong>(name : String, content : String)</a>
         
           <div class="summary"><p>Writes a <code>String</code> to given filename in the specified directory</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#write_file_bytes(name:String,content:Bytes)-instance-method" class="signature"><strong>#write_file_bytes</strong>(name : String, content : Bytes)</a>
+        <a href="#write_file_bytes%28name%3AString%2Ccontent%3ABytes%29-instance-method" class="signature"><strong>#write_file_bytes</strong>(name : String, content : Bytes)</a>
         
           <div class="summary"><p>Same as write_file but content is <code>Bytes</code></p></div>
         
@@ -864,24 +859,24 @@
         
         def <strong>dir=</strong>(dir : String)
 
-        <a class="method-permalink" href="#dir=(dir:String)-instance-method">#</a>
+        <a class="method-permalink" href="#dir%3D%28dir%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Sets the subdirectory to write files to</p>
-
 <p>The given path is appended to the user directory:</p>
-
-<ul><li>On windows: <code>%appdata%\&lt;dir&gt;\</code></li><li>On linux: <code>~/.local/share/&lt;dir&gt;/</code></li></ul>
-
+<ul>
+<li>On windows: <code>%appdata%\&lt;dir&gt;\</code></li>
+<li>On linux: <code>~/.local/share/&lt;dir&gt;/</code></li>
+</ul>
 <p>It is recommended to set your own subfolder via this method before writing to or reading from any files to avoid conficts.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/util.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/util.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -891,7 +886,7 @@
         
         def <strong>read_file</strong>(name : String)
 
-        <a class="method-permalink" href="#read_file(name:String)-instance-method">#</a>
+        <a class="method-permalink" href="#read_file%28name%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -902,7 +897,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/util.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/util.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -912,7 +907,7 @@
         
         def <strong>read_file_bytes</strong>(name : String)
 
-        <a class="method-permalink" href="#read_file_bytes(name:String)-instance-method">#</a>
+        <a class="method-permalink" href="#read_file_bytes%28name%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -923,7 +918,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/util.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/util.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -933,7 +928,7 @@
         
         def <strong>write_file</strong>(name : String, content : String)
 
-        <a class="method-permalink" href="#write_file(name:String,content:String)-instance-method">#</a>
+        <a class="method-permalink" href="#write_file%28name%3AString%2Ccontent%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -944,7 +939,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/util.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/util.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -954,7 +949,7 @@
         
         def <strong>write_file_bytes</strong>(name : String, content : Bytes)
 
-        <a class="method-permalink" href="#write_file_bytes(name:String,content:Bytes)-instance-method">#</a>
+        <a class="method-permalink" href="#write_file_bytes%28name%3AString%2Ccontent%3ABytes%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -965,7 +960,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/util.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/util.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,15 +745,19 @@
   </h2>
 
   <p>This component provides a simple way to draw a <a href="https://github.com/mapeditor/tiled">Tiled</a> tilemap.</p>
-
 <p>It only supports ungrouped TileLayers (finite or infinite)
 with an embedded Tileset referencing an image whose path
 is corresponds to a loaded texture asset (see <code><a href="../../Scar/Assets.html">Assets</a></code>)</p>
-
 <p>This component does <strong>not</strong> support:</p>
-
-<ul><li>Layer Groups</li><li>External or multiple Tilesets</li><li>Renderorder other than right-down</li><li>Anything except orthogonal orientation</li><li>Tile transformations</li><li>Parallax effects</li><li>Objects</li></ul>
-
+<ul>
+<li>Layer Groups</li>
+<li>External or multiple Tilesets</li>
+<li>Renderorder other than right-down</li>
+<li>Anything except orthogonal orientation</li>
+<li>Tile transformations</li>
+<li>Parallax effects</li>
+<li>Objects</li>
+</ul>
 <p>This component is intended as an easy way to draw tilemaps for prototyping and as an example
 of how you could implement the drawing of a tilemap youself. You can use it in more mature
 applications as well of course.</p>
@@ -786,7 +785,7 @@ applications as well of course.</p>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/tilemap.cr#L19" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/tilemap.cr#L19" target="_blank">
         scar/components/tilemap.cr
       </a>
     
@@ -808,14 +807,14 @@ applications as well of course.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(asset_id:String)-class-method" class="signature"><strong>.new</strong>(asset_id : String)</a>
+        <a href="#new%28asset_id%3AString%29-class-method" class="signature"><strong>.new</strong>(asset_id : String)</a>
         
           <div class="summary"><p>Creates a new tilemap component by loading a tilemap from <code><a href="../../Scar/Assets.html">Assets</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(map)-class-method" class="signature"><strong>.new</strong>(map)</a>
+        <a href="#new%28map%29-class-method" class="signature"><strong>.new</strong>(map)</a>
         
           <div class="summary"><p>Creates a new tilemap component with the given <code><a href="../../Scar/Tiled/Map.html">Scar::Tiled::Map</a></code></p></div>
         
@@ -838,21 +837,21 @@ applications as well of course.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#drawable:SF::VertexBuffer-instance-method" class="signature"><strong>#drawable</strong> : SF::VertexBuffer</a>
+        <a href="#drawable%3ASF%3A%3AVertexBuffer-instance-method" class="signature"><strong>#drawable</strong> : SF::VertexBuffer</a>
         
           <div class="summary"><p>Returns the <code>SF::VertexBuffer</code> that is used to draw the tilemap</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#map:Scar::Tiled::Map-instance-method" class="signature"><strong>#map</strong> : Scar::Tiled::Map</a>
+        <a href="#map%3AScar%3A%3ATiled%3A%3AMap-instance-method" class="signature"><strong>#map</strong> : Scar::Tiled::Map</a>
         
           <div class="summary"><p>Returns the underlying <code><a href="../../Scar/Tiled/Map.html">Scar::Tiled::Map</a></code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#map=(new_map:Scar::Tiled::Map)-instance-method" class="signature"><strong>#map=</strong>(new_map : Scar::Tiled::Map)</a>
+        <a href="#map%3D%28new_map%3AScar%3A%3ATiled%3A%3AMap%29-instance-method" class="signature"><strong>#map=</strong>(new_map : Scar::Tiled::Map)</a>
         
           <div class="summary"><p>Replaces the underlying <code><a href="../../Scar/Tiled/Map.html">Scar::Tiled::Map</a></code></p></div>
         
@@ -888,47 +887,47 @@ applications as well of course.</p>
   <h3>Instance methods inherited from module <code><a href="../../Scar/Drawable.html">Scar::Drawable</a></code></h3>
   
   
-    <a href="../../Scar/Drawable.html#blend_mode:SF::BlendMode-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3ASF%3A%3ABlendMode-instance-method" class="tooltip">
       <span>blend_mode : SF::BlendMode</span>
     blend_mode</a>, 
     
   
-    <a href="../../Scar/Drawable.html#blend_mode=(blend_mode:SF::BlendMode)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#blend_mode%3D%28blend_mode%3ASF%3A%3ABlendMode%29-instance-method" class="tooltip">
       <span>blend_mode=(blend_mode : SF::BlendMode)</span>
     blend_mode=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#drawable:SF::Drawable-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#drawable%3ASF%3A%3ADrawable-instance-method" class="tooltip">
       <span>drawable : SF::Drawable</span>
     drawable</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader:SF::Shader-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3ASF%3A%3AShader-instance-method" class="tooltip">
       <span>shader : SF::Shader</span>
     shader</a>, 
     
   
-    <a href="../../Scar/Drawable.html#shader=(shader:SF::Shader)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#shader%3D%28shader%3ASF%3A%3AShader%29-instance-method" class="tooltip">
       <span>shader=(shader : SF::Shader)</span>
     shader=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture:SF::Texture-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3ASF%3A%3ATexture-instance-method" class="tooltip">
       <span>texture : SF::Texture</span>
     texture</a>, 
     
   
-    <a href="../../Scar/Drawable.html#texture=(texture:SF::Texture)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#texture%3D%28texture%3ASF%3A%3ATexture%29-instance-method" class="tooltip">
       <span>texture=(texture : SF::Texture)</span>
     texture=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible=(visible)-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3D%28visible%29-instance-method" class="tooltip">
       <span>visible=(visible)</span>
     visible=</a>, 
     
   
-    <a href="../../Scar/Drawable.html#visible?-instance-method" class="tooltip">
+    <a href="../../Scar/Drawable.html#visible%3F-instance-method" class="tooltip">
       <span>visible?</span>
     visible?</a>
     
@@ -999,7 +998,7 @@ applications as well of course.</p>
         
         def self.<strong>new</strong>(asset_id : String)
 
-        <a class="method-permalink" href="#new(asset_id:String)-class-method">#</a>
+        <a class="method-permalink" href="#new%28asset_id%3AString%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1011,7 +1010,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/tilemap.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/tilemap.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1021,7 +1020,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
         
         def self.<strong>new</strong>(map)
 
-        <a class="method-permalink" href="#new(map)-class-method">#</a>
+        <a class="method-permalink" href="#new%28map%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1032,7 +1031,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/tilemap.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/tilemap.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1056,7 +1055,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
         
         def <strong>drawable</strong> : SF::VertexBuffer
 
-        <a class="method-permalink" href="#drawable:SF::VertexBuffer-instance-method">#</a>
+        <a class="method-permalink" href="#drawable%3ASF%3A%3AVertexBuffer-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1067,7 +1066,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/tilemap.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/tilemap.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1077,7 +1076,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
         
         def <strong>map</strong> : <a href="../../Scar/Tiled/Map.html">Scar::Tiled::Map</a>
 
-        <a class="method-permalink" href="#map:Scar::Tiled::Map-instance-method">#</a>
+        <a class="method-permalink" href="#map%3AScar%3A%3ATiled%3A%3AMap-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1088,7 +1087,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/tilemap.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/tilemap.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1098,7 +1097,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
         
         def <strong>map=</strong>(new_map : <a href="../../Scar/Tiled/Map.html">Scar::Tiled::Map</a>)
 
-        <a class="method-permalink" href="#map=(new_map:Scar::Tiled::Map)-instance-method">#</a>
+        <a class="method-permalink" href="#map%3D%28new_map%3AScar%3A%3ATiled%3A%3AMap%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1109,7 +1108,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/tilemap.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/tilemap.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1130,7 +1129,7 @@ This function also enables hot-reloading of the tilemap (if it is enabled in the
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/components/tilemap.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/components/tilemap.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,13 +745,9 @@
   </h2>
 
   <p>An entity is any independent thing in your application, like a button, the player, an enemy, ...</p>
-
 <p>An entity contains <code><a href="../Scar/Component.html">Component</a></code>s. They define the entity; An entity itself only has an id and transformational data (position, rotation, scale, z).</p>
-
 <p>Being a subclass of <code>SF::Transformable</code>, its <code>transform</code> is applied if this entity or any of its components is drawn.</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal">player_sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>.<span class="k">new</span> <span class="t">Assets</span>.texture(<span class="s">&quot;textures/player.png&quot;</span>)
 player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Entity</span>.<span class="k">new</span>(<span class="s">&quot;player&quot;</span>, <span class="t">PlayerComponent</span>.<span class="k">new</span>, player_sprite, <span class="t">Scar</span><span class="t">::</span><span class="t">Vec</span>.<span class="k">new</span>(<span class="n">100</span>, <span class="n">100</span>), z: <span class="n">1</span>)</code></pre>
 
@@ -797,7 +788,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L14" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L14" target="_blank">
         scar/entity.cr
       </a>
     
@@ -819,17 +810,17 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(id:String,components:Array(Component),*,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method" class="signature"><strong>.new</strong>(id : String, components : Array(Component), *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</a>
+        <a href="#new%28id%3AString%2Ccomponents%3AArray%28Component%29%2C%2A%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method" class="signature"><strong>.new</strong>(id : String, components : Array(Component), *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(id:String,*comps:Component,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method" class="signature"><strong>.new</strong>(id : String, *comps : Component, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</a>
+        <a href="#new%28id%3AString%2C%2Acomps%3AComponent%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method" class="signature"><strong>.new</strong>(id : String, *comps : Component, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(id:String,*,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method" class="signature"><strong>.new</strong>(id : String, *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</a>
+        <a href="#new%28id%3AString%2C%2A%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method" class="signature"><strong>.new</strong>(id : String, *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</a>
         
       </li>
     
@@ -850,47 +841,47 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%3C%3C(c:Component)-instance-method" class="signature"><strong>#<<</strong>(c : Component)</a>
+        <a href="#%3C%3C%28c%3AComponent%29-instance-method" class="signature"><strong>#<<</strong>(c : Component)</a>
         
           <div class="summary"><p>Adds a component to this entity and returns self</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C%3C(*cs:Component)-instance-method" class="signature"><strong>#<<</strong>(*cs : Component)</a>
+        <a href="#%3C%3C%28%2Acs%3AComponent%29-instance-method" class="signature"><strong>#<<</strong>(*cs : Component)</a>
         
           <div class="summary"><p>Adds multiple components to this entity and returns self</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[](comp_type:T.class):TforallT-instance-method" class="signature"><strong>#[]</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T forall T</a>
+        <a href="#%5B%5D%28comp_type%3AT.class%29%3ATforallT-instance-method" class="signature"><strong>#[]</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T forall T</a>
         
           <div class="summary"><p>Returns this entities' component of given type</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[]?(comp_type:T.class):T?forallT-instance-method" class="signature"><strong>#[]?</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T? forall T</a>
+        <a href="#%5B%5D%3F%28comp_type%3AT.class%29%3AT%3FforallT-instance-method" class="signature"><strong>#[]?</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T? forall T</a>
         
           <div class="summary"><p>Returns this entities' component of given type or nil if it was not found</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#alive?:Bool-instance-method" class="signature"><strong>#alive?</strong> : Bool</a>
+        <a href="#alive%3F%3ABool-instance-method" class="signature"><strong>#alive?</strong> : Bool</a>
         
           <div class="summary"><p>Getter for alive</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#components:Array(Scar::Component)-instance-method" class="signature"><strong>#components</strong> : Array(Scar::Component)</a>
+        <a href="#components%3AArray%28Scar%3A%3AComponent%29-instance-method" class="signature"><strong>#components</strong> : Array(Scar::Component)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#components=(components)-instance-method" class="signature"><strong>#components=</strong>(components)</a>
+        <a href="#components%3D%28components%29-instance-method" class="signature"><strong>#components=</strong>(components)</a>
         
       </li>
     
@@ -902,40 +893,40 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       </li>
     
       <li class="entry-summary">
-        <a href="#has?(c:Component.class):Bool-instance-method" class="signature"><strong>#has?</strong>(c : <span class="t">Component</span>.<span class="k">class</span>) : Bool</a>
+        <a href="#has%3F%28c%3AComponent.class%29%3ABool-instance-method" class="signature"><strong>#has?</strong>(c : <span class="t">Component</span>.<span class="k">class</span>) : Bool</a>
         
           <div class="summary"><p>Checks if this entity contains a component of the given type</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has?(cs:Array(Component.class)):Bool-instance-method" class="signature"><strong>#has?</strong>(cs : Array(<span class="t">Component</span>.<span class="k">class</span>)) : Bool</a>
+        <a href="#has%3F%28cs%3AArray%28Component.class%29%29%3ABool-instance-method" class="signature"><strong>#has?</strong>(cs : Array(<span class="t">Component</span>.<span class="k">class</span>)) : Bool</a>
         
           <div class="summary"><p>Checks if this entity contains a component of every given type</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#has?(*cs:Component.class):Bool-instance-method" class="signature"><strong>#has?</strong>(*cs : <span class="t">Component</span>.<span class="k">class</span>) : Bool</a>
+        <a href="#has%3F%28%2Acs%3AComponent.class%29%3ABool-instance-method" class="signature"><strong>#has?</strong>(*cs : <span class="t">Component</span>.<span class="k">class</span>) : Bool</a>
         
           <div class="summary"><p>Checks if this entity contains a component of every given type</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id:String-instance-method" class="signature"><strong>#id</strong> : String</a>
+        <a href="#id%3AString-instance-method" class="signature"><strong>#id</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#z:Int32-instance-method" class="signature"><strong>#z</strong> : Int32</a>
+        <a href="#z%3AInt32-instance-method" class="signature"><strong>#z</strong> : Int32</a>
         
           <div class="summary"><p>Used to specify the rendering order</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#z=(z)-instance-method" class="signature"><strong>#z=</strong>(z)</a>
+        <a href="#z%3D%28z%29-instance-method" class="signature"><strong>#z=</strong>(z)</a>
         
           <div class="summary"><p>Used to specify the rendering order</p></div>
         
@@ -996,13 +987,13 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def self.<strong>new</strong>(id : String, components : Array(<a href="../Scar/Component.html">Component</a>), *, position : <a href="../Scar/Vec.html">Vec</a>? = <span class="n">nil</span>, scale : <a href="../Scar/Vec.html">Vec</a>? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#new(id:String,components:Array(Component),*,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method">#</a>
+        <a class="method-permalink" href="#new%28id%3AString%2Ccomponents%3AArray%28Component%29%2C%2A%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1012,13 +1003,13 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def self.<strong>new</strong>(id : String, *comps : <a href="../Scar/Component.html">Component</a>, position : <a href="../Scar/Vec.html">Vec</a>? = <span class="n">nil</span>, scale : <a href="../Scar/Vec.html">Vec</a>? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#new(id:String,*comps:Component,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method">#</a>
+        <a class="method-permalink" href="#new%28id%3AString%2C%2Acomps%3AComponent%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1028,13 +1019,13 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def self.<strong>new</strong>(id : String, *, position : <a href="../Scar/Vec.html">Vec</a>? = <span class="n">nil</span>, scale : <a href="../Scar/Vec.html">Vec</a>? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#new(id:String,*,position:Vec?=nil,scale:Vec?=nil,rotation:Float32?=nil,z:Int32=0)-class-method">#</a>
+        <a class="method-permalink" href="#new%28id%3AString%2C%2A%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1058,7 +1049,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong><<</strong>(c : <a href="../Scar/Component.html">Component</a>)
 
-        <a class="method-permalink" href="#%3C%3C(c:Component)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28c%3AComponent%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1069,7 +1060,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1079,7 +1070,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong><<</strong>(*cs : <a href="../Scar/Component.html">Component</a>)
 
-        <a class="method-permalink" href="#%3C%3C(*cs:Component)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28%2Acs%3AComponent%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1090,7 +1081,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1100,7 +1091,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>[]</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T forall T
 
-        <a class="method-permalink" href="#[](comp_type:T.class):TforallT-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%28comp_type%3AT.class%29%3ATforallT-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1111,7 +1102,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L74" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1121,7 +1112,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>[]?</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T? forall T
 
-        <a class="method-permalink" href="#[]?(comp_type:T.class):T?forallT-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3F%28comp_type%3AT.class%29%3AT%3FforallT-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1132,7 +1123,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L84" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L84" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1142,7 +1133,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>alive?</strong> : Bool
 
-        <a class="method-permalink" href="#alive?:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#alive%3F%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1153,7 +1144,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L99" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1163,13 +1154,13 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>components</strong> : Array(<a href="../Scar/Component.html">Scar::Component</a>)
 
-        <a class="method-permalink" href="#components:Array(Scar::Component)-instance-method">#</a>
+        <a class="method-permalink" href="#components%3AArray%28Scar%3A%3AComponent%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1179,13 +1170,13 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>components=</strong>(components)
 
-        <a class="method-permalink" href="#components=(components)-instance-method">#</a>
+        <a class="method-permalink" href="#components%3D%28components%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1206,7 +1197,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L94" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1216,7 +1207,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>has?</strong>(c : <span class="t">Component</span>.<span class="k">class</span>) : Bool
 
-        <a class="method-permalink" href="#has?(c:Component.class):Bool-instance-method">#</a>
+        <a class="method-permalink" href="#has%3F%28c%3AComponent.class%29%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1227,7 +1218,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1237,7 +1228,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>has?</strong>(cs : Array(<span class="t">Component</span>.<span class="k">class</span>)) : Bool
 
-        <a class="method-permalink" href="#has?(cs:Array(Component.class)):Bool-instance-method">#</a>
+        <a class="method-permalink" href="#has%3F%28cs%3AArray%28Component.class%29%29%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1248,7 +1239,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1258,7 +1249,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>has?</strong>(*cs : <span class="t">Component</span>.<span class="k">class</span>) : Bool
 
-        <a class="method-permalink" href="#has?(*cs:Component.class):Bool-instance-method">#</a>
+        <a class="method-permalink" href="#has%3F%28%2Acs%3AComponent.class%29%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1269,7 +1260,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1279,13 +1270,13 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>id</strong> : String
 
-        <a class="method-permalink" href="#id:String-instance-method">#</a>
+        <a class="method-permalink" href="#id%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1295,7 +1286,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>z</strong> : Int32
 
-        <a class="method-permalink" href="#z:Int32-instance-method">#</a>
+        <a class="method-permalink" href="#z%3AInt32-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1306,7 +1297,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1316,7 +1307,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
         
         def <strong>z=</strong>(z)
 
-        <a class="method-permalink" href="#z=(z)-instance-method">#</a>
+        <a class="method-permalink" href="#z%3D%28z%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1327,7 +1318,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/entity.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/entity.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>

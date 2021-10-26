@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -730,12 +725,10 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Scar::Input
+  <span class="kind">module</span> Scar::Input
 
 </h1>
 
-
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Scar/Input.html">Scar::Input</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -749,12 +742,9 @@
     Overview
   </h2>
 
-  <p>A simple class to be used in conjunction with <code><a href="../Scar/App.html">App</a></code>, which provides simple digital and analogue input bindings.</p>
-
+  <p>This module provides simple digital and analogue input bindings.</p>
 <p>You can also get creative with your input sources, you could e. g. implement an analogue input that changes with the current time.</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal">input.bind_digital <span class="n">:jump</span> { <span class="t">Scar</span><span class="t">::</span><span class="t">Input</span>.sf_key <span class="n">:Space</span> }
 input.bind_axis <span class="n">:time</span> { <span class="t">Time</span>.utc.millisecond <span class="o">/</span> <span class="n">1000</span> }
 
@@ -765,6 +755,20 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
 
 
 
+
+  <h2>
+    <a id="extended-modules" class="anchor" href="#extended-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Extended Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Scar/Input.html">Scar::Input</a></li>
+    
+  </ul>
 
 
 
@@ -783,7 +787,7 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/input.cr#L16" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/input.cr#L14" target="_blank">
         scar/input.cr
       </a>
     
@@ -809,28 +813,28 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#active?(which:Symbol)-instance-method" class="signature"><strong>#active?</strong>(which : Symbol)</a>
+        <a href="#active%3F%28which%3ASymbol%29-instance-method" class="signature"><strong>#active?</strong>(which : Symbol)</a>
         
           <div class="summary"><p>Returns true if the specified digital input is currently active</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#axis(which:Symbol)-instance-method" class="signature"><strong>#axis</strong>(which : Symbol)</a>
+        <a href="#axis%28which%3ASymbol%29-instance-method" class="signature"><strong>#axis</strong>(which : Symbol)</a>
         
           <div class="summary"><p>Returns the value for the specified analogue input</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bind_axis(which:Symbol,&block:-%3EFloat32)-instance-method" class="signature"><strong>#bind_axis</strong>(which : Symbol, &block :  -> Float32)</a>
+        <a href="#bind_axis%28which%3ASymbol%2C%26block%3A-%3EFloat32%29-instance-method" class="signature"><strong>#bind_axis</strong>(which : Symbol, &block :  -> Float32)</a>
         
           <div class="summary"><p>Binds a <code>Symbol</code> to an analogue input</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#bind_digital(which:Symbol,&block:-%3EBool)-instance-method" class="signature"><strong>#bind_digital</strong>(which : Symbol, &block :  -> Bool)</a>
+        <a href="#bind_digital%28which%3ASymbol%2C%26block%3A-%3EBool%29-instance-method" class="signature"><strong>#bind_digital</strong>(which : Symbol, &block :  -> Bool)</a>
         
           <div class="summary"><p>Binds a <code>Symbol</code> to a digital input</p></div>
         
@@ -851,7 +855,7 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#sf_key(which)-macro" class="signature"><strong>sf_key</strong>(which)</a>
+        <a href="#key_pressed%3F%28which%29-macro" class="signature"><strong>key_pressed?</strong>(which)</a>
         
           <div class="summary"><p>Shortcut for digital inputs based on keys</p></div>
         
@@ -862,26 +866,6 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
 
 
 <div class="methods-inherited">
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
   
 </div>
 
@@ -904,7 +888,7 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
         
         def <strong>active?</strong>(which : Symbol)
 
-        <a class="method-permalink" href="#active?(which:Symbol)-instance-method">#</a>
+        <a class="method-permalink" href="#active%3F%28which%3ASymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -915,7 +899,7 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/input.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/input.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -925,7 +909,7 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
         
         def <strong>axis</strong>(which : Symbol)
 
-        <a class="method-permalink" href="#axis(which:Symbol)-instance-method">#</a>
+        <a class="method-permalink" href="#axis%28which%3ASymbol%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -936,7 +920,7 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/input.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/input.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -946,20 +930,19 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
         
         def <strong>bind_axis</strong>(which : Symbol, &block :  -> Float32)
 
-        <a class="method-permalink" href="#bind_axis(which:Symbol,&block:-%3EFloat32)-instance-method">#</a>
+        <a class="method-permalink" href="#bind_axis%28which%3ASymbol%2C%26block%3A-%3EFloat32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Binds a <code>Symbol</code> to an analogue input</p>
-
-<p>Similar to <code><a href="../Scar/Input.html#bind_digital(which:Symbol,&block:-%3EBool)-instance-method">#bind_digital</a></code>, but here the check has to return a float instead of a boolean</p>
+<p>Similar to <code><a href="../Scar/Input.html#bind_digital%28which%3ASymbol%2C%26block%3A-%3EBool%29-instance-method">#bind_digital</a></code>, but here the check has to return a float instead of a boolean</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/input.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/input.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -969,24 +952,21 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
         
         def <strong>bind_digital</strong>(which : Symbol, &block :  -> Bool)
 
-        <a class="method-permalink" href="#bind_digital(which:Symbol,&block:-%3EBool)-instance-method">#</a>
+        <a class="method-permalink" href="#bind_digital%28which%3ASymbol%2C%26block%3A-%3EBool%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Binds a <code>Symbol</code> to a digital input</p>
-
 <p>The check should return true if the input is currently active and false if not</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal">input.bind_digital <span class="n">:jump</span> { <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span>.key_pressed? <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span><span class="t">::</span><span class="t">Space</span> }</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/input.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/input.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1003,27 +983,27 @@ input.axis <span class="n">:time</span> <span class="c"># =&gt; 0.415 (example)<
     Macro Detail
   </h2>
   
-    <div class="entry-detail" id="sf_key(which)-macro">
+    <div class="entry-detail" id="key_pressed?(which)-macro">
       <div class="signature">
         
-        macro <strong>sf_key</strong>(which)
+        macro <strong>key_pressed?</strong>(which)
 
-        <a class="method-permalink" href="#sf_key(which)-macro">#</a>
+        <a class="method-permalink" href="#key_pressed%3F%28which%29-macro">#</a>
       </div>
       
         <div class="doc">
           
           <p>Shortcut for digital inputs based on keys</p>
-
 <p>Example usage:</p>
-
-<pre><code class="language-crystal"><span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span>.key_pressed? <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span><span class="t">::</span>{{which.id}}</code></pre>
+<pre><code class="language-crystal">input.bind_digital(<span class="n">:jump</span>) { <span class="t">Scar</span><span class="t">::</span><span class="t">Input</span>.key_pressed? <span class="n">:Space</span> }
+<span class="c"># This turns into</span>
+input.bind_digital(<span class="n">:jump</span>) { <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span>.key_pressed? <span class="t">SF</span><span class="t">::</span><span class="t">Keyboard</span><span class="t">::</span>{{which.id}} }</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/input.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/input.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>

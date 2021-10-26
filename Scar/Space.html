@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -751,18 +746,12 @@
 
   <p>A Space is a container for one independent layer of your application,
 like UI, Game World, Background, ...</p>
-
 <p>A space contains <code><a href="../Scar/Entity.html">Entity</a></code>s and <code><a href="../Scar/System.html">System</a></code>s.</p>
-
 <p>Spaces live inside <code><a href="../Scar/Scene.html">Scene</a></code>s.</p>
-
 <p>Spaces should not interact with each other.</p>
-
 <p>Each <code><a href="../Scar/Space.html">Space</a></code> has a default camera object, accessible through space#camera.
 The camera object has the entity id <code>__camera</code>.</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="c"># Create a space with the id &quot;ui&quot;, a system and two entities</span>
 sp <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Space</span>.<span class="k">new</span>(<span class="s">&quot;ui&quot;</span>, <span class="t">UpdateUISystem</span>, health_bar, exit_button, <span class="n">1</span>)
 scene <span class="o">&lt;&lt;</span> sp</code></pre>
@@ -790,7 +779,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L20" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L20" target="_blank">
         scar/space.cr
       </a>
     
@@ -812,12 +801,12 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(id:String,z:Int32=0)-class-method" class="signature"><strong>.new</strong>(id : String, z : Int32 = <span class="n">0</span>)</a>
+        <a href="#new%28id%3AString%2Cz%3AInt32%3D0%29-class-method" class="signature"><strong>.new</strong>(id : String, z : Int32 = <span class="n">0</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(id:String,*entities_or_systems:Entity%7CSystem,z:Int32=0)-class-method" class="signature"><strong>.new</strong>(id : String, *entities_or_systems : Entity | System, z : Int32 = <span class="n">0</span>)</a>
+        <a href="#new%28id%3AString%2C%2Aentities_or_systems%3AEntity%7CSystem%2Cz%3AInt32%3D0%29-class-method" class="signature"><strong>.new</strong>(id : String, *entities_or_systems : Entity | System, z : Int32 = <span class="n">0</span>)</a>
         
       </li>
     
@@ -838,87 +827,87 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%3C%3C(entity:Entity)-instance-method" class="signature"><strong>#<<</strong>(entity : Entity)</a>
+        <a href="#%3C%3C%28entity%3AEntity%29-instance-method" class="signature"><strong>#<<</strong>(entity : Entity)</a>
         
           <div class="summary"><p>Adds an Entity to the space and returns self</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C%3C(sys:System)-instance-method" class="signature"><strong>#<<</strong>(sys : System)</a>
+        <a href="#%3C%3C%28sys%3ASystem%29-instance-method" class="signature"><strong>#<<</strong>(sys : System)</a>
         
           <div class="summary"><p>Adds a System to the space and returns self</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#%3C%3C(*entities_or_systems:Entity%7CSystem)-instance-method" class="signature"><strong>#<<</strong>(*entities_or_systems : Entity | System)</a>
+        <a href="#%3C%3C%28%2Aentities_or_systems%3AEntity%7CSystem%29-instance-method" class="signature"><strong>#<<</strong>(*entities_or_systems : Entity | System)</a>
         
           <div class="summary"><p>Adds multiple Entities or Systems to the space and returns self</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[](id:String):Entity-instance-method" class="signature"><strong>#[]</strong>(id : String) : Entity</a>
+        <a href="#%5B%5D%28id%3AString%29%3AEntity-instance-method" class="signature"><strong>#[]</strong>(id : String) : Entity</a>
         
           <div class="summary"><p>Returns the <code><a href="../Scar/Entity.html">Entity</a></code> with given id</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[]?(id:String):Entity?-instance-method" class="signature"><strong>#[]?</strong>(id : String) : Entity?</a>
+        <a href="#%5B%5D%3F%28id%3AString%29%3AEntity%3F-instance-method" class="signature"><strong>#[]?</strong>(id : String) : Entity?</a>
         
           <div class="summary"><p>Returns the <code><a href="../Scar/Entity.html">Entity</a></code> with given id or return <code>nil</code> of no entity is found</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#camera:Scar::Objects::Camera-instance-method" class="signature"><strong>#camera</strong> : Scar::Objects::Camera</a>
+        <a href="#camera%3AScar%3A%3AObjects%3A%3ACamera-instance-method" class="signature"><strong>#camera</strong> : Scar::Objects::Camera</a>
         
           <div class="summary"><p>The default <code>Camera</code> object</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#camera=(camera)-instance-method" class="signature"><strong>#camera=</strong>(camera)</a>
+        <a href="#camera%3D%28camera%29-instance-method" class="signature"><strong>#camera=</strong>(camera)</a>
         
           <div class="summary"><p>The default <code>Camera</code> object</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#each_with(comp_type:T.class,&block:Entity,T-%3E)forallT-instance-method" class="signature"><strong>#each_with</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>, &block : Entity, T -> ) forall T</a>
+        <a href="#each_with%28comp_type%3AT.class%2C%26block%3AEntity%2CT-%3E%29forallT-instance-method" class="signature"><strong>#each_with</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>, &block : Entity, T -> ) forall T</a>
         
           <div class="summary"><p>For each Entity having the given component in the space, yield the entity and it's component</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#each_with(comp_type:T.class,*other_comp_types:Component.class,&block:Entity,T-%3E)forallT-instance-method" class="signature"><strong>#each_with</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>, *other_comp_types : <span class="t">Component</span>.<span class="k">class</span>, &block : Entity, T -> ) forall T</a>
+        <a href="#each_with%28comp_type%3AT.class%2C%2Aother_comp_types%3AComponent.class%2C%26block%3AEntity%2CT-%3E%29forallT-instance-method" class="signature"><strong>#each_with</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>, *other_comp_types : <span class="t">Component</span>.<span class="k">class</span>, &block : Entity, T -> ) forall T</a>
         
           <div class="summary"><p>For each Entity having the given components in the space, yield the entity and it's <em>comp_type</em> component</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id:String-instance-method" class="signature"><strong>#id</strong> : String</a>
+        <a href="#id%3AString-instance-method" class="signature"><strong>#id</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#id=(id)-instance-method" class="signature"><strong>#id=</strong>(id)</a>
+        <a href="#id%3D%28id%29-instance-method" class="signature"><strong>#id=</strong>(id)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#z:Int32-instance-method" class="signature"><strong>#z</strong> : Int32</a>
+        <a href="#z%3AInt32-instance-method" class="signature"><strong>#z</strong> : Int32</a>
         
           <div class="summary"><p>The z-coordinate of this space, used to specify the rendering order of multiple spaces</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#z=(z)-instance-method" class="signature"><strong>#z=</strong>(z)</a>
+        <a href="#z%3D%28z%29-instance-method" class="signature"><strong>#z=</strong>(z)</a>
         
           <div class="summary"><p>The z-coordinate of this space, used to specify the rendering order of multiple spaces</p></div>
         
@@ -969,13 +958,13 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def self.<strong>new</strong>(id : String, z : Int32 = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#new(id:String,z:Int32=0)-class-method">#</a>
+        <a class="method-permalink" href="#new%28id%3AString%2Cz%3AInt32%3D0%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -985,13 +974,13 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def self.<strong>new</strong>(id : String, *entities_or_systems : <a href="../Scar/Entity.html">Entity</a> | <a href="../Scar/System.html">System</a>, z : Int32 = <span class="n">0</span>)
 
-        <a class="method-permalink" href="#new(id:String,*entities_or_systems:Entity%7CSystem,z:Int32=0)-class-method">#</a>
+        <a class="method-permalink" href="#new%28id%3AString%2C%2Aentities_or_systems%3AEntity%7CSystem%2Cz%3AInt32%3D0%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1015,7 +1004,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong><<</strong>(entity : <a href="../Scar/Entity.html">Entity</a>)
 
-        <a class="method-permalink" href="#%3C%3C(entity:Entity)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28entity%3AEntity%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1026,7 +1015,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1036,7 +1025,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong><<</strong>(sys : <a href="../Scar/System.html">System</a>)
 
-        <a class="method-permalink" href="#%3C%3C(sys:System)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28sys%3ASystem%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1047,7 +1036,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L104" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1057,7 +1046,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong><<</strong>(*entities_or_systems : <a href="../Scar/Entity.html">Entity</a> | <a href="../Scar/System.html">System</a>)
 
-        <a class="method-permalink" href="#%3C%3C(*entities_or_systems:Entity%7CSystem)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28%2Aentities_or_systems%3AEntity%7CSystem%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1068,7 +1057,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L110" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1078,7 +1067,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong>[]</strong>(id : String) : <a href="../Scar/Entity.html">Entity</a>
 
-        <a class="method-permalink" href="#[](id:String):Entity-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%28id%3AString%29%3AEntity-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1089,7 +1078,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L129" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L140" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1099,7 +1088,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong>[]?</strong>(id : String) : <a href="../Scar/Entity.html">Entity</a>?
 
-        <a class="method-permalink" href="#[]?(id:String):Entity?-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3F%28id%3AString%29%3AEntity%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1110,7 +1099,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1120,7 +1109,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong>camera</strong> : <a href="../Scar/Objects/Camera.html">Scar::Objects::Camera</a>
 
-        <a class="method-permalink" href="#camera:Scar::Objects::Camera-instance-method">#</a>
+        <a class="method-permalink" href="#camera%3AScar%3A%3AObjects%3A%3ACamera-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1131,7 +1120,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1141,7 +1130,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong>camera=</strong>(camera)
 
-        <a class="method-permalink" href="#camera=(camera)-instance-method">#</a>
+        <a class="method-permalink" href="#camera%3D%28camera%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1152,7 +1141,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1162,7 +1151,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong>each_with</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>, &block : <a href="../Scar/Entity.html">Entity</a>, T -> ) forall T
 
-        <a class="method-permalink" href="#each_with(comp_type:T.class,&block:Entity,T-%3E)forallT-instance-method">#</a>
+        <a class="method-permalink" href="#each_with%28comp_type%3AT.class%2C%26block%3AEntity%2CT-%3E%29forallT-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1173,7 +1162,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1183,15 +1172,13 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
         
         def <strong>each_with</strong>(comp_type : <span class="t">T</span>.<span class="k">class</span>, *other_comp_types : <span class="t">Component</span>.<span class="k">class</span>, &block : <a href="../Scar/Entity.html">Entity</a>, T -> ) forall T
 
-        <a class="method-permalink" href="#each_with(comp_type:T.class,*other_comp_types:Component.class,&block:Entity,T-%3E)forallT-instance-method">#</a>
+        <a class="method-permalink" href="#each_with%28comp_type%3AT.class%2C%2Aother_comp_types%3AComponent.class%2C%26block%3AEntity%2CT-%3E%29forallT-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>For each Entity having the given components in the space, yield the entity and it's <em>comp_type</em> component</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal"><span class="c"># Subtract hp from every enemy entity in the player&#39;s range</span>
 space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>) <span class="k">do</span> <span class="o">|</span>ent, comp<span class="o">|</span>
   comp.hp -= <span class="n">10</span> <span class="k">if</span> player.in_range?(ent)
@@ -1201,7 +1188,7 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L121" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L132" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1211,13 +1198,13 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
         
         def <strong>id</strong> : String
 
-        <a class="method-permalink" href="#id:String-instance-method">#</a>
+        <a class="method-permalink" href="#id%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1227,13 +1214,13 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
         
         def <strong>id=</strong>(id)
 
-        <a class="method-permalink" href="#id=(id)-instance-method">#</a>
+        <a class="method-permalink" href="#id%3D%28id%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1243,7 +1230,7 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
         
         def <strong>z</strong> : Int32
 
-        <a class="method-permalink" href="#z:Int32-instance-method">#</a>
+        <a class="method-permalink" href="#z%3AInt32-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1254,7 +1241,7 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1264,7 +1251,7 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
         
         def <strong>z=</strong>(z)
 
-        <a class="method-permalink" href="#z=(z)-instance-method">#</a>
+        <a class="method-permalink" href="#z%3D%28z%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1275,7 +1262,7 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/space.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/space.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -253,11 +253,6 @@
   
   <li class=" " data-id="scar/Scar/Easing/EaseOutQuint" data-name="scar::easing::easeoutquint">
       <a href="../Scar/Easing/EaseOutQuint.html">EaseOutQuint</a>
-      
-    </li>
-  
-  <li class=" " data-id="scar/Scar/Easing/EaseWithFunction" data-name="scar::easing::easewithfunction">
-      <a href="../Scar/Easing/EaseWithFunction.html">EaseWithFunction</a>
       
     </li>
   
@@ -750,16 +745,12 @@
   </h2>
 
   <p>A Scene is a container for one independent state of your application, like title screen, in-game, pause menu, ...</p>
-
 <p>A Scene contains <code><a href="../Scar/Space.html">Space</a></code>s.</p>
-
 <p>Scenes live on an <code><a href="../Scar/App.html">App</a></code>'s scene stack, while only the topmost scene is updated and rendered. This means that you can
 e. g. push your pause scene onto the stack and pop it off later and your ingame scene will get paused automatically.
 You could also implement a system that updates and/or renders other scenes, so that your pause scene shows your game
 in the background.</p>
-
 <p>Example usage:</p>
-
 <pre><code class="language-crystal">sc <span class="o">=</span> <span class="t">Scene</span>.<span class="k">new</span>
 sc <span class="o">&lt;&lt;</span> <span class="t">Space</span>.<span class="k">new</span>(<span class="s">&quot;ui&quot;</span>, ...)
 sc <span class="o">&lt;&lt;</span> <span class="t">Space</span>.<span class="k">new</span>(<span class="s">&quot;game&quot;</span>, ...)
@@ -788,7 +779,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L18" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L18" target="_blank">
         scar/scene.cr
       </a>
     
@@ -810,7 +801,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(spaces:Array(Space))-class-method" class="signature"><strong>.new</strong>(spaces : Array(Space))</a>
+        <a href="#new%28spaces%3AArray%28Space%29%29-class-method" class="signature"><strong>.new</strong>(spaces : Array(Space))</a>
         
       </li>
     
@@ -820,7 +811,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#new(*spaces:Space)-class-method" class="signature"><strong>.new</strong>(*spaces : Space)</a>
+        <a href="#new%28%2Aspaces%3ASpace%29-class-method" class="signature"><strong>.new</strong>(*spaces : Space)</a>
         
       </li>
     
@@ -841,21 +832,21 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#%3C%3C(*spaces:Space)-instance-method" class="signature"><strong>#<<</strong>(*spaces : Space)</a>
+        <a href="#%3C%3C%28%2Aspaces%3ASpace%29-instance-method" class="signature"><strong>#<<</strong>(*spaces : Space)</a>
         
           <div class="summary"><p>Adds one or more spaces to the scene and returns self</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[](id:String):Space-instance-method" class="signature"><strong>#[]</strong>(id : String) : Space</a>
+        <a href="#%5B%5D%28id%3AString%29%3ASpace-instance-method" class="signature"><strong>#[]</strong>(id : String) : Space</a>
         
           <div class="summary"><p>Returns the space with the given id</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#[]?(id:String):Space?-instance-method" class="signature"><strong>#[]?</strong>(id : String) : Space?</a>
+        <a href="#%5B%5D%3F%28id%3AString%29%3ASpace%3F-instance-method" class="signature"><strong>#[]?</strong>(id : String) : Space?</a>
         
           <div class="summary"><p>Returns the space with the given id or nil when it is not found</p></div>
         
@@ -869,7 +860,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#spaces:Array(Scar::Space)-instance-method" class="signature"><strong>#spaces</strong> : Array(Scar::Space)</a>
+        <a href="#spaces%3AArray%28Scar%3A%3ASpace%29-instance-method" class="signature"><strong>#spaces</strong> : Array(Scar::Space)</a>
         
       </li>
     
@@ -918,13 +909,13 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
         
         def self.<strong>new</strong>(spaces : Array(<a href="../Scar/Space.html">Space</a>))
 
-        <a class="method-permalink" href="#new(spaces:Array(Space))-class-method">#</a>
+        <a class="method-permalink" href="#new%28spaces%3AArray%28Space%29%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -940,7 +931,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -950,13 +941,13 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
         
         def self.<strong>new</strong>(*spaces : <a href="../Scar/Space.html">Space</a>)
 
-        <a class="method-permalink" href="#new(*spaces:Space)-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2Aspaces%3ASpace%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -980,7 +971,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
         
         def <strong><<</strong>(*spaces : <a href="../Scar/Space.html">Space</a>)
 
-        <a class="method-permalink" href="#%3C%3C(*spaces:Space)-instance-method">#</a>
+        <a class="method-permalink" href="#%3C%3C%28%2Aspaces%3ASpace%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -991,7 +982,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1001,7 +992,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
         
         def <strong>[]</strong>(id : String) : <a href="../Scar/Space.html">Space</a>
 
-        <a class="method-permalink" href="#[](id:String):Space-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%28id%3AString%29%3ASpace-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1012,7 +1003,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1022,7 +1013,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
         
         def <strong>[]?</strong>(id : String) : <a href="../Scar/Space.html">Space</a>?
 
-        <a class="method-permalink" href="#[]?(id:String):Space?-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3F%28id%3AString%29%3ASpace%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1033,7 +1024,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1054,7 +1045,7 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1064,13 +1055,13 @@ app <span class="o">&lt;&lt;</span> sc</code></pre>
         
         def <strong>spaces</strong> : Array(<a href="../Scar/Space.html">Scar::Space</a>)
 
-        <a class="method-permalink" href="#spaces:Array(Scar::Space)-instance-method">#</a>
+        <a class="method-permalink" href="#spaces%3AArray%28Scar%3A%3ASpace%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/27d0592adf7dca79da107520f834861dd539bb06/src/scar/scene.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/96fdda8596c3d72ad3f5d092c6eb2dbfe545963a/src/scar/scene.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
