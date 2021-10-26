@@ -2,12 +2,10 @@
 
 [![GitHub release](https://img.shields.io/github/release/vypxl/scar.svg?sort=semver)](https://github.com/vypxl/scar/releases)
 [![Build Status](https://img.shields.io/github/workflow/status/vypxl/scar/on_push)](https://github.com/vypxl/scar/actions/workflows/on_push.yml)
-[![Book](https://img.shields.io/badge/Documentation-Gitbook-blueviolet.svg)](https://vypxl.gitbook.io/scar/)
+[![Book OUTDATED](https://img.shields.io/badge/Documentation_OUTDATED_SEE_REFERENCE-Gitbook-blueviolet.svg)](https://vypxl.gitbook.io/scar/)
 [![Reference](https://img.shields.io/badge/Reference-Crystal%20Docs-informational.svg)](https://vypxl.github.io/scar/)
 
 A 2D game engine written in Crystal using crsfml
-
-Examples can be found [here](https://github.com/vypxl/scar_examples)
 
 ## Motivation
 
@@ -31,6 +29,18 @@ and of course for the fun.
 
 - Sound manager
 - Video playback
+
+## Examples
+
+You can find examples in the [examples](https://github.com/vypxl/scar/tree/main/examples) directory.
+To run an example, execute the following command in your terminal, while in the root directory of this repo:
+
+```bash
+crystal run examples/<example-name>/main.cr
+
+# e. g.
+crystal run examples/hello_world/main.cr
+```
 
 ## Installation
 
