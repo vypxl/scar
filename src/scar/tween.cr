@@ -219,13 +219,37 @@ module Scar
       end
     end
 
+    # Chains a new `on_completed` handler after the existing one.
+    # This can be used as an alternative to specifying the `on_completed` handler on initialization.
+    #
+    # Example usage:
+    #
+    # ```
+    # x = 0
+    # Tween.bind_value(1, Easing::Linear.new, x, "x + 5 * ")
+    #   .then { |t|
+    #     x = 0
+    #     t.reset
+    #   }
+    # ```
+    def then(&block : Tween ->)
+      prev = @on_completed
+
+      @on_completed = ->(t : Tween) {
+        prev.call(t)
+        block.call(t)
+      }
+
+      self
+    end
+
     # This macro can be used for very simple value tweening
     #
     # Example usage:
     # ```
     # tween Tween.bind_value(3, Easing::EaseInOutQuint.new, x, "80 *")
     # # This expands to
-    # Tween.new(3, Easing::EaseInOutQuint.new, ->(t : Tween) { x = 80 * t.fraction }, ->(t : Tween) {})
+    # tween Tween.new(3, Easing::EaseInOutQuint.new, ->(t : Tween) { x = 80 * t.fraction }, ->(t : Tween) {})
     # ```
     #
     # Note that this does not work with individual entity transform components like `e.position.x`, as updating
