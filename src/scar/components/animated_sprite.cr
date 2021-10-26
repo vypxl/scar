@@ -29,6 +29,8 @@ require "./sprite.cr"
 # sprite.state = "A" # Necessary, there is no default animation state
 # ```
 #
+# If you specify `0` fps, the animation will not advance by itself. It can be advanced manually by calling `#next`.
+#
 # Note that animation states can share frames, but only if both states' frames remain in sequence.
 #
 # Example:
@@ -105,5 +107,3 @@ class Scar::Components::AnimatedSprite < Scar::Components::Sprite
     end
   end
 end
-
-# TODO add 0 fps mode, this way the animation will not be advanced automatically.
