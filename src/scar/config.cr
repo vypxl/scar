@@ -6,7 +6,7 @@
 # Example usage:
 # ```
 # # At toplevel
-# Scar::Config.define_standards({
+# Scar::Config.set_defaults({
 #   int: 7331,
 #   str: "hello world",
 #   arr: [1, 3, 3, 7],
@@ -17,7 +17,8 @@
 # Scar::Config[:str] = "lol"
 # puts Config[:str] # => lol
 #
-# Scar::Config.save "config.yml"
+# Scar::Util.dir = "config-examle" # don't forget to specify a data directory for your files!
+# Scar::Config.save                # using default filename "config.yml"
 #
 # Scar::Config.reset(:str)
 # puts Config[:str] # => hello world
@@ -30,38 +31,38 @@ module Scar::Config
   extend self
 
   @@data : Hash(String, YAML::Any) = Hash(String, YAML::Any).new
-  @@standards : Hash(String, YAML::Any) = Hash(String, YAML::Any).new
+  @@defaults : Hash(String, YAML::Any) = Hash(String, YAML::Any).new
 
-  # Resets the value of a configuration entry to it's standard (see `Config#define_standards`)
+  # Resets the value of a configuration entry to it's standard (see `Config#define_defaults`)
   def reset(key)
-    @@data[key.to_s] = convert(@@standards[key.to_s]?)
+    @@data[key.to_s] = convert(@@defaults[key.to_s]?)
   end
 
   # Defines standard values for configuration entries to fall back to.
   #
-  # Specify the standards as a `NamedTuple` of format `{entry name}: {value}`.
+  # Specify the defaults as a `NamedTuple` of format `{entry name}: {value}`.
   #
   # Example:
   # ```
-  # Scar::Config.define_standards({
+  # Scar::Config.define_defaults({
   #   str: "hello world",
   #   arr: [1, 3, 3, 7],
   # })
   # ```
-  macro define_standards(standards)
+  macro set_defaults(defaults)
     module Scar::Config
-      @@standards = Hash(String, YAML::Any) {
-        {% for k, v, i in standards %}"{{k.id}}" => convert({{v}}){% if i < standards.size - 1 %},{% end %}
+      @@defaults = Hash(String, YAML::Any) {
+        {% for k, v, i in defaults %}"{{k.id}}" => convert({{v}}){% if i < defaults.size - 1 %},{% end %}
         {% end %}
       }
-      load_standards()
+      load_defaults()
     end
   end
 
   # Resets all configuration entries to their standard value
-  def load_standards
+  def load_defaults
     @@data = Hash(String, YAML::Any).new
-    @@standards.each_key { |key| @@data[key] = @@standards[key] }
+    @@defaults.each_key { |key| @@data[key] = @@defaults[key] }
   end
 
   # Returns the value for the given configuration entry
@@ -73,7 +74,7 @@ module Scar::Config
     if query
       query
     else
-      @@standards[key.to_s]?
+      @@defaults[key.to_s]?
     end
   end
 
@@ -102,7 +103,7 @@ module Scar::Config
   end
 
   # Saves the configuration to a file with given file name (using `Util#write_file`)
-  def save(fname : String)
+  def save(fname : String = "config.yml")
     Util.write_file(fname, YAML.dump(@@data))
   end
 
@@ -112,15 +113,12 @@ module Scar::Config
   end
 
   # Loads configuration values from the given file (using `Util#read_file`)
-  def load(fname : String)
+  def load(fname : String = "config.yml")
     data = YAML.parse(Util.read_file(fname)).as_h
     keys = data.keys.map(&.to_s)
     @@data = Hash.zip(keys, data.values)
   rescue ex
-    Logger.error "Error loading config file! Loading standards. Exception: #{ex}"
-    load_standards()
+    Logger.error "Error loading config file! Loading defaults. Exception: #{ex}"
+    load_defaults()
   end
 end
-
-# TODO rename standards to defaults
-# TODO default file name for save/load
