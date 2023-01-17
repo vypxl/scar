@@ -1,19 +1,14 @@
 name: scar
 version: 0.3.1
-
 description: |
   A game engine with entity component system written in Crystal, built on top of CrSFML
-
 authors:
   - vypxl <thomas@vypxl.io>
-
-crystal: 1.0.0
-
+crystal: 1.6.2
 dependencies:
   crsfml:
     github: oprypin/crsfml
     branch: master
   zstd:
     github: didactic-drunk/zstd.cr
-
 license: MIT
