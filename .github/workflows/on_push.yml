@@ -4,45 +4,37 @@ jobs:
   test_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@v3
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1
-
       - name: Install SFML
         id: sfml
         uses: oprypin/install-sfml@v1
         with:
           sfml: 2.5.1
-
       - name: Setup environment variables
         run: |
           echo "LIBRARY_PATH=${{ steps.sfml.outputs.path }}/lib" >> $GITHUB_ENV
           echo "LD_LIBRARY_PATH=${{ steps.sfml.outputs.path }}/lib" >> $GITHUB_ENV
           echo "SFML_INCLUDE_DIR=${{ steps.sfml.outputs.path }}/include" >> $GITHUB_ENV
-
       - name: Cache shards
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: lib
-          key: ${{ runner.os }}-shards-${{ hashFiles('shard.lock', '**/shard.lock') }}
+          key: ${{ runner.os }}-shards-${{ hashFiles('shard.lock', '**/shard.lock')
+            }}
           restore-keys: ${{ runner.os }}-shards-
-
       - name: Install dependencies
         run: shards check || shards install
-
       - name: Format check
         run: crystal tool format --check ./src ./spec
-
       - name: Run tests
         run: crystal spec
-
       - name: Generate docs
         run: crystal docs
-
       - name: Deploy docs to pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs

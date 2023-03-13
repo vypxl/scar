@@ -1,9 +1,8 @@
 # Scar - A Crystal Game Library/Engine with Batteries included
 
 [![GitHub release](https://img.shields.io/github/release/vypxl/scar.svg?sort=semver)](https://github.com/vypxl/scar/releases)
-[![Build Status](https://img.shields.io/github/workflow/status/vypxl/scar/on_push)](https://github.com/vypxl/scar/actions/workflows/on_push.yml)
-[![Book OUTDATED](https://img.shields.io/badge/Documentation_OUTDATED_SEE_REFERENCE-Gitbook-blueviolet.svg)](https://vypxl.gitbook.io/scar/)
-[![Reference](https://img.shields.io/badge/Reference-Crystal%20Docs-informational.svg)](https://vypxl.github.io/scar/)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/vypxl/scar/on_push.yml?branch=main)](https://github.com/vypxl/scar/actions/workflows/on_push.yml)
+[![Documentation](https://img.shields.io/badge/Documentation-Crystal%20Docs-informational.svg)](https://vypxl.github.io/scar/)
 
 A 2D game engine written in Crystal using crsfml
 
@@ -64,7 +63,7 @@ Feature requests are welcome, just open an issue!
 ## Contributing
 
 1. Create an [Feature Request] Issue
-2. Fork it ( https://github.com/vypxl/scar/fork )
+2. Fork it ( <https://github.com/vypxl/scar/fork> )
 3. (optional) Create the git hook checks via `$ scripts/create-git-hooks`
 4. Create your feature branch (git checkout -b my-new-feature)
 5. Commit your changes (git commit -am 'Add some feature')
