@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -780,7 +780,7 @@ Hot-reloading only works if you are loading assets from plain files (not zipped)
 <span class="t">Scar</span><span class="t">::</span><span class="t">Assets</span>.load <span class="s">&quot;textures/player.png&quot;</span>
 
 tex <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Assets</span>.texture(<span class="s">&quot;textures/player.png&quot;</span>) { <span class="o">|</span>new_tex<span class="o">|</span> puts <span class="s">&quot;Player texture was modified&quot;</span> }
-playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>.<span class="k">new</span> tex</code></pre>
+playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>.new tex</code></pre>
 
 
 
@@ -819,7 +819,7 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L45" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L45" target="_blank">
         scar/assets.cr
       </a>
     
@@ -843,14 +843,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#default_font%3AFont%3F-class-method" class="signature"><strong>.default_font</strong> : Font?</a>
+        <a href="#default_font%3AFont%7CNil-class-method" class="signature"><strong>.default_font</strong> : Font | Nil</a>
         
           <div class="summary"><p>If you set this property, <code><a href="../Scar/Components/Text.html">Components::Text</a></code> components can be created without specifying a font.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default_font%3D%28default_font%3AFont%3F%29-class-method" class="signature"><strong>.default_font=</strong>(default_font : Font?)</a>
+        <a href="#default_font%3D%28default_font%3AFont%7CNil%29-class-method" class="signature"><strong>.default_font=</strong>(default_font : Font | Nil)</a>
         
           <div class="summary"><p>If you set this property, <code><a href="../Scar/Components/Text.html">Components::Text</a></code> components can be created without specifying a font.</p></div>
         
@@ -934,14 +934,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#font%3F%28name%29%3AFont%3F-instance-method" class="signature"><strong>#font?</strong>(name) : Font?</a>
+        <a href="#font%3F%28name%29%3AFont%7CNil-instance-method" class="signature"><strong>#font?</strong>(name) : Font | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#font%3F%28name%2C%26block%3AFont-%3E%29%3AFont%3F-instance-method" class="signature"><strong>#font?</strong>(name, &block : Font -> ) : Font?</a>
+        <a href="#font%3F%28name%2C%26block%3AFont-%3E%29%3AFont%7CNil-instance-method" class="signature"><strong>#font?</strong>(name, &block : Font -> ) : Font | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Font.html">Font</a>, block]?</code></p></div>
         
@@ -962,14 +962,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#json%3F%28name%29%3AJson%3F-instance-method" class="signature"><strong>#json?</strong>(name) : Json?</a>
+        <a href="#json%3F%28name%29%3AJson%7CNil-instance-method" class="signature"><strong>#json?</strong>(name) : Json | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#json%3F%28name%2C%26block%3AJson-%3E%29%3AJson%3F-instance-method" class="signature"><strong>#json?</strong>(name, &block : Json -> ) : Json?</a>
+        <a href="#json%3F%28name%2C%26block%3AJson-%3E%29%3AJson%7CNil-instance-method" class="signature"><strong>#json?</strong>(name, &block : Json -> ) : Json | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Json.html">Json</a>, block]?</code></p></div>
         
@@ -1011,14 +1011,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#music%3F%28name%29%3AMusic%3F-instance-method" class="signature"><strong>#music?</strong>(name) : Music?</a>
+        <a href="#music%3F%28name%29%3AMusic%7CNil-instance-method" class="signature"><strong>#music?</strong>(name) : Music | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#music%3F%28name%2C%26block%3AMusic-%3E%29%3AMusic%3F-instance-method" class="signature"><strong>#music?</strong>(name, &block : Music -> ) : Music?</a>
+        <a href="#music%3F%28name%2C%26block%3AMusic-%3E%29%3AMusic%7CNil-instance-method" class="signature"><strong>#music?</strong>(name, &block : Music -> ) : Music | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Music.html">Music</a>, block]?</code></p></div>
         
@@ -1039,14 +1039,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#sound%3F%28name%29%3ASound%3F-instance-method" class="signature"><strong>#sound?</strong>(name) : Sound?</a>
+        <a href="#sound%3F%28name%29%3ASound%7CNil-instance-method" class="signature"><strong>#sound?</strong>(name) : Sound | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#sound%3F%28name%2C%26block%3ASound-%3E%29%3ASound%3F-instance-method" class="signature"><strong>#sound?</strong>(name, &block : Sound -> ) : Sound?</a>
+        <a href="#sound%3F%28name%2C%26block%3ASound-%3E%29%3ASound%7CNil-instance-method" class="signature"><strong>#sound?</strong>(name, &block : Sound -> ) : Sound | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Sound.html">Sound</a>, block]?</code></p></div>
         
@@ -1067,14 +1067,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#text%3F%28name%29%3AText%3F-instance-method" class="signature"><strong>#text?</strong>(name) : Text?</a>
+        <a href="#text%3F%28name%29%3AText%7CNil-instance-method" class="signature"><strong>#text?</strong>(name) : Text | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#text%3F%28name%2C%26block%3AText-%3E%29%3AText%3F-instance-method" class="signature"><strong>#text?</strong>(name, &block : Text -> ) : Text?</a>
+        <a href="#text%3F%28name%2C%26block%3AText-%3E%29%3AText%7CNil-instance-method" class="signature"><strong>#text?</strong>(name, &block : Text -> ) : Text | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Text.html">Text</a>, block]?</code></p></div>
         
@@ -1095,14 +1095,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#texture%3F%28name%29%3ATexture%3F-instance-method" class="signature"><strong>#texture?</strong>(name) : Texture?</a>
+        <a href="#texture%3F%28name%29%3ATexture%7CNil-instance-method" class="signature"><strong>#texture?</strong>(name) : Texture | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#texture%3F%28name%2C%26block%3ATexture-%3E%29%3ATexture%3F-instance-method" class="signature"><strong>#texture?</strong>(name, &block : Texture -> ) : Texture?</a>
+        <a href="#texture%3F%28name%2C%26block%3ATexture-%3E%29%3ATexture%7CNil-instance-method" class="signature"><strong>#texture?</strong>(name, &block : Texture -> ) : Texture | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Texture.html">Texture</a>, block]?</code></p></div>
         
@@ -1123,14 +1123,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#tilemap%3F%28name%29%3ATilemap%3F-instance-method" class="signature"><strong>#tilemap?</strong>(name) : Tilemap?</a>
+        <a href="#tilemap%3F%28name%29%3ATilemap%7CNil-instance-method" class="signature"><strong>#tilemap?</strong>(name) : Tilemap | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tilemap%3F%28name%2C%26block%3ATilemap-%3E%29%3ATilemap%3F-instance-method" class="signature"><strong>#tilemap?</strong>(name, &block : Tilemap -> ) : Tilemap?</a>
+        <a href="#tilemap%3F%28name%2C%26block%3ATilemap-%3E%29%3ATilemap%7CNil-instance-method" class="signature"><strong>#tilemap?</strong>(name, &block : Tilemap -> ) : Tilemap | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Tilemap.html">Tilemap</a>, block]?</code></p></div>
         
@@ -1172,14 +1172,14 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       </li>
     
       <li class="entry-summary">
-        <a href="#yaml%3F%28name%29%3AYaml%3F-instance-method" class="signature"><strong>#yaml?</strong>(name) : Yaml?</a>
+        <a href="#yaml%3F%28name%29%3AYaml%7CNil-instance-method" class="signature"><strong>#yaml?</strong>(name) : Yaml | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>]?</code></p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#yaml%3F%28name%2C%26block%3AYaml-%3E%29%3AYaml%3F-instance-method" class="signature"><strong>#yaml?</strong>(name, &block : Yaml -> ) : Yaml?</a>
+        <a href="#yaml%3F%28name%2C%26block%3AYaml-%3E%29%3AYaml%7CNil-instance-method" class="signature"><strong>#yaml?</strong>(name, &block : Yaml -> ) : Yaml | Nil</a>
         
           <div class="summary"><p>Same as <code>#[name, <a href="../Scar/Assets/Yaml.html">Yaml</a>, block]?</code></p></div>
         
@@ -1207,12 +1207,12 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="default_font:Font?-class-method">
+    <div class="entry-detail" id="default_font:Font|Nil-class-method">
       <div class="signature">
         
-        def self.<strong>default_font</strong> : <a href="../Scar/Assets/Font.html">Font</a>?
+        def self.<strong>default_font</strong> : <a href="../Scar/Assets/Font.html">Font</a> | Nil
 
-        <a class="method-permalink" href="#default_font%3AFont%3F-class-method">#</a>
+        <a class="method-permalink" href="#default_font%3AFont%7CNil-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1225,17 +1225,17 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="default_font=(default_font:Font?)-class-method">
+    <div class="entry-detail" id="default_font=(default_font:Font|Nil)-class-method">
       <div class="signature">
         
-        def self.<strong>default_font=</strong>(default_font : <a href="../Scar/Assets/Font.html">Font</a>?)
+        def self.<strong>default_font=</strong>(default_font : <a href="../Scar/Assets/Font.html">Font</a> | Nil)
 
-        <a class="method-permalink" href="#default_font%3D%28default_font%3AFont%3F%29-class-method">#</a>
+        <a class="method-permalink" href="#default_font%3D%28default_font%3AFont%7CNil%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1248,7 +1248,7 @@ playerSprite <span class="o">=</span> <span class="t">Scar</span><span class="t"
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L105" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1284,7 +1284,7 @@ Specify <em>on_reload</em> (type: <code>Proc(asset_type, Nil)</code>) to execute
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L376" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L376" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1308,7 +1308,7 @@ Specify a block (type: <code>Proc(asset_type, Nil)</code>) to execute some code 
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L386" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L386" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1329,7 +1329,7 @@ Specify a block (type: <code>Proc(asset_type, Nil)</code>) to execute some code 
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L391" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L391" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1350,7 +1350,7 @@ Specify a block (type: <code>Proc(asset_type, Nil)</code>) to execute some code 
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L396" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L396" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1373,7 +1373,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L163" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1395,7 +1395,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L172" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L172" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1416,7 +1416,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L182" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L182" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1437,7 +1437,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1458,17 +1458,17 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="font?(name):Font?-instance-method">
+    <div class="entry-detail" id="font?(name):Font|Nil-instance-method">
       <div class="signature">
         
-        def <strong>font?</strong>(name) : <a href="../Scar/Assets/Font.html">Font</a>?
+        def <strong>font?</strong>(name) : <a href="../Scar/Assets/Font.html">Font</a> | Nil
 
-        <a class="method-permalink" href="#font%3F%28name%29%3AFont%3F-instance-method">#</a>
+        <a class="method-permalink" href="#font%3F%28name%29%3AFont%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1479,17 +1479,17 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="font?(name,&amp;block:Font-&gt;):Font?-instance-method">
+    <div class="entry-detail" id="font?(name,&amp;block:Font-&gt;):Font|Nil-instance-method">
       <div class="signature">
         
-        def <strong>font?</strong>(name, &block : <a href="../Scar/Assets/Font.html">Font</a> -> ) : <a href="../Scar/Assets/Font.html">Font</a>?
+        def <strong>font?</strong>(name, &block : <a href="../Scar/Assets/Font.html">Font</a> -> ) : <a href="../Scar/Assets/Font.html">Font</a> | Nil
 
-        <a class="method-permalink" href="#font%3F%28name%2C%26block%3AFont-%3E%29%3AFont%3F-instance-method">#</a>
+        <a class="method-permalink" href="#font%3F%28name%2C%26block%3AFont-%3E%29%3AFont%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1500,7 +1500,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1521,7 +1521,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1542,17 +1542,17 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="json?(name):Json?-instance-method">
+    <div class="entry-detail" id="json?(name):Json|Nil-instance-method">
       <div class="signature">
         
-        def <strong>json?</strong>(name) : <a href="../Scar/Assets/Json.html">Json</a>?
+        def <strong>json?</strong>(name) : <a href="../Scar/Assets/Json.html">Json</a> | Nil
 
-        <a class="method-permalink" href="#json%3F%28name%29%3AJson%3F-instance-method">#</a>
+        <a class="method-permalink" href="#json%3F%28name%29%3AJson%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1563,17 +1563,17 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="json?(name,&amp;block:Json-&gt;):Json?-instance-method">
+    <div class="entry-detail" id="json?(name,&amp;block:Json-&gt;):Json|Nil-instance-method">
       <div class="signature">
         
-        def <strong>json?</strong>(name, &block : <a href="../Scar/Assets/Json.html">Json</a> -> ) : <a href="../Scar/Assets/Json.html">Json</a>?
+        def <strong>json?</strong>(name, &block : <a href="../Scar/Assets/Json.html">Json</a> -> ) : <a href="../Scar/Assets/Json.html">Json</a> | Nil
 
-        <a class="method-permalink" href="#json%3F%28name%2C%26block%3AJson-%3E%29%3AJson%3F-instance-method">#</a>
+        <a class="method-permalink" href="#json%3F%28name%2C%26block%3AJson-%3E%29%3AJson%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1584,7 +1584,7 @@ in memory for it to be quickly accesible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1611,7 +1611,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L197" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L197" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1640,7 +1640,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L287" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L287" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1661,7 +1661,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L310" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L310" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1682,7 +1682,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1703,17 +1703,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="music?(name):Music?-instance-method">
+    <div class="entry-detail" id="music?(name):Music|Nil-instance-method">
       <div class="signature">
         
-        def <strong>music?</strong>(name) : <a href="../Scar/Assets/Music.html">Music</a>?
+        def <strong>music?</strong>(name) : <a href="../Scar/Assets/Music.html">Music</a> | Nil
 
-        <a class="method-permalink" href="#music%3F%28name%29%3AMusic%3F-instance-method">#</a>
+        <a class="method-permalink" href="#music%3F%28name%29%3AMusic%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1724,17 +1724,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="music?(name,&amp;block:Music-&gt;):Music?-instance-method">
+    <div class="entry-detail" id="music?(name,&amp;block:Music-&gt;):Music|Nil-instance-method">
       <div class="signature">
         
-        def <strong>music?</strong>(name, &block : <a href="../Scar/Assets/Music.html">Music</a> -> ) : <a href="../Scar/Assets/Music.html">Music</a>?
+        def <strong>music?</strong>(name, &block : <a href="../Scar/Assets/Music.html">Music</a> -> ) : <a href="../Scar/Assets/Music.html">Music</a> | Nil
 
-        <a class="method-permalink" href="#music%3F%28name%2C%26block%3AMusic-%3E%29%3AMusic%3F-instance-method">#</a>
+        <a class="method-permalink" href="#music%3F%28name%2C%26block%3AMusic-%3E%29%3AMusic%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1745,7 +1745,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1766,7 +1766,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1787,17 +1787,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="sound?(name):Sound?-instance-method">
+    <div class="entry-detail" id="sound?(name):Sound|Nil-instance-method">
       <div class="signature">
         
-        def <strong>sound?</strong>(name) : <a href="../Scar/Assets/Sound.html">Sound</a>?
+        def <strong>sound?</strong>(name) : <a href="../Scar/Assets/Sound.html">Sound</a> | Nil
 
-        <a class="method-permalink" href="#sound%3F%28name%29%3ASound%3F-instance-method">#</a>
+        <a class="method-permalink" href="#sound%3F%28name%29%3ASound%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1808,17 +1808,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="sound?(name,&amp;block:Sound-&gt;):Sound?-instance-method">
+    <div class="entry-detail" id="sound?(name,&amp;block:Sound-&gt;):Sound|Nil-instance-method">
       <div class="signature">
         
-        def <strong>sound?</strong>(name, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a>?
+        def <strong>sound?</strong>(name, &block : <a href="../Scar/Assets/Sound.html">Sound</a> -> ) : <a href="../Scar/Assets/Sound.html">Sound</a> | Nil
 
-        <a class="method-permalink" href="#sound%3F%28name%2C%26block%3ASound-%3E%29%3ASound%3F-instance-method">#</a>
+        <a class="method-permalink" href="#sound%3F%28name%2C%26block%3ASound-%3E%29%3ASound%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1829,7 +1829,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1850,7 +1850,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1871,17 +1871,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="text?(name):Text?-instance-method">
+    <div class="entry-detail" id="text?(name):Text|Nil-instance-method">
       <div class="signature">
         
-        def <strong>text?</strong>(name) : <a href="../Scar/Assets/Text.html">Text</a>?
+        def <strong>text?</strong>(name) : <a href="../Scar/Assets/Text.html">Text</a> | Nil
 
-        <a class="method-permalink" href="#text%3F%28name%29%3AText%3F-instance-method">#</a>
+        <a class="method-permalink" href="#text%3F%28name%29%3AText%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1892,17 +1892,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="text?(name,&amp;block:Text-&gt;):Text?-instance-method">
+    <div class="entry-detail" id="text?(name,&amp;block:Text-&gt;):Text|Nil-instance-method">
       <div class="signature">
         
-        def <strong>text?</strong>(name, &block : <a href="../Scar/Assets/Text.html">Text</a> -> ) : <a href="../Scar/Assets/Text.html">Text</a>?
+        def <strong>text?</strong>(name, &block : <a href="../Scar/Assets/Text.html">Text</a> -> ) : <a href="../Scar/Assets/Text.html">Text</a> | Nil
 
-        <a class="method-permalink" href="#text%3F%28name%2C%26block%3AText-%3E%29%3AText%3F-instance-method">#</a>
+        <a class="method-permalink" href="#text%3F%28name%2C%26block%3AText-%3E%29%3AText%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1913,7 +1913,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1934,7 +1934,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1955,17 +1955,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="texture?(name):Texture?-instance-method">
+    <div class="entry-detail" id="texture?(name):Texture|Nil-instance-method">
       <div class="signature">
         
-        def <strong>texture?</strong>(name) : <a href="../Scar/Assets/Texture.html">Texture</a>?
+        def <strong>texture?</strong>(name) : <a href="../Scar/Assets/Texture.html">Texture</a> | Nil
 
-        <a class="method-permalink" href="#texture%3F%28name%29%3ATexture%3F-instance-method">#</a>
+        <a class="method-permalink" href="#texture%3F%28name%29%3ATexture%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1976,17 +1976,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="texture?(name,&amp;block:Texture-&gt;):Texture?-instance-method">
+    <div class="entry-detail" id="texture?(name,&amp;block:Texture-&gt;):Texture|Nil-instance-method">
       <div class="signature">
         
-        def <strong>texture?</strong>(name, &block : <a href="../Scar/Assets/Texture.html">Texture</a> -> ) : <a href="../Scar/Assets/Texture.html">Texture</a>?
+        def <strong>texture?</strong>(name, &block : <a href="../Scar/Assets/Texture.html">Texture</a> -> ) : <a href="../Scar/Assets/Texture.html">Texture</a> | Nil
 
-        <a class="method-permalink" href="#texture%3F%28name%2C%26block%3ATexture-%3E%29%3ATexture%3F-instance-method">#</a>
+        <a class="method-permalink" href="#texture%3F%28name%2C%26block%3ATexture-%3E%29%3ATexture%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1997,7 +1997,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2018,7 +2018,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2039,17 +2039,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="tilemap?(name):Tilemap?-instance-method">
+    <div class="entry-detail" id="tilemap?(name):Tilemap|Nil-instance-method">
       <div class="signature">
         
-        def <strong>tilemap?</strong>(name) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a>?
+        def <strong>tilemap?</strong>(name) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> | Nil
 
-        <a class="method-permalink" href="#tilemap%3F%28name%29%3ATilemap%3F-instance-method">#</a>
+        <a class="method-permalink" href="#tilemap%3F%28name%29%3ATilemap%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2060,17 +2060,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="tilemap?(name,&amp;block:Tilemap-&gt;):Tilemap?-instance-method">
+    <div class="entry-detail" id="tilemap?(name,&amp;block:Tilemap-&gt;):Tilemap|Nil-instance-method">
       <div class="signature">
         
-        def <strong>tilemap?</strong>(name, &block : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> -> ) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a>?
+        def <strong>tilemap?</strong>(name, &block : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> -> ) : <a href="../Scar/Assets/Tilemap.html">Tilemap</a> | Nil
 
-        <a class="method-permalink" href="#tilemap%3F%28name%2C%26block%3ATilemap-%3E%29%3ATilemap%3F-instance-method">#</a>
+        <a class="method-permalink" href="#tilemap%3F%28name%2C%26block%3ATilemap-%3E%29%3ATilemap%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2081,7 +2081,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2103,7 +2103,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L333" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L333" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2124,7 +2124,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L343" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L343" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2145,7 +2145,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L143" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L143" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2166,7 +2166,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -2187,17 +2187,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="yaml?(name):Yaml?-instance-method">
+    <div class="entry-detail" id="yaml?(name):Yaml|Nil-instance-method">
       <div class="signature">
         
-        def <strong>yaml?</strong>(name) : <a href="../Scar/Assets/Yaml.html">Yaml</a>?
+        def <strong>yaml?</strong>(name) : <a href="../Scar/Assets/Yaml.html">Yaml</a> | Nil
 
-        <a class="method-permalink" href="#yaml%3F%28name%29%3AYaml%3F-instance-method">#</a>
+        <a class="method-permalink" href="#yaml%3F%28name%29%3AYaml%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2208,17 +2208,17 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="yaml?(name,&amp;block:Yaml-&gt;):Yaml?-instance-method">
+    <div class="entry-detail" id="yaml?(name,&amp;block:Yaml-&gt;):Yaml|Nil-instance-method">
       <div class="signature">
         
-        def <strong>yaml?</strong>(name, &block : <a href="../Scar/Assets/Yaml.html">Yaml</a> -> ) : <a href="../Scar/Assets/Yaml.html">Yaml</a>?
+        def <strong>yaml?</strong>(name, &block : <a href="../Scar/Assets/Yaml.html">Yaml</a> -> ) : <a href="../Scar/Assets/Yaml.html">Yaml</a> | Nil
 
-        <a class="method-permalink" href="#yaml%3F%28name%2C%26block%3AYaml-%3E%29%3AYaml%3F-instance-method">#</a>
+        <a class="method-permalink" href="#yaml%3F%28name%2C%26block%3AYaml-%3E%29%3AYaml%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2229,7 +2229,7 @@ Zip file entries take precedence over plain files.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/assets.cr#L400" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/assets.cr#L400" target="_blank">View source</a>]
         
       </div>
     </div>

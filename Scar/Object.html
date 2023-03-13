@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -788,7 +788,7 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/object.cr#L10" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/object.cr#L10" target="_blank">
         scar/object.cr
       </a>
     
@@ -826,7 +826,7 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
       </li>
     
       <li class="entry-summary">
-        <a href="#initialized%3D%28initialized%29-instance-method" class="signature"><strong>#initialized=</strong>(initialized)</a>
+        <a href="#initialized%3D%28initialized%3ABool%29-instance-method" class="signature"><strong>#initialized=</strong>(initialized : Bool)</a>
         
       </li>
     
@@ -867,8 +867,8 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
     []</a>, 
     
   
-    <a href="../Scar/Entity.html#%5B%5D%3F%28comp_type%3AT.class%29%3AT%3FforallT-instance-method" class="tooltip">
-      <span>[]?(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T? forall T</span>
+    <a href="../Scar/Entity.html#%5B%5D%3F%28comp_type%3AT.class%29%3AT%7CNilforallT-instance-method" class="tooltip">
+      <span>[]?(comp_type : <span class="t">T</span>.<span class="k">class</span>) : T | Nil forall T</span>
     []?</a>, 
     
   
@@ -882,8 +882,8 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
     components</a>, 
     
   
-    <a href="../Scar/Entity.html#components%3D%28components%29-instance-method" class="tooltip">
-      <span>components=(components)</span>
+    <a href="../Scar/Entity.html#components%3D%28components%3AArray%28Scar%3A%3AComponent%29%29-instance-method" class="tooltip">
+      <span>components=(components : Array(Scar::Component))</span>
     components=</a>, 
     
   
@@ -907,8 +907,8 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
     z</a>, 
     
   
-    <a href="../Scar/Entity.html#z%3D%28z%29-instance-method" class="tooltip">
-      <span>z=(z)</span>
+    <a href="../Scar/Entity.html#z%3D%28z%3AInt32%29-instance-method" class="tooltip">
+      <span>z=(z : Int32)</span>
     z=</a>
     
   
@@ -919,8 +919,8 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
   <h3>Constructor methods inherited from class <code><a href="../Scar/Entity.html">Scar::Entity</a></code></h3>
   
   
-    <a href="../Scar/Entity.html#new%28id%3AString%2Ccomponents%3AArray%28Component%29%2C%2A%2Cposition%3AVec%3F%3Dnil%2Cscale%3AVec%3F%3Dnil%2Crotation%3AFloat32%3F%3Dnil%2Cz%3AInt32%3D0%29-class-method" class="tooltip">
-      <span>new(id : String, components : Array(Component), *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *comps : Component, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *, position : Vec? = <span class="n">nil</span>, scale : Vec? = <span class="n">nil</span>, rotation : Float32? = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</span>
+    <a href="../Scar/Entity.html#new%28id%3AString%2Ccomponents%3AArray%28Component%29%2C%2A%2Cposition%3AVec%7CNil%3Dnil%2Cscale%3AVec%7CNil%3Dnil%2Crotation%3AFloat32%7CNil%3Dnil%2Cz%3AInt32%3D0%29-class-method" class="tooltip">
+      <span>new(id : String, components : Array(Component), *, position : Vec | Nil = <span class="n">nil</span>, scale : Vec | Nil = <span class="n">nil</span>, rotation : Float32 | Nil = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *comps : Component, position : Vec | Nil = <span class="n">nil</span>, scale : Vec | Nil = <span class="n">nil</span>, rotation : Float32 | Nil = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)<br/>new(id : String, *, position : Vec | Nil = <span class="n">nil</span>, scale : Vec | Nil = <span class="n">nil</span>, rotation : Float32 | Nil = <span class="n">nil</span>, z : Int32 = <span class="n">0</span>)</span>
     new</a>
     
   
@@ -992,7 +992,7 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/object.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/object.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1008,23 +1008,23 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/object.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/object.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="initialized=(initialized)-instance-method">
+    <div class="entry-detail" id="initialized=(initialized:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>initialized=</strong>(initialized)
+        def <strong>initialized=</strong>(initialized : Bool)
 
-        <a class="method-permalink" href="#initialized%3D%28initialized%29-instance-method">#</a>
+        <a class="method-permalink" href="#initialized%3D%28initialized%3ABool%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/object.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/object.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1045,7 +1045,7 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/object.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/object.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1066,7 +1066,7 @@ drawable components or include <code><a href="../Scar/Drawable.html">Scar::Drawa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/object.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/object.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>

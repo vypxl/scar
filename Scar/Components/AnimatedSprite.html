@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -756,13 +756,13 @@ See <a href="https://github.com/vypxl/scar_examples">Scar examples</a> for real-
 <span class="c"># AAAABB</span>
 <span class="c"># BBCCCC</span>
 <span class="c">#</span>
-sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">AnimatedSprite</span>.<span class="k">new</span>(
+sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">AnimatedSprite</span>.new(
   <span class="t">Assets</span>.texture(<span class="s">&quot;textures/spritesheet.png&quot;</span>), <span class="c"># Get the spritesheet from the asset manager</span>
   {<span class="n">32</span>, <span class="n">32</span>},                                   <span class="c"># Each frame has a size of 32x32 pixels</span>
   {
-  <span class="s">&quot;A&quot;</span> => {<span class="n">0</span>, <span class="n">4</span>, <span class="n">2</span>}, <span class="c"># Start index: 0, framecount: 4, fps: 2</span>
-  <span class="s">&quot;B&quot;</span> => {<span class="n">4</span>, <span class="n">4</span>, <span class="n">5</span>}, <span class="c"># Start index: 4, framecount: 4, fps: 5</span>
-  <span class="s">&quot;C&quot;</span> => {<span class="n">8</span>, <span class="n">4</span>, <span class="n">8</span>}, <span class="c"># Start index: 8, framecount: 4, fps: 8</span>
+  <span class="s">&quot;A&quot;</span> <span class="o">=&gt;</span> {<span class="n">0</span>, <span class="n">4</span>, <span class="n">2</span>}, <span class="c"># Start index: 0, framecount: 4, fps: 2</span>
+  <span class="s">&quot;B&quot;</span> <span class="o">=&gt;</span> {<span class="n">4</span>, <span class="n">4</span>, <span class="n">5</span>}, <span class="c"># Start index: 4, framecount: 4, fps: 5</span>
+  <span class="s">&quot;C&quot;</span> <span class="o">=&gt;</span> {<span class="n">8</span>, <span class="n">4</span>, <span class="n">8</span>}, <span class="c"># Start index: 8, framecount: 4, fps: 8</span>
 }
 )
 
@@ -803,7 +803,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L42" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L42" target="_blank">
         scar/components/animated_sprite.cr
       </a>
     
@@ -919,8 +919,8 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
   <h3>Constructor methods inherited from class <code><a href="../../Scar/Components/Sprite.html">Scar::Components::Sprite</a></code></h3>
   
   
-    <a href="../../Scar/Components/Sprite.html#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%3F%3Dnil%29-class-method" class="tooltip">
-      <span>new(texture : SF::Texture, rect : SF::IntRect? = <span class="n">nil</span>)</span>
+    <a href="../../Scar/Components/Sprite.html#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%7CNil%3Dnil%29-class-method" class="tooltip">
+      <span>new(texture : SF::Texture, rect : SF::IntRect | Nil = <span class="n">nil</span>)</span>
     new</a>
     
   
@@ -1073,7 +1073,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1108,7 +1108,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L81" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1129,7 +1129,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1150,7 +1150,7 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1168,14 +1168,14 @@ sprite.state <span class="o">=</span> <span class="s">&quot;A&quot;</span> <span
           <p>Sets the current animation state</p>
 <p>Takes the name of an animation state specified in the <em>states</em> parameter of the constructor</p>
 <p>Example usage:</p>
-<pre><code class="language-crystal">an_sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">AnimatedSprite</span>.<span class="k">new</span>(... <span class="s">&quot;idle&quot;</span> => {...} ...)
+<pre><code class="language-crystal">an_sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">AnimatedSprite</span>.new(... <span class="s">&quot;idle&quot;</span> <span class="o">=&gt;</span> {...} ...)
 an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1196,7 +1196,7 @@ an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1217,7 +1217,7 @@ an_sprite.state <span class="o">=</span> <span class="s">&quot;idle&quot;</span>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/animated_sprite.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/animated_sprite.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -746,8 +746,8 @@
 
   <p>This component is a wrapper around <code>SF::Sprite</code></p>
 <p>Example usage:</p>
-<pre><code class="language-crystal">player_sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>.<span class="k">new</span>(<span class="t">Assets</span>.texture <span class="s">&quot;textures/player.png&quot;</span>)
-player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Entity</span>.<span class="k">new</span>(<span class="s">&quot;player&quot;</span>, player_sprite)</code></pre>
+<pre><code class="language-crystal">player_sprite <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>.new(<span class="t">Assets</span>.texture <span class="s">&quot;textures/player.png&quot;</span>)
+player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Entity</span>.new(<span class="s">&quot;player&quot;</span>, player_sprite)</code></pre>
 
 
 
@@ -786,7 +786,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/sprite.cr#L10" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/sprite.cr#L10" target="_blank">
         scar/components/sprite.cr
       </a>
     
@@ -808,7 +808,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(texture : SF::Texture, rect : SF::IntRect? = <span class="n">nil</span>)</a>
+        <a href="#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(texture : SF::Texture, rect : SF::IntRect | Nil = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Creates a new sprite component.</p></div>
         
@@ -973,12 +973,12 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(texture:SF::Texture,rect:SF::IntRect?=nil)-class-method">
+    <div class="entry-detail" id="new(texture:SF::Texture,rect:SF::IntRect|Nil=nil)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(texture : SF::Texture, rect : SF::IntRect? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(texture : SF::Texture, rect : SF::IntRect | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%3F%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28texture%3ASF%3A%3ATexture%2Crect%3ASF%3A%3AIntRect%7CNil%3Dnil%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -989,7 +989,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/sprite.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/sprite.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1024,7 +1024,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1045,7 +1045,7 @@ player <span class="o">=</span> <span class="t">Scar</span><span class="t">::</s
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/components/sprite.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>

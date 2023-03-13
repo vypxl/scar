@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -753,7 +753,7 @@ like UI, Game World, Background, ...</p>
 The camera object has the entity id <code>__camera</code>.</p>
 <p>Example usage:</p>
 <pre><code class="language-crystal"><span class="c"># Create a space with the id &quot;ui&quot;, a system and two entities</span>
-sp <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Space</span>.<span class="k">new</span>(<span class="s">&quot;ui&quot;</span>, <span class="t">UpdateUISystem</span>, health_bar, exit_button, <span class="n">1</span>)
+sp <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Space</span>.new(<span class="s">&quot;ui&quot;</span>, <span class="t">UpdateUISystem</span>, health_bar, exit_button, <span class="n">1</span>)
 scene <span class="o">&lt;&lt;</span> sp</code></pre>
 
 
@@ -779,7 +779,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L20" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L20" target="_blank">
         scar/space.cr
       </a>
     
@@ -855,7 +855,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#%5B%5D%3F%28id%3AString%29%3AEntity%3F-instance-method" class="signature"><strong>#[]?</strong>(id : String) : Entity?</a>
+        <a href="#%5B%5D%3F%28id%3AString%29%3AEntity%7CNil-instance-method" class="signature"><strong>#[]?</strong>(id : String) : Entity | Nil</a>
         
           <div class="summary"><p>Returns the <code><a href="../Scar/Entity.html">Entity</a></code> with given id or return <code>nil</code> of no entity is found</p></div>
         
@@ -869,7 +869,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#camera%3D%28camera%29-instance-method" class="signature"><strong>#camera=</strong>(camera)</a>
+        <a href="#camera%3D%28camera%3AScar%3A%3AObjects%3A%3ACamera%29-instance-method" class="signature"><strong>#camera=</strong>(camera : Scar::Objects::Camera)</a>
         
           <div class="summary"><p>The default <code>Camera</code> object</p></div>
         
@@ -895,7 +895,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#id%3D%28id%29-instance-method" class="signature"><strong>#id=</strong>(id)</a>
+        <a href="#id%3D%28id%3AString%29-instance-method" class="signature"><strong>#id=</strong>(id : String)</a>
         
       </li>
     
@@ -907,7 +907,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#z%3D%28z%29-instance-method" class="signature"><strong>#z=</strong>(z)</a>
+        <a href="#z%3D%28z%3AInt32%29-instance-method" class="signature"><strong>#z=</strong>(z : Int32)</a>
         
           <div class="summary"><p>The z-coordinate of this space, used to specify the rendering order of multiple spaces</p></div>
         
@@ -964,7 +964,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -980,7 +980,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1015,7 +1015,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1036,7 +1036,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L104" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1057,7 +1057,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L110" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L110" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1078,17 +1078,17 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L140" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L140" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="[]?(id:String):Entity?-instance-method">
+    <div class="entry-detail" id="[]?(id:String):Entity|Nil-instance-method">
       <div class="signature">
         
-        def <strong>[]?</strong>(id : String) : <a href="../Scar/Entity.html">Entity</a>?
+        def <strong>[]?</strong>(id : String) : <a href="../Scar/Entity.html">Entity</a> | Nil
 
-        <a class="method-permalink" href="#%5B%5D%3F%28id%3AString%29%3AEntity%3F-instance-method">#</a>
+        <a class="method-permalink" href="#%5B%5D%3F%28id%3AString%29%3AEntity%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1099,7 +1099,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L150" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1120,17 +1120,17 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="camera=(camera)-instance-method">
+    <div class="entry-detail" id="camera=(camera:Scar::Objects::Camera)-instance-method">
       <div class="signature">
         
-        def <strong>camera=</strong>(camera)
+        def <strong>camera=</strong>(camera : <a href="../Scar/Objects/Camera.html">Scar::Objects::Camera</a>)
 
-        <a class="method-permalink" href="#camera%3D%28camera%29-instance-method">#</a>
+        <a class="method-permalink" href="#camera%3D%28camera%3AScar%3A%3AObjects%3A%3ACamera%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1141,7 +1141,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1162,7 +1162,7 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L116" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1181,14 +1181,14 @@ scene <span class="o">&lt;&lt;</span> sp</code></pre>
 <p>Example usage:</p>
 <pre><code class="language-crystal"><span class="c"># Subtract hp from every enemy entity in the player&#39;s range</span>
 space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</span><span class="t">::</span><span class="t">Components</span><span class="t">::</span><span class="t">Sprite</span>) <span class="k">do</span> <span class="o">|</span>ent, comp<span class="o">|</span>
-  comp.hp -= <span class="n">10</span> <span class="k">if</span> player.in_range?(ent)
+  comp.hp <span class="o">-=</span> <span class="n">10</span> <span class="k">if</span> player.in_range?(ent)
 <span class="k">end</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L132" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L132" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1204,23 +1204,23 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="id=(id)-instance-method">
+    <div class="entry-detail" id="id=(id:String)-instance-method">
       <div class="signature">
         
-        def <strong>id=</strong>(id)
+        def <strong>id=</strong>(id : String)
 
-        <a class="method-permalink" href="#id%3D%28id%29-instance-method">#</a>
+        <a class="method-permalink" href="#id%3D%28id%3AString%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1241,17 +1241,17 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="z=(z)-instance-method">
+    <div class="entry-detail" id="z=(z:Int32)-instance-method">
       <div class="signature">
         
-        def <strong>z=</strong>(z)
+        def <strong>z=</strong>(z : Int32)
 
-        <a class="method-permalink" href="#z%3D%28z%29-instance-method">#</a>
+        <a class="method-permalink" href="#z%3D%28z%3AInt32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1262,7 +1262,7 @@ space.each_with(<span class="t">EnemyComponent</span>, <span class="t">Scar</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/space.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/space.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>

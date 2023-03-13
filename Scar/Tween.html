@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -752,11 +752,11 @@ the easing function determines how the tween calculates its values.</p>
 <p>Example usage:</p>
 <pre><code class="language-crystal"><span class="c"># Move the player 100 pixels to the right over the course of 5 seconds</span>
 origin <span class="o">=</span> player.x
-t <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Tween</span>.<span class="k">new</span>(
+t <span class="o">=</span> <span class="t">Scar</span><span class="t">::</span><span class="t">Tween</span>.new(
   <span class="n">5</span>,
   <span class="t">Scar</span><span class="t">::</span><span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuad</span>,
-  ->(t : <span class="t">Tween</span>) { player.x <span class="o">=</span> origin <span class="o">+</span> t.fraction },
-  ->(t : <span class="t">Tweeen</span>) { puts <span class="s">&quot;Player movement complete.&quot;</span> }
+  <span class="o">-&gt;</span>(t : <span class="t">Tween</span>) { player.x <span class="o">=</span> origin <span class="o">+</span> t.fraction },
+  <span class="o">-&gt;</span>(t : <span class="t">Tweeen</span>) { puts <span class="s">&quot;Player movement complete.&quot;</span> }
 )
 app.tween(t)</code></pre>
 
@@ -783,7 +783,7 @@ app.tween(t)</code></pre>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L158" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L158" target="_blank">
         scar/tween.cr
       </a>
     
@@ -805,7 +805,7 @@ app.tween(t)</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28duration%3ANumber%2Cease%3AEasing%3A%3AEasingDefinition%2Con_update%3AProc%28Tween%2CNil%29%2Con_completed%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%29-class-method" class="signature"><strong>.new</strong>(duration : Number, ease : Easing::EasingDefinition, on_update : Proc(Tween, Nil), on_completed : Proc(Tween, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+        <a href="#new%28duration%3ANumber%2Cease%3AEasing%3A%3AEasingDefinition%2Con_update%3AProc%28Tween%2CNil%29%2Con_completed%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%29-class-method" class="signature"><strong>.new</strong>(duration : Number, ease : Easing::EasingDefinition, on_update : Proc(Tween, Nil), on_completed : Proc(Tween, Nil) = <span class="o">-&gt;</span>(t : <span class="t">Tween</span>) <span class="k">do</span>
 <span class="k">end</span>)</a>
         
           <div class="summary"><p>Creates a new tween with the following parameters (see details):</p></div>
@@ -870,7 +870,7 @@ app.tween(t)</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#paused%3D%28paused%29-instance-method" class="signature"><strong>#paused=</strong>(paused)</a>
+        <a href="#paused%3D%28paused%3ABool%29-instance-method" class="signature"><strong>#paused=</strong>(paused : Bool)</a>
         
           <div class="summary"><p>Can be used to pause the Tween, meaning that its <code><a href="../Scar/Tween.html#fraction%3AFloat32-instance-method">#fraction</a></code> will stay the same until <code>@paused</code> is false again</p></div>
         
@@ -917,7 +917,7 @@ app.tween(t)</code></pre>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#bind_value%28duration%2Cease%2Cval%2Cmodifier%3D%22%22%2Con_completed%3D-%3E%28t%3ATween%29do%0Aend%29-macro" class="signature"><strong>bind_value</strong>(duration, ease, val, modifier = <span class="s">&quot;&quot;</span>, on_completed = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+        <a href="#bind_value%28duration%2Cease%2Cval%2Cmodifier%3D%22%22%2Con_completed%3D-%3E%28t%3ATween%29do%0Aend%29-macro" class="signature"><strong>bind_value</strong>(duration, ease, val, modifier = <span class="s">&quot;&quot;</span>, on_completed = <span class="o">-&gt;</span>(t : <span class="t">Tween</span>) <span class="k">do</span>
 <span class="k">end</span>)</a>
         
           <div class="summary"><p>This macro can be used for very simple value tweening</p></div>
@@ -966,7 +966,7 @@ app.tween(t)</code></pre>
 end)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(duration : Number, ease : <a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a>, on_update : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil), on_completed : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil) = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+        def self.<strong>new</strong>(duration : Number, ease : <a href="../Scar/Easing/EasingDefinition.html">Easing::EasingDefinition</a>, on_update : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil), on_completed : Proc(<a href="../Scar/Tween.html">Tween</a>, Nil) = <span class="o">-&gt;</span>(t : <span class="t">Tween</span>) <span class="k">do</span>
 <span class="k">end</span>)
 
         <a class="method-permalink" href="#new%28duration%3ANumber%2Cease%3AEasing%3A%3AEasingDefinition%2Con_update%3AProc%28Tween%2CNil%29%2Con_completed%3AProc%28Tween%2CNil%29%3D-%3E%28t%3ATween%29do%0Aend%29-class-method">#</a>
@@ -986,7 +986,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L180" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L180" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1021,7 +1021,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L206" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L206" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1037,7 +1037,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L168" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L168" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1053,7 +1053,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L196" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L196" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1074,7 +1074,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L192" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L192" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1095,7 +1095,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1111,7 +1111,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L160" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1127,17 +1127,17 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L159" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L159" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="paused=(paused)-instance-method">
+    <div class="entry-detail" id="paused=(paused:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>paused=</strong>(paused)
+        def <strong>paused=</strong>(paused : Bool)
 
-        <a class="method-permalink" href="#paused%3D%28paused%29-instance-method">#</a>
+        <a class="method-permalink" href="#paused%3D%28paused%3ABool%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1148,7 +1148,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1164,7 +1164,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L164" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L164" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1185,7 +1185,7 @@ end)-class-method">
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L201" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L201" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1204,7 +1204,7 @@ end)-class-method">
 This can be used as an alternative to specifying the <code><a href="../Scar/Tween.html#on_completed%3AScar%3A%3ATween-%3ENil-instance-method">#on_completed</a></code> handler on initialization.</p>
 <p>Example usage:</p>
 <pre><code class="language-crystal">x <span class="o">=</span> <span class="n">0</span>
-<span class="t">Tween</span>.bind_value(<span class="n">1</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">Linear</span>.<span class="k">new</span>, x, <span class="s">&quot;x + 5 * &quot;</span>)
+<span class="t">Tween</span>.bind_value(<span class="n">1</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">Linear</span>.new, x, <span class="s">&quot;x + 5 * &quot;</span>)
   .<span class="k">then</span> { <span class="o">|</span>t<span class="o">|</span>
     x <span class="o">=</span> <span class="n">0</span>
     t.reset
@@ -1214,7 +1214,7 @@ This can be used as an alternative to specifying the <code><a href="../Scar/Twee
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L235" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L235" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1235,7 +1235,7 @@ This can be used as an alternative to specifying the <code><a href="../Scar/Twee
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L211" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L211" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1256,7 +1256,7 @@ This can be used as an alternative to specifying the <code><a href="../Scar/Twee
 end)-macro">
       <div class="signature">
         
-        macro <strong>bind_value</strong>(duration, ease, val, modifier = <span class="s">&quot;&quot;</span>, on_completed = ->(t : <span class="t">Tween</span>) <span class="k">do</span>
+        macro <strong>bind_value</strong>(duration, ease, val, modifier = <span class="s">&quot;&quot;</span>, on_completed = <span class="o">-&gt;</span>(t : <span class="t">Tween</span>) <span class="k">do</span>
 <span class="k">end</span>)
 
         <a class="method-permalink" href="#bind_value%28duration%2Cease%2Cval%2Cmodifier%3D%22%22%2Con_completed%3D-%3E%28t%3ATween%29do%0Aend%29-macro">#</a>
@@ -1266,9 +1266,9 @@ end)-macro">
           
           <p>This macro can be used for very simple value tweening</p>
 <p>Example usage:</p>
-<pre><code class="language-crystal">tween <span class="t">Tween</span>.bind_value(<span class="n">3</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuint</span>.<span class="k">new</span>, x, <span class="s">&quot;80 *&quot;</span>)
+<pre><code class="language-crystal">tween <span class="t">Tween</span>.bind_value(<span class="n">3</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuint</span>.new, x, <span class="s">&quot;80 *&quot;</span>)
 <span class="c"># This expands to</span>
-tween <span class="t">Tween</span>.<span class="k">new</span>(<span class="n">3</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuint</span>.<span class="k">new</span>, ->(t : <span class="t">Tween</span>) { x <span class="o">=</span> <span class="n">80</span> <span class="o">*</span> t.fraction }, ->(t : <span class="t">Tween</span>) {})</code></pre>
+tween <span class="t">Tween</span>.new(<span class="n">3</span>, <span class="t">Easing</span><span class="t">::</span><span class="t">EaseInOutQuint</span>.new, <span class="o">-&gt;</span>(t : <span class="t">Tween</span>) { x <span class="o">=</span> <span class="n">80</span> <span class="o">*</span> t.fraction }, <span class="o">-&gt;</span>(t : <span class="t">Tween</span>) {})</code></pre>
 <p>Note that this does not work with individual entity transform components like <code>e.position.x</code>, as updating
 these directly does not update the underlying <code>SF::Transform</code>. You have to set <code>e.position</code> as a whole.</p>
         </div>
@@ -1276,7 +1276,7 @@ these directly does not update the underlying <code>SF::Transform</code>. You ha
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/tween.cr#L257" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/tween.cr#L257" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="scar">
 
@@ -756,7 +756,7 @@
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="m">update</span>
-    @counter += <span class="n">1</span>
+    @counter <span class="o">+=</span> <span class="n">1</span>
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="m">render</span>
@@ -765,10 +765,10 @@
 <span class="k">end</span>
 
 <span class="c"># Create a window to render to</span>
-window <span class="o">=</span> <span class="t">SF</span><span class="t">::</span><span class="t">RenderWindow</span>.<span class="k">new</span>(<span class="t">SF</span><span class="t">::</span><span class="t">VideoMode</span>.<span class="k">new</span>(<span class="n">1600</span>, <span class="n">900</span>), <span class="s">&quot;MyApp&quot;</span>, <span class="t">SF</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">Close</span>)
+window <span class="o">=</span> <span class="t">SF</span><span class="t">::</span><span class="t">RenderWindow</span>.new(<span class="t">SF</span><span class="t">::</span><span class="t">VideoMode</span>.new(<span class="n">1600</span>, <span class="n">900</span>), <span class="s">&quot;MyApp&quot;</span>, <span class="t">SF</span><span class="t">::</span><span class="t">Style</span><span class="t">::</span><span class="t">Close</span>)
 
 <span class="c"># Instatiate your app</span>
-app <span class="o">=</span> <span class="t">MyApp</span>.<span class="k">new</span>(window)
+app <span class="o">=</span> <span class="t">MyApp</span>.new(window)
 
 <span class="c"># Run your app</span>
 app.run</code></pre>
@@ -796,7 +796,7 @@ app.run</code></pre>
   </h2>
   
     
-      <a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L32" target="_blank">
+      <a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L32" target="_blank">
         scar/app.cr
       </a>
     
@@ -890,7 +890,7 @@ app.run</code></pre>
       </li>
     
       <li class="entry-summary">
-        <a href="#hotreload%3D%28hotreload%29-instance-method" class="signature"><strong>#hotreload=</strong>(hotreload)</a>
+        <a href="#hotreload%3D%28hotreload%3ABool%29-instance-method" class="signature"><strong>#hotreload=</strong>(hotreload : Bool)</a>
         
           <div class="summary"><p>Set this to <code>true</code> to enable hot-reloading of assets</p></div>
         
@@ -1036,7 +1036,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1071,7 +1071,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L160" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1092,7 +1092,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L160" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1113,7 +1113,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L175" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L175" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1134,7 +1134,7 @@ app.run</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1151,13 +1151,13 @@ app.run</code></pre>
           
           <p>Broadcasts the given event (calls all event listeners)</p>
 <p>Example usage:</p>
-<pre><code class="language-crystal">app.broadcast(<span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Closed</span>.<span class="k">new</span>)</code></pre>
+<pre><code class="language-crystal">app.broadcast(<span class="t">Scar</span><span class="t">::</span><span class="t">Event</span><span class="t">::</span><span class="t">Closed</span>.new)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L126" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L126" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1180,7 +1180,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L98" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L98" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1201,17 +1201,17 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="hotreload=(hotreload)-instance-method">
+    <div class="entry-detail" id="hotreload=(hotreload:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>hotreload=</strong>(hotreload)
+        def <strong>hotreload=</strong>(hotreload : Bool)
 
-        <a class="method-permalink" href="#hotreload%3D%28hotreload%29-instance-method">#</a>
+        <a class="method-permalink" href="#hotreload%3D%28hotreload%3ABool%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1222,7 +1222,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1244,7 +1244,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1265,7 +1265,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1286,7 +1286,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1308,7 +1308,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1329,7 +1329,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L69" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1350,7 +1350,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L181" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L181" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1371,7 +1371,7 @@ Note that it is recommended that you call super() during you custom exit method.
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1396,7 +1396,7 @@ Exampe usage:</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L116" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1420,7 +1420,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed%3
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L169" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L169" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1441,7 +1441,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed%3
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1463,7 +1463,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed%3
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1484,7 +1484,7 @@ or does anything that prevents the <code><a href="../Scar/Tween.html#completed%3
       <br/>
       <div>
         
-          [<a href="https://github.com/vypxl/scar/blob/bf109a5af2ca2b719fc5f4ae2bb39944f3816add/src/scar/app.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/vypxl/scar/blob/e614737bc2efb14379d8abf50efb1dcbf33ff80c/src/scar/app.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
